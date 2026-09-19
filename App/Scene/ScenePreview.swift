@@ -23,8 +23,8 @@ private struct SceneSurface: UIViewRepresentable {
     let active: Bool
     let reduceMotion: Bool
 
-    func makeUIView(context: Context) -> SKView {
-        let view = SKView()
+    func makeUIView(context: Context) -> PreviewSKView {
+        let view = PreviewSKView()
         view.ignoresSiblingOrder = true
         view.isOpaque = true
         view.backgroundColor = .black
@@ -32,7 +32,7 @@ private struct SceneSurface: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ view: SKView, context: Context) {
+    func updateUIView(_ view: PreviewSKView, context: Context) {
         let scene: ArtworkScene
         if let existing = view.scene as? ArtworkScene, existing.theme == theme {
             scene = existing
@@ -46,7 +46,7 @@ private struct SceneSurface: UIViewRepresentable {
                 guard let scene, let view, view.scene === scene else { return }
                 scene.setArtwork(image)
                 // A paused preview still needs one frame after asynchronous decoding.
-                if view.isPaused { view.setNeedsDisplay() }
+                view.refreshStill()
             }
         }
         scene.configuration = configuration
@@ -54,12 +54,41 @@ private struct SceneSurface: UIViewRepresentable {
         view.preferredFramesPerSecond = ProcessInfo.processInfo.isLowPowerModeEnabled ? 30 : 60
         view.isPaused = !active || reduceMotion
         if reduceMotion { scene.updateFrame(at: 0, displacement: .zero) }
+        view.showsStill = !active || reduceMotion
+        view.refreshStill()
     }
 
-    static func dismantleUIView(_ view: SKView, coordinator: ()) {
+    static func dismantleUIView(_ view: PreviewSKView, coordinator: ()) {
         (view.scene as? ArtworkScene)?.setActive(false, reduceMotion: true)
         view.isPaused = true
         view.presentScene(nil)
+    }
+}
+
+/// A paused Metal view does not redraw when asynchronous artwork arrives.
+/// A static snapshot keeps Reduce Motion completely still without a perpetual render loop.
+@MainActor
+private final class PreviewSKView: SKView {
+    var showsStill = false
+    private let still = UIImageView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        still.isUserInteractionEnabled = false
+        still.contentMode = .scaleToFill
+        addSubview(still)
+    }
+    required init?(coder: NSCoder) { nil }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        still.frame = bounds
+        refreshStill()
+    }
+    func refreshStill() {
+        still.isHidden = !showsStill
+        guard showsStill, let scene, bounds.width > 0, bounds.height > 0 else { return }
+        scene.size = bounds.size
+        guard let snapshot = texture(from: scene, crop: CGRect(origin: .zero, size: bounds.size)) else { return }
+        still.image = UIImage(cgImage: snapshot.cgImage())
     }
 }
 
