@@ -96,7 +96,7 @@ private final class PreviewSKView: SKView {
 enum SceneFrameRenderer {
     private static var cachedScene: ArtworkScene?
     private static var cachedView: SKView?
-    private static var preparedArtwork: (name: String, image: UIImage)?
+    private static var preparedArtwork: (name: String, image: SceneArtwork)?
 
     /// Decode before the frame loop, away from the main actor. False prevents a black export.
     static func prepare(theme: Theme) async -> Bool {
@@ -139,6 +139,7 @@ private final class ArtworkScene: SKScene {
     let theme: Theme
     var configuration: SceneConfiguration
     private let artwork = SKSpriteNode()
+    private let foreground = SKSpriteNode()
     private let tint = SKSpriteNode(color: .clear, size: .zero)
     private let motion = CMMotionManager()
     private var particles: [SKShapeNode] = []
@@ -160,6 +161,8 @@ private final class ArtworkScene: SKScene {
         isUserInteractionEnabled = true
         artwork.zPosition = 0
         addChild(artwork)
+        foreground.zPosition = 0.5
+        addChild(foreground)
         tint.zPosition = 1
         tint.blendMode = .alpha
         addChild(tint)
@@ -199,8 +202,10 @@ private final class ArtworkScene: SKScene {
 
     required init?(coder aDecoder: NSCoder) { nil }
 
-    func setArtwork(_ image: UIImage?) {
-        artwork.texture = image.map { SKTexture(image: $0) }
+    func setArtwork(_ image: SceneArtwork?) {
+        artwork.texture = image.map { SKTexture(image: $0.background) }
+        foreground.texture = image?.foreground.map { SKTexture(image: $0) }
+        foreground.isHidden = foreground.texture == nil
         updateFrame(at: reduceMotion ? 0 : elapsed, displacement: smoothed)
     }
 
@@ -252,8 +257,15 @@ private final class ArtworkScene: SKScene {
         artwork.size = CGSize(width: source.width * factor, height: source.height * factor)
         let breathing = sin(time * 0.35) * 0.004 * intensity
         artwork.setScale(1 + breathing)
-        artwork.position = CGPoint(x: size.width / 2 + displacement.x * size.width * 0.025 * depth,
-                                   y: size.height / 2 + displacement.y * size.height * 0.025 * depth)
+        artwork.position = CGPoint(x: size.width / 2 + displacement.x * size.width * 0.025 * depth * intensity,
+                                   y: size.height / 2 + displacement.y * size.height * 0.025 * depth * intensity)
+        // The transparent subject shares the original canvas registration, but reacts more
+        // strongly than the road. Both live interaction and exports use these exact transforms.
+        foreground.size = artwork.size
+        foreground.setScale(1 + breathing)
+        foreground.position = CGPoint(
+            x: size.width / 2 + displacement.x * size.width * 0.065 * depth * intensity + sin(time * 0.8) * size.width * 0.003 * intensity,
+            y: size.height / 2 + displacement.y * size.height * 0.065 * depth * intensity + sin(time * 1.2) * size.height * 0.001 * intensity)
         tint.position = CGPoint(x: size.width / 2, y: size.height / 2)
         tint.size = size
         switch configuration.style {
@@ -278,9 +290,9 @@ private final class ArtworkScene: SKScene {
             let y = (seed * 0.38196601125 + 0.17).truncatingRemainder(dividingBy: 1)
             let speed = (theme.collection == .vehicles ? 0.06 : 0.012) * intensity
             let animatedY = (y + time * speed * (0.4 + x)).truncatingRemainder(dividingBy: 1)
-            particle.position = CGPoint(x: x * size.width + sin(time * 0.3 + seed) * 5 * intensity + displacement.x * 18 * depth,
-                                        y: animatedY * size.height + displacement.y * 26 * depth)
-            particle.alpha = min(max(configuration.particles, 0), 1) * (0.08 + 0.16 * abs(sin(time * 0.8 + seed)))
+            particle.position = CGPoint(x: x * size.width + sin(time * 0.3 + seed) * 5 * intensity + displacement.x * 18 * depth * intensity,
+                                        y: animatedY * size.height + displacement.y * 26 * depth * intensity)
+            particle.alpha = min(max(configuration.particles, 0), 1) * (0.08 + 0.16 * abs(sin(time * 0.8 * intensity + seed)))
             particle.setScale(max(0.8, size.width / 390))
         }
     }
@@ -297,21 +309,34 @@ private final class ArtworkScene: SKScene {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { touching = false }
 }
 
-/// UIImage is immutable here and crosses the boundary only after full bitmap preparation.
-private enum SceneArtwork {
-    static func load(_ name: String) async -> UIImage? {
+/// Immutable, fully decoded bitmaps cross to the main actor only after background IO.
+private struct SceneArtwork: Sendable {
+    let background: UIImage
+    let foreground: UIImage?
+
+    static func load(_ name: String) async -> SceneArtwork? {
         await Task.detached(priority: .userInitiated) {
-            var image = UIImage(named: name)
-            if image == nil {
-                for ext in ["jpg", "png", "jpeg"] {
-                    if let url = Bundle.main.url(forResource: name, withExtension: ext),
-                       let loaded = UIImage(contentsOfFile: url.path) {
-                        image = loaded
-                        break
+            func decoded(_ resource: String) -> UIImage? {
+                var image = UIImage(named: resource)
+                if image == nil {
+                    for ext in ["jpg", "png", "jpeg"] {
+                        if let url = Bundle.main.url(forResource: resource, withExtension: ext),
+                           let loaded = UIImage(contentsOfFile: url.path) {
+                            image = loaded
+                            break
+                        }
                     }
                 }
+                return image?.preparingForDisplay()
             }
-            return image?.preparingForDisplay()
+            // A partial pair must never produce an empty road or a subject over a duplicate car.
+            if let background = decoded(name + "-background"),
+               let foreground = decoded(name + "-foreground"),
+               abs(background.size.width / background.size.height - foreground.size.width / foreground.size.height) < 0.001 {
+                return SceneArtwork(background: background, foreground: foreground)
+            }
+            guard let original = decoded(name) else { return nil }
+            return SceneArtwork(background: original, foreground: nil)
         }.value
     }
 }
