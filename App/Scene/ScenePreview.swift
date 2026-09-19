@@ -41,6 +41,13 @@ private struct SceneSurface: UIViewRepresentable {
             scene = ArtworkScene(theme: theme, configuration: configuration, size: view.bounds.size)
             scene.scaleMode = .resizeFill
             view.presentScene(scene)
+            Task { @MainActor [weak scene, weak view] in
+                let image = await SceneArtwork.load(theme.artwork)
+                guard let scene, let view, view.scene === scene else { return }
+                scene.setArtwork(image)
+                // A paused preview still needs one frame after asynchronous decoding.
+                if view.isPaused { view.setNeedsDisplay() }
+            }
         }
         scene.configuration = configuration
         scene.setActive(active, reduceMotion: reduceMotion)
@@ -60,24 +67,39 @@ private struct SceneSurface: UIViewRepresentable {
 enum SceneFrameRenderer {
     private static var cachedScene: ArtworkScene?
     private static var cachedView: SKView?
+    private static var preparedArtwork: (name: String, image: UIImage)?
+
+    /// Decode before the frame loop, away from the main actor. False prevents a black export.
+    static func prepare(theme: Theme) async -> Bool {
+        if preparedArtwork?.name == theme.artwork { return true }
+        guard let image = await SceneArtwork.load(theme.artwork) else { return false }
+        preparedArtwork = (theme.artwork, image)
+        return true
+    }
     /// Renders only artwork, never the simulated clock, controls, or status bar.
     static func image(theme: Theme, configuration: SceneConfiguration, size: CGSize, time: TimeInterval) -> UIImage? {
-        guard size.width > 0, size.height > 0, size.width <= 4096, size.height <= 4096 else { return nil }
+        guard size.width > 0, size.height > 0, size.width <= 4096, size.height <= 4096,
+              let preparedArtwork, preparedArtwork.name == theme.artwork else { return nil }
+        // SpriteKit snapshots use the display scale even on an offscreen SKView.
+        // Convert requested pixels to points to avoid accidental 3x exports and GPU memory spikes.
+        let scale = UIScreen.main.scale
+        let logicalSize = CGSize(width: size.width / scale, height: size.height / scale)
         let scene: ArtworkScene
         let renderer: SKView
-        if let previous = cachedScene, let previousView = cachedView, previous.theme == theme, previous.size == size {
+        if let previous = cachedScene, let previousView = cachedView, previous.theme == theme, previous.size == logicalSize {
             scene = previous
             renderer = previousView
             scene.configuration = configuration
         } else {
-            scene = ArtworkScene(theme: theme, configuration: configuration, size: size)
-            renderer = SKView(frame: CGRect(origin: .zero, size: size))
-            renderer.contentScaleFactor = 1
+            scene = ArtworkScene(theme: theme, configuration: configuration, size: logicalSize)
+            renderer = SKView(frame: CGRect(origin: .zero, size: logicalSize))
+            renderer.contentScaleFactor = scale
+            scene.setArtwork(preparedArtwork.image)
             cachedScene = scene
             cachedView = renderer
         }
         scene.updateFrame(at: time, displacement: CGPoint(x: sin(time * 0.7) * 0.3, y: cos(time * 0.5) * 0.2))
-        guard let texture = renderer.texture(from: scene, crop: CGRect(origin: .zero, size: size)) else { return nil }
+        guard let texture = renderer.texture(from: scene, crop: CGRect(origin: .zero, size: logicalSize)) else { return nil }
         return UIImage(cgImage: texture.cgImage(), scale: 1, orientation: .up)
     }
 }
@@ -91,6 +113,7 @@ private final class ArtworkScene: SKScene {
     private let tint = SKSpriteNode(color: .clear, size: .zero)
     private let motion = CMMotionManager()
     private var particles: [SKShapeNode] = []
+    private var fish: [SKShapeNode] = []
     private var finger = CGPoint.zero
     private var smoothed = CGPoint.zero
     private var touching = false
@@ -105,7 +128,7 @@ private final class ArtworkScene: SKScene {
         super.init(size: CGSize(width: max(size.width, 1), height: max(size.height, 1)))
         backgroundColor = .black
         anchorPoint = .zero
-        if let image = Self.artworkImage(theme.artwork) { artwork.texture = SKTexture(image: image) }
+        isUserInteractionEnabled = true
         artwork.zPosition = 0
         addChild(artwork)
         tint.zPosition = 1
@@ -122,18 +145,34 @@ private final class ArtworkScene: SKScene {
             addChild(particle)
             particles.append(particle)
         }
+        if theme.collection == .ocean {
+            // Distant, curved silhouettes form an independent school, separate from the backdrop.
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: 15, y: 0))
+            path.addCurve(to: CGPoint(x: -7, y: 0), control1: CGPoint(x: 5, y: 7), control2: CGPoint(x: -2, y: 6))
+            path.addLine(to: CGPoint(x: -14, y: 5))
+            path.addQuadCurve(to: CGPoint(x: -14, y: -5), control: CGPoint(x: -11, y: 0))
+            path.addLine(to: CGPoint(x: -7, y: 0))
+            path.addCurve(to: CGPoint(x: 15, y: 0), control1: CGPoint(x: -2, y: -6), control2: CGPoint(x: 5, y: -7))
+            path.closeSubpath()
+            for _ in 0..<5 {
+                let node = SKShapeNode(path: path)
+                node.fillColor = UIColor(red: 0.50, green: 0.83, blue: 0.89, alpha: 1)
+                node.strokeColor = .clear
+                node.alpha = 0.3
+                node.zPosition = 1.5
+                addChild(node)
+                fish.append(node)
+            }
+        }
         updateFrame(at: 0, displacement: .zero)
     }
 
     required init?(coder aDecoder: NSCoder) { nil }
 
-    private static func artworkImage(_ name: String) -> UIImage? {
-        if let asset = UIImage(named: name) { return asset }
-        for ext in ["jpg", "png", "jpeg"] {
-            if let url = Bundle.main.url(forResource: name, withExtension: ext),
-               let image = UIImage(contentsOfFile: url.path) { return image }
-        }
-        return nil
+    func setArtwork(_ image: UIImage?) {
+        artwork.texture = image.map { SKTexture(image: $0) }
+        updateFrame(at: reduceMotion ? 0 : elapsed, displacement: smoothed)
     }
 
     func setActive(_ value: Bool, reduceMotion: Bool) {
@@ -193,6 +232,17 @@ private final class ArtworkScene: SKScene {
         case 2: tint.color = UIColor(red: 0.4, green: 0.17, blue: 0.04, alpha: 0.18)
         default: tint.color = .clear
         }
+        for (index, node) in fish.enumerated() {
+            let phase = Double(index) * 0.65
+            let swim = time * 0.22 * intensity + phase
+            node.position = CGPoint(x: size.width * (0.5 + 0.22 * sin(swim)) + displacement.x * size.width * 0.10 * intensity,
+                                    y: size.height * (0.43 + Double(index) * 0.035 + 0.035 * cos(swim * 1.3)) + displacement.y * size.height * 0.045 * intensity)
+            let direction: CGFloat = cos(swim) < 0 ? -1 : 1
+            let scale = size.width / 390 * (0.55 + Double(index % 3) * 0.12)
+            node.xScale = direction * scale
+            node.yScale = scale * (1 + sin(time * 2.5 * intensity + phase) * 0.08)
+            node.zRotation = sin(swim * 1.3) * 0.07
+        }
         for (index, particle) in particles.enumerated() {
             let seed = Double(index)
             let x = (seed * 0.61803398875).truncatingRemainder(dividingBy: 1)
@@ -207,7 +257,7 @@ private final class ArtworkScene: SKScene {
     }
 
     private func track(_ touches: Set<UITouch>) {
-        guard !reduceMotion, let point = touches.first?.location(in: self) else { return }
+        guard active && !reduceMotion, let point = touches.first?.location(in: self) else { return }
         touching = true
         finger = CGPoint(x: (point.x / max(size.width, 1) - 0.5) * 2,
                          y: (point.y / max(size.height, 1) - 0.5) * 2)
@@ -216,4 +266,23 @@ private final class ArtworkScene: SKScene {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { track(touches) }
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { touching = false }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { touching = false }
+}
+
+/// UIImage is immutable here and crosses the boundary only after full bitmap preparation.
+private enum SceneArtwork {
+    static func load(_ name: String) async -> UIImage? {
+        await Task.detached(priority: .userInitiated) {
+            var image = UIImage(named: name)
+            if image == nil {
+                for ext in ["jpg", "png", "jpeg"] {
+                    if let url = Bundle.main.url(forResource: name, withExtension: ext),
+                       let loaded = UIImage(contentsOfFile: url.path) {
+                        image = loaded
+                        break
+                    }
+                }
+            }
+            return image?.preparingForDisplay()
+        }.value
+    }
 }
