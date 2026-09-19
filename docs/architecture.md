@@ -1,0 +1,2 @@
+# Architecture
+App/Core: design tokens and shared UI. App/Models: immutable catalog/configuration models. App/Features: SwiftUI views. App/Services: persistence, StoreKit local purchase boundary, rewarded test provider, exports. App/Scene: SpriteKit preview and deterministic export rendering. Widgets: separate WidgetKit extension, App Group snapshot. App/Resources: versioned catalog, original artwork, localization. No backend in local milestone.

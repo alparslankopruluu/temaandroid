@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "themes": [
+    {
+      "id": "midnight",
+      "titleKey": "theme.midnight",
+      "collection": "vehicles",
+      "artwork": "midnight",
+      "isFree": true,
+      "symbol": "car.side"
+    },
+    {
+      "id": "motorcycle",
+      "titleKey": "theme.motorcycle",
+      "collection": "vehicles",
+      "artwork": "motorcycle",
+      "isFree": false,
+      "symbol": "bicycle"
+    },
+    {
+      "id": "bicycle",
+      "titleKey": "theme.bicycle",
+      "collection": "vehicles",
+      "artwork": "bicycle",
+      "isFree": false,
+      "symbol": "bicycle"
+    },
+    {
+      "id": "tractor",
+      "titleKey": "theme.tractor",
+      "collection": "vehicles",
+      "artwork": "tractor",
+      "isFree": false,
+      "symbol": "car.side"
+    },
+    {
+      "id": "tank",
+      "titleKey": "theme.tank",
+      "collection": "vehicles",
+      "artwork": "tank",
+      "isFree": false,
+      "symbol": "shield"
+    },
+    {
+      "id": "bus",
+      "titleKey": "theme.bus",
+      "collection": "vehicles",
+      "artwork": "bus",
+      "isFree": false,
+      "symbol": "bus"
+    },
+    {
+      "id": "truck",
+      "titleKey": "theme.truck",
+      "collection": "vehicles",
+      "artwork": "truck",
+      "isFree": false,
+      "symbol": "truck.box"
+    },
+    {
+      "id": "helicopter",
+      "titleKey": "theme.helicopter",
+      "collection": "vehicles",
+      "artwork": "helicopter",
+      "isFree": false,
+      "symbol": "airplane"
+    },
+    {
+      "id": "airplane",
+      "titleKey": "theme.airplane",
+      "collection": "vehicles",
+      "artwork": "airplane",
+      "isFree": false,
+      "symbol": "airplane"
+    },
+    {
+      "id": "spaceship",
+      "titleKey": "theme.spaceship",
+      "collection": "vehicles",
+      "artwork": "spaceship",
+      "isFree": false,
+      "symbol": "paperplane"
+    },
+    {
+      "id": "reef",
+      "titleKey": "theme.reef",
+      "collection": "ocean",
+      "artwork": "reef",
+      "isFree": true,
+      "symbol": "fish"
+    },
+    {
+      "id": "jellyfish",
+      "titleKey": "theme.jellyfish",
+      "collection": "ocean",
+      "artwork": "jellyfish",
+      "isFree": false,
+      "symbol": "water.waves"
+    },
+    {
+      "id": "orbit",
+      "titleKey": "theme.orbit",
+      "collection": "cosmos",
+      "artwork": "orbit",
+      "isFree": true,
+      "symbol": "moon.stars"
+    },
+    {
+      "id": "nebula",
+      "titleKey": "theme.nebula",
+      "collection": "cosmos",
+      "artwork": "nebula",
+      "isFree": false,
+      "symbol": "sparkles"
+    },
+    {
+      "id": "alpine",
+      "titleKey": "theme.alpine",
+      "collection": "nature",
+      "artwork": "alpine",
+      "isFree": true,
+      "symbol": "mountain.2"
+    },
+    {
+      "id": "forest",
+      "titleKey": "theme.forest",
+      "collection": "nature",
+      "artwork": "forest",
+      "isFree": false,
+      "symbol": "leaf"
+    }
+  ]
+}
