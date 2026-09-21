@@ -1,24 +1,32 @@
-# Security Model — {{APP_NAME}}
+# Security Model — ScreenMotion
 
 *Canonical owner for app-specific data classification, trust boundaries, abuse cases, and incident readiness. Global rules live in `docs/checklists/security.md`.*
 
 ## Risk profile
 
-- **Category flags:** {{RISK_FLAGS}} <!-- health | kids | UGC | AI | finance | sensitive-data | none -->
-- **Highest-risk user harm:** {{HIGHEST_RISK}}
-- **Review-sensitive claims/flows:** {{REVIEW_SENSITIVE_FLOWS}}
+- **Category flags:** sensitive-data (Photos write permission); subscriptions
+- **Highest-risk user harm:** a paid entitlement fails to unlock or restore, or exported media is represented as working on the lock screen when the physical device does not accept it.
+- **Review-sensitive claims/flows:** monthly/yearly auto-renewing subscriptions, restore purchases, rewarded-export simulator removal for production, Photos add-only permission, Live Photo/Spatial Scene compatibility claims, WidgetKit installation, in-app gyro/touch pixel worlds that must not be described as live lock-screen games.
 
 ## Data and SDK inventory
 
 | Data / SDK | Classification | Purpose | Owner/location | Retention/deletion | Client access | Privacy label / manifest |
 |---|---|---|---|---|---|---|
-| {{DATA_OR_SDK}} | public · account · private · sensitive · secret | {{PURPOSE}} | {{OWNER}} | {{RETENTION}} | {{ACCESS}} | {{DISCLOSURE}} |
+| Local favorites, drafts and setup progress | private | Restore user-created configurations without an account | App Group container on device | Until app deletion or user overwrite | App + widget extension only | Not collected; local device data |
+| Exported JPEG/MOV/Live Photo resources | sensitive user content | Save the design selected by the user | Temporary app files, then Photos library on explicit action | Temporary resources are removed after export; Photos copy is user-controlled | App writes through Photos add-only flow | Photos permission; no server upload |
+| StoreKit transaction and entitlement state | purchase data | Purchase, unlock and restore Pro | Apple; currently evaluated on device | Apple account lifecycle | PurchasesService only | Purchases; not used for tracking |
+| RevenueCat SDK | purchase data, identifiers, diagnostics | Cross-device entitlement and offering management | RevenueCat; PurchasesService plus native paywall fallback | Must match the live RevenueCat configuration and privacy policy before release | PurchasesService / ProPaywallView | App Privacy answers currently cover Purchases, Device ID and Product Interaction; tracking remains off |
+| Optional HTTPS content overlay | public curation | Titles, visibility, order and artwork URLs | Bundled JSON, last-known-good cache, optional HTTPS manifest | Cache until overwritten or app deletion | ContentStore only; never writes entitlement | Not collected from the user; remote files are public assets |
 
 ## Trust boundaries and abuse controls
 
 | Boundary / abuse case | Prevent | Detect | Recover / owner | Test evidence |
 |---|---|---|---|---|
-| Client → callable/API | Auth + App Check + schema validation + per-user rate limit | redacted metrics/alerts | revoke/disable/rotate; {{OWNER}} | {{EVIDENCE}} |
+| UI → PurchasesService → StoreKit/RevenueCat | Product allowlist, verified transactions/customer info, single service wrapper, bounded load failure and retry | sanitized purchase state/error telemetry only if analytics is later approved | disable offering/product in provider; ship hotfix; product owner | Unit/UI, StoreKit, sandbox and TestFlight purchase/restore evidence required |
+| App → Photos library | Add-only purpose string and explicit user action; no library read permission | user-visible success/failure state | user can delete saved media in Photos; app clears temp files | denied/resource-exhaustion/cancellation and physical-device save tests pending |
+| App → optional remote catalog | HTTPS-only base URL, path traversal rejection, schema/version gates, last-known-good fallback; accessPolicy describes unlocks but never grants them | decode/validation failure keeps bundled or cached content | disable remote URL in Info.plist; keep bundled catalog | DynamicContentTests |
+| Pixel high-score persistence | Local UserDefaults keyed by theme id; no account, no network | N/A | user can delete the app | interaction tests plus local persistence |
+| App ↔ widget App Group | Explicit shared container, Codable snapshots, no network or secrets | local decode failure falls back safely | app rewrites snapshot; app deletion clears container | widget compile passed; device install pending |
 
 Include account takeover, replay/duplicate writes, paid-API abuse, entitlement spoofing,
 admin escalation, malicious uploads/UGC, data export/deletion, and provider outage when applicable.
@@ -31,13 +39,14 @@ access policy.
 
 ## Incident and review readiness
 
-- **Credential rotation route:** {{ROTATION_ROUTE}}
-- **Kill switches / degraded mode:** {{KILL_SWITCHES}}
-- **Account deletion proof:** {{DELETION_PROOF}}
-- **Reviewer journey/account:** {{REVIEWER_JOURNEY}}
-- **Privacy-label and permission-inventory evidence:** {{PRIVACY_EVIDENCE}}
-- **Web security headers / CORS evidence:** {{WEB_SECURITY_EVIDENCE}}
-- **Repo-history secret scan / rotation owner:** {{HISTORY_SECRET_EVIDENCE}}
+- **Credential rotation route:** RevenueCat public SDK key is injected through release configuration and rotated in RevenueCat; no secret/provider key may enter the app or repository. Current production key is not configured.
+- **Kill switches / degraded mode:** Keep four starter scenes usable offline; a failed product/offering load must show a recoverable unavailable state and retry, never an indefinite spinner or false Pro access.
+- **Remote content degraded mode:** Invalid, unsafe or newer-than-app manifests fall back to last-known-good cache, then bundled catalog. Remote titles and artwork never unlock Pro.
+- **Account deletion proof:** N/A — ScreenMotion has no account creation or login.
+- **Reviewer journey/account:** No demo account. Reviewer opens Discover, previews free and locked scenes, opens Pro, purchases/restores through Apple sandbox, exports to Photos, and follows installation guidance.
+- **Privacy-label and permission-inventory evidence:** Current permission inventory is Photos add-only. Final RevenueCat SDK/data inventory, privacy manifest inspection and live App Privacy readback are pending.
+- **Web security headers / CORS evidence:** N/A for the native app; required privacy/support/terms HTTPS pages are not yet provided.
+- **Repo-history secret scan / rotation owner:** Working-tree and history scans are required before archive; product owner owns any rotation. No production provider credentials have been added.
 
 ## Deterministic guards (kit-enforced, not app-specific)
 

@@ -53,4 +53,19 @@ final class SceneTests: XCTestCase {
         XCTAssertNotEqual(first, moved)
         XCTAssertNil(SceneFrameRenderer.image(theme: midnight, configuration: configuration, size: .zero, time: 0))
     }
+
+    @MainActor
+    func testPixelAssetAndProgrammaticScenesRenderDeterministically() async throws {
+        for id in ["pixel-car", "pixel-reef", "pixel-forest"] {
+            let theme = try XCTUnwrap(ThemeCatalog.bundled.theme(id))
+            let prepared = await SceneFrameRenderer.prepare(theme: theme)
+            XCTAssertTrue(prepared, id)
+            let configuration = SceneConfiguration(intensity: 1, particles: 0.8, depth: 1, scoreMode: true)
+            let first = try XCTUnwrap(SceneFrameRenderer.image(theme: theme, configuration: configuration,
+                                                               size: CGSize(width: 390, height: 780), time: 1)?.pngData())
+            let repeated = try XCTUnwrap(SceneFrameRenderer.image(theme: theme, configuration: configuration,
+                                                                  size: CGSize(width: 390, height: 780), time: 1)?.pngData())
+            XCTAssertEqual(first, repeated, id)
+        }
+    }
 }

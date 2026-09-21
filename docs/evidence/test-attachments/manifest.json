@@ -1,0 +1,44 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "A81DD3D1-5CEC-4C0D-8E58-3ED2B0431403",
+        "deviceName" : "iPhone 17 Pro Max",
+        "exportedFileName" : "D40805B1-BC52-4E7E-B08A-8642C91CCB7E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "export-options_0_CCAB9559-83BD-43E9-909D-9275F533A00F.png",
+        "timestamp" : 1789881459.343
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "A81DD3D1-5CEC-4C0D-8E58-3ED2B0431403",
+        "deviceName" : "iPhone 17 Pro Max",
+        "exportedFileName" : "F329FD94-6E7A-4E5C-8AE8-0FD810357543.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "editor_0_67F5C4CD-C9CC-4296-AF07-61CCD3278EC4.png",
+        "timestamp" : 1789881455.557
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "A81DD3D1-5CEC-4C0D-8E58-3ED2B0431403",
+        "deviceName" : "iPhone 17 Pro Max",
+        "exportedFileName" : "1C754D26-62EA-4C8A-BA1C-E1BA16E959C8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "discover_0_BD274444-9BF2-457B-87D6-B4F30BAF6748.png",
+        "timestamp" : 1789881453.329
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "A81DD3D1-5CEC-4C0D-8E58-3ED2B0431403",
+        "deviceName" : "iPhone 17 Pro Max",
+        "exportedFileName" : "41527461-894B-4B10-8EAC-D491DE21F9C7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "welcome_0_C57BB981-6263-4314-8801-2AC753B55CCD.png",
+        "timestamp" : 1789881451.129
+      }
+    ],
+    "testIdentifier" : "JourneyTests/testDiscoverEditSaveAndInstallationJourney()",
+    "testIdentifierURL" : "test://com.apple.xcode/ScreenMotion/ScreenMotionUITests/JourneyTests/testDiscoverEditSaveAndInstallationJourney"
+  }
+]

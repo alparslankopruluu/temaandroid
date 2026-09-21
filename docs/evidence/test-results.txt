@@ -1,0 +1,79 @@
+
+screenmotion-tests3.log
+Test Case '-[ScreenMotionTests.ExportTests testLivePhotoResourcesContainMatchingIdentifierAndTimedTrack]' started.
+Test Case '-[ScreenMotionTests.ExportTests testLivePhotoResourcesContainMatchingIdentifierAndTimedTrack]' passed (0.294 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.294 (0.294) seconds
+Test Case '-[ScreenMotionTests.LibraryTests testAllIconPacksExport24DistinctImages]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testAllIconPacksExport24DistinctImages]' passed (0.984 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testCatalogHasSixteenUniqueScenesAndOneFreePerCollection]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testCatalogHasSixteenUniqueScenesAndOneFreePerCollection]' passed (0.001 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testDraftFavoriteRewardAndInstallProgressSurviveRelaunch]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testDraftFavoriteRewardAndInstallProgressSurviveRelaunch]' passed (0.010 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testRewardCancelledBeforeCompletionNeverGrantsSuccess]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testRewardCancelledBeforeCompletionNeverGrantsSuccess]' passed (0.004 seconds).
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.999 (1.000) seconds
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' started.
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:13: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : XCTAssertEqual failed: ("0") is not equal to ("2")
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:15: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : failed: caught error: "notEntitled"
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' failed (0.115 seconds).
+	 Executed 1 test, with 2 failures (1 unexpected) in 0.115 (0.115) seconds
+Test Case '-[ScreenMotionTests.SceneTests testBundledMidnightExportsExactPixelDimensionsAndVisibleArtwork]' started.
+Test Case '-[ScreenMotionTests.SceneTests testBundledMidnightExportsExactPixelDimensionsAndVisibleArtwork]' passed (0.223 seconds).
+Test Case '-[ScreenMotionTests.SceneTests testExportIsRepeatableAtSameTimeAndChangesWithMotion]' started.
+Test Case '-[ScreenMotionTests.SceneTests testExportIsRepeatableAtSameTimeAndChangesWithMotion]' passed (0.252 seconds).
+Test Case '-[ScreenMotionTests.SceneTests testMissingArtworkCannotProduceSuccessfulBlackExport]' started.
+Test Case '-[ScreenMotionTests.SceneTests testMissingArtworkCannotProduceSuccessfulBlackExport]' passed (0.003 seconds).
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.477 (0.478) seconds
+	 Executed 9 tests, with 2 failures (1 unexpected) in 1.884 (1.889) seconds
+	 Executed 9 tests, with 2 failures (1 unexpected) in 1.884 (1.890) seconds
+Test Case '-[ScreenMotionUITests.JourneyTests testDiscoverEditSaveAndInstallationJourney]' started.
+Test Case '-[ScreenMotionUITests.JourneyTests testDiscoverEditSaveAndInstallationJourney]' passed (16.138 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 16.138 (16.139) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 16.138 (16.140) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 16.138 (16.141) seconds
+** TEST FAILED **
+
+screenmotion-tests4.log
+Test Case '-[ScreenMotionTests.ExportTests testLivePhotoResourcesContainMatchingIdentifierAndTimedTrack]' started.
+Test Case '-[ScreenMotionTests.ExportTests testLivePhotoResourcesContainMatchingIdentifierAndTimedTrack]' passed (0.326 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.326 (0.327) seconds
+Test Case '-[ScreenMotionTests.LibraryTests testAllIconPacksExport24DistinctImages]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testAllIconPacksExport24DistinctImages]' passed (0.955 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testCatalogHasSixteenUniqueScenesAndOneFreePerCollection]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testCatalogHasSixteenUniqueScenesAndOneFreePerCollection]' passed (0.001 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testDraftFavoriteRewardAndInstallProgressSurviveRelaunch]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testDraftFavoriteRewardAndInstallProgressSurviveRelaunch]' passed (0.010 seconds).
+Test Case '-[ScreenMotionTests.LibraryTests testRewardCancelledBeforeCompletionNeverGrantsSuccess]' started.
+Test Case '-[ScreenMotionTests.LibraryTests testRewardCancelledBeforeCompletionNeverGrantsSuccess]' passed (0.004 seconds).
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.970 (0.972) seconds
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' started.
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:13: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : XCTAssertEqual failed: ("0") is not equal to ("2")
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:15: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : failed: caught error: "notEntitled"
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' failed (0.114 seconds).
+	 Executed 1 test, with 2 failures (1 unexpected) in 0.114 (0.114) seconds
+Test Case '-[ScreenMotionTests.SceneTests testBundledMidnightExportsExactPixelDimensionsAndVisibleArtwork]' started.
+Test Case '-[ScreenMotionTests.SceneTests testBundledMidnightExportsExactPixelDimensionsAndVisibleArtwork]' passed (0.190 seconds).
+Test Case '-[ScreenMotionTests.SceneTests testExportIsRepeatableAtSameTimeAndChangesWithMotion]' started.
+Test Case '-[ScreenMotionTests.SceneTests testExportIsRepeatableAtSameTimeAndChangesWithMotion]' passed (0.235 seconds).
+Test Case '-[ScreenMotionTests.SceneTests testMissingArtworkCannotProduceSuccessfulBlackExport]' started.
+Test Case '-[ScreenMotionTests.SceneTests testMissingArtworkCannotProduceSuccessfulBlackExport]' passed (0.002 seconds).
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.428 (0.429) seconds
+	 Executed 9 tests, with 2 failures (1 unexpected) in 1.838 (1.843) seconds
+	 Executed 9 tests, with 2 failures (1 unexpected) in 1.838 (1.843) seconds
+Test Case '-[ScreenMotionUITests.JourneyTests testDiscoverEditSaveAndInstallationJourney]' started.
+Test Case '-[ScreenMotionUITests.JourneyTests testDiscoverEditSaveAndInstallationJourney]' passed (15.916 seconds).
+Test Case '-[ScreenMotionUITests.JourneyTests testTurkishAndArabicDiscovery]' started.
+Test Case '-[ScreenMotionUITests.JourneyTests testTurkishAndArabicDiscovery]' passed (18.374 seconds).
+	 Executed 2 tests, with 0 failures (0 unexpected) in 34.290 (34.292) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 34.290 (34.293) seconds
+	 Executed 2 tests, with 0 failures (0 unexpected) in 34.290 (34.294) seconds
+
+screenmotion-purchase-plan.log
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' started.
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:13: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : XCTAssertEqual failed: ("0") is not equal to ("2")
+/Users/fmss/Desktop/tema/Tests/PurchaseTests.swift:15: error: -[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro] : failed: caught error: "notEntitled"
+Test Case '-[ScreenMotionTests.PurchaseTests testLocalSubscriptionUnlocksAndRefundRevokesPro]' failed (0.140 seconds).
+	 Executed 1 test, with 2 failures (1 unexpected) in 0.140 (0.141) seconds
+	 Executed 1 test, with 2 failures (1 unexpected) in 0.140 (0.141) seconds
+	 Executed 1 test, with 2 failures (1 unexpected) in 0.140 (0.142) seconds
+** TEST FAILED **

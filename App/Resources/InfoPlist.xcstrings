@@ -1,0 +1,142 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSPhotoLibraryAddUsageDescription": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save your wallpaper and Live Photo to your photo library."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lưu hình nền và Live Photo vào thư viện ảnh của bạn."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salve seu papel de parede e sua Live Photo na fototeca."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simpan wallpaper dan Live Photo ke perpustakaan foto Anda."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gem din baggrund og dit Live Photo i dit fotobibliotek."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spara din bakgrund och Live Photo i ditt bildbibliotek."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกภาพพื้นหลังและ Live Photo ลงในคลังรูปภาพของคุณ"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "احفظ خلفيتك وصورة Live Photo في مكتبة صورك."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda tu fondo de pantalla y tu Live Photo en la fototeca."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lagre bakgrunnen og Live Photo i bildebiblioteket ditt."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enregistrez votre fond d’écran et votre Live Photo dans votre photothèque."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपने वॉलपेपर और Live Photo को फ़ोटो लाइब्रेरी में सहेजें।"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "배경화면과 Live Photo를 사진 보관함에 저장합니다."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "将壁纸和实况照片保存到你的照片图库。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохраняйте обои и Live Photo в медиатеку фотографий."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zapisuj tapety i Live Photo w bibliotece zdjęć."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speichere dein Hintergrundbild und Live Photo in deiner Fotomediathek."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva il tuo sfondo e la tua Live Photo nella libreria foto."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duvar kâğıdınızı ve Live Photo’nuzu fotoğraf arşivinize kaydedin."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewaar je achtergrond en Live Photo in je fotobibliotheek."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "將背景圖片與原況照片儲存到你的照片圖庫。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "壁紙とLive Photoを写真ライブラリに保存します。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

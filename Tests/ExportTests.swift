@@ -35,9 +35,14 @@ final class ExportTests: XCTestCase {
             let reader = try AVAssetReader(asset: asset)
             let output = AVAssetReaderTrackOutput(track: track, outputSettings: nil)
             reader.add(output)
+            let metadataReader = AVAssetReaderOutputMetadataAdaptor(assetReaderTrackOutput: output)
             XCTAssertTrue(reader.startReading())
-            let sample = try XCTUnwrap(output.copyNextSampleBuffer())
-            XCTAssertEqual(CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sample)), 1.5, accuracy: 0.04)
+            var stillGroup: AVTimedMetadataGroup?
+            while let group = metadataReader.nextTimedMetadataGroup() {
+                if group.items.contains(where: { ($0.key as? String) == "com.apple.quicktime.still-image-time" }) { stillGroup = group; break }
+            }
+            let group = try XCTUnwrap(stillGroup)
+            XCTAssertEqual(CMTimeGetSeconds(group.timeRange.start), 1.5, accuracy: 0.04)
             let duration = try await asset.load(.duration)
             XCTAssertEqual(duration.seconds, 3, accuracy: 0.04)
             await writer.remove(directory)

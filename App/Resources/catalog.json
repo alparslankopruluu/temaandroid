@@ -128,6 +128,66 @@
       "artwork": "forest",
       "isFree": false,
       "symbol": "leaf"
+    },
+    {
+      "id": "pixel-car",
+      "titleKey": "theme.pixel-car",
+      "collection": "vehicles",
+      "artwork": "pixel-car",
+      "isFree": true,
+      "symbol": "car.side",
+      "appearance": "pixel",
+      "interaction": "car"
+    },
+    {
+      "id": "pixel-motorcycle",
+      "titleKey": "theme.pixel-motorcycle",
+      "collection": "vehicles",
+      "artwork": "pixel-motorcycle",
+      "isFree": false,
+      "symbol": "bicycle",
+      "appearance": "pixel",
+      "interaction": "motorcycle"
+    },
+    {
+      "id": "pixel-helicopter",
+      "titleKey": "theme.pixel-helicopter",
+      "collection": "vehicles",
+      "artwork": "pixel-helicopter",
+      "isFree": false,
+      "symbol": "airplane",
+      "appearance": "pixel",
+      "interaction": "helicopter"
+    },
+    {
+      "id": "pixel-spaceship",
+      "titleKey": "theme.pixel-spaceship",
+      "collection": "cosmos",
+      "artwork": "pixel-spaceship",
+      "isFree": false,
+      "symbol": "paperplane",
+      "appearance": "pixel",
+      "interaction": "spaceship"
+    },
+    {
+      "id": "pixel-reef",
+      "titleKey": "theme.pixel-reef",
+      "collection": "ocean",
+      "artwork": "pixel-reef",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "fish"
+    },
+    {
+      "id": "pixel-forest",
+      "titleKey": "theme.pixel-forest",
+      "collection": "nature",
+      "artwork": "pixel-forest",
+      "isFree": false,
+      "symbol": "leaf",
+      "appearance": "pixel",
+      "interaction": "nature"
     }
   ]
 }

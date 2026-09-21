@@ -43,8 +43,12 @@ struct MotionProvider: AppIntentTimelineProvider {
     }
     func timeline(for configuration: MotionWidgetIntent, in context: Context) async -> Timeline<MotionEntry> {
         let now = Date()
-        let next = Calendar.current.date(byAdding: .minute, value: 30, to: now) ?? now.addingTimeInterval(1800)
-        return Timeline(entries: [.init(date: now, configuration: configuration, snapshot: .read())], policy: .after(next))
+        let snapshot = WidgetSnapshot.read()
+        let minute = Calendar.current.dateInterval(of: .minute, for: now)?.start ?? now
+        let entries = (0..<60).map { offset in
+            MotionEntry(date: minute.addingTimeInterval(Double(offset) * 60), configuration: configuration, snapshot: snapshot)
+        }
+        return Timeline(entries: entries, policy: .after(minute.addingTimeInterval(3600)))
     }
 }
 
@@ -87,7 +91,7 @@ struct MotionWidgetView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Image(systemName: "square.stack.3d.up").font(.largeTitle).foregroundStyle(accent)
                 Spacer(minLength: 0)
-                Text(LocalizedStringKey("collection.\(entry.snapshot.collection)")).font(.headline)
+                Text(LocalizedStringKey("collection." + entry.snapshot.collection)).font(.headline)
                 Text("widget.open").font(.caption).foregroundStyle(accent)
             }.frame(maxWidth: .infinity, alignment: .leading).foregroundStyle(.white)
         }

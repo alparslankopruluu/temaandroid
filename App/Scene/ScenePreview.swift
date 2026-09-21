@@ -11,9 +11,16 @@ struct ScenePreview: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        SceneSurface(theme: theme, configuration: configuration,
-                     active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
-            .accessibilityHidden(true)
+        Group {
+            if theme.isPixel {
+                PixelSceneSurface(theme: theme, configuration: configuration,
+                                  active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
+            } else {
+                SceneSurface(theme: theme, configuration: configuration,
+                             active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
+            }
+        }
+        .accessibilityHidden(true)
     }
 }
 
@@ -42,7 +49,7 @@ private struct SceneSurface: UIViewRepresentable {
             scene.scaleMode = .resizeFill
             view.presentScene(scene)
             Task { @MainActor [weak scene, weak view] in
-                let image = await SceneArtwork.load(theme.artwork)
+                let image = await SceneArtwork.load(theme)
                 guard let scene, let view, view.scene === scene else { return }
                 scene.setArtwork(image)
                 // A paused preview still needs one frame after asynchronous decoding.
@@ -100,13 +107,17 @@ enum SceneFrameRenderer {
 
     /// Decode before the frame loop, away from the main actor. False prevents a black export.
     static func prepare(theme: Theme) async -> Bool {
+        if theme.isPixel { return await PixelFrameRenderer.prepare(theme: theme) }
         if preparedArtwork?.name == theme.artwork { return true }
-        guard let image = await SceneArtwork.load(theme.artwork) else { return false }
+        guard let image = await SceneArtwork.load(theme) else { return false }
         preparedArtwork = (theme.artwork, image)
         return true
     }
     /// Renders only artwork, never the simulated clock, controls, or status bar.
     static func image(theme: Theme, configuration: SceneConfiguration, size: CGSize, time: TimeInterval) -> UIImage? {
+        if theme.isPixel {
+            return PixelFrameRenderer.image(theme: theme, configuration: configuration, size: size, time: time)
+        }
         guard size.width > 0, size.height > 0, size.width <= 4096, size.height <= 4096,
               let preparedArtwork, preparedArtwork.name == theme.artwork else { return nil }
         // SpriteKit snapshots use the display scale even on an offscreen SKView.
@@ -314,7 +325,7 @@ private struct SceneArtwork: Sendable {
     let background: UIImage
     let foreground: UIImage?
 
-    static func load(_ name: String) async -> SceneArtwork? {
+    static func load(_ theme: Theme) async -> SceneArtwork? {
         await Task.detached(priority: .userInitiated) {
             func decoded(_ resource: String) -> UIImage? {
                 var image = UIImage(named: resource)
@@ -330,12 +341,16 @@ private struct SceneArtwork: Sendable {
                 return image?.preparingForDisplay()
             }
             // A partial pair must never produce an empty road or a subject over a duplicate car.
-            if let background = decoded(name + "-background"),
-               let foreground = decoded(name + "-foreground"),
+            if let artworkURL = theme.artworkURL,
+               let image = UIImage(contentsOfFile: artworkURL.path)?.preparingForDisplay() {
+                return SceneArtwork(background: image, foreground: nil)
+            }
+            if let background = decoded(theme.artwork + "-background"),
+               let foreground = decoded(theme.artwork + "-foreground"),
                abs(background.size.width / background.size.height - foreground.size.width / foreground.size.height) < 0.001 {
                 return SceneArtwork(background: background, foreground: foreground)
             }
-            guard let original = decoded(name) else { return nil }
+            guard let original = decoded(theme.artwork) else { return nil }
             return SceneArtwork(background: original, foreground: nil)
         }.value
     }

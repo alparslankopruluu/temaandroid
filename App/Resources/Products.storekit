@@ -1,0 +1,68 @@
+{
+  "identifier": "ScreenMotionLocal",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_applicationInternalID": "",
+    "_developerTeamID": "",
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [
+    {
+      "id": "screenmotion-pro",
+      "localizations": [],
+      "name": "ScreenMotion Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "6.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "monthly",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Local ScreenMotion Pro test subscription",
+              "displayName": "ScreenMotion Pro monthly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.screenmotion.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pro monthly",
+          "subscriptionGroupID": "screenmotion-pro",
+          "type": "RecurringSubscription"
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "79.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "yearly",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Local ScreenMotion Pro test subscription",
+              "displayName": "ScreenMotion Pro yearly",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.screenmotion.pro.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Pro yearly",
+          "subscriptionGroupID": "screenmotion-pro",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

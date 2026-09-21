@@ -10,6 +10,13 @@ enum ExportFormat: String, CaseIterable, Identifiable, Sendable {
     case still, livePhoto, video
     var id: String { rawValue }
     var titleKey: String { "export.\(rawValue)" }
+    var hintKey: String {
+        switch self {
+        case .still: "export.hint.still"
+        case .livePhoto: "export.hint.livePhoto"
+        case .video: "export.hint.video"
+        }
+    }
 }
 
 enum ExportFailure: LocalizedError {
@@ -59,6 +66,7 @@ enum ExportFailure: LocalizedError {
             let movie = directory.appendingPathComponent("ScreenMotion.mov")
             let identifier = UUID().uuidString
             let stillTime = format == .livePhoto ? 1.5 : 0
+            guard await SceneFrameRenderer.prepare(theme: theme) else { throw ExportFailure.renderer }
             guard let image = SceneFrameRenderer.image(theme: theme, configuration: configuration, size: size, time: stillTime)?.cgImage else { throw ExportFailure.renderer }
             try await writer.writePhoto(image, to: photo, identifier: format == .livePhoto ? identifier : nil)
             if format != .still {

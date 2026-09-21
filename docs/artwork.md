@@ -1,0 +1,7 @@
+# Artwork provenance
+
+The 16 realistic catalog images were generated specifically for ScreenMotion using OpenAI image generation during local implementation on 2026-09-19/20. Four additional pixel vehicle/space artworks (`pixel-car`, `pixel-motorcycle`, `pixel-helicopter`, `pixel-spaceship`) were added later as nearest-neighbor SpriteKit backgrounds. `pixel-reef` and `pixel-forest` are programmatic pixel backdrops, not image files. No reference-project screenshots are bundled. See artwork-manifest.json for available original output paths. The actual distributable copies are in App/Resources/Assets.xcassets.
+
+Art direction: portrait, no text/logos/watermarks, quiet upper area for system clock, subject in lower half. Vehicles use cinematic realistic lighting; ocean/cosmos use stylized atmospheric depth; nature uses calm landscapes. Midnight additionally has a transparent vehicle foreground and separate empty-road background. Other scenes currently use whole-image parallax plus independent ambient particles; aquarium adds moving vector fish. Independent articulated motion for every vehicle is not implemented.
+
+Pixel worlds keep the existing editor chrome and add in-app gyro, drag, tap and optional score-mode obstacles. That motion is not exported as a live lock-screen game. The application icon is original vector construction. Exported icon packs use 24 original vector glyphs in four palettes; system SF Symbols are only used within the UI.

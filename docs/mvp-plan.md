@@ -1,8 +1,17 @@
-# Approved local implementation
-Current milestone: M1 — Complete local theme studio.
+# Approved implementation and release progression
+Current milestone: M3 — Production purchase setup and App Store release gates.
+M0–M2 implementation is present and accepted locally. The StoreKit purchase/expiration regression and paywall compliance UI journey pass on the current simulator runtime.
 M0: Kit and native app/widget targets.
-M1: Scene engine, 16 scenes, editor, exports, library, icon packs, widgets and installation.
+M1: Scene engine, 16 realistic scenes, editor, exports, library, icon packs, widgets and installation.
 M2: Local StoreKit and rewarded test provider; 22 locales.
-M3: Build, tests, simulator visual review and physical-device gates.
+M3: App Store Connect/RevenueCat catalog, production purchase integration, build, tests, store assets, simulator visual review and physical-device gates. In-app pixel worlds are local product work inside this studio; they do not change the lock-screen contract or authorize review submission.
 ## Scope Fence
-No production Firebase/R2/RevenueCat/ad provisioning, store submission, user AI generation, accounts, weather/health services or Android implementation. User-approved scope overrides kit defaults for infrastructure and early paywalls.
+Production RevenueCat subscription setup and App Store 1.0 review submission are approved. Firebase/R2, production ads, user AI generation, accounts, weather/health services and Android remain out of scope. Review submission remains blocked until the release checklist is green; catalog identifiers and pricing must match the approved production plan.
+
+## Live release state — 2026-09-21
+
+- App Store Connect app `6814078185`, bundle `com.screenmotion.studio`, version `1.0` in `PREPARE_FOR_SUBMISSION`.
+- Subscription group `22398612`; monthly product `com.screenmotion.pro.monthly` (`6814078761`) is priced at USD 6.99 and yearly product `com.screenmotion.pro.yearly` (`6814170987`) at USD 79.99. Both have complete 175-territory price coverage and availability plus 22 product/group localizations.
+- Apple reports both products as `READY_TO_SUBMIT`. Their review screenshots are present; the first subscription submission still has to be attached to app version 1.0 during Add for Review.
+- RevenueCat production SDK integration is active. The app reads the current `default` offering and presents a native, offering-driven paywall with yearly preselection, localized Apple prices, Restore, Terms and Privacy. The remote RevenueCat paywall template is not required by this binary. Runtime product readback and local StoreKit acceptance pass; dashboard readback was unavailable in the latest session because MCP authentication expired.
+- Build 3 is `VALID` and version 1.0 remains `PREPARE_FOR_SUBMISSION`, but build 3 predates the current pixel/paywall working tree. A new signed archive/upload, 13-inch iPad screenshot, sandbox purchase/restore and physical-device acceptance remain open. Review submission is not authorized until those checks are recorded.

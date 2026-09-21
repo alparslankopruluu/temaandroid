@@ -34,10 +34,17 @@ enum WidgetBridge {
         guard let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: WidgetSnapshot.group) else {
             throw WidgetBridgeError.unavailable
         }
-        guard let image = UIImage(named: theme.artwork), let data = image.jpegData(compressionQuality: 0.88) else {
+        let image: UIImage?
+        if theme.isPixel {
+            guard await SceneFrameRenderer.prepare(theme: theme) else { throw WidgetBridgeError.artwork }
+            image = SceneFrameRenderer.image(theme: theme, configuration: .init(), size: CGSize(width: 600, height: 800), time: 1)
+        } else {
+            image = UIImage(named: theme.artwork)
+        }
+        guard let image, let data = image.jpegData(compressionQuality: 0.88) else {
             throw WidgetBridgeError.artwork
         }
-        let snapshot = WidgetSnapshot(themeID: theme.id, titleKey: theme.titleKey, collection: theme.collection.rawValue, artworkFile: "selected-artwork.jpg")
+        let snapshot = WidgetSnapshot(themeID: theme.id, titleKey: theme.displayTitle, collection: theme.collection.rawValue, artworkFile: "selected-artwork.jpg")
         try await Task.detached(priority: .utility) {
             try data.write(to: directory.appendingPathComponent(snapshot.artworkFile), options: .atomic)
             try JSONEncoder().encode(snapshot).write(to: directory.appendingPathComponent(WidgetSnapshot.filename), options: .atomic)

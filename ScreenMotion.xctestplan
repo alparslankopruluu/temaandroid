@@ -1,0 +1,34 @@
+{
+  "configurations": [
+    {
+      "id": "EAC0932C-1374-4EAC-BBCD-E1D56199E859",
+      "name": "Local",
+      "options": {}
+    }
+  ],
+  "defaultOptions": {
+    "storeKitConfigurationFilePath": "container:App/Resources/Products.storekit",
+    "targetForVariableExpansion": {
+      "containerPath": "container:ScreenMotion.xcodeproj",
+      "identifier": "1D50252A7CD98DE8D5FA4289",
+      "name": "ScreenMotion"
+    }
+  },
+  "testTargets": [
+    {
+      "target": {
+        "containerPath": "container:ScreenMotion.xcodeproj",
+        "identifier": "D2B9CD9A25C0F8B31E54D0D6",
+        "name": "ScreenMotionTests"
+      }
+    },
+    {
+      "target": {
+        "containerPath": "container:ScreenMotion.xcodeproj",
+        "identifier": "C458D454716613B108C710B5",
+        "name": "ScreenMotionUITests"
+      }
+    }
+  ],
+  "version": 1
+}

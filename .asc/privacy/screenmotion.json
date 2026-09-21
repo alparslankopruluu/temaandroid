@@ -1,0 +1,23 @@
+{
+  "privacyPolicyUrl": "https://screenmotion-legal.kprl884.workers.dev/privacy",
+  "dataUses": [
+    {
+      "category": "PURCHASES",
+      "purposes": ["APP_FUNCTIONALITY"],
+      "dataProtection": "DATA_NOT_LINKED_TO_YOU",
+      "tracking": false
+    },
+    {
+      "category": "DEVICE_ID",
+      "purposes": ["APP_FUNCTIONALITY"],
+      "dataProtection": "DATA_NOT_LINKED_TO_YOU",
+      "tracking": false
+    },
+    {
+      "category": "PRODUCT_INTERACTION",
+      "purposes": ["APP_FUNCTIONALITY", "ANALYTICS"],
+      "dataProtection": "DATA_NOT_LINKED_TO_YOU",
+      "tracking": false
+    }
+  ]
+}

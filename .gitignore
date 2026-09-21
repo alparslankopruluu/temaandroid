@@ -23,3 +23,5 @@ build/
 DerivedData/
 *.xcuserstate
 xcuserdata/
+legal-worker/.wrangler/
+!.asc/privacy/
