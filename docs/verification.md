@@ -17,8 +17,8 @@ Environment: Xcode 27.0 (27A266a), iPhone 17 Pro simulator, iOS 26.2, plus a 13-
 - Physical Live Photo lock-screen playback and Spatial Scene compatibility. No app-side gyro/touch execution is claimed on the lock screen.
 - Physical-device 60 FPS / low-power 30 FPS measurements, battery profiling, full VoiceOver / accessibility-size audit, native-language review, widget installation and Pro restore/pending/cancellation paths.
 - Sandbox purchase/restore against Apple's live sandbox account on a signed physical-device build. Runtime offering/package readback works, but the current RevenueCat dashboard state was not independently re-read because MCP authentication expired.
-- A new signed archive/IPA from the current working tree and App Store processing. Existing build 3 is valid but predates the latest pixel and paywall changes.
-- Final 13-inch iPad store screenshot, first-subscription attachment during Add for Review, and final metadata/App Privacy/age-rating/review-contact readback.
+- Signed archive/IPA 1.0 (4) uploaded and `VALID`. Physical-device sandbox purchase/restore remains open.
+- Final metadata/App Privacy/age-rating/review-contact readback before human review submit. English 13-inch iPad screenshots are uploaded. A draft review submission includes the app version plus monthly/yearly subscriptions and has not been submitted.
 
 ## App Store Connect checkpoint — 2026-09-21
 
@@ -26,6 +26,6 @@ Environment: Xcode 27.0 (27A266a), iPhone 17 Pro simulator, iOS 26.2, plus a 13-
 - Subscription group `22398612`, monthly subscription `6814078761` (`com.screenmotion.pro.monthly`) and yearly subscription `6814170987` (`com.screenmotion.pro.yearly`) were created and read back. USD prices are $6.99 monthly and $79.99 yearly; pricing and availability cover all 175 territories. Group and both products have 22 localizations. Apple reports both products as `READY_TO_SUBMIT`.
 - RevenueCat OAuth was completed. Project `ScreenMotion` (`6eac634f`) has a valid App Store connection, entitlement `pro`, current `default` offering and matching App Store monthly/yearly products. Readback confirms both products are attached to their packages and entitlement. Test Store placeholder products remain available for direct provider testing but were removed from the production offering packages.
 - RevenueCat paywall `pw08fc3171c9634bad` remains an optional unpublished remote draft. The shipping app now uses its own native paywall backed by the current offering, so an absent remote presentation does not show RevenueCat's `No Paywall configured` screen. Runtime prices come from the StoreKit products. Legal links point to the live ScreenMotion Terms and Privacy pages.
-- Build 3 is `VALID`; version 1.0 remains `PREPARE_FOR_SUBMISSION`. These prove provider processing only and do not cover the current unuploaded working tree.
+- Build 4 (`98c09e2a-42a5-4d86-8960-89e68630e726`) is `VALID` and attached to version 1.0. English `APP_IPAD_PRO_3GEN_129` screenshots 01–04 are COMPLETE. Draft review submission `5d33748b-2692-444e-a52a-7d021d5a4d97` contains the app version and both first-time subscriptions, state `READY_FOR_REVIEW`, not submitted.
 
-The local technical core is green. The app remains NO-GO for review until the new signed build, Apple sandbox/device checks, final iPad store screenshot and first-subscription attachment are completed.
+The local technical core and English store screenshot set are green. The app remains NO-GO for App Review until sandbox/device checks and an explicit human submit.
