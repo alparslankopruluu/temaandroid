@@ -24,6 +24,6 @@ struct PrimaryButton: View {
             HStack { Text(LocalizedStringKey(title)).font(.headline); Spacer(); Image(systemName: symbol) }
                 .padding(18).frame(minHeight: 56).foregroundStyle(.black)
                 .background(Design.accent, in: RoundedRectangle(cornerRadius: 18))
-        }.buttonStyle(.plain)
+        }.buttonStyle(.plain).accessibilityIdentifier(title)
     }
 }

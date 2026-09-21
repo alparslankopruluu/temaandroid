@@ -26,3 +26,5 @@ xcuserdata/
 legal-worker/.wrangler/
 !.asc/privacy/
 screenshots/raw/
+screenshots/upload/
+.asc/reports/

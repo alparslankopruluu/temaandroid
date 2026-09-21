@@ -57,7 +57,7 @@ struct ExportView: View {
                     Text("platform.detail").font(.footnote).foregroundStyle(Design.muted)
                 }.padding(Design.padding)
             }.background(Design.background).navigationTitle("export.title").navigationBarTitleDisplayMode(.inline)
-                .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("action.close") { dismiss() }.disabled(service.isExporting) } }
+                .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("action.close") { dismiss() }.disabled(service.isExporting).accessibilityIdentifier("action.close") } }
                 .sheet(isPresented: $showPro) { ProPaywallView() }
                 .navigationDestination(isPresented: $showGuide) { InstallView(kind: .wallpaper) }
         }.interactiveDismissDisabled(service.isExporting).onDisappear { task?.cancel() }

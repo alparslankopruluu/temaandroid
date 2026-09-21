@@ -12,8 +12,9 @@
 | Guided installation | Install | Persisted steps, wallpaper/icons/widgets instructions | install.* |
 | 96 icons | Package | Four packs × 24 distinct PNGs tested | package.* |
 | Widgets | Widget extension / package | Compiled, shared snapshot; device install pending | widget.* |
-| Pro | Paywall / settings | RevenueCat SDK wrapper and native offering-driven paywall; localized prices, yearly preselection/Most Popular, retry, Restore, Terms and Privacy; local purchase plus expiration/revocation and paywall UI tests pass; ASC monthly/yearly products at $6.99/$79.99 are `READY_TO_SUBMIT`; signed-device sandbox acceptance pending | pro.*, purchase.*, legal.* |
+| Pro | Paywall / settings | RevenueCat SDK wrapper and native offering-driven paywall; localized prices, yearly preselection/Most Popular, retry, Restore, Terms and Privacy; local purchase plus expiration/revocation and paywall UI tests pass; ASC monthly/yearly products at $6.99/$79.99 are `WAITING_FOR_REVIEW` with version 1.0; signed-device sandbox acceptance pending | pro.*, purchase.*, legal.* |
 | Rewarded export | Export | Clearly labeled local simulator, cancellation tested | ad.* |
 | 22 languages | All screens and widget | Key completeness; Turkish/Arabic UI captures; dynamic-key guard and Turkish export-hint regression | all |
+| 22-locale App Store screenshots | Discover / Editor / Export / iPad store set | All 22 version localizations have exactly 4 COMPLETE iPhone 6.7 and 4 COMPLETE 13-inch iPad shots; English iPad duplicates deleted | store.screenshots |
 
 Analytics: no external analytics SDK is currently included. RevenueCat is included for purchases and entitlement management. App Privacy currently declares Purchases, Device ID and Product Interaction with tracking disabled; recheck the signed release binary and provider configuration before submission.
