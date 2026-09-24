@@ -15,11 +15,12 @@ Prepared on 2026-09-24 for App Store Connect app `6814078185`.
 ## App Store staging
 
 - Version ID: `2ad39b87-866c-4c56-bea2-751c273ce919`
-- State: `PREPARE_FOR_SUBMISSION`
+- State: `WAITING_FOR_REVIEW`
 - Build 5 attached and read back.
 - What's New added and read back for all 22 locales.
 - Every locale has four complete iPhone 6.7-inch and four complete 13-inch iPad screenshots.
-- Review details are configured; review submission has not been created.
+- Review details are configured.
+- Review submission: `aaeb8944-bb04-466b-bb16-2f37e4adbc79`, submitted at `2026-09-24T05:28:09.57Z` and read back as `WAITING_FOR_REVIEW`.
 
 ## Validation
 
