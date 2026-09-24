@@ -13,6 +13,10 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
     var artworkURL: URL?
 
     var isPixel: Bool { appearance == .pixel }
+    var hasProgrammaticArtwork: Bool {
+        guard isPixel else { return false }
+        return [.fish, .nature, .ufo, .aquarium, .autumn, .race, .koi, .snow].contains(interaction)
+    }
     var displayTitle: String { titleOverride ?? NSLocalizedString(titleKey, comment: "") }
 
     private enum CodingKeys: String, CodingKey {

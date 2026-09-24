@@ -155,9 +155,11 @@ private final class ArtworkScene: SKScene {
     private let motion = CMMotionManager()
     private var particles: [SKShapeNode] = []
     private var fish: [SKShapeNode] = []
+    private var accents: [SKShapeNode] = []
     private var finger = CGPoint.zero
     private var smoothed = CGPoint.zero
     private var touching = false
+    private var tapPulse: CGFloat = 0
     private var reduceMotion = false
     private var active = false
     private var lastTime: TimeInterval?
@@ -208,10 +210,52 @@ private final class ArtworkScene: SKScene {
                 fish.append(node)
             }
         }
+        buildThemeAccents()
         updateFrame(at: 0, displacement: .zero)
     }
 
     required init?(coder aDecoder: NSCoder) { nil }
+
+    private func buildThemeAccents() {
+        let count: Int
+        switch theme.id {
+        case "helicopter": count = 2
+        case "airplane": count = 7
+        case "spaceship", "orbit", "nebula": count = 14
+        case "reef", "jellyfish": count = 10
+        case "alpine", "forest": count = 12
+        default: count = 10
+        }
+        for index in 0..<count {
+            let node: SKShapeNode
+            switch theme.id {
+            case "helicopter":
+                node = SKShapeNode(rectOf: CGSize(width: index == 0 ? 108 : 60, height: 2))
+            case "airplane":
+                node = SKShapeNode(ellipseOf: CGSize(width: 46 + index % 3 * 18, height: 14 + index % 2 * 8))
+            case "spaceship", "orbit", "nebula":
+                node = SKShapeNode(circleOfRadius: CGFloat(1 + index % 3))
+                node.glowWidth = 3
+            case "reef", "jellyfish":
+                node = SKShapeNode(circleOfRadius: CGFloat(2 + index % 4))
+            case "alpine", "forest":
+                node = SKShapeNode(ellipseOf: CGSize(width: 8 + index % 3 * 3, height: 4 + index % 2 * 3))
+            default:
+                node = SKShapeNode(rectOf: CGSize(width: 3 + index % 2 * 2, height: 30 + index % 4 * 16), cornerRadius: 1)
+            }
+            node.fillColor = switch theme.collection {
+            case .vehicles: UIColor(white: 0.96, alpha: 0.78)
+            case .ocean: UIColor(red: 0.45, green: 0.9, blue: 1, alpha: 0.7)
+            case .cosmos: UIColor(red: 0.75, green: 0.86, blue: 1, alpha: 0.9)
+            case .nature: UIColor(red: 0.78, green: 0.9, blue: 0.35, alpha: 0.72)
+            }
+            node.strokeColor = .clear
+            node.zPosition = 2.2
+            node.name = "accent-\(index)"
+            addChild(node)
+            accents.append(node)
+        }
+    }
 
     func setArtwork(_ image: SceneArtwork?) {
         artwork.texture = image.map { SKTexture(image: $0.background) }
@@ -248,6 +292,7 @@ private final class ArtworkScene: SKScene {
         let delta = min(max(currentTime - (lastTime ?? currentTime), 0), 0.05)
         lastTime = currentTime
         elapsed += delta
+        tapPulse = max(0, tapPulse - CGFloat(delta) * 1.6)
         let gravity = motion.deviceMotion?.gravity
         let sensor = CGPoint(x: (gravity?.x ?? 0) * 0.8, y: (gravity?.y ?? 0) * 0.35)
         let target = touching ? finger : sensor
@@ -266,7 +311,13 @@ private final class ArtworkScene: SKScene {
         let source = artwork.texture?.size() ?? size
         let factor = max(size.width / max(source.width, 1), size.height / max(source.height, 1)) * (1.08 + depth * 0.04) * zoom
         artwork.size = CGSize(width: source.width * factor, height: source.height * factor)
-        let breathing = sin(time * 0.35) * 0.004 * intensity
+        let sceneReaction: CGFloat = switch theme.collection {
+        case .vehicles: tapPulse * 0.018
+        case .ocean: tapPulse * 0.006
+        case .cosmos: tapPulse * 0.012
+        case .nature: tapPulse * 0.004
+        }
+        let breathing = sin(time * 0.35) * 0.004 * intensity + sceneReaction
         artwork.setScale(1 + breathing)
         artwork.position = CGPoint(x: size.width / 2 + displacement.x * size.width * 0.025 * depth * intensity,
                                    y: size.height / 2 + displacement.y * size.height * 0.025 * depth * intensity)
@@ -287,8 +338,9 @@ private final class ArtworkScene: SKScene {
         for (index, node) in fish.enumerated() {
             let phase = Double(index) * 0.65
             let swim = time * 0.22 * intensity + phase
-            node.position = CGPoint(x: size.width * (0.5 + 0.22 * sin(swim)) + displacement.x * size.width * 0.10 * intensity,
-                                    y: size.height * (0.43 + Double(index) * 0.035 + 0.035 * cos(swim * 1.3)) + displacement.y * size.height * 0.045 * intensity)
+            let scatter = tapPulse * CGFloat(index.isMultiple(of: 2) ? 1 : -1)
+            node.position = CGPoint(x: size.width * (0.5 + 0.22 * sin(swim)) + displacement.x * size.width * 0.10 * intensity + scatter * size.width * 0.12,
+                                    y: size.height * (0.43 + Double(index) * 0.035 + 0.035 * cos(swim * 1.3)) + displacement.y * size.height * 0.045 * intensity + tapPulse * size.height * 0.04)
             let direction: CGFloat = cos(swim) < 0 ? -1 : 1
             let scale = size.width / 390 * (0.55 + Double(index % 3) * 0.12)
             node.xScale = direction * scale
@@ -299,12 +351,53 @@ private final class ArtworkScene: SKScene {
             let seed = Double(index)
             let x = (seed * 0.61803398875).truncatingRemainder(dividingBy: 1)
             let y = (seed * 0.38196601125 + 0.17).truncatingRemainder(dividingBy: 1)
-            let speed = (theme.collection == .vehicles ? 0.06 : 0.012) * intensity
+            let baseSpeed: Double = switch theme.collection {
+            case .vehicles: 0.06
+            case .ocean: 0.012
+            case .cosmos: 0.006
+            case .nature: 0.016
+            }
+            let speed = (baseSpeed + Double(tapPulse) * (theme.collection == .vehicles ? 0.12 : 0.035)) * intensity
             let animatedY = (y + time * speed * (0.4 + x)).truncatingRemainder(dividingBy: 1)
-            particle.position = CGPoint(x: x * size.width + sin(time * 0.3 + seed) * 5 * intensity + displacement.x * 18 * depth * intensity,
+            let gust = theme.collection == .nature ? Double(tapPulse) * sin(seed * 2.7) * 36 : 0
+            let radial = theme.collection == .cosmos ? Double(tapPulse) * sin(seed) * 24 : 0
+            particle.position = CGPoint(x: x * size.width + sin(time * 0.3 + seed) * 5 * intensity + displacement.x * 18 * depth * intensity + gust + radial,
                                         y: animatedY * size.height + displacement.y * 26 * depth * intensity)
-            particle.alpha = min(max(configuration.particles, 0), 1) * (0.08 + 0.16 * abs(sin(time * 0.8 * intensity + seed)))
+            particle.alpha = min(1, min(max(configuration.particles, 0), 1) * (0.08 + 0.16 * abs(sin(time * 0.8 * intensity + seed))) + Double(tapPulse) * (theme.collection == .cosmos ? 0.5 : 0.12))
             particle.setScale(max(0.8, size.width / 390))
+        }
+        for (index, node) in accents.enumerated() {
+            let seed = Double(index + 1)
+            let baseX = Double((index * 71 + 13) % 100) / 100
+            let baseY = Double((index * 47 + 19) % 100) / 100
+            switch theme.id {
+            case "helicopter":
+                node.position = CGPoint(x: size.width * 0.5 + displacement.x * size.width * 0.09,
+                                        y: size.height * (index == 0 ? 0.61 : 0.54) + displacement.y * size.height * 0.08)
+                node.zRotation = CGFloat(time * (index == 0 ? 11 : -8) * max(intensity, 0.15))
+            case "airplane":
+                node.position = CGPoint(x: (baseX + time * 0.025 * intensity).truncatingRemainder(dividingBy: 1) * size.width,
+                                        y: (0.45 + baseY * 0.45) * size.height)
+                node.alpha = 0.12 + tapPulse * 0.28
+            case "spaceship", "orbit", "nebula":
+                node.position = CGPoint(x: baseX * size.width + displacement.x * CGFloat(seed * 1.8),
+                                        y: baseY * size.height + displacement.y * CGFloat(seed * 2.2))
+                node.alpha = 0.25 + 0.5 * abs(sin(time * (0.7 + seed * 0.03))) + tapPulse * 0.25
+            case "reef", "jellyfish":
+                node.position = CGPoint(x: baseX * size.width + sin(time * 0.6 + seed) * 9,
+                                        y: (baseY + time * 0.025 * intensity).truncatingRemainder(dividingBy: 1) * size.height)
+                node.setScale(1 + tapPulse * 0.8)
+            case "alpine", "forest":
+                node.position = CGPoint(x: (baseX + time * 0.018 * intensity + Double(tapPulse) * 0.08 * sin(seed)).truncatingRemainder(dividingBy: 1) * size.width,
+                                        y: (baseY - time * 0.012 * intensity + 10).truncatingRemainder(dividingBy: 1) * size.height)
+                node.zRotation = CGFloat(sin(time + seed) * 0.7)
+            default:
+                let stableVariant = theme.id.utf8.reduce(0) { ($0 + Int($1)) % 7 }
+                let speed = 0.08 + Double(stableVariant) * 0.006
+                node.position = CGPoint(x: baseX * size.width,
+                                        y: (baseY - time * speed * intensity - Double(tapPulse) * 0.12 + 10).truncatingRemainder(dividingBy: 1) * size.height)
+                node.alpha = 0.12 + 0.36 * intensity
+            }
         }
     }
 
@@ -316,7 +409,12 @@ private final class ArtworkScene: SKScene {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { track(touches) }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { track(touches) }
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { touching = false }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if touches.first != nil {
+            tapPulse = 1
+        }
+        touching = false
+    }
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) { touching = false }
 }
 

@@ -65,7 +65,7 @@ final class InteractiveSceneBehaviorTests: XCTestCase {
 
             XCTAssertTrue(events.contains(.tapResponded(profile: profile)), "Profile: \(profile)")
             XCTAssertEqual(behavior.state.tapResponse, 1, "Profile: \(profile)")
-            if profile == .helicopter || profile == .spaceship || profile == .fish {
+            if [.helicopter, .spaceship, .ufo, .fish, .aquarium, .koi].contains(profile) {
                 XCTAssertNotEqual(behavior.state.velocity, beforeVelocity, "Profile: \(profile)")
             }
         }
@@ -90,7 +90,7 @@ final class InteractiveSceneBehaviorTests: XCTestCase {
     }
 
     func testFishAndNatureRemainNonScoringWhenScoreModeIsRequested() {
-        for profile in [InteractiveSceneBehavior.Profile.fish, .nature] {
+        for profile in [InteractiveSceneBehavior.Profile.fish, .nature, .aquarium, .autumn, .koi, .snow] {
             var behavior = InteractiveSceneBehavior(profile: profile, mode: .score, seed: 11)
 
             for frame in 0..<300 {

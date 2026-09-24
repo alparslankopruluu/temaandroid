@@ -7,12 +7,12 @@ catalog=json.loads((root/'App/Resources/catalog.json').read_text())
 assert catalog['version']==1
 assert len(catalog['themes'])>=16
 assert len({theme['id'] for theme in catalog['themes']})==len(catalog['themes'])
-programmatic_artwork={'pixel-reef','pixel-forest'}
+programmatic_artwork={'pixel-reef','pixel-forest','pixel-ufo','pixel-aquarium','pixel-autumn','pixel-race','pixel-koi','pixel-snow'}
 artwork_files=0
 for theme in catalog['themes']:
     if theme['artwork'] in programmatic_artwork:
         assert theme.get('appearance')=='pixel'
-        assert theme.get('interaction') in {'fish','nature'}
+        assert theme.get('interaction') in {'fish','nature','ufo','aquarium','autumn','race','koi','snow'}
         continue
     folder=root/'App/Resources/Assets.xcassets'/f"{theme['artwork']}.imageset"
     manifest=json.loads((folder/'Contents.json').read_text())

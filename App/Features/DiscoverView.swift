@@ -6,8 +6,8 @@ struct ArtworkView: View {
         Group {
             if let artworkURL = theme.artworkURL {
                 RemoteArtworkView(url: artworkURL)
-            } else if theme.id == "pixel-reef" || theme.id == "pixel-forest" {
-                PixelStaticArtwork(kind: theme.interaction ?? .nature)
+            } else if theme.hasProgrammaticArtwork {
+                PixelStaticArtwork(theme: theme)
             } else {
                 Image(theme.artwork).resizable().scaledToFill()
             }
@@ -34,22 +34,18 @@ private struct RemoteArtworkView: View {
 }
 
 private struct PixelStaticArtwork: View {
-    let kind: InteractiveSceneBehavior.Profile
+    let theme: Theme
+    @State private var image: UIImage?
 
     var body: some View {
-        Canvas { context, size in
-            let colors: [Color] = kind == .fish
-                ? [.init(red: 0.02, green: 0.08, blue: 0.18), .cyan.opacity(0.55), .purple.opacity(0.7)]
-                : [.init(red: 0.02, green: 0.07, blue: 0.05), .green.opacity(0.45), Design.accent.opacity(0.55)]
-            context.fill(Path(CGRect(origin: .zero, size: size)), with: .linearGradient(
-                Gradient(colors: colors), startPoint: .zero, endPoint: CGPoint(x: size.width, y: size.height)
-            ))
-            for index in 0..<44 {
-                let x = Double((index * 67) % 100) / 100 * size.width
-                let y = Double((index * 43) % 100) / 100 * size.height
-                let block = CGRect(x: x, y: y, width: 3 + Double(index % 4) * 3, height: 3 + Double(index % 3) * 4)
-                context.fill(Path(block), with: .color(colors[(index + 1) % colors.count].opacity(0.58)))
-            }
+        Group {
+            if let image { Image(uiImage: image).resizable().scaledToFill() }
+            else { Design.surface.overlay { ProgressView() } }
+        }
+        .task(id: theme.id) {
+            guard await SceneFrameRenderer.prepare(theme: theme) else { return }
+            image = SceneFrameRenderer.image(theme: theme, configuration: .init(),
+                                             size: CGSize(width: 600, height: 800), time: 1)
         }
     }
 }
@@ -75,9 +71,9 @@ struct DiscoverView: View {
                 VStack(alignment: .leading, spacing: 26) {
                     header.zIndex(1)
                     if showSearch { TextField("search.placeholder", text: $query).textFieldStyle(.roundedBorder).accessibilityIdentifier("themeSearch") }
-                    if collection == nil && query.isEmpty, let theme = catalog.themes.first { hero(theme) }
-                    categories
                     appearanceFilters
+                    categories
+                    if query.isEmpty, let theme = filtered.first { hero(theme) }
                     HStack { Text("discover.curated").font(.title2.bold()); Spacer(); Text(filtered.count, format: .number).foregroundStyle(Design.muted) }
                     LazyVGrid(columns: [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)], spacing: 22) {
                         ForEach(filtered) { theme in
@@ -158,7 +154,14 @@ struct ThemeCard: View {
                     Image(systemName: theme.isFree ? "waveform.path" : "lock.fill").font(.caption).padding(10).background(.black.opacity(0.35), in: Circle()).padding(10)
                 }
             Text(theme.displayTitle).font(.headline)
-            Text(LocalizedStringKey(theme.collection.titleKey)).font(.caption).foregroundStyle(Design.muted)
+            HStack(spacing: 6) {
+                Text(LocalizedStringKey(theme.collection.titleKey))
+                Text("·")
+                if theme.isPixel { Text("filter.pixel") }
+                else { Text("filter.realistic") }
+            }
+            .font(.caption)
+            .foregroundStyle(Design.muted)
         }.contentShape(Rectangle())
     }
 }

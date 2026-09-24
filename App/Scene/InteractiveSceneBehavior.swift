@@ -10,11 +10,17 @@ struct InteractiveSceneBehavior: Equatable, Sendable {
         case spaceship
         case fish
         case nature
+        case ufo
+        case aquarium
+        case autumn
+        case race
+        case koi
+        case snow
 
         var supportsScoreMode: Bool {
             switch self {
-            case .car, .motorcycle, .helicopter, .spaceship: true
-            case .fish, .nature: false
+            case .car, .motorcycle, .helicopter, .spaceship, .ufo, .race: true
+            case .fish, .nature, .aquarium, .autumn, .koi, .snow: false
             }
         }
     }
@@ -193,7 +199,7 @@ struct InteractiveSceneBehavior: Equatable, Sendable {
         let response = min(1, deltaTime * responsiveness)
 
         switch profile {
-        case .car:
+        case .car, .race:
             state.velocity.x += (direction.x * 1.25 - state.velocity.x) * response
             state.velocity.y = 0
             state.position.y = -0.68
@@ -208,12 +214,12 @@ struct InteractiveSceneBehavior: Equatable, Sendable {
             state.velocity.y += (direction.y * 0.8 - state.velocity.y) * response
             state.rotation = direction.x * 0.18
             if input.tap != nil { state.velocity.y = min(1, state.velocity.y + 0.55) }
-        case .spaceship:
+        case .spaceship, .ufo:
             state.velocity.x += (direction.x * 1.05 - state.velocity.x) * response
             state.velocity.y += (direction.y * 0.7 - state.velocity.y) * response
             state.rotation = direction.x * 0.22
             if input.tap != nil { state.velocity.y = min(1, state.velocity.y + 0.38) }
-        case .fish:
+        case .fish, .aquarium, .koi:
             let ambient = Vector(unclampedX: sin(time * 0.7) * 0.16, y: cos(time * 0.45) * 0.08)
             let target = direction * 0.45 + ambient
             state.velocity.x += (target.x - state.velocity.x) * response
@@ -223,8 +229,10 @@ struct InteractiveSceneBehavior: Equatable, Sendable {
                 state.velocity = (state.velocity + away * 0.65).bounded()
             }
             state.rotation = state.velocity.y * 0.12
-        case .nature:
-            let target = direction * 0.16
+        case .nature, .autumn, .snow:
+            let breeze = Vector(unclampedX: sin(time * (profile == .snow ? 0.28 : 0.8)) * 0.08,
+                                y: cos(time * 0.35) * 0.04)
+            let target = direction * (profile == .autumn ? 0.3 : 0.16) + breeze
             state.velocity.x += (target.x - state.velocity.x) * response
             state.velocity.y += (target.y - state.velocity.y) * response
             state.rotation = sin(time * 0.8) * 0.025 + direction.x * 0.035
@@ -297,36 +305,36 @@ struct InteractiveSceneBehavior: Equatable, Sendable {
 
     private var forwardSpeed: Double {
         switch profile {
-        case .car: 0.78
+        case .car, .race: 0.78
         case .motorcycle: 0.86
         case .helicopter: 0.66
-        case .spaceship: 0.74
-        case .fish, .nature: 0
+        case .spaceship, .ufo: 0.74
+        case .fish, .nature, .aquarium, .autumn, .koi, .snow: 0
         }
     }
 
     private var responsiveness: Double {
         switch profile {
-        case .car: 8
+        case .car, .race: 8
         case .motorcycle: 10
-        case .helicopter, .spaceship: 7
-        case .fish: 5
-        case .nature: 3
+        case .helicopter, .spaceship, .ufo: 7
+        case .fish, .aquarium, .koi: 5
+        case .nature, .autumn, .snow: 3
         }
     }
 
     private var playerRadius: Double {
         switch profile {
         case .motorcycle: 0.08
-        case .car, .helicopter, .spaceship: 0.11
-        case .fish, .nature: 0
+        case .car, .helicopter, .spaceship, .ufo, .race: 0.11
+        case .fish, .nature, .aquarium, .autumn, .koi, .snow: 0
         }
     }
 
     private static func initialPosition(for profile: Profile) -> Vector {
         switch profile {
-        case .car, .motorcycle: Vector(x: 0, y: -0.68)
-        case .helicopter, .spaceship, .fish, .nature: .zero
+        case .car, .motorcycle, .race: Vector(x: 0, y: -0.68)
+        case .helicopter, .spaceship, .fish, .nature, .ufo, .aquarium, .autumn, .koi, .snow: .zero
         }
     }
 }

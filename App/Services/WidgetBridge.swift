@@ -30,17 +30,13 @@ struct WidgetSnapshot: Codable, Sendable {
 #if !WIDGET_EXTENSION
 @MainActor
 enum WidgetBridge {
-    static func select(theme: Theme) async throws {
+    static func select(theme: Theme, configuration: SceneConfiguration) async throws {
         guard let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: WidgetSnapshot.group) else {
             throw WidgetBridgeError.unavailable
         }
-        let image: UIImage?
-        if theme.isPixel {
-            guard await SceneFrameRenderer.prepare(theme: theme) else { throw WidgetBridgeError.artwork }
-            image = SceneFrameRenderer.image(theme: theme, configuration: .init(), size: CGSize(width: 600, height: 800), time: 1)
-        } else {
-            image = UIImage(named: theme.artwork)
-        }
+        guard await SceneFrameRenderer.prepare(theme: theme) else { throw WidgetBridgeError.artwork }
+        let image = SceneFrameRenderer.image(theme: theme, configuration: configuration,
+                                             size: CGSize(width: 600, height: 800), time: 1)
         guard let image, let data = image.jpegData(compressionQuality: 0.88) else {
             throw WidgetBridgeError.artwork
         }

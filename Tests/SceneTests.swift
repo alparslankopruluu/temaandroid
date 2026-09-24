@@ -56,7 +56,7 @@ final class SceneTests: XCTestCase {
 
     @MainActor
     func testPixelAssetAndProgrammaticScenesRenderDeterministically() async throws {
-        for id in ["pixel-car", "pixel-reef", "pixel-forest"] {
+        for id in ["pixel-car", "pixel-reef", "pixel-forest", "pixel-ufo", "pixel-aquarium", "pixel-autumn", "pixel-race", "pixel-koi", "pixel-snow"] {
             let theme = try XCTUnwrap(ThemeCatalog.bundled.theme(id))
             let prepared = await SceneFrameRenderer.prepare(theme: theme)
             XCTAssertTrue(prepared, id)

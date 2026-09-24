@@ -33,7 +33,7 @@ struct ExportView: View {
                     }
                     if let exported {
                         Label("export.success", systemImage: "checkmark.circle.fill").font(.title2.bold()).foregroundStyle(Design.accent)
-                        PrimaryButton(title: "install.title") { showGuide = true }
+                        if format != .video { PrimaryButton(title: "install.title") { showGuide = true } }
                         ShareLink(item: exported) { Label("action.share", systemImage: "square.and.arrow.up").frame(maxWidth: .infinity, minHeight: 44) }
                     } else {
                         ForEach(ExportFormat.allCases) { item in
@@ -59,7 +59,7 @@ struct ExportView: View {
             }.background(Design.background).navigationTitle("export.title").navigationBarTitleDisplayMode(.inline)
                 .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("action.close") { dismiss() }.disabled(service.isExporting).accessibilityIdentifier("action.close") } }
                 .sheet(isPresented: $showPro) { ProPaywallView() }
-                .navigationDestination(isPresented: $showGuide) { InstallView(kind: .wallpaper) }
+                .navigationDestination(isPresented: $showGuide) { InstallView(kind: .wallpaper, theme: theme, configuration: configuration) }
         }.interactiveDismissDisabled(service.isExporting).onDisappear { task?.cancel() }
     }
     private func performExport() {
@@ -68,6 +68,9 @@ struct ExportView: View {
             do {
                 exported = try await service.export(theme: theme, configuration: configuration, format: format)
                 library.save(theme, configuration: configuration)
+                if format != .video {
+                    library.markExported(.wallpaper, themeID: theme.id, configuration: configuration)
+                }
 #if DEBUG
                 if !theme.isFree && !purchases.isPro { library.consumeReward(theme.id) }
 #endif

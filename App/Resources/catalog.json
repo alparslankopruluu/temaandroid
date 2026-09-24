@@ -188,6 +188,66 @@
       "symbol": "leaf",
       "appearance": "pixel",
       "interaction": "nature"
+    },
+    {
+      "id": "pixel-ufo",
+      "titleKey": "theme.pixel-ufo",
+      "collection": "cosmos",
+      "artwork": "pixel-ufo",
+      "isFree": false,
+      "symbol": "sparkles",
+      "appearance": "pixel",
+      "interaction": "ufo"
+    },
+    {
+      "id": "pixel-aquarium",
+      "titleKey": "theme.pixel-aquarium",
+      "collection": "ocean",
+      "artwork": "pixel-aquarium",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "aquarium"
+    },
+    {
+      "id": "pixel-autumn",
+      "titleKey": "theme.pixel-autumn",
+      "collection": "nature",
+      "artwork": "pixel-autumn",
+      "isFree": false,
+      "symbol": "leaf",
+      "appearance": "pixel",
+      "interaction": "autumn"
+    },
+    {
+      "id": "pixel-race",
+      "titleKey": "theme.pixel-race",
+      "collection": "vehicles",
+      "artwork": "pixel-race",
+      "isFree": false,
+      "symbol": "flag.checkered",
+      "appearance": "pixel",
+      "interaction": "race"
+    },
+    {
+      "id": "pixel-koi",
+      "titleKey": "theme.pixel-koi",
+      "collection": "ocean",
+      "artwork": "pixel-koi",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "koi"
+    },
+    {
+      "id": "pixel-snow",
+      "titleKey": "theme.pixel-snow",
+      "collection": "nature",
+      "artwork": "pixel-snow",
+      "isFree": false,
+      "symbol": "snowflake",
+      "appearance": "pixel",
+      "interaction": "snow"
     }
   ]
 }

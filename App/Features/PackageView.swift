@@ -4,6 +4,7 @@ struct PackageView: View {
     let collection: ThemeCollection
     @Environment(PurchasesService.self) private var purchases
     @Environment(ContentStore.self) private var content
+    @Environment(LibraryStore.self) private var library
     @State private var showPro = false
     @State private var iconURL: URL?
     @State private var busy = false
@@ -11,6 +12,9 @@ struct PackageView: View {
     @State private var selectedTheme: String = ""
     @State private var showWidgetGuide = false
     private var themes: [Theme] { content.catalog.themes.filter { $0.collection == collection } }
+    private var selectedConfiguration: SceneConfiguration {
+        library.designs.first(where: { $0.themeID == selectedTheme })?.configuration ?? .init()
+    }
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
@@ -24,9 +28,19 @@ struct PackageView: View {
                 else { PrimaryButton(title: busy ? "purchase.working" : "icons.export", symbol: "arrow.down") {
                     guard purchases.isPro else { showPro = true; return }
                     busy = true
-                    Task { do { iconURL = try await IconExportService.export(collection: collection) } catch { message = error.localizedDescription }; busy = false }
+                    Task {
+                        do {
+                            iconURL = try await IconExportService.export(collection: collection)
+                            if let theme = themes.first(where: { $0.id == selectedTheme }) ?? themes.first {
+                                library.markExported(.icons, themeID: theme.id, configuration: selectedConfiguration)
+                            }
+                        } catch { message = error.localizedDescription }
+                        busy = false
+                    }
                 }.disabled(busy) }
-                NavigationLink("install.icons", destination: InstallView(kind: .icons)).frame(minHeight: 44)
+                if let theme = themes.first(where: { $0.id == selectedTheme }) ?? themes.first {
+                    NavigationLink("install.icons", destination: InstallView(kind: .icons, theme: theme, configuration: selectedConfiguration)).frame(minHeight: 44)
+                }
                 Text("package.widgets").font(.title2.bold())
                 HStack { widgetTile("widget.date", symbol: "calendar"); widgetTile("widget.photo", symbol: "photo") }
                 Text("widget.selectionHint").font(.subheadline).foregroundStyle(Design.muted)
@@ -34,13 +48,23 @@ struct PackageView: View {
                 PrimaryButton(title: "widget.select", symbol: "plus") {
                     guard purchases.isPro else { showPro = true; return }
                     guard let theme = themes.first(where: { $0.id == selectedTheme }) ?? themes.first else { return }
-                    Task { do { try await WidgetBridge.select(theme: theme); showWidgetGuide = true } catch { message = error.localizedDescription } }
+                    Task {
+                        do {
+                            try await WidgetBridge.select(theme: theme, configuration: selectedConfiguration)
+                            library.markExported(.widgets, themeID: theme.id, configuration: selectedConfiguration)
+                            showWidgetGuide = true
+                        } catch { message = error.localizedDescription }
+                    }
                 }
                 if let message { Text(message).foregroundStyle(.orange).font(.footnote) }
             }.padding(Design.padding)
         }.background(Design.background).navigationTitle(LocalizedStringKey(collection.titleKey)).navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showPro) { ProPaywallView() }
-            .navigationDestination(isPresented: $showWidgetGuide) { InstallView(kind: .widgets) }
+            .navigationDestination(isPresented: $showWidgetGuide) {
+                if let theme = themes.first(where: { $0.id == selectedTheme }) ?? themes.first {
+                    InstallView(kind: .widgets, theme: theme, configuration: selectedConfiguration)
+                }
+            }
             .onAppear { if selectedTheme.isEmpty { selectedTheme = themes.first?.id ?? "" } }
     }
     private func widgetTile(_ key: String, symbol: String) -> some View {

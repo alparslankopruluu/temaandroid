@@ -53,7 +53,7 @@ enum PixelFrameRenderer {
     private static var cachedView: SKView?
 
     static func prepare(theme: Theme) async -> Bool {
-        if theme.interaction == .fish || theme.interaction == .nature { return true }
+        if theme.hasProgrammaticArtwork { return true }
         if preparedArtwork?.name == theme.artwork { return true }
         guard let image = await PixelThemeArtwork.load(theme) else { return false }
         preparedArtwork = (theme.artwork, image)
@@ -80,11 +80,7 @@ enum PixelFrameRenderer {
             cachedScene = scene
             cachedView = view
         }
-        let input = InteractiveSceneBehavior.Input(
-            tilt: .init(x: sin(time * 0.8) * 0.65, y: cos(time * 0.55) * 0.25),
-            tap: time > 1.25 && time < 1.3 ? .init(x: 0.35, y: 0.1) : nil
-        )
-        scene.renderFrame(time: time, input: input)
+        scene.renderFrame(time: time, input: .idle)
         guard let texture = view.texture(from: scene, crop: CGRect(origin: .zero, size: logicalSize)) else { return nil }
         return UIImage(cgImage: texture.cgImage(), scale: 1, orientation: .up)
     }
@@ -102,6 +98,7 @@ final class PixelThemeScene: SKScene {
     private let background = SKSpriteNode()
     private let scenery = SKNode()
     private let player = SKNode()
+    private let tapEffect = SKShapeNode()
     private let score = SKLabelNode(fontNamed: "Menlo-Bold")
     private var obstacleNodes: [UInt64: SKShapeNode] = [:]
     private var behavior: InteractiveSceneBehavior
@@ -180,7 +177,7 @@ final class PixelThemeScene: SKScene {
 
     func renderFrame(time: TimeInterval, input: InteractiveSceneBehavior.Input) {
         refreshBehaviorModeIfNeeded()
-        if time <= elapsed {
+        if time <= elapsed || time - elapsed > 0.11 {
             behavior = InteractiveSceneBehavior(
                 profile: theme.interaction ?? .nature,
                 mode: configuration.scoreMode ? .score : .calm,
@@ -189,10 +186,20 @@ final class PixelThemeScene: SKScene {
             )
             elapsed = 0
         }
-        let delta = max(0, min(time - elapsed, 1 / 30))
-        elapsed = max(elapsed, time)
-        let events = behavior.update(deltaTime: delta, time: time, input: input)
-        apply(events: events)
+        let target = max(0, time)
+        while elapsed + 0.000_001 < target {
+            let delta = min(1.0 / 60.0, target - elapsed)
+            elapsed += delta
+            let scriptedTap: InteractiveSceneBehavior.Vector? = elapsed >= 1.25 && elapsed - delta < 1.25
+                ? .init(x: 0.35, y: 0.1) : input.tap
+            let scriptedTilt = InteractiveSceneBehavior.Vector(
+                x: sin(elapsed * 0.8) * 0.65 + input.tilt.x,
+                y: cos(elapsed * 0.55) * 0.25 + input.tilt.y
+            )
+            let events = behavior.update(deltaTime: delta, time: elapsed,
+                                         input: .init(tilt: scriptedTilt, drag: input.drag, tap: scriptedTap))
+            apply(events: events)
+        }
         syncNodes()
     }
 
@@ -201,7 +208,7 @@ final class PixelThemeScene: SKScene {
         addChild(background)
         scenery.zPosition = -10
         addChild(scenery)
-        if theme.interaction == .fish || theme.interaction == .nature { buildProgrammaticBackdrop() }
+        if theme.hasProgrammaticArtwork { buildProgrammaticBackdrop() }
         buildPlayer()
         score.fontSize = 18
         score.horizontalAlignmentMode = .right
@@ -216,13 +223,39 @@ final class PixelThemeScene: SKScene {
 
     private func buildProgrammaticBackdrop() {
         let palette: [UIColor]
-        if theme.interaction == .fish {
+        switch theme.interaction {
+        case .fish, .aquarium, .koi:
             palette = [.init(red: 0.02, green: 0.12, blue: 0.25, alpha: 1), .init(red: 0.02, green: 0.35, blue: 0.4, alpha: 0.85), .init(red: 0.45, green: 0.2, blue: 0.55, alpha: 0.9)]
-        } else {
+        case .ufo:
+            palette = [.init(red: 0.02, green: 0.01, blue: 0.12, alpha: 1), .init(red: 0.25, green: 0.08, blue: 0.45, alpha: 0.9), .init(red: 0.3, green: 0.9, blue: 0.85, alpha: 0.85)]
+        case .race:
+            palette = [.init(red: 0.12, green: 0.04, blue: 0.04, alpha: 1), .init(red: 0.7, green: 0.14, blue: 0.06, alpha: 0.9), .init(white: 0.9, alpha: 0.8)]
+        case .autumn:
+            palette = [.init(red: 0.14, green: 0.06, blue: 0.02, alpha: 1), .init(red: 0.65, green: 0.2, blue: 0.04, alpha: 0.9), .init(red: 0.95, green: 0.58, blue: 0.08, alpha: 0.8)]
+        case .snow:
+            palette = [.init(red: 0.05, green: 0.12, blue: 0.2, alpha: 1), .init(red: 0.34, green: 0.58, blue: 0.72, alpha: 0.9), .white]
+        default:
             palette = [.init(red: 0.02, green: 0.08, blue: 0.06, alpha: 1), .init(red: 0.08, green: 0.24, blue: 0.16, alpha: 0.9), .init(red: 0.38, green: 0.58, blue: 0.2, alpha: 0.8)]
         }
         for index in 0..<42 {
-            let block = SKShapeNode(rectOf: CGSize(width: 10 + index % 5 * 5, height: 8 + index % 4 * 4), cornerRadius: 0)
+            let block: SKShapeNode
+            switch theme.interaction {
+            case .fish, .aquarium, .koi:
+                block = SKShapeNode(ellipseOf: CGSize(width: 12 + index % 4 * 5, height: 6 + index % 3 * 3))
+            case .snow:
+                block = SKShapeNode(circleOfRadius: CGFloat(2 + index % 4))
+            case .ufo:
+                block = index.isMultiple(of: 7)
+                    ? SKShapeNode(rectOf: CGSize(width: 18, height: 18), cornerRadius: 0)
+                    : SKShapeNode(circleOfRadius: CGFloat(1 + index % 3))
+            case .race:
+                block = SKShapeNode(rectOf: CGSize(width: index.isMultiple(of: 3) ? 34 : 7,
+                                                   height: index.isMultiple(of: 3) ? 5 : 18), cornerRadius: 0)
+            case .autumn:
+                block = SKShapeNode(rectOf: CGSize(width: 8 + index % 4 * 3, height: 5 + index % 3 * 3), cornerRadius: 1)
+            default:
+                block = SKShapeNode(rectOf: CGSize(width: 10 + index % 5 * 5, height: 8 + index % 4 * 4), cornerRadius: 0)
+            }
             block.fillColor = palette[index % palette.count]
             block.strokeColor = .clear
             block.isAntialiased = false
@@ -232,10 +265,17 @@ final class PixelThemeScene: SKScene {
     }
 
     private func buildPlayer() {
-        let outline = UIColor(red: 0.76, green: 0.98, blue: 0.42, alpha: 1)
+        let outline: UIColor = switch theme.interaction {
+        case .koi: UIColor(red: 1, green: 0.42, blue: 0.16, alpha: 1)
+        case .aquarium: UIColor(red: 0.2, green: 0.86, blue: 0.95, alpha: 1)
+        case .autumn: UIColor(red: 0.98, green: 0.48, blue: 0.08, alpha: 1)
+        case .snow: UIColor(white: 0.95, alpha: 1)
+        case .race: UIColor(red: 0.95, green: 0.16, blue: 0.12, alpha: 1)
+        default: UIColor(red: 0.76, green: 0.98, blue: 0.42, alpha: 1)
+        }
         let body: SKShapeNode
         switch theme.interaction ?? .nature {
-        case .car:
+        case .car, .race:
             body = SKShapeNode(rectOf: CGSize(width: 40, height: 64), cornerRadius: 5)
         case .motorcycle:
             body = SKShapeNode(rectOf: CGSize(width: 20, height: 58), cornerRadius: 4)
@@ -250,7 +290,15 @@ final class PixelThemeScene: SKScene {
             let path = CGMutablePath()
             path.move(to: CGPoint(x: 0, y: 38)); path.addLine(to: CGPoint(x: -25, y: -28)); path.addLine(to: CGPoint(x: 0, y: -18)); path.addLine(to: CGPoint(x: 25, y: -28)); path.closeSubpath()
             body = SKShapeNode(path: path)
-        case .fish:
+        case .ufo:
+            body = SKShapeNode(ellipseOf: CGSize(width: 70, height: 28))
+            let dome = SKShapeNode(ellipseOf: CGSize(width: 34, height: 24))
+            dome.position.y = 12
+            dome.fillColor = UIColor(red: 0.34, green: 0.92, blue: 0.9, alpha: 1)
+            dome.strokeColor = .black
+            dome.lineWidth = 3
+            player.addChild(dome)
+        case .fish, .aquarium, .koi:
             body = SKShapeNode(ellipseOf: CGSize(width: 58, height: 30))
             let tail = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
             tail.zRotation = .pi / 4
@@ -258,7 +306,7 @@ final class PixelThemeScene: SKScene {
             tail.fillColor = outline
             tail.strokeColor = .clear
             player.addChild(tail)
-        case .nature:
+        case .nature, .autumn, .snow:
             body = SKShapeNode(ellipseOf: CGSize(width: 16, height: 16))
         }
         body.fillColor = outline
@@ -266,6 +314,15 @@ final class PixelThemeScene: SKScene {
         body.lineWidth = 4
         body.isAntialiased = false
         player.addChild(body)
+        if theme.interaction == .ufo || theme.interaction == .spaceship {
+            tapEffect.path = CGPath(rect: CGRect(x: -2, y: 20, width: 4, height: 86), transform: nil)
+            tapEffect.fillColor = UIColor(red: 0.25, green: 1, blue: 0.82, alpha: 1)
+            tapEffect.strokeColor = .white
+            tapEffect.glowWidth = 5
+            tapEffect.alpha = 0
+            tapEffect.zPosition = -1
+            player.addChild(tapEffect)
+        }
         player.zPosition = 10
         addChild(player)
     }
@@ -292,7 +349,8 @@ final class PixelThemeScene: SKScene {
         let state = behavior.state
         player.position = CGPoint(x: size.width * (0.5 + state.position.x * 0.34), y: size.height * (0.5 + state.position.y * 0.38))
         player.zRotation = state.rotation
-        player.setScale(1 + state.tapResponse * 0.12)
+        player.setScale(CGFloat(configuration.zoom) * (1 + state.tapResponse * 0.12))
+        tapEffect.alpha = state.tapResponse
         score.text = "\(state.score)  ·  \(state.highScore)"
         score.isHidden = !showsHUD || !behavior.isScoreActive
 
@@ -308,11 +366,31 @@ final class PixelThemeScene: SKScene {
             node.isHidden = !behavior.isScoreActive
         }
 
-        background.position.x = size.width / 2 - state.position.x * size.width * 0.015 * configuration.depth
-        background.position.y = size.height / 2 - state.position.y * size.height * 0.01 * configuration.depth
+        let intensity = max(0, min(configuration.intensity, 1))
+        switch configuration.style {
+        case 1: backgroundColor = UIColor(red: 0.015, green: 0.07, blue: 0.18, alpha: 1)
+        case 2: backgroundColor = UIColor(red: 0.18, green: 0.055, blue: 0.025, alpha: 1)
+        default: backgroundColor = UIColor(red: 0.025, green: 0.035, blue: 0.08, alpha: 1)
+        }
+        background.position.x = size.width / 2 - state.position.x * size.width * 0.015 * configuration.depth * intensity
+        background.position.y = size.height / 2 - state.position.y * size.height * 0.01 * configuration.depth * intensity
         scenery.children.enumerated().forEach { index, node in
             node.alpha = 0.22 + configuration.particles * 0.55
-            node.zRotation = theme.interaction == .nature ? sin(elapsed + Double(index)) * 0.04 : 0
+            let phase = elapsed * (0.35 + intensity) + Double(index)
+            node.zRotation = [.nature, .autumn, .snow].contains(theme.interaction) ? sin(phase) * 0.12 : 0
+            let edge = index.isMultiple(of: 2) ? 0.08 : 0.92
+            let baseX = size.width * (edge + Double((index * 37) % 14) / 100)
+            let baseY = size.height * (0.05 + Double((index * 61) % 90) / 100)
+            if theme.interaction == .snow {
+                let travel = CGFloat(elapsed * (18 + intensity * 36))
+                let height = max(size.height, 1)
+                node.position = CGPoint(x: baseX + CGFloat(sin(phase) * 12),
+                                        y: (baseY - travel + height * 1_000).truncatingRemainder(dividingBy: height))
+            } else if [.fish, .aquarium, .koi].contains(theme.interaction) {
+                node.position = CGPoint(x: baseX + CGFloat(sin(phase * 0.7) * 14), y: baseY + CGFloat(cos(phase) * 5))
+            } else {
+                node.position = CGPoint(x: baseX + CGFloat(sin(phase) * 8 * intensity), y: baseY)
+            }
         }
     }
 

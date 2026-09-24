@@ -23,20 +23,39 @@ final class LibraryTests: XCTestCase {
         reopened.consumeReward("motorcycle")
         XCTAssertFalse(LibraryStore(defaults: defaults).rewards.contains("motorcycle"))
     }
-    func testCatalogPreservesRealisticBaselineAndAddsSixPixelScenes() {
+    func testCatalogPreservesRealisticBaselineAndAddsTwelvePixelScenes() {
         let themes = ThemeCatalog.bundled.themes
-        XCTAssertEqual(themes.count, 22)
-        XCTAssertEqual(Set(themes.map(\.id)).count, 22)
+        XCTAssertEqual(themes.count, 28)
+        XCTAssertEqual(Set(themes.map(\.id)).count, 28)
         XCTAssertEqual(themes.filter { $0.appearance == .realistic }.count, 16)
-        XCTAssertEqual(themes.filter { $0.appearance == .pixel }.count, 6)
+        XCTAssertEqual(themes.filter { $0.appearance == .pixel }.count, 12)
         XCTAssertEqual(themes.filter { $0.appearance == .pixel && $0.isFree }.map(\.id), ["pixel-car"])
         XCTAssertEqual(Set(themes.filter(\.isPixel).map(\.titleKey)), Set([
             "theme.pixel-car", "theme.pixel-motorcycle", "theme.pixel-helicopter",
-            "theme.pixel-spaceship", "theme.pixel-reef", "theme.pixel-forest"
+            "theme.pixel-spaceship", "theme.pixel-reef", "theme.pixel-forest",
+            "theme.pixel-ufo", "theme.pixel-aquarium", "theme.pixel-autumn",
+            "theme.pixel-race", "theme.pixel-koi", "theme.pixel-snow"
         ]))
         for collection in ThemeCollection.allCases {
             XCTAssertEqual(themes.filter { $0.collection == collection && $0.appearance == .realistic && $0.isFree }.count, 1)
         }
+    }
+    @MainActor func testInstallProgressIsScopedToExactDesignAndPersists() throws {
+        let name = "ScreenMotionInstallTests-\(UUID().uuidString)"
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: name))
+        defer { defaults.removePersistentDomain(forName: name) }
+        let first = SceneConfiguration(intensity: 0.4)
+        let second = SceneConfiguration(intensity: 0.9)
+        let store = LibraryStore(defaults: defaults)
+        for step in 1...3 { store.toggleInstallationStep(step, kind: .wallpaper, themeID: "pixel-ufo", configuration: second) }
+        XCTAssertFalse(store.installationProgress(themeID: "pixel-ufo", configuration: second).installed.contains(.wallpaper))
+        store.markExported(.wallpaper, themeID: "pixel-ufo", configuration: first)
+        for step in 1...3 { store.toggleInstallationStep(step, kind: .wallpaper, themeID: "pixel-ufo", configuration: first) }
+        let reopened = LibraryStore(defaults: defaults)
+        let installed = reopened.installationProgress(themeID: "pixel-ufo", configuration: first)
+        XCTAssertTrue(installed.exported.contains(.wallpaper))
+        XCTAssertTrue(installed.installed.contains(.wallpaper))
+        XCTAssertEqual(reopened.installationProgress(themeID: "pixel-ufo", configuration: second), .init())
     }
     @MainActor func testRewardCancelledBeforeCompletionNeverGrantsSuccess() async {
         let service = RewardedAdService()
