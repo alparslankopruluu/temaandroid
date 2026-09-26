@@ -1,11 +1,13 @@
 import SwiftUI
 import RevenueCat
+import FirebaseCore
 
 @main struct ScreenMotionApp: App {
     @State private var library = LibraryStore()
     @State private var content = ContentStore()
     @State private var purchases: PurchasesService
     init() {
+        FirebaseApp.configure()
         if let apiKey = Bundle.main.object(forInfoDictionaryKey: "RevenueCatAPIKey") as? String,
            apiKey.hasPrefix("appl_") {
             Purchases.configure(withAPIKey: apiKey)
@@ -39,6 +41,13 @@ struct RootView: View {
             if url.host == "theme" { linkedTheme = content.catalog.theme(url.lastPathComponent) }
         }
         .task {
+            AppTelemetry.log(.appOpened)
+#if DEBUG
+            if ProcessInfo.processInfo.environment["SCREENMOTION_VERIFY_CRASHLYTICS"] == "1" {
+                AppTelemetry.record(.debugVerification)
+            }
+#endif
+            await purchases.identifyAnonymousUser()
             async let purchaseLoad: Void = purchases.load()
             async let contentLoad: Void = content.refresh()
             _ = await (purchaseLoad, contentLoad)

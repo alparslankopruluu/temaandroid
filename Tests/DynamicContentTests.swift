@@ -22,8 +22,8 @@ final class DynamicContentTests: XCTestCase {
             currentAppVersion: "1.0"
         )
 
-        await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: manifestData(schema: 2))) { error in
-            XCTAssertEqual(error as? RemoteContentValidationError, .unsupportedSchema(2))
+        await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: manifestData(schema: 3))) { error in
+            XCTAssertEqual(error as? RemoteContentValidationError, .unsupportedSchema(3))
         }
         await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: manifestData(assetPath: "../secret.jpg"))) { error in
             XCTAssertEqual(
@@ -105,6 +105,82 @@ final class DynamicContentTests: XCTestCase {
 
         XCTAssertEqual(snapshot.source, .cache)
         XCTAssertEqual(snapshot.content.manifest.contentVersion, "2")
+    }
+
+    func testSchemaTwoAcceptsNewLocalizedSceneWithBoundedLayersParticlesLightAndAudio() async throws {
+        let service = DynamicContentService(
+            bundledData: manifestData(version: "1"),
+            currentAppVersion: "1.0.2"
+        )
+
+        let content = try await service.validatedContent(from: remoteThemeManifestData())
+
+        XCTAssertEqual(content.remoteThemes.map(\.id), ["pixel-rainfire"])
+        XCTAssertEqual(content.assetURL(themeID: "pixel-rainfire", name: "artwork")?.lastPathComponent, "rainfire.png")
+        XCTAssertEqual(content.assetURL(themeID: "pixel-rainfire", name: "ambience")?.lastPathComponent, "rain.m4a")
+        XCTAssertEqual(content.remoteThemes.first?.scene.particles?.count, 3)
+        XCTAssertEqual(content.remoteThemes.first?.scene.ambientAudioAsset, "ambience")
+    }
+
+    func testSchemaTwoRejectsUnsafeAndUnboundedThemeRecipes() async throws {
+        let service = DynamicContentService(bundledData: manifestData(version: "1"), currentAppVersion: "1.0.2")
+
+        await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: remoteThemeManifestData(assetPath: "../rainfire.png"))) { error in
+            XCTAssertEqual(error as? RemoteContentValidationError, .invalidThemeAssets(themeID: "pixel-rainfire"))
+        }
+        await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: remoteThemeManifestData(particleCount: 161))) { error in
+            XCTAssertEqual(error as? RemoteContentValidationError, .invalidSceneRecipe(themeID: "pixel-rainfire"))
+        }
+        await XCTAssertThrowsErrorAsync(try await service.validatedContent(from: remoteThemeManifestData(assetPath: "assets/rainfire.png"))) { error in
+            XCTAssertEqual(error as? RemoteContentValidationError, .invalidThemeAssets(themeID: "pixel-rainfire"))
+        }
+    }
+
+    func testSchemaTwoRejectsIntegerOverflowInParticleBudget() async throws {
+        let service = DynamicContentService(bundledData: manifestData(version: "1"), currentAppVersion: "1.0.2")
+
+        await XCTAssertThrowsErrorAsync(try await service.validatedContent(
+            from: remoteThemeManifestData(particleCount: Int.max)
+        )) { error in
+            XCTAssertEqual(error as? RemoteContentValidationError, .invalidSceneRecipe(themeID: "pixel-rainfire"))
+        }
+    }
+
+    private func remoteThemeManifestData(assetPath: String = "assets/2/rainfire.png", particleCount: Int = 32) -> Data {
+        let json = """
+        {
+          "schemaVersion": 2,
+          "contentVersion": "2",
+          "minimumAppVersion": "1.0.2",
+          "assetBaseURL": "https://assets.example.com/v2/",
+          "items": [],
+          "themes": [
+            {
+              "id": "pixel-rainfire",
+              "localizedText": {"en": {"title": "Rainfire Cabin", "summary": "Rain and fire."}, "tr": {"title": "Yağmur Ateşi", "summary": "Yağmur ve ateş."}},
+              "isVisible": true,
+              "order": 1,
+              "accessPolicy": "pro",
+              "appearance": "pixel",
+              "collection": "nature",
+              "symbol": "house.fill",
+              "assets": {"artwork": "\(assetPath)", "ambience": "assets/2/rain.m4a"},
+              "scene": {
+                "layers": [{"asset": "artwork", "parallax": 0.5, "animation": "drift", "amount": 0.2, "period": 18}],
+                "particles": [
+                  {"preset": "rain", "count": \(particleCount), "speed": 0.8},
+                  {"preset": "ember", "count": 24, "speed": 1.1},
+                  {"preset": "smoke", "count": 12, "speed": 0.3}
+                ],
+                "light": {"x": 0.8, "y": 0.3, "color": "#FF8B37", "radius": 0.2, "flicker": 0.8, "period": 1.2},
+                "interaction": "emberBurst",
+                "ambientAudioAsset": "ambience"
+              }
+            }
+          ]
+        }
+        """
+        return Data(json.utf8)
     }
 
     private func manifestData(

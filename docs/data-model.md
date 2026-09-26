@@ -4,6 +4,12 @@
 
 ## Collections
 
+The iOS M5 public theme catalog is static JSON and versioned media on Firebase Hosting; it
+adds no Firestore collection, user data, or write path.
+Firebase Anonymous Auth creates identities in Firebase Authentication only. Analytics and
+Crashlytics do not create app Firestore collections. The generic schema examples below are
+unimplemented and must not be deployed for ScreenMotion without a separate approval.
+
 | Collection | Doc shape (key fields) | Client access | Written by |
 |---|---|---|---|
 | `users/{uid}` | profile, settings | own-doc read/write | client |

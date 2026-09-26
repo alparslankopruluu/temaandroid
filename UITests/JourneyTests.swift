@@ -71,6 +71,34 @@ final class JourneyTests: XCTestCase {
         capture("editor-pixel-car")
     }
 
+    @MainActor func testRainfireThemeLoadsFromRemoteCatalogAndOpensInEditor() {
+        let app = XCUIApplication()
+        app.launchArguments = ["-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
+        app.launch()
+        let start = app.buttons["startExploring"]
+        if start.waitForExistence(timeout: 3) { start.tap() }
+        let filter = app.segmentedControls["appearanceFilter"]
+        XCTAssertTrue(filter.waitForExistence(timeout: 5))
+        filter.buttons["Pixel"].tap()
+        let rainfire = app.buttons["theme.pixel-rainfire"]
+        XCTAssertTrue(rainfire.waitForExistence(timeout: 10))
+        rainfire.tap()
+        let preview = app.descendants(matching: .any)["scenePreview.pixel-rainfire"]
+        XCTAssertTrue(preview.waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts[
+            "Rain falls over a quiet island cabin while firelight, smoke and embers respond to your touch."
+        ].waitForExistence(timeout: 10))
+        capture("editor-pixel-rainfire")
+        let sceneCenter = preview.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.58))
+        sceneCenter.tap()
+        capture("editor-pixel-rainfire-after-tap")
+        let dragStart = preview.coordinate(withNormalizedOffset: CGVector(dx: 0.38, dy: 0.64))
+        let dragEnd = preview.coordinate(withNormalizedOffset: CGVector(dx: 0.62, dy: 0.48))
+        dragStart.press(forDuration: 0.2, thenDragTo: dragEnd)
+        XCTAssertTrue(preview.exists)
+        capture("editor-pixel-rainfire-after-drag")
+    }
+
     @MainActor func testPaywallLoadsProductsAndComplianceActions() {
         let app = XCUIApplication()
         app.launchArguments = ["-AppleLanguages", "(en)", "-AppleLocale", "en_US"]

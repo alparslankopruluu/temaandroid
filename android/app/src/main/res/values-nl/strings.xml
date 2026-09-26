@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">Annuleren</string>
+    <string name="action_close" formatted="false">Sluiten</string>
+    <string name="action_delete" formatted="false">Ontwerp verwijderen</string>
+    <string name="action_reset" formatted="false">Aanpassingen herstellen</string>
+    <string name="action_retry" formatted="false">Opnieuw proberen</string>
+    <string name="action_share" formatted="false">Delen</string>
+    <string name="action_skip" formatted="false">Overslaan</string>
+    <string name="action_undo" formatted="false">Ongedaan maken</string>
+    <string name="ad_cancelled" formatted="false">Advertentie geannuleerd. Probeer het opnieuw wanneer je wilt.</string>
+    <string name="ad_playing" formatted="false">Testadvertentie wordt afgespeeld…</string>
+    <string name="ad_testnotice" formatted="false">Ontwikkelvoorbeeld: dit simuleert een advertentie met beloning. Er wordt geen echte advertentie getoond of omzet gegenereerd.</string>
+    <string name="ad_watch" formatted="false">Test advertentie · ontgrendel één export</string>
+    <string name="audio_play" formatted="false">Scènegeluid afspelen</string>
+    <string name="audio_stop" formatted="false">Scènegeluid stoppen</string>
+    <string name="collection_cosmos" formatted="false">Andere werelden</string>
+    <string name="collection_nature" formatted="false">Rustige momenten</string>
+    <string name="collection_ocean" formatted="false">Onder water</string>
+    <string name="collection_vehicles" formatted="false">Onderweg</string>
+    <string name="discover_complete" formatted="false">De complete look</string>
+    <string name="discover_curated" formatted="false">Vind je volgende stijl</string>
+    <string name="discover_featured" formatted="false">GEMAAKT OM TE BEWEGEN</string>
+    <string name="discover_title" formatted="false">Maak het van jou.</string>
+    <string name="editor_advanced" formatted="false">Fijn afstellen</string>
+    <string name="editor_depth" formatted="false">Diepte</string>
+    <string name="editor_home" formatted="false">Beginscherm</string>
+    <string name="editor_interact" formatted="false">Raak aan of kantel om te ontdekken</string>
+    <string name="editor_lock" formatted="false">Toegangsscherm</string>
+    <string name="editor_motion" formatted="false">Beweging</string>
+    <string name="editor_particles" formatted="false">Deeltjes</string>
+    <string name="editor_preview" formatted="false">Voorbeeld</string>
+    <string name="editor_saveinstall" formatted="false">Bewaren en instellen</string>
+    <string name="editor_scoremode" formatted="false">Scoremodus</string>
+    <string name="editor_style" formatted="false">Kleursfeer</string>
+    <string name="editor_yourstyle" formatted="false">Jouw finishing touch</string>
+    <string name="editor_zoom" formatted="false">Bijsnijden</string>
+    <string name="export_description" formatted="false">Kies hoe je wilt bewaren.</string>
+    <string name="export_error_busy" formatted="false">Er wordt al iets geëxporteerd.</string>
+    <string name="export_error_cancelled" formatted="false">Export geannuleerd. Je ontgrendeling blijft beschikbaar.</string>
+    <string name="export_error_encoding" formatted="false">De animatie kon niet worden gemaakt. Probeer het opnieuw.</string>
+    <string name="export_error_permission" formatted="false">Sta in Instellingen het toevoegen van foto\'s toe om je achtergrond te bewaren.</string>
+    <string name="export_error_renderer" formatted="false">Deze scène kon niet worden weergegeven. Probeer een ander thema.</string>
+    <string name="export_error_storage" formatted="false">Er is onvoldoende vrije ruimte. Maak ruimte vrij en probeer het opnieuw.</string>
+    <string name="export_hint_livephoto" formatted="false">Een korte animatie voor je toegangsscherm</string>
+    <string name="export_hint_still" formatted="false">Een scherpe achtergrond voor elk scherm</string>
+    <string name="export_hint_video" formatted="false">Een clip van 3 seconden om te delen</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Bewaar in Foto\'s</string>
+    <string name="export_still" formatted="false">Stilstaand beeld</string>
+    <string name="export_success" formatted="false">Bewaard in Foto\'s</string>
+    <string name="export_title" formatted="false">Maak er je achtergrond van</string>
+    <string name="export_video" formatted="false">Video</string>
+    <string name="filter_all" formatted="false">Voor jou</string>
+    <string name="filter_pixel" formatted="false">Pixel</string>
+    <string name="filter_realistic" formatted="false">Realistisch</string>
+    <string name="hero_subtitle" formatted="false">Ontdek Middernachtrit</string>
+    <string name="hero_title" formatted="false">Een andere kijk
+op schermtijd.</string>
+    <string name="icon_0" formatted="false">Telefoon</string>
+    <string name="icon_1" formatted="false">Berichten</string>
+    <string name="icon_10" formatted="false">Kaarten</string>
+    <string name="icon_11" formatted="false">Weer</string>
+    <string name="icon_12" formatted="false">Notities</string>
+    <string name="icon_13" formatted="false">Herinneringen</string>
+    <string name="icon_14" formatted="false">Bestanden</string>
+    <string name="icon_15" formatted="false">Winkelen</string>
+    <string name="icon_16" formatted="false">Boeken</string>
+    <string name="icon_17" formatted="false">Gezondheid</string>
+    <string name="icon_18" formatted="false">Video</string>
+    <string name="icon_19" formatted="false">Recorder</string>
+    <string name="icon_2" formatted="false">Mail</string>
+    <string name="icon_20" formatted="false">Rekenmachine</string>
+    <string name="icon_21" formatted="false">Wereld</string>
+    <string name="icon_22" formatted="false">Woning</string>
+    <string name="icon_23" formatted="false">Favorieten</string>
+    <string name="icon_3" formatted="false">Browser</string>
+    <string name="icon_4" formatted="false">Camera</string>
+    <string name="icon_5" formatted="false">Foto\'s</string>
+    <string name="icon_6" formatted="false">Muziek</string>
+    <string name="icon_7" formatted="false">Instellingen</string>
+    <string name="icon_8" formatted="false">Kalender</string>
+    <string name="icon_9" formatted="false">Klok</string>
+    <string name="icons_error_export" formatted="false">Het iconenpakket kon niet worden geëxporteerd. Probeer het opnieuw.</string>
+    <string name="icons_export" formatted="false">Iconenpakket exporteren</string>
+    <string name="icons_share" formatted="false">Iconenpakket delen</string>
+    <string name="install_completed" formatted="false">Gemarkeerd als voltooid</string>
+    <string name="install_icons" formatted="false">Stel je iconen in</string>
+    <string name="install_icons_1" formatted="false">Exporteer het iconenpakket en bewaar de map in Bestanden. Kies het beeld voor de app die je wilt aanpassen.</string>
+    <string name="install_icons_2" formatted="false">Maak in Opdrachten de actie Open app aan en kies de app. Open het menu en kies Zet op beginscherm.</string>
+    <string name="install_icons_3" formatted="false">Tik op het icoon, kies je bewaarde beeld en geef het een naam. Tik op Voeg toe. Herhaal voor andere apps; de oorspronkelijke appiconen blijven ongewijzigd.</string>
+    <string name="install_intro" formatted="false">Een paar stappen. Een nieuwe look.</string>
+    <string name="install_manual" formatted="false">iOS regelt de laatste stap. Tik op elke stap wanneer je klaar bent; we onthouden je voortgang.</string>
+    <string name="install_mark" formatted="false">Tik wanneer je klaar bent</string>
+    <string name="install_title" formatted="false">Instellen</string>
+    <string name="install_wallpaper" formatted="false">Stel je achtergrond in</string>
+    <string name="install_wallpaper_1" formatted="false">Open Instellingen → Achtergrond → Voeg nieuwe achtergrond toe. Kies Foto\'s en selecteer het bewaarde beeld.</string>
+    <string name="install_wallpaper_2" formatted="false">Schakel beweging in voor een Live Photo als iOS die optie aanbiedt. Probeer een ruimtelijke scène bij een geschikt beeld. Pas de uitsnede en klok aan in de systeemeditor.</string>
+    <string name="install_wallpaper_3" formatted="false">Tik op Voeg toe en kies daarna Stel in als achtergrondpaar of pas je beginscherm aan. Activeer je telefoon om het resultaat te bekijken.</string>
+    <string name="install_widgets" formatted="false">Voeg je widgets toe</string>
+    <string name="install_widgets_1" formatted="false">Kies je widgetachtergrond in ScreenMotion. Houd een lege plek op het beginscherm ingedrukt.</string>
+    <string name="install_widgets_2" formatted="false">Tik op Wijzig → Voeg widget toe, zoek ScreenMotion, kies een formaat en tik op Voeg widget toe. Gebruik op oudere iOS-versies de knop +.</string>
+    <string name="install_widgets_3" formatted="false">Houd de widget ingedrukt → Wijzig widget om Foto, Klok en datum, Kalender of Collectie te kiezen. Widgets voor het toegangsscherm voeg je toe in de systeemeditor voor het toegangsscherm.</string>
+    <string name="legal_privacy" formatted="false">Privacybeleid</string>
+    <string name="legal_support" formatted="false">Ondersteuning</string>
+    <string name="legal_terms" formatted="false">Gebruiksvoorwaarden</string>
+    <string name="library_designs" formatted="false">Mijn ontwerpen</string>
+    <string name="library_empty" formatted="false">Ruimte voor je favorieten</string>
+    <string name="library_emptyhint" formatted="false">Bewaar een ontwerp of tik tijdens het ontdekken op een hartje. Daar begint je verzameling.</string>
+    <string name="library_favorite" formatted="false">Favoriet aan- of uitzetten</string>
+    <string name="library_favorites" formatted="false">Favorieten</string>
+    <string name="library_save" formatted="false">Ontwerp bewaren</string>
+    <string name="library_saved" formatted="false">Ontwerp bewaard</string>
+    <string name="library_subtitle" formatted="false">Al je favorieten. Helemaal van jou.</string>
+    <string name="package_icons" formatted="false">24 bijpassende iconen</string>
+    <string name="package_subtitle" formatted="false">Achtergronden, iconen en widgets. Perfect op elkaar afgestemd.</string>
+    <string name="package_widgets" formatted="false">Kleine details. Groot verschil.</string>
+    <string name="platform_detail" formatted="false">Aanraken en kantelen werken binnen ScreenMotion. Live Photos kunnen bewegen wanneer je het toegangsscherm activeert. iOS bepaalt welke beelden Live Photo-achtergronden of ruimtelijke scènes ondersteunen. Stel je achtergrond handmatig in via Instellingen; achtergronden op het beginscherm blijven stilstaan.</string>
+    <string name="platform_short" formatted="false">Hier interactief. Bewaar een Live Photo of stilstaand beeld als achtergrond.</string>
+    <string name="privacy_local" formatted="false">Je ontwerpen en favorieten blijven op dit apparaat. Deze versie gebruikt geen account, tracking-SDK of cloudupload.</string>
+    <string name="pro_active" formatted="false">Je hebt Pro</string>
+    <string name="pro_benefit_exports" formatted="false">Onbeperkt exporteren, zonder advertenties</string>
+    <string name="pro_benefit_packs" formatted="false">Bijpassende iconen en widgetstijlen</string>
+    <string name="pro_benefit_scenes" formatted="false">Elke scène en kleursfeer</string>
+    <string name="pro_continue" formatted="false">Doorgaan met Pro</string>
+    <string name="pro_monthly" formatted="false">Maandelijks</string>
+    <string name="pro_mostpopular" formatted="false">Meest populair</string>
+    <string name="pro_subtitle" formatted="false">Meer manieren om je telefoon eigen te maken.</string>
+    <string name="pro_terms" formatted="false">Het abonnement wordt automatisch verlengd voor de gekozen periode totdat je het opzegt in de App Store-instellingen.</string>
+    <string name="pro_testnotice" formatted="false">Lokale testversie. Aankopen gebruiken Xcode StoreKit-tests. Er wordt geen echt geld afgeschreven.</string>
+    <string name="pro_title" formatted="false">Elke wereld. Van jou.</string>
+    <string name="pro_unlock" formatted="false">Ontdek Pro</string>
+    <string name="pro_yearly" formatted="false">Jaarlijks</string>
+    <string name="purchase_failed" formatted="false">De aankoop kon niet worden voltooid. Probeer het opnieuw.</string>
+    <string name="purchase_none" formatted="false">Geen actief abonnement gevonden.</string>
+    <string name="purchase_pending" formatted="false">Je aankoop wacht op goedkeuring.</string>
+    <string name="purchase_restore" formatted="false">Aankopen herstellen</string>
+    <string name="purchase_restored" formatted="false">Je Pro-toegang is hersteld.</string>
+    <string name="purchase_unavailable" formatted="false">Testproducten zijn niet beschikbaar. Start de app vanuit Xcode met Products.storekit geselecteerd.</string>
+    <string name="purchase_working" formatted="false">Bezig…</string>
+    <string name="search_placeholder" formatted="false">Zoek een thema…</string>
+    <string name="search_title" formatted="false">Thema\'s zoeken</string>
+    <string name="settings_about" formatted="false">Goed om te weten</string>
+    <string name="settings_help" formatted="false">Maak het van jou</string>
+    <string name="settings_testbuild" formatted="false">Lokale ontwikkelversie · Live diensten zijn niet verbonden.</string>
+    <string name="settings_version" formatted="false">Versie</string>
+    <string name="style_cool" formatted="false">Koel</string>
+    <string name="style_original" formatted="false">Origineel</string>
+    <string name="style_warm" formatted="false">Warm</string>
+    <string name="tab_discover" formatted="false">Ontdekken</string>
+    <string name="tab_library" formatted="false">Bibliotheek</string>
+    <string name="tab_settings" formatted="false">Instellingen</string>
+    <string name="theme_airplane" formatted="false">In de wolken</string>
+    <string name="theme_alpine" formatted="false">Stil water</string>
+    <string name="theme_bicycle" formatted="false">Gouden kilometers</string>
+    <string name="theme_bus" formatted="false">Uitwaaien aan zee</string>
+    <string name="theme_forest" formatted="false">Het groen in</string>
+    <string name="theme_helicopter" formatted="false">Hoog boven alles</string>
+    <string name="theme_jellyfish" formatted="false">Oceaangloed</string>
+    <string name="theme_midnight" formatted="false">Middernachtrit</string>
+    <string name="theme_motorcycle" formatted="false">Na zonsondergang</string>
+    <string name="theme_nebula" formatted="false">Fluwelen heelal</string>
+    <string name="theme_orbit" formatted="false">Kleine astronaut</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">Pixelrit</string>
+    <string name="theme_pixel_forest" formatted="false">Pixelbosje</string>
+    <string name="theme_pixel_helicopter" formatted="false">Pixel zweven</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Pixel nachtrit</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">Hut in de regen</string>
+    <string name="theme_pixel_reef" formatted="false">Pixelrif</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">Pixel drift</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">Koraaltuin</string>
+    <string name="theme_spaceship" formatted="false">Nieuwe horizonnen</string>
+    <string name="theme_tank" formatted="false">Woestijnlegende</string>
+    <string name="theme_tractor" formatted="false">Oogstlicht</string>
+    <string name="theme_truck" formatted="false">De lange weg naar huis</string>
+    <string name="welcome_interact" formatted="false">Kantel je telefoon. Raak de scène aan.</string>
+    <string name="welcome_note" formatted="false">Geen account nodig. Voel je thuis.</string>
+    <string name="welcome_start" formatted="false">Vind mijn stijl</string>
+    <string name="welcome_subtitle" formatted="false">Levendige werelden, doordachte iconen en bijpassende widgets. Vind een stijl die bij je past.</string>
+    <string name="welcome_title" formatted="false">Jouw scherm.
+Een beetje meer jij.</string>
+    <string name="widget_calendar" formatted="false">Kalender</string>
+    <string name="widget_choose" formatted="false">Kies een thema in ScreenMotion</string>
+    <string name="widget_collection" formatted="false">Collectie</string>
+    <string name="widget_configuration" formatted="false">Pas je widget aan</string>
+    <string name="widget_configuration_description" formatted="false">Kies een indeling voor het in ScreenMotion geselecteerde thema.</string>
+    <string name="widget_date" formatted="false">Klok en datum</string>
+    <string name="widget_description" formatted="false">Je gekozen thema met een foto, klok, kalender of snelkoppeling naar de collectie.</string>
+    <string name="widget_error_artwork" formatted="false">De afbeelding van dit thema kon niet worden geladen.</string>
+    <string name="widget_error_group" formatted="false">Widgetdeling is niet beschikbaar. Controleer de App Group-ondertekening en probeer het opnieuw.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Collectie ontdekken</string>
+    <string name="widget_photo" formatted="false">Foto</string>
+    <string name="widget_select" formatted="false">Gebruik voor mijn widgets</string>
+    <string name="widget_selectionhint" formatted="false">Kies een achtergrond en voeg daarna een ScreenMotion-widget toe vanaf je beginscherm.</string>
+    <string name="widget_style" formatted="false">Stijl</string>
+    <string name="widget_theme" formatted="false">Widgetachtergrond</string>
+</resources>

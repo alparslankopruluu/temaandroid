@@ -12,7 +12,10 @@ struct ScenePreview: View {
 
     var body: some View {
         Group {
-            if theme.isPixel {
+            if theme.remoteScene != nil {
+                RemoteSceneSurface(theme: theme, configuration: configuration,
+                                   active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
+            } else if theme.isPixel {
                 PixelSceneSurface(theme: theme, configuration: configuration,
                                   active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
             } else {
@@ -107,6 +110,7 @@ enum SceneFrameRenderer {
 
     /// Decode before the frame loop, away from the main actor. False prevents a black export.
     static func prepare(theme: Theme) async -> Bool {
+        if theme.remoteScene != nil { return await RemoteSceneFrameRenderer.prepare(theme: theme) }
         if theme.isPixel { return await PixelFrameRenderer.prepare(theme: theme) }
         if preparedArtwork?.name == theme.artwork { return true }
         guard let image = await SceneArtwork.load(theme) else { return false }
@@ -115,6 +119,9 @@ enum SceneFrameRenderer {
     }
     /// Renders only artwork, never the simulated clock, controls, or status bar.
     static func image(theme: Theme, configuration: SceneConfiguration, size: CGSize, time: TimeInterval) -> UIImage? {
+        if theme.remoteScene != nil {
+            return RemoteSceneFrameRenderer.image(theme: theme, configuration: configuration, size: size, time: time)
+        }
         if theme.isPixel {
             return PixelFrameRenderer.image(theme: theme, configuration: configuration, size: size, time: time)
         }

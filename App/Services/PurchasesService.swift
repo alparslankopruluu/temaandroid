@@ -14,6 +14,7 @@ import StoreKit
     @ObservationIgnored private var localEntitlementOverride: Bool?
 #endif
     static let entitlement = "pro"
+    @ObservationIgnored private var identified = false
 
     init() {
         updates = Task { [weak self] in
@@ -26,6 +27,19 @@ import StoreKit
 
     deinit { updates?.cancel() }
 
+    func identifyAnonymousUser() async {
+        guard !identified else { return }
+        do {
+            let uid = try await AuthenticationService.shared.userID()
+            let result = try await Purchases.shared.logIn(uid)
+            identified = true
+            apply(result.customerInfo)
+        } catch {
+            AppTelemetry.record(.anonymousIdentity)
+            // Keep the existing anonymous RevenueCat purchase flow available during an auth outage.
+        }
+    }
+
     func load() async {
         do {
             async let customerInfo = Purchases.shared.customerInfo()
@@ -34,6 +48,7 @@ import StoreKit
             offeringAvailable = try await offerings.current != nil
             message = offeringAvailable || isPro ? nil : "purchase.unavailable"
         } catch {
+            AppTelemetry.record(.purchaseLoad)
             offeringAvailable = false
             message = "purchase.unavailable"
         }
@@ -43,11 +58,23 @@ import StoreKit
         guard !busy else { return }
         busy = true; defer { busy = false }
         do {
+            await identifyAnonymousUser()
             apply(try await Purchases.shared.restorePurchases())
+            AppTelemetry.log(.proRestoreCompleted)
             message = isPro ? "purchase.restored" : "purchase.none"
         } catch {
+            AppTelemetry.log(.proRestoreFailed)
             message = "purchase.failed"
         }
+    }
+
+    func purchase(_ package: Package) async throws -> Bool {
+        await identifyAnonymousUser()
+        let result = try await Purchases.shared.purchase(package: package)
+        guard !result.userCancelled else { return false }
+        apply(result.customerInfo)
+        if isPro { AppTelemetry.log(.proPurchaseCompleted) }
+        return isPro
     }
 
     func syncTransactions() async throws {

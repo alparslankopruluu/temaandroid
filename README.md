@@ -1,6 +1,7 @@
-# ScreenMotion iOS
+# ScreenMotion
 
-Native SwiftUI theme studio built with app-factory 4.5.0. iOS 17+, local-first; no account required.
+Native SwiftUI theme studio with a separate native Kotlin/Compose Android port. Both are
+local-first and require no account screen. Firebase silently creates an anonymous identity for purchase continuity. Debug builds connect to `screenmotion-dev`; release builds connect to `screenmotion-prod`. Analytics records allowlisted screen and funnel events, and Crashlytics records sanitized failures. Local Firebase SDK configurations are gitignored and required for builds. See [Firebase setup](docs/firebase-setup.md), [analytics](docs/playbooks/analytics.md) and [security model](docs/security-model.md).
 
 ## Run
 
@@ -12,14 +13,25 @@ python3 scripts/verify-content.py
 xcodebuild -project ScreenMotion.xcodeproj -scheme ScreenMotion -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' -parallel-testing-enabled NO test
 ```
 
+Android build, test and local AAB instructions are in [android/README.md](android/README.md).
+The Google Play app exists as `com.screenmotion.studio`; version `1.0` (code `1`) is published
+to Internal Testing, but no testers are assigned. The same earlier AAB is attached to a
+production draft. RevenueCat's Play app, products, entitlement and offering are configured.
+Code-2 predates the current Android M4 parity changes and must not be treated as the current
+parity build; these changes are local and require fresh release validation before another AAB
+can be considered. Its replacement upload key becomes valid on 2026-09-25 at 16:14 UTC. Play
+setup and RevenueCat service credentials remain release gates.
+
 ## Experience
 
 Discover → interactive preview → Save & set up. Three tabs keep the navigation simple. The editor supports style, motion, optional depth/particles/framing, undo and reset. Favorites, drafts and setup progress persist locally.
 
-16 original realistic artworks plus 6 in-app pixel worlds, four collections, 96 original exported icon glyphs, WidgetKit photo/date/calendar/collection styles. JPEG, paired Live Photo and three-second video exports use the matching scene renderer. Preview clocks and icons are excluded from exports. All 190 interface keys and permission text cover 22 locales. Pixel gyro, touch and optional score mode stay inside the editor. The yearly Pro option is selected by default and carries a localized Most Popular badge.
+M4 provides 16 realistic artworks plus 12 in-app pixel worlds, four collections, 96 original exported icon glyphs, and WidgetKit photo/date/calendar/collection styles. M5 adds validated schema-v2 Firebase-hosted themes with localized copy, original image layers, optional ambient audio, and safe animation, particle, lighting and interaction recipes. The Rainfire Cabin scene loops continuously and responds to touch, drag and device tilt while preserving editor scrolling; Reduce Motion and scene lifecycle pause animation. Preview and export use the same renderer. Audio plays only after the user taps its control and is not included in Live Photo or system wallpaper exports. Themes and artwork are public read-only static content; no account, Firestore, downloaded code or shader is introduced. JPEG, paired Live Photo and three-second video exports use the matching scene renderer. Preview clocks and icons are excluded from exports. All interface keys and permission text cover 22 locales. Per-design setup tracks the separately user-installed wallpaper, widget and icon steps. The yearly Pro option is selected by default and carries a localized Most Popular badge.
 
-Four starter scenes are free. Pro uses the RevenueCat SDK through `PurchasesService`; the native paywall reads the current offering and Apple's localized prices, defaults to yearly, exposes Restore, Terms and Privacy, and handles unavailable products with a bounded retry state. Rewarded access is a clearly labeled, cancellable local test provider. Failed exports retain the reward. App Store Connect prices are $6.99 monthly and $79.99 yearly with Apple-equivalent territory pricing. RevenueCat has matching App Store products, the `pro` entitlement and a current `default` offering. Local StoreKit purchase, expiration/revocation and paywall UI acceptance pass. Sandbox acceptance on a signed physical-device build remains a release gate. Production ads and Android remain later work.
+To author and validate themes, see [remote-content/README.md](remote-content/README.md) and run `python3 scripts/validate-remote-themes.py`. The checked-in version-2 manifest and cabin art are live on both ScreenMotion Firebase Hosting sites; both manifest and artwork endpoints were read back successfully. New catalog additions need a versioned Hosting deployment.
+
+Five starter scenes are free. Pro uses the RevenueCat SDK through `PurchasesService`; the native paywall reads the current offering and Apple's localized prices, defaults to yearly, exposes Restore, Terms and Privacy, and handles unavailable products with a bounded retry state. Rewarded access is a clearly labeled, cancellable debug-only test provider. Failed exports retain the reward. App Store Connect prices are $6.99 monthly and $79.99 yearly with Apple-equivalent territory pricing. RevenueCat has matching App Store and Play products attached to the `pro` entitlement and current `default` offering. Google Play has active monthly and yearly subscriptions at USD 6.99 and USD 79.99 with Play-derived regional prices. The Android public SDK key is supplied outside source at build time. The separate native Android parity lane is defined in [docs/android-parity.md](docs/android-parity.md), including a true Android live wallpaper and capability-gated Huawei support.
 
 ## Validation and limits
 
-See [verification](docs/verification.md), [feature registry](docs/features.md), and [artwork provenance](docs/artwork.md). App Store Connect app `6814078185` has valid build 4 attached to version 1.0. All 22 locales have four iPhone 6.7 and four 13-inch iPad store screenshots. Review submission `5d33748b-2692-444e-a52a-7d021d5a4d97` is `WAITING_FOR_REVIEW` with the app version, monthly/yearly subscriptions, and subscription group. That is not App Review approval. A successful paired-resource test is not proof that iOS accepts playback on the physical lock screen. Pixel and realistic motion are interactive inside the app; system wallpapers use Apple's supported still, Live Photo or video behaviors. Frame-rate targets are configured at 60/30 FPS, not yet measured on a physical device.
+See [verification](docs/verification.md), [feature registry](docs/features.md), and [artwork provenance](docs/artwork.md). App Store Connect readback on 2026-09-24 shows app `6814078185`, bundle `com.screenmotion.studio`, version 1.0.1 ready for sale, build 5 valid, and its review submission complete. Version 1.0.2 is in `PREPARE_FOR_SUBMISSION`; the signed build-6 archive and IPA are prepared locally but not uploaded, and no review submission is claimed. A successful paired-resource test is not proof that iOS accepts playback on the physical lock screen. Pixel and realistic scenes animate and respond inside the app; system wallpapers use Apple's supported still, Live Photo or video behaviors. Frame-rate targets are configured at 60/30 FPS, not yet measured on a physical device.

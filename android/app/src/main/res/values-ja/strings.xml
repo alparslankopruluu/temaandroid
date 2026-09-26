@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">キャンセル</string>
+    <string name="action_close" formatted="false">閉じる</string>
+    <string name="action_delete" formatted="false">デザインを削除</string>
+    <string name="action_reset" formatted="false">調整をリセット</string>
+    <string name="action_retry" formatted="false">もう一度試す</string>
+    <string name="action_share" formatted="false">共有</string>
+    <string name="action_skip" formatted="false">スキップ</string>
+    <string name="action_undo" formatted="false">元に戻す</string>
+    <string name="ad_cancelled" formatted="false">広告をキャンセルしました。いつでももう一度お試しいただけます。</string>
+    <string name="ad_playing" formatted="false">テスト広告を再生中…</string>
+    <string name="ad_testnotice" formatted="false">開発用プレビュー：リワード広告のシミュレーションです。実際の広告は表示されず、収益も発生しません。</string>
+    <string name="ad_watch" formatted="false">広告をテスト・1回の書き出しを解除</string>
+    <string name="audio_play" formatted="false">シーンの環境音を再生</string>
+    <string name="audio_stop" formatted="false">シーンの環境音を停止</string>
+    <string name="collection_cosmos" formatted="false">まだ見ぬ世界</string>
+    <string name="collection_nature" formatted="false">穏やかなひととき</string>
+    <string name="collection_ocean" formatted="false">水中の世界</string>
+    <string name="collection_vehicles" formatted="false">動き出す景色</string>
+    <string name="discover_complete" formatted="false">まるごと、おそろいに</string>
+    <string name="discover_curated" formatted="false">次のお気に入りを見つけよう</string>
+    <string name="discover_featured" formatted="false">動きを楽しむデザイン</string>
+    <string name="discover_title" formatted="false">あなたらしい画面に。</string>
+    <string name="editor_advanced" formatted="false">細かく調整</string>
+    <string name="editor_depth" formatted="false">奥行き</string>
+    <string name="editor_home" formatted="false">ホーム画面</string>
+    <string name="editor_interact" formatted="false">タッチや傾きで楽しもう</string>
+    <string name="editor_lock" formatted="false">ロック画面</string>
+    <string name="editor_motion" formatted="false">動き</string>
+    <string name="editor_particles" formatted="false">パーティクル</string>
+    <string name="editor_preview" formatted="false">プレビュー</string>
+    <string name="editor_saveinstall" formatted="false">保存して設定</string>
+    <string name="editor_scoremode" formatted="false">スコアモード</string>
+    <string name="editor_style" formatted="false">色の雰囲気</string>
+    <string name="editor_yourstyle" formatted="false">あなたらしい仕上げに</string>
+    <string name="editor_zoom" formatted="false">トリミング</string>
+    <string name="export_description" formatted="false">保存方法を選んでください。</string>
+    <string name="export_error_busy" formatted="false">別の書き出しが進行中です。</string>
+    <string name="export_error_cancelled" formatted="false">書き出しをキャンセルしました。獲得した書き出し権はそのまま利用できます。</string>
+    <string name="export_error_encoding" formatted="false">アニメーションを作成できませんでした。もう一度お試しください。</string>
+    <string name="export_error_permission" formatted="false">壁紙を保存するには、設定で写真の追加を許可してください。</string>
+    <string name="export_error_renderer" formatted="false">このシーンを描画できませんでした。別のテーマをお試しください。</string>
+    <string name="export_error_storage" formatted="false">空き容量が足りません。空き容量を増やしてから、もう一度お試しください。</string>
+    <string name="export_hint_livephoto" formatted="false">ロック画面用の短いアニメーション</string>
+    <string name="export_hint_still" formatted="false">どの画面にも映える鮮明な壁紙</string>
+    <string name="export_hint_video" formatted="false">共有できる3秒の動画</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">写真に保存</string>
+    <string name="export_still" formatted="false">静止画</string>
+    <string name="export_success" formatted="false">写真に保存しました</string>
+    <string name="export_title" formatted="false">あなたの壁紙にしよう</string>
+    <string name="export_video" formatted="false">動画</string>
+    <string name="filter_all" formatted="false">おすすめ</string>
+    <string name="filter_pixel" formatted="false">ピクセル</string>
+    <string name="filter_realistic" formatted="false">リアル</string>
+    <string name="hero_subtitle" formatted="false">ミッドナイトドライブを体験</string>
+    <string name="hero_title" formatted="false">画面を見る時間に、
+新しい楽しみを。</string>
+    <string name="icon_0" formatted="false">電話</string>
+    <string name="icon_1" formatted="false">メッセージ</string>
+    <string name="icon_10" formatted="false">マップ</string>
+    <string name="icon_11" formatted="false">天気</string>
+    <string name="icon_12" formatted="false">メモ</string>
+    <string name="icon_13" formatted="false">リマインダー</string>
+    <string name="icon_14" formatted="false">ファイル</string>
+    <string name="icon_15" formatted="false">買い物</string>
+    <string name="icon_16" formatted="false">ブック</string>
+    <string name="icon_17" formatted="false">ヘルスケア</string>
+    <string name="icon_18" formatted="false">動画</string>
+    <string name="icon_19" formatted="false">録音</string>
+    <string name="icon_2" formatted="false">メール</string>
+    <string name="icon_20" formatted="false">計算機</string>
+    <string name="icon_21" formatted="false">世界</string>
+    <string name="icon_22" formatted="false">ホーム</string>
+    <string name="icon_23" formatted="false">お気に入り</string>
+    <string name="icon_3" formatted="false">ブラウザ</string>
+    <string name="icon_4" formatted="false">カメラ</string>
+    <string name="icon_5" formatted="false">写真</string>
+    <string name="icon_6" formatted="false">ミュージック</string>
+    <string name="icon_7" formatted="false">設定</string>
+    <string name="icon_8" formatted="false">カレンダー</string>
+    <string name="icon_9" formatted="false">時計</string>
+    <string name="icons_error_export" formatted="false">アイコンパックを書き出せませんでした。もう一度お試しください。</string>
+    <string name="icons_export" formatted="false">アイコンパックを書き出す</string>
+    <string name="icons_share" formatted="false">アイコンパックを共有</string>
+    <string name="install_completed" formatted="false">完了として記録済み</string>
+    <string name="install_icons" formatted="false">アイコンを設定</string>
+    <string name="install_icons_1" formatted="false">アイコンパックを書き出し、フォルダを「ファイル」に保存します。変更したいアプリに使う画像を選んでください。</string>
+    <string name="install_icons_2" formatted="false">「ショートカット」で「アプリを開く」アクションを作成し、アプリを選びます。メニューを開き、「ホーム画面に追加」を選択してください。</string>
+    <string name="install_icons_3" formatted="false">アイコンをタップし、保存した画像を選んで名前を付け、「追加」をタップします。他のアプリも同じ手順で設定できます。元のアプリアイコンは変更されません。</string>
+    <string name="install_intro" formatted="false">少しの手順で、まったく新しいスタイルに。</string>
+    <string name="install_manual" formatted="false">最後の設定はiOSで行います。完了した手順をタップすると、進み具合を記録します。</string>
+    <string name="install_mark" formatted="false">終わったらタップ</string>
+    <string name="install_title" formatted="false">画面を設定しよう</string>
+    <string name="install_wallpaper" formatted="false">壁紙を設定</string>
+    <string name="install_wallpaper_1" formatted="false">設定 → 壁紙 → 新しい壁紙を追加を開きます。「写真」を選び、保存した画像を選択してください。</string>
+    <string name="install_wallpaper_2" formatted="false">Live Photoでは、iOSにオプションが表示される場合に動きを有効にします。対応する画像では空間シーンも試せます。システムの編集画面でトリミングと時計を調整してください。</string>
+    <string name="install_wallpaper_3" formatted="false">「追加」をタップし、「壁紙を両方に設定」を選ぶか、ホーム画面をカスタマイズします。スマホのスリープを解除して仕上がりを確認しましょう。</string>
+    <string name="install_widgets" formatted="false">ウィジェットを追加</string>
+    <string name="install_widgets_1" formatted="false">ScreenMotionでウィジェットの背景を選びます。ホーム画面の空いている場所を長押ししてください。</string>
+    <string name="install_widgets_2" formatted="false">編集 → ウィジェットを追加をタップし、ScreenMotionを探します。サイズを選び、「ウィジェットを追加」をタップしてください。古いiOSでは「＋」ボタンを使います。</string>
+    <string name="install_widgets_3" formatted="false">ウィジェットを長押し → ウィジェットを編集から、写真、時計と日付、カレンダー、コレクションを選びます。ロック画面のウィジェットは、iOSのロック画面編集で追加します。</string>
+    <string name="legal_privacy" formatted="false">プライバシーポリシー</string>
+    <string name="legal_support" formatted="false">サポート</string>
+    <string name="legal_terms" formatted="false">利用規約</string>
+    <string name="library_designs" formatted="false">マイデザイン</string>
+    <string name="library_empty" formatted="false">お気に入りを集めよう</string>
+    <string name="library_emptyhint" formatted="false">デザインを保存したり、気になるテーマのハートをタップしたり。ここからコレクションが始まります。</string>
+    <string name="library_favorite" formatted="false">お気に入りを切り替え</string>
+    <string name="library_favorites" formatted="false">お気に入り</string>
+    <string name="library_save" formatted="false">デザインを保存</string>
+    <string name="library_saved" formatted="false">デザインを保存しました</string>
+    <string name="library_subtitle" formatted="false">お気に入りを、あなたの手元に。</string>
+    <string name="package_icons" formatted="false">おそろいのアイコン24個</string>
+    <string name="package_subtitle" formatted="false">壁紙、アイコン、ウィジェット。すべて、おそろいに。</string>
+    <string name="package_widgets" formatted="false">小さなこだわりで、大きな変化。</string>
+    <string name="platform_detail" formatted="false">タッチや傾きの操作はScreenMotion内で動作します。Live Photoはロック画面をスリープ解除した際に動く場合があります。Live Photoの壁紙や空間シーンに対応する画像はiOSが判断します。設定から手動で壁紙を設定してください。ホーム画面の壁紙は静止画です。</string>
+    <string name="platform_short" formatted="false">ここでは触って楽しめます。壁紙にはLive Photoか静止画を保存しましょう。</string>
+    <string name="privacy_local" formatted="false">デザインとお気に入りは、このデバイスに保存されます。この版ではアカウント、トラッキングSDK、クラウドへのアップロードは使用しません。</string>
+    <string name="pro_active" formatted="false">Proを利用中です</string>
+    <string name="pro_benefit_exports" formatted="false">書き出し無制限、広告なし</string>
+    <string name="pro_benefit_packs" formatted="false">おそろいのアイコンとウィジェットスタイル</string>
+    <string name="pro_benefit_scenes" formatted="false">すべてのシーンと色の雰囲気</string>
+    <string name="pro_continue" formatted="false">Proで続ける</string>
+    <string name="pro_monthly" formatted="false">月額</string>
+    <string name="pro_mostpopular" formatted="false">一番人気</string>
+    <string name="pro_subtitle" formatted="false">スマホをもっと自分らしくする方法。</string>
+    <string name="pro_terms" formatted="false">サブスクリプションは、App Storeの設定で解約するまで、選択した期間ごとに自動更新されます。</string>
+    <string name="pro_testnotice" formatted="false">ローカルテスト版です。購入にはXcodeのStoreKitテストを使用します。実際の料金は請求されません。</string>
+    <string name="pro_title" formatted="false">すべての世界を、あなたに。</string>
+    <string name="pro_unlock" formatted="false">Proを見る</string>
+    <string name="pro_yearly" formatted="false">年額</string>
+    <string name="purchase_failed" formatted="false">購入を完了できませんでした。もう一度お試しください。</string>
+    <string name="purchase_none" formatted="false">有効なサブスクリプションが見つかりませんでした。</string>
+    <string name="purchase_pending" formatted="false">購入は承認待ちです。</string>
+    <string name="purchase_restore" formatted="false">購入を復元</string>
+    <string name="purchase_restored" formatted="false">Proの利用権を復元しました。</string>
+    <string name="purchase_unavailable" formatted="false">テスト商品を利用できません。XcodeでProducts.storekitを選択してアプリを起動してください。</string>
+    <string name="purchase_working" formatted="false">処理中…</string>
+    <string name="search_placeholder" formatted="false">テーマを探す…</string>
+    <string name="search_title" formatted="false">テーマを検索</string>
+    <string name="settings_about" formatted="false">知っておきたいこと</string>
+    <string name="settings_help" formatted="false">あなたらしく仕上げよう</string>
+    <string name="settings_testbuild" formatted="false">ローカル開発版・本番サービスには接続していません。</string>
+    <string name="settings_version" formatted="false">バージョン</string>
+    <string name="style_cool" formatted="false">クール</string>
+    <string name="style_original" formatted="false">オリジナル</string>
+    <string name="style_warm" formatted="false">ウォーム</string>
+    <string name="tab_discover" formatted="false">見つける</string>
+    <string name="tab_library" formatted="false">ライブラリ</string>
+    <string name="tab_settings" formatted="false">設定</string>
+    <string name="theme_airplane" formatted="false">雲の上で</string>
+    <string name="theme_alpine" formatted="false">静かな水辺</string>
+    <string name="theme_bicycle" formatted="false">黄金の道</string>
+    <string name="theme_bus" formatted="false">海辺への逃避行</string>
+    <string name="theme_forest" formatted="false">緑の中へ</string>
+    <string name="theme_helicopter" formatted="false">すべてを見渡して</string>
+    <string name="theme_jellyfish" formatted="false">海の輝き</string>
+    <string name="theme_midnight" formatted="false">ミッドナイトドライブ</string>
+    <string name="theme_motorcycle" formatted="false">夜のひととき</string>
+    <string name="theme_nebula" formatted="false">ビロードの宇宙</string>
+    <string name="theme_orbit" formatted="false">小さな宇宙飛行士</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">ピクセルドライブ</string>
+    <string name="theme_pixel_forest" formatted="false">ピクセルの森</string>
+    <string name="theme_pixel_helicopter" formatted="false">ピクセルホバー</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">ピクセルナイトライド</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">雨夜の焚き火小屋</string>
+    <string name="theme_pixel_reef" formatted="false">ピクセルリーフ</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">ピクセルドリフト</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">サンゴの庭</string>
+    <string name="theme_spaceship" formatted="false">新たな地平線</string>
+    <string name="theme_tank" formatted="false">砂漠の伝説</string>
+    <string name="theme_tractor" formatted="false">収穫の光</string>
+    <string name="theme_truck" formatted="false">長い帰り道</string>
+    <string name="welcome_interact" formatted="false">スマホを傾けて。シーンに触れて。</string>
+    <string name="welcome_note" formatted="false">アカウントは不要。気軽に楽しもう。</string>
+    <string name="welcome_start" formatted="false">自分のスタイルを探す</string>
+    <string name="welcome_subtitle" formatted="false">息づく世界、こだわりのアイコン、おそろいのウィジェット。自分にしっくりくるスタイルを見つけよう。</string>
+    <string name="welcome_title" formatted="false">あなたの画面を、
+もっとあなたらしく。</string>
+    <string name="widget_calendar" formatted="false">カレンダー</string>
+    <string name="widget_choose" formatted="false">ScreenMotionでテーマを選んでください</string>
+    <string name="widget_collection" formatted="false">コレクション</string>
+    <string name="widget_configuration" formatted="false">ウィジェットをカスタマイズ</string>
+    <string name="widget_configuration_description" formatted="false">ScreenMotionで選んだテーマのレイアウトを選択してください。</string>
+    <string name="widget_date" formatted="false">時計と日付</string>
+    <string name="widget_description" formatted="false">選んだテーマに、写真、時計、カレンダー、コレクションへのショートカットを組み合わせます。</string>
+    <string name="widget_error_artwork" formatted="false">このテーマの画像を読み込めませんでした。</string>
+    <string name="widget_error_group" formatted="false">ウィジェットとの共有を利用できません。App Groupの署名を確認し、もう一度お試しください。</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">コレクションを見る</string>
+    <string name="widget_photo" formatted="false">写真</string>
+    <string name="widget_select" formatted="false">ウィジェットに使う</string>
+    <string name="widget_selectionhint" formatted="false">背景を選び、ホーム画面からScreenMotionウィジェットを追加してください。</string>
+    <string name="widget_style" formatted="false">スタイル</string>
+    <string name="widget_theme" formatted="false">ウィジェットの背景</string>
+</resources>

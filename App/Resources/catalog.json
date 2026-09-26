@@ -248,6 +248,41 @@
       "symbol": "snowflake",
       "appearance": "pixel",
       "interaction": "snow"
+    },
+    {
+      "id": "pixel-rainfire",
+      "titleKey": "theme.pixel-rainfire",
+      "collection": "nature",
+      "artwork": "pixel-rainfire",
+      "isFree": false,
+      "symbol": "house.fill",
+      "appearance": "pixel",
+      "remoteScene": {
+        "layers": [
+          {
+            "asset": "artwork",
+            "parallax": 0.55,
+            "animation": "drift",
+            "amount": 0.25,
+            "period": 18
+          }
+        ],
+        "particles": [
+          { "preset": "rain", "count": 88, "speed": 0.8 },
+          { "preset": "ember", "count": 30, "speed": 1.1 },
+          { "preset": "smoke", "count": 12, "speed": 0.32 }
+        ],
+        "light": {
+          "x": 0.79,
+          "y": 0.36,
+          "color": "#FF8B37",
+          "radius": 0.18,
+          "flicker": 0.84,
+          "period": 1.1
+        },
+        "interaction": "emberBurst",
+        "ambientAudioAsset": null
+      }
     }
   ]
 }

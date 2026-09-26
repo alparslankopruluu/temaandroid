@@ -64,9 +64,11 @@ struct ExportView: View {
     }
     private func performExport() {
         error = nil
+        AppTelemetry.log(.exportStarted)
         task = Task {
             do {
                 exported = try await service.export(theme: theme, configuration: configuration, format: format)
+                AppTelemetry.log(.exportCompleted)
                 library.save(theme, configuration: configuration)
                 if format != .video {
                     library.markExported(.wallpaper, themeID: theme.id, configuration: configuration)
@@ -74,7 +76,11 @@ struct ExportView: View {
 #if DEBUG
                 if !theme.isFree && !purchases.isPro { library.consumeReward(theme.id) }
 #endif
-            } catch { self.error = error.localizedDescription }
+            } catch {
+                AppTelemetry.log(.exportFailed)
+                AppTelemetry.record(.export)
+                self.error = error.localizedDescription
+            }
         }
     }
 }

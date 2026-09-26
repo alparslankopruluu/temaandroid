@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">取消</string>
+    <string name="action_close" formatted="false">關閉</string>
+    <string name="action_delete" formatted="false">刪除設計</string>
+    <string name="action_reset" formatted="false">重設調整</string>
+    <string name="action_retry" formatted="false">再試一次</string>
+    <string name="action_share" formatted="false">分享</string>
+    <string name="action_skip" formatted="false">略過</string>
+    <string name="action_undo" formatted="false">還原</string>
+    <string name="ad_cancelled" formatted="false">已取消廣告，準備好時可再試。</string>
+    <string name="ad_playing" formatted="false">正在播放測試廣告…</string>
+    <string name="ad_testnotice" formatted="false">開發預覽：此功能模擬獎勵廣告，不會播放真實廣告或產生收益。</string>
+    <string name="ad_watch" formatted="false">測試廣告 · 解鎖一次匯出</string>
+    <string name="audio_play" formatted="false">播放場景環境音</string>
+    <string name="audio_stop" formatted="false">停止場景環境音</string>
+    <string name="collection_cosmos" formatted="false">異想宇宙</string>
+    <string name="collection_nature" formatted="false">慢享片刻</string>
+    <string name="collection_ocean" formatted="false">水下世界</string>
+    <string name="collection_vehicles" formatted="false">隨心馳騁</string>
+    <string name="discover_complete" formatted="false">完整搭配</string>
+    <string name="discover_curated" formatted="false">尋找下一個新風格</string>
+    <string name="discover_featured" formatted="false">為動態而生</string>
+    <string name="discover_title" formatted="false">打造你的風格。</string>
+    <string name="editor_advanced" formatted="false">微調</string>
+    <string name="editor_depth" formatted="false">景深</string>
+    <string name="editor_home" formatted="false">主畫面</string>
+    <string name="editor_interact" formatted="false">輕觸或傾斜以探索</string>
+    <string name="editor_lock" formatted="false">鎖定畫面</string>
+    <string name="editor_motion" formatted="false">動態</string>
+    <string name="editor_particles" formatted="false">粒子</string>
+    <string name="editor_preview" formatted="false">預覽</string>
+    <string name="editor_saveinstall" formatted="false">儲存並設定</string>
+    <string name="editor_scoremode" formatted="false">計分模式</string>
+    <string name="editor_style" formatted="false">色彩氛圍</string>
+    <string name="editor_yourstyle" formatted="false">加入你的巧思</string>
+    <string name="editor_zoom" formatted="false">裁切</string>
+    <string name="export_description" formatted="false">選擇儲存方式。</string>
+    <string name="export_error_busy" formatted="false">已有匯出作業正在進行。</string>
+    <string name="export_error_cancelled" formatted="false">已取消匯出，你的解鎖次數仍可使用。</string>
+    <string name="export_error_encoding" formatted="false">無法建立動畫，請再試一次。</string>
+    <string name="export_error_permission" formatted="false">請在「設定」中允許加入照片，以儲存背景圖片。</string>
+    <string name="export_error_renderer" formatted="false">無法繪製此場景，請嘗試其他主題。</string>
+    <string name="export_error_storage" formatted="false">儲存空間不足，請釋出空間後再試。</string>
+    <string name="export_hint_livephoto" formatted="false">用於鎖定畫面的短動畫</string>
+    <string name="export_hint_still" formatted="false">適合各種螢幕的清晰背景圖片</string>
+    <string name="export_hint_video" formatted="false">可分享的 3 秒短片</string>
+    <string name="export_livephoto" formatted="false">原況照片</string>
+    <string name="export_save" formatted="false">儲存至「照片」</string>
+    <string name="export_still" formatted="false">靜態圖片</string>
+    <string name="export_success" formatted="false">已儲存至「照片」</string>
+    <string name="export_title" formatted="false">設為你的背景圖片</string>
+    <string name="export_video" formatted="false">影片</string>
+    <string name="filter_all" formatted="false">為你推薦</string>
+    <string name="filter_pixel" formatted="false">像素</string>
+    <string name="filter_realistic" formatted="false">寫實</string>
+    <string name="hero_subtitle" formatted="false">邂逅午夜馳騁</string>
+    <string name="hero_title" formatted="false">螢幕時光，
+從此不一樣。</string>
+    <string name="icon_0" formatted="false">電話</string>
+    <string name="icon_1" formatted="false">訊息</string>
+    <string name="icon_10" formatted="false">地圖</string>
+    <string name="icon_11" formatted="false">天氣</string>
+    <string name="icon_12" formatted="false">備忘錄</string>
+    <string name="icon_13" formatted="false">提醒事項</string>
+    <string name="icon_14" formatted="false">檔案</string>
+    <string name="icon_15" formatted="false">購物</string>
+    <string name="icon_16" formatted="false">書籍</string>
+    <string name="icon_17" formatted="false">健康</string>
+    <string name="icon_18" formatted="false">影片</string>
+    <string name="icon_19" formatted="false">錄音機</string>
+    <string name="icon_2" formatted="false">郵件</string>
+    <string name="icon_20" formatted="false">計算機</string>
+    <string name="icon_21" formatted="false">世界</string>
+    <string name="icon_22" formatted="false">家庭</string>
+    <string name="icon_23" formatted="false">喜好項目</string>
+    <string name="icon_3" formatted="false">瀏覽器</string>
+    <string name="icon_4" formatted="false">相機</string>
+    <string name="icon_5" formatted="false">照片</string>
+    <string name="icon_6" formatted="false">音樂</string>
+    <string name="icon_7" formatted="false">設定</string>
+    <string name="icon_8" formatted="false">行事曆</string>
+    <string name="icon_9" formatted="false">時鐘</string>
+    <string name="icons_error_export" formatted="false">無法匯出圖像套組，請再試一次。</string>
+    <string name="icons_export" formatted="false">匯出圖像套組</string>
+    <string name="icons_share" formatted="false">分享圖像套組</string>
+    <string name="install_completed" formatted="false">已標記完成</string>
+    <string name="install_icons" formatted="false">設定圖像</string>
+    <string name="install_icons_1" formatted="false">匯出圖像套組並將資料夾儲存至「檔案」。選擇要自訂之 App 的圖片。</string>
+    <string name="install_icons_2" formatted="false">在「捷徑」中建立「打開 App」動作並選擇 App。開啟選單，選取「加入主畫面」。</string>
+    <string name="install_icons_3" formatted="false">點按圖像、選擇已儲存的圖片並命名，再點按「加入」。其他 App 可重複此操作，原有 App 圖像不會改變。</string>
+    <string name="install_intro" formatted="false">簡單幾步，煥然一新。</string>
+    <string name="install_manual" formatted="false">最後設定由 iOS 完成。完成各步驟後請點按標記，我們會記住你的進度。</string>
+    <string name="install_mark" formatted="false">完成後點按</string>
+    <string name="install_title" formatted="false">開始設定</string>
+    <string name="install_wallpaper" formatted="false">設定背景圖片</string>
+    <string name="install_wallpaper_1" formatted="false">開啟「設定」→「背景圖片」→「加入新的背景圖片」。選擇「照片」，再選取已儲存的圖片。</string>
+    <string name="install_wallpaper_2" formatted="false">若是原況照片，請在 iOS 提供選項時啟用動態。符合資格的圖片可嘗試空間場景。在系統編輯器中調整裁切與時鐘。</string>
+    <string name="install_wallpaper_3" formatted="false">點按「加入」，再選擇「設為背景圖片組合」或自訂主畫面。喚醒手機確認效果。</string>
+    <string name="install_widgets" formatted="false">加入小工具</string>
+    <string name="install_widgets_1" formatted="false">在 ScreenMotion 選擇小工具背景。在主畫面按住空白區域。</string>
+    <string name="install_widgets_2" formatted="false">點按「編輯」→「加入小工具」，找到 ScreenMotion、選擇尺寸，再點按「加入小工具」。舊版 iOS 請使用 + 按鈕。</string>
+    <string name="install_widgets_3" formatted="false">按住小工具→「編輯小工具」，選擇照片、時鐘與日期、行事曆或系列。鎖定畫面小工具需在系統鎖定畫面編輯器中加入。</string>
+    <string name="legal_privacy" formatted="false">隱私權政策</string>
+    <string name="legal_support" formatted="false">支援</string>
+    <string name="legal_terms" formatted="false">使用條款</string>
+    <string name="library_designs" formatted="false">我的設計</string>
+    <string name="library_empty" formatted="false">留給心愛風格的空間</string>
+    <string name="library_emptyhint" formatted="false">儲存設計，或在探索時點按愛心，開始你的收藏。</string>
+    <string name="library_favorite" formatted="false">切換喜好項目</string>
+    <string name="library_favorites" formatted="false">喜好項目</string>
+    <string name="library_save" formatted="false">儲存設計</string>
+    <string name="library_saved" formatted="false">設計已儲存</string>
+    <string name="library_subtitle" formatted="false">心愛的風格，專屬於你。</string>
+    <string name="package_icons" formatted="false">24 個配套圖像</string>
+    <string name="package_subtitle" formatted="false">背景圖片、圖像與小工具，完美搭配。</string>
+    <string name="package_widgets" formatted="false">小細節，大不同。</string>
+    <string name="platform_detail" formatted="false">觸控與傾斜互動僅適用於 ScreenMotion 內。喚醒鎖定畫面時，原況照片可播放動畫。是否支援原況照片背景圖片或空間場景由 iOS 決定。請在「設定」中手動設定背景圖片；主畫面背景圖片為靜態。</string>
+    <string name="platform_short" formatted="false">在此互動，將原況照片或靜態圖片儲存為背景圖片。</string>
+    <string name="privacy_local" formatted="false">你的設計與喜好項目保留於此裝置。本版本不使用帳號、追蹤 SDK 或雲端上傳。</string>
+    <string name="pro_active" formatted="false">你已啟用 Pro</string>
+    <string name="pro_benefit_exports" formatted="false">無限匯出，沒有廣告</string>
+    <string name="pro_benefit_packs" formatted="false">配套圖像與小工具樣式</string>
+    <string name="pro_benefit_scenes" formatted="false">所有場景與色彩氛圍</string>
+    <string name="pro_continue" formatted="false">繼續使用 Pro</string>
+    <string name="pro_monthly" formatted="false">每月</string>
+    <string name="pro_mostpopular" formatted="false">最受歡迎</string>
+    <string name="pro_subtitle" formatted="false">更多方式，讓手機展現你的風格。</string>
+    <string name="pro_terms" formatted="false">訂閱會按所選期間自動續訂，直到你在App Store設定中取消。</string>
+    <string name="pro_testnotice" formatted="false">本機測試版本。購買使用 Xcode StoreKit 測試，不會實際扣款。</string>
+    <string name="pro_title" formatted="false">每個世界，都屬於你。</string>
+    <string name="pro_unlock" formatted="false">探索 Pro</string>
+    <string name="pro_yearly" formatted="false">每年</string>
+    <string name="purchase_failed" formatted="false">無法完成購買，請再試一次。</string>
+    <string name="purchase_none" formatted="false">找不到有效訂閱。</string>
+    <string name="purchase_pending" formatted="false">你的購買正在等待核准。</string>
+    <string name="purchase_restore" formatted="false">回復購買項目</string>
+    <string name="purchase_restored" formatted="false">已回復你的 Pro 存取權。</string>
+    <string name="purchase_unavailable" formatted="false">測試商品無法使用。請在 Xcode 選取 Products.storekit 後執行 App。</string>
+    <string name="purchase_working" formatted="false">處理中…</string>
+    <string name="search_placeholder" formatted="false">尋找主題…</string>
+    <string name="search_title" formatted="false">搜尋主題</string>
+    <string name="settings_about" formatted="false">使用須知</string>
+    <string name="settings_help" formatted="false">打造你的風格</string>
+    <string name="settings_testbuild" formatted="false">本機開發版本 · 尚未連接正式服務。</string>
+    <string name="settings_version" formatted="false">版本</string>
+    <string name="style_cool" formatted="false">冷色</string>
+    <string name="style_original" formatted="false">原始</string>
+    <string name="style_warm" formatted="false">暖色</string>
+    <string name="tab_discover" formatted="false">探索</string>
+    <string name="tab_library" formatted="false">收藏庫</string>
+    <string name="tab_settings" formatted="false">設定</string>
+    <string name="theme_airplane" formatted="false">雲端漫步</string>
+    <string name="theme_alpine" formatted="false">靜謐湖水</string>
+    <string name="theme_bicycle" formatted="false">金色旅途</string>
+    <string name="theme_bus" formatted="false">海岸漫遊</string>
+    <string name="theme_forest" formatted="false">走進綠意</string>
+    <string name="theme_helicopter" formatted="false">凌空遠眺</string>
+    <string name="theme_jellyfish" formatted="false">海洋微光</string>
+    <string name="theme_midnight" formatted="false">午夜馳騁</string>
+    <string name="theme_motorcycle" formatted="false">夜幕之後</string>
+    <string name="theme_nebula" formatted="false">絲絨宇宙</string>
+    <string name="theme_orbit" formatted="false">小小太空人</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">像素馳騁</string>
+    <string name="theme_pixel_forest" formatted="false">像素林間</string>
+    <string name="theme_pixel_helicopter" formatted="false">像素懸停</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">像素夜騎</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">雨夜火光小屋</string>
+    <string name="theme_pixel_reef" formatted="false">像素珊瑚</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">像素漂流</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">珊瑚花園</string>
+    <string name="theme_spaceship" formatted="false">全新地平線</string>
+    <string name="theme_tank" formatted="false">沙漠傳奇</string>
+    <string name="theme_tractor" formatted="false">豐收微光</string>
+    <string name="theme_truck" formatted="false">漫漫歸途</string>
+    <string name="welcome_interact" formatted="false">傾斜手機，輕觸場景。</string>
+    <string name="welcome_note" formatted="false">無須帳號，隨心探索。</string>
+    <string name="welcome_start" formatted="false">尋找我的風格</string>
+    <string name="welcome_subtitle" formatted="false">靈動世界、精緻圖像與配套小工具。找到屬於你的風格。</string>
+    <string name="welcome_title" formatted="false">你的螢幕，
+更像你一點。</string>
+    <string name="widget_calendar" formatted="false">行事曆</string>
+    <string name="widget_choose" formatted="false">在 ScreenMotion 選擇主題</string>
+    <string name="widget_collection" formatted="false">系列</string>
+    <string name="widget_configuration" formatted="false">自訂小工具</string>
+    <string name="widget_configuration_description" formatted="false">為 ScreenMotion 中選取的主題選擇版面。</string>
+    <string name="widget_date" formatted="false">時鐘與日期</string>
+    <string name="widget_description" formatted="false">你的主題，搭配照片、時鐘、行事曆或系列捷徑。</string>
+    <string name="widget_error_artwork" formatted="false">無法載入此主題的圖片。</string>
+    <string name="widget_error_group" formatted="false">無法共享小工具資料，請檢查 App Group 簽署設定後再試。</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">探索系列</string>
+    <string name="widget_photo" formatted="false">照片</string>
+    <string name="widget_select" formatted="false">用於我的小工具</string>
+    <string name="widget_selectionhint" formatted="false">先選擇背景，再從主畫面加入 ScreenMotion 小工具。</string>
+    <string name="widget_style" formatted="false">樣式</string>
+    <string name="widget_theme" formatted="false">小工具背景</string>
+</resources>

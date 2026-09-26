@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">취소</string>
+    <string name="action_close" formatted="false">닫기</string>
+    <string name="action_delete" formatted="false">디자인 삭제</string>
+    <string name="action_reset" formatted="false">조정 초기화</string>
+    <string name="action_retry" formatted="false">다시 시도</string>
+    <string name="action_share" formatted="false">공유</string>
+    <string name="action_skip" formatted="false">건너뛰기</string>
+    <string name="action_undo" formatted="false">실행 취소</string>
+    <string name="ad_cancelled" formatted="false">광고를 취소했습니다. 준비되면 언제든 다시 시도할 수 있습니다.</string>
+    <string name="ad_playing" formatted="false">테스트 광고 재생 중…</string>
+    <string name="ad_testnotice" formatted="false">개발 미리보기: 보상형 광고를 시뮬레이션합니다. 실제 광고는 표시되지 않으며 수익도 발생하지 않습니다.</string>
+    <string name="ad_watch" formatted="false">광고 테스트 · 내보내기 1회 해제</string>
+    <string name="audio_play" formatted="false">장면 분위기 소리 재생</string>
+    <string name="audio_stop" formatted="false">장면 분위기 소리 중지</string>
+    <string name="collection_cosmos" formatted="false">다른 세계</string>
+    <string name="collection_nature" formatted="false">고요한 순간</string>
+    <string name="collection_ocean" formatted="false">물속 세상</string>
+    <string name="collection_vehicles" formatted="false">길 위에서</string>
+    <string name="discover_complete" formatted="false">하나로 어우러진 스타일</string>
+    <string name="discover_curated" formatted="false">새로운 스타일을 찾아보세요</string>
+    <string name="discover_featured" formatted="false">움직임을 담은 디자인</string>
+    <string name="discover_title" formatted="false">나를 닮은 화면.</string>
+    <string name="editor_advanced" formatted="false">세부 조정</string>
+    <string name="editor_depth" formatted="false">깊이</string>
+    <string name="editor_home" formatted="false">홈 화면</string>
+    <string name="editor_interact" formatted="false">터치하거나 기울여 둘러보세요</string>
+    <string name="editor_lock" formatted="false">잠금 화면</string>
+    <string name="editor_motion" formatted="false">움직임</string>
+    <string name="editor_particles" formatted="false">입자</string>
+    <string name="editor_preview" formatted="false">미리보기</string>
+    <string name="editor_saveinstall" formatted="false">저장 및 설정</string>
+    <string name="editor_scoremode" formatted="false">점수 모드</string>
+    <string name="editor_style" formatted="false">색감</string>
+    <string name="editor_yourstyle" formatted="false">나만의 마무리</string>
+    <string name="editor_zoom" formatted="false">자르기</string>
+    <string name="export_description" formatted="false">저장할 형식을 선택하세요.</string>
+    <string name="export_error_busy" formatted="false">이미 내보내기가 진행 중입니다.</string>
+    <string name="export_error_cancelled" formatted="false">내보내기를 취소했습니다. 잠금 해제한 내보내기 권한은 그대로 사용할 수 있습니다.</string>
+    <string name="export_error_encoding" formatted="false">애니메이션을 만들 수 없습니다. 다시 시도해 주세요.</string>
+    <string name="export_error_permission" formatted="false">배경화면을 저장하려면 설정에서 사진 추가를 허용해 주세요.</string>
+    <string name="export_error_renderer" formatted="false">이 장면을 렌더링할 수 없습니다. 다른 테마를 시도해 주세요.</string>
+    <string name="export_error_storage" formatted="false">여유 공간이 부족합니다. 저장 공간을 확보한 후 다시 시도해 주세요.</string>
+    <string name="export_hint_livephoto" formatted="false">잠금 화면을 위한 짧은 애니메이션</string>
+    <string name="export_hint_still" formatted="false">어떤 화면에도 선명한 배경화면</string>
+    <string name="export_hint_video" formatted="false">공유할 수 있는 3초 동영상</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">사진에 저장</string>
+    <string name="export_still" formatted="false">정지 이미지</string>
+    <string name="export_success" formatted="false">사진에 저장했어요</string>
+    <string name="export_title" formatted="false">내 배경화면으로 만들기</string>
+    <string name="export_video" formatted="false">동영상</string>
+    <string name="filter_all" formatted="false">추천</string>
+    <string name="filter_pixel" formatted="false">픽셀</string>
+    <string name="filter_realistic" formatted="false">사실적</string>
+    <string name="hero_subtitle" formatted="false">미드나잇 드라이브를 만나보세요</string>
+    <string name="hero_title" formatted="false">화면을 보는 시간,
+새로운 즐거움.</string>
+    <string name="icon_0" formatted="false">전화</string>
+    <string name="icon_1" formatted="false">메시지</string>
+    <string name="icon_10" formatted="false">지도</string>
+    <string name="icon_11" formatted="false">날씨</string>
+    <string name="icon_12" formatted="false">메모</string>
+    <string name="icon_13" formatted="false">미리 알림</string>
+    <string name="icon_14" formatted="false">파일</string>
+    <string name="icon_15" formatted="false">쇼핑</string>
+    <string name="icon_16" formatted="false">도서</string>
+    <string name="icon_17" formatted="false">건강</string>
+    <string name="icon_18" formatted="false">동영상</string>
+    <string name="icon_19" formatted="false">녹음기</string>
+    <string name="icon_2" formatted="false">메일</string>
+    <string name="icon_20" formatted="false">계산기</string>
+    <string name="icon_21" formatted="false">세계</string>
+    <string name="icon_22" formatted="false">홈</string>
+    <string name="icon_23" formatted="false">즐겨찾기</string>
+    <string name="icon_3" formatted="false">브라우저</string>
+    <string name="icon_4" formatted="false">카메라</string>
+    <string name="icon_5" formatted="false">사진</string>
+    <string name="icon_6" formatted="false">음악</string>
+    <string name="icon_7" formatted="false">설정</string>
+    <string name="icon_8" formatted="false">캘린더</string>
+    <string name="icon_9" formatted="false">시계</string>
+    <string name="icons_error_export" formatted="false">아이콘 팩을 내보낼 수 없습니다. 다시 시도해 주세요.</string>
+    <string name="icons_export" formatted="false">아이콘 팩 내보내기</string>
+    <string name="icons_share" formatted="false">아이콘 팩 공유</string>
+    <string name="install_completed" formatted="false">완료로 표시됨</string>
+    <string name="install_icons" formatted="false">아이콘 설정</string>
+    <string name="install_icons_1" formatted="false">아이콘 팩을 내보내고 폴더를 파일에 저장하세요. 꾸미려는 앱에 사용할 이미지를 선택하세요.</string>
+    <string name="install_icons_2" formatted="false">단축어에서 앱 열기 동작을 만들고 앱을 선택하세요. 메뉴를 열어 홈 화면에 추가를 선택하세요.</string>
+    <string name="install_icons_3" formatted="false">아이콘을 누르고 저장한 이미지를 선택한 후 이름을 지정하세요. 추가를 누르세요. 다른 앱도 반복해 설정할 수 있으며 원래 앱 아이콘은 바뀌지 않습니다.</string>
+    <string name="install_intro" formatted="false">몇 단계만으로 완전히 새로운 스타일.</string>
+    <string name="install_manual" formatted="false">마지막 설정은 iOS에서 진행합니다. 각 단계를 마친 후 눌러주세요. 진행 상황을 기억해 둘게요.</string>
+    <string name="install_mark" formatted="false">완료하면 누르세요</string>
+    <string name="install_title" formatted="false">내 화면 설정하기</string>
+    <string name="install_wallpaper" formatted="false">배경화면 설정</string>
+    <string name="install_wallpaper_1" formatted="false">설정 → 배경화면 → 새로운 배경화면 추가를 여세요. 사진을 선택한 후 저장한 이미지를 고르세요.</string>
+    <string name="install_wallpaper_2" formatted="false">Live Photo는 iOS에서 옵션을 제공하는 경우 움직임을 켜세요. 지원되는 이미지에서는 공간 장면을 사용해 보세요. 시스템 편집기에서 자르기와 시계를 조정하세요.</string>
+    <string name="install_wallpaper_3" formatted="false">추가를 누른 다음 한 쌍의 배경화면으로 설정을 선택하거나 홈 화면을 사용자화하세요. 휴대폰을 깨워 결과를 확인하세요.</string>
+    <string name="install_widgets" formatted="false">위젯 추가</string>
+    <string name="install_widgets_1" formatted="false">ScreenMotion에서 위젯 배경을 선택하세요. 홈 화면의 빈 공간을 길게 누르세요.</string>
+    <string name="install_widgets_2" formatted="false">편집 → 위젯 추가를 누르고 ScreenMotion을 찾으세요. 크기를 고른 후 위젯 추가를 누르세요. 이전 iOS 버전에서는 + 버튼을 사용하세요.</string>
+    <string name="install_widgets_3" formatted="false">위젯을 길게 누르고 위젯 편집에서 사진, 시계 및 날짜, 캘린더 또는 컬렉션을 선택하세요. 잠금 화면 위젯은 시스템 잠금 화면 편집기에서 추가합니다.</string>
+    <string name="legal_privacy" formatted="false">개인정보 처리방침</string>
+    <string name="legal_support" formatted="false">지원</string>
+    <string name="legal_terms" formatted="false">이용 약관</string>
+    <string name="library_designs" formatted="false">내 디자인</string>
+    <string name="library_empty" formatted="false">즐겨찾기를 위한 공간</string>
+    <string name="library_emptyhint" formatted="false">디자인을 저장하거나 둘러보면서 하트를 눌러보세요. 나만의 컬렉션이 시작됩니다.</string>
+    <string name="library_favorite" formatted="false">즐겨찾기 전환</string>
+    <string name="library_favorites" formatted="false">즐겨찾기</string>
+    <string name="library_save" formatted="false">디자인 저장</string>
+    <string name="library_saved" formatted="false">디자인을 저장했어요</string>
+    <string name="library_subtitle" formatted="false">좋아하는 모든 것을 나만의 공간에.</string>
+    <string name="package_icons" formatted="false">어울리는 아이콘 24개</string>
+    <string name="package_subtitle" formatted="false">배경화면, 아이콘, 위젯. 함께 어우러지도록.</string>
+    <string name="package_widgets" formatted="false">작은 디테일, 큰 변화.</string>
+    <string name="platform_detail" formatted="false">터치와 기울기 반응은 ScreenMotion 안에서 작동합니다. Live Photo는 잠금 화면을 깨울 때 움직일 수 있습니다. Live Photo 배경화면이나 공간 장면을 지원하는 이미지는 iOS가 결정합니다. 설정에서 직접 배경화면을 지정해 주세요. 홈 화면 배경은 정지 이미지로 표시됩니다.</string>
+    <string name="platform_short" formatted="false">여기서는 직접 반응해요. 배경화면은 Live Photo나 정지 이미지로 저장하세요.</string>
+    <string name="privacy_local" formatted="false">디자인과 즐겨찾기는 이 기기에만 저장됩니다. 이 버전은 계정, 추적 SDK 또는 클라우드 업로드를 사용하지 않습니다.</string>
+    <string name="pro_active" formatted="false">Pro를 이용 중이에요</string>
+    <string name="pro_benefit_exports" formatted="false">광고 없이 무제한 내보내기</string>
+    <string name="pro_benefit_packs" formatted="false">어울리는 아이콘과 위젯 스타일</string>
+    <string name="pro_benefit_scenes" formatted="false">모든 장면과 색감</string>
+    <string name="pro_continue" formatted="false">Pro로 계속하기</string>
+    <string name="pro_monthly" formatted="false">월간</string>
+    <string name="pro_mostpopular" formatted="false">가장 인기</string>
+    <string name="pro_subtitle" formatted="false">휴대폰을 더 나답게 만드는 다양한 방법.</string>
+    <string name="pro_terms" formatted="false">구독은 App Store 설정에서 취소할 때까지 선택한 기간마다 자동 갱신됩니다.</string>
+    <string name="pro_testnotice" formatted="false">로컬 테스트 버전입니다. 구매는 Xcode StoreKit 테스트를 사용하며 실제 요금은 청구되지 않습니다.</string>
+    <string name="pro_title" formatted="false">모든 세계를 내 것으로.</string>
+    <string name="pro_unlock" formatted="false">Pro 둘러보기</string>
+    <string name="pro_yearly" formatted="false">연간</string>
+    <string name="purchase_failed" formatted="false">구매를 완료할 수 없습니다. 다시 시도해 주세요.</string>
+    <string name="purchase_none" formatted="false">활성 구독을 찾을 수 없습니다.</string>
+    <string name="purchase_pending" formatted="false">구매 승인을 기다리고 있습니다.</string>
+    <string name="purchase_restore" formatted="false">구매 복원</string>
+    <string name="purchase_restored" formatted="false">Pro 이용 권한을 복원했습니다.</string>
+    <string name="purchase_unavailable" formatted="false">테스트 상품을 이용할 수 없습니다. Xcode에서 Products.storekit을 선택하고 앱을 실행해 주세요.</string>
+    <string name="purchase_working" formatted="false">처리 중…</string>
+    <string name="search_placeholder" formatted="false">테마 찾기…</string>
+    <string name="search_title" formatted="false">테마 검색</string>
+    <string name="settings_about" formatted="false">알아두면 좋아요</string>
+    <string name="settings_help" formatted="false">나답게 꾸미기</string>
+    <string name="settings_testbuild" formatted="false">로컬 개발 버전 · 실제 서비스는 연결되지 않았습니다.</string>
+    <string name="settings_version" formatted="false">버전</string>
+    <string name="style_cool" formatted="false">차갑게</string>
+    <string name="style_original" formatted="false">원본</string>
+    <string name="style_warm" formatted="false">따뜻하게</string>
+    <string name="tab_discover" formatted="false">둘러보기</string>
+    <string name="tab_library" formatted="false">보관함</string>
+    <string name="tab_settings" formatted="false">설정</string>
+    <string name="theme_airplane" formatted="false">구름 너머</string>
+    <string name="theme_alpine" formatted="false">잔잔한 물결</string>
+    <string name="theme_bicycle" formatted="false">황금빛 여정</string>
+    <string name="theme_bus" formatted="false">해안으로 떠나기</string>
+    <string name="theme_forest" formatted="false">초록 속으로</string>
+    <string name="theme_helicopter" formatted="false">모든 것 위에서</string>
+    <string name="theme_jellyfish" formatted="false">바다의 빛</string>
+    <string name="theme_midnight" formatted="false">미드나잇 드라이브</string>
+    <string name="theme_motorcycle" formatted="false">밤이 깊으면</string>
+    <string name="theme_nebula" formatted="false">벨벳 우주</string>
+    <string name="theme_orbit" formatted="false">작은 우주비행사</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">픽셀 드라이브</string>
+    <string name="theme_pixel_forest" formatted="false">픽셀 숲</string>
+    <string name="theme_pixel_helicopter" formatted="false">픽셀 호버</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">픽셀 나이트 라이드</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">빗속의 오두막</string>
+    <string name="theme_pixel_reef" formatted="false">픽셀 리프</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">픽셀 드리프트</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">산호 정원</string>
+    <string name="theme_spaceship" formatted="false">새로운 지평선</string>
+    <string name="theme_tank" formatted="false">사막의 전설</string>
+    <string name="theme_tractor" formatted="false">수확의 빛</string>
+    <string name="theme_truck" formatted="false">집으로 가는 긴 길</string>
+    <string name="welcome_interact" formatted="false">휴대폰을 기울이고, 장면을 터치해 보세요.</string>
+    <string name="welcome_note" formatted="false">계정은 필요 없어요. 편하게 둘러보세요.</string>
+    <string name="welcome_start" formatted="false">내 스타일 찾기</string>
+    <string name="welcome_subtitle" formatted="false">살아 숨 쉬는 세계, 세심한 아이콘, 어울리는 위젯. 나를 닮은 스타일을 찾아보세요.</string>
+    <string name="welcome_title" formatted="false">나의 화면.
+조금 더 나답게.</string>
+    <string name="widget_calendar" formatted="false">캘린더</string>
+    <string name="widget_choose" formatted="false">ScreenMotion에서 테마를 선택하세요</string>
+    <string name="widget_collection" formatted="false">컬렉션</string>
+    <string name="widget_configuration" formatted="false">위젯 꾸미기</string>
+    <string name="widget_configuration_description" formatted="false">ScreenMotion에서 선택한 테마의 레이아웃을 선택하세요.</string>
+    <string name="widget_date" formatted="false">시계 및 날짜</string>
+    <string name="widget_description" formatted="false">선택한 테마에 사진, 시계, 캘린더 또는 컬렉션 바로가기를 더하세요.</string>
+    <string name="widget_error_artwork" formatted="false">이 테마의 이미지를 불러올 수 없습니다.</string>
+    <string name="widget_error_group" formatted="false">위젯 공유를 이용할 수 없습니다. App Group 서명을 확인한 후 다시 시도해 주세요.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">컬렉션 둘러보기</string>
+    <string name="widget_photo" formatted="false">사진</string>
+    <string name="widget_select" formatted="false">내 위젯에 사용</string>
+    <string name="widget_selectionhint" formatted="false">배경을 고른 후 홈 화면에서 ScreenMotion 위젯을 추가하세요.</string>
+    <string name="widget_style" formatted="false">스타일</string>
+    <string name="widget_theme" formatted="false">위젯 배경</string>
+</resources>

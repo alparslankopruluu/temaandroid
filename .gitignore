@@ -1,6 +1,7 @@
 .DS_Store
 .factory/
 .factory/context/
+.firebase/
 .asc/artifacts/
 .asc/config.json
 *.p8

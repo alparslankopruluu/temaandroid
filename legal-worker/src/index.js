@@ -1,17 +1,19 @@
 const pages = {
   privacy: {
     title: "Privacy Policy",
-    updated: "September 20, 2026",
+    updated: "September 26, 2026",
     content: `
       <p>ScreenMotion is designed to work without an account. Your saved designs, favorites, installation progress, and theme choices remain on your device and are removed when you delete the app.</p>
       <h2>Photos</h2>
       <p>ScreenMotion requests add-only access to Photos solely when you choose to save a wallpaper, video, or Live Photo. It does not read or upload your photo library.</p>
       <h2>Purchases</h2>
       <p>Subscriptions are processed by Apple. RevenueCat helps ScreenMotion load available plans, validate purchase status, and restore access. RevenueCat may process an anonymous app user identifier, purchase and entitlement information, device and app diagnostics, and country or storefront information needed to provide these services. ScreenMotion does not sell this data or use it for cross-app tracking.</p>
+      <h2>Firebase</h2>
+      <p>New app versions may create a silent anonymous Firebase identity to keep subscription access consistent; that identifier is linked to RevenueCat. Firebase Analytics records app interactions such as onboarding, editing, exporting, and paywall use without sending design names or files. Firebase Crashlytics receives crash reports and limited diagnostic codes. Google processes this information for ScreenMotion as a service provider. No account screen is required.</p>
       <h2>Tracking and advertising</h2>
       <p>ScreenMotion does not request tracking permission, build advertising profiles, or include third-party advertising in the production app.</p>
       <h2>Data retention and choices</h2>
-      <p>Local app data remains until you remove it or delete the app. Apple and RevenueCat retain purchase records under their own legal and operational requirements. You can manage or cancel subscriptions in your Apple ID subscription settings and request purchase support from Apple.</p>
+      <p>Local app data remains until you remove it or delete the app. Apple, RevenueCat, and Google retain purchase, identity, analytics, and diagnostic records under their own legal and operational requirements. You can manage or cancel subscriptions in your Apple ID subscription settings and request data deletion through ScreenMotion support.</p>
       <h2>Children</h2>
       <p>ScreenMotion is a general-audience personalization app and does not knowingly collect personal information from children.</p>
       <h2>Changes</h2>

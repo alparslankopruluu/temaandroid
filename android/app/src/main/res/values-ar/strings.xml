@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">إلغاء</string>
+    <string name="action_close" formatted="false">إغلاق</string>
+    <string name="action_delete" formatted="false">حذف التصميم</string>
+    <string name="action_reset" formatted="false">إعادة ضبط التعديلات</string>
+    <string name="action_retry" formatted="false">حاول مجددًا</string>
+    <string name="action_share" formatted="false">مشاركة</string>
+    <string name="action_skip" formatted="false">تخطَّ</string>
+    <string name="action_undo" formatted="false">تراجع</string>
+    <string name="ad_cancelled" formatted="false">تم إلغاء الإعلان. يمكنك المحاولة مجددًا عندما تكون جاهزًا.</string>
+    <string name="ad_playing" formatted="false">جارٍ تشغيل إعلان تجريبي…</string>
+    <string name="ad_testnotice" formatted="false">معاينة تطوير: هذه محاكاة لإعلان بمكافأة. لا يُعرض إعلان حقيقي ولا تُحقّق إيرادات.</string>
+    <string name="ad_watch" formatted="false">جرّب إعلانًا · افتح تصديرًا واحدًا</string>
+    <string name="audio_play" formatted="false">تشغيل صوت المشهد</string>
+    <string name="audio_stop" formatted="false">إيقاف صوت المشهد</string>
+    <string name="collection_cosmos" formatted="false">عوالم أخرى</string>
+    <string name="collection_nature" formatted="false">لحظات هادئة</string>
+    <string name="collection_ocean" formatted="false">تحت الماء</string>
+    <string name="collection_vehicles" formatted="false">على الطريق</string>
+    <string name="discover_complete" formatted="false">إطلالة متكاملة</string>
+    <string name="discover_curated" formatted="false">اعثر على إطلالتك التالية</string>
+    <string name="discover_featured" formatted="false">صُمّمت لتتحرّك</string>
+    <string name="discover_title" formatted="false">اجعلها تعبّر عنك.</string>
+    <string name="editor_advanced" formatted="false">ضبط دقيق</string>
+    <string name="editor_depth" formatted="false">العمق</string>
+    <string name="editor_home" formatted="false">الشاشة الرئيسية</string>
+    <string name="editor_interact" formatted="false">المس أو أمِل للاستكشاف</string>
+    <string name="editor_lock" formatted="false">شاشة القفل</string>
+    <string name="editor_motion" formatted="false">الحركة</string>
+    <string name="editor_particles" formatted="false">الجزيئات</string>
+    <string name="editor_preview" formatted="false">معاينة</string>
+    <string name="editor_saveinstall" formatted="false">حفظ وإعداد</string>
+    <string name="editor_scoremode" formatted="false">وضع النقاط</string>
+    <string name="editor_style" formatted="false">طابع الألوان</string>
+    <string name="editor_yourstyle" formatted="false">لمستك الأخيرة</string>
+    <string name="editor_zoom" formatted="false">الاقتصاص</string>
+    <string name="export_description" formatted="false">اختر طريقة الحفظ.</string>
+    <string name="export_error_busy" formatted="false">هناك عملية تصدير قيد التنفيذ بالفعل.</string>
+    <string name="export_error_cancelled" formatted="false">تم إلغاء التصدير. لا يزال حق التصدير الذي فتحته متاحًا.</string>
+    <string name="export_error_encoding" formatted="false">تعذّر إنشاء الحركة. حاول مجددًا.</string>
+    <string name="export_error_permission" formatted="false">اسمح بإضافة الصور من الإعدادات لحفظ خلفيتك.</string>
+    <string name="export_error_renderer" formatted="false">تعذّر عرض هذا المشهد. جرّب سمة أخرى.</string>
+    <string name="export_error_storage" formatted="false">المساحة المتوفرة غير كافية. أفرغ بعض المساحة ثم حاول مجددًا.</string>
+    <string name="export_hint_livephoto" formatted="false">حركة قصيرة لشاشة القفل</string>
+    <string name="export_hint_still" formatted="false">خلفية واضحة تناسب أي شاشة</string>
+    <string name="export_hint_video" formatted="false">مقطع مدته 3 ثوانٍ للمشاركة</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">حفظ في الصور</string>
+    <string name="export_still" formatted="false">صورة ثابتة</string>
+    <string name="export_success" formatted="false">تم الحفظ في الصور</string>
+    <string name="export_title" formatted="false">اجعلها خلفيتك</string>
+    <string name="export_video" formatted="false">فيديو</string>
+    <string name="filter_all" formatted="false">لك</string>
+    <string name="filter_pixel" formatted="false">بكسل</string>
+    <string name="filter_realistic" formatted="false">واقعي</string>
+    <string name="hero_subtitle" formatted="false">تعرّف على قيادة منتصف الليل</string>
+    <string name="hero_title" formatted="false">وقت شاشة
+بطابع مختلف.</string>
+    <string name="icon_0" formatted="false">الهاتف</string>
+    <string name="icon_1" formatted="false">الرسائل</string>
+    <string name="icon_10" formatted="false">الخرائط</string>
+    <string name="icon_11" formatted="false">الطقس</string>
+    <string name="icon_12" formatted="false">الملاحظات</string>
+    <string name="icon_13" formatted="false">التذكيرات</string>
+    <string name="icon_14" formatted="false">الملفات</string>
+    <string name="icon_15" formatted="false">التسوق</string>
+    <string name="icon_16" formatted="false">الكتب</string>
+    <string name="icon_17" formatted="false">الصحة</string>
+    <string name="icon_18" formatted="false">الفيديو</string>
+    <string name="icon_19" formatted="false">مسجّل الصوت</string>
+    <string name="icon_2" formatted="false">البريد</string>
+    <string name="icon_20" formatted="false">الآلة الحاسبة</string>
+    <string name="icon_21" formatted="false">العالم</string>
+    <string name="icon_22" formatted="false">المنزل</string>
+    <string name="icon_23" formatted="false">المفضلة</string>
+    <string name="icon_3" formatted="false">المتصفح</string>
+    <string name="icon_4" formatted="false">الكاميرا</string>
+    <string name="icon_5" formatted="false">الصور</string>
+    <string name="icon_6" formatted="false">الموسيقى</string>
+    <string name="icon_7" formatted="false">الإعدادات</string>
+    <string name="icon_8" formatted="false">التقويم</string>
+    <string name="icon_9" formatted="false">الساعة</string>
+    <string name="icons_error_export" formatted="false">تعذّر تصدير حزمة الأيقونات. حاول مجددًا.</string>
+    <string name="icons_export" formatted="false">تصدير حزمة الأيقونات</string>
+    <string name="icons_share" formatted="false">مشاركة حزمة الأيقونات</string>
+    <string name="install_completed" formatted="false">وُضعت علامة الاكتمال</string>
+    <string name="install_icons" formatted="false">إعداد أيقوناتك</string>
+    <string name="install_icons_1" formatted="false">صدّر حزمة الأيقونات واحفظ المجلد في الملفات. اختر صورة التطبيق الذي تريد تخصيصه.</string>
+    <string name="install_icons_2" formatted="false">في الاختصارات، أنشئ إجراء فتح تطبيق واختر التطبيق. افتح قائمته واختر إضافة إلى الشاشة الرئيسية.</string>
+    <string name="install_icons_3" formatted="false">اضغط على الأيقونة، واختر الصورة المحفوظة وسمّها. اضغط على إضافة. كرّر ذلك لباقي تطبيقاتك؛ لن تتغيّر أيقونات التطبيقات الأصلية.</string>
+    <string name="install_intro" formatted="false">خطوات قليلة. إطلالة جديدة بالكامل.</string>
+    <string name="install_manual" formatted="false">يتولّى iOS الإعداد النهائي. اضغط على كل خطوة عند إتمامها؛ وسنحفظ تقدّمك.</string>
+    <string name="install_mark" formatted="false">اضغط عند الانتهاء</string>
+    <string name="install_title" formatted="false">إعداد الإطلالة</string>
+    <string name="install_wallpaper" formatted="false">تعيين خلفيتك</string>
+    <string name="install_wallpaper_1" formatted="false">افتح الإعدادات ← خلفية الشاشة ← إضافة خلفية جديدة. اختر الصور ثم حدّد الصورة التي حفظتها.</string>
+    <string name="install_wallpaper_2" formatted="false">لصورة Live Photo، فعّل الحركة إذا أتاحها iOS. جرّب المشهد المكاني للصور المتوافقة. اضبط الاقتصاص والساعة في محرّر النظام.</string>
+    <string name="install_wallpaper_3" formatted="false">اضغط على إضافة، ثم اختر التعيين كزوج خلفيات أو خصّص شاشتك الرئيسية. أيقظ هاتفك للتحقّق من النتيجة.</string>
+    <string name="install_widgets" formatted="false">إضافة أدواتك</string>
+    <string name="install_widgets_1" formatted="false">اختر خلفية الأداة في ScreenMotion. المس مطولًا مساحة فارغة على الشاشة الرئيسية.</string>
+    <string name="install_widgets_2" formatted="false">اضغط على تعديل ← إضافة أداة، وابحث عن ScreenMotion، واختر حجمًا ثم اضغط على إضافة أداة. في إصدارات iOS الأقدم، استخدم زر +.</string>
+    <string name="install_widgets_3" formatted="false">المس الأداة مطولًا ← تعديل الأداة لاختيار صورة أو الساعة والتاريخ أو التقويم أو المجموعة. تُضاف أدوات شاشة القفل من محرّر شاشة القفل في النظام.</string>
+    <string name="legal_privacy" formatted="false">سياسة الخصوصية</string>
+    <string name="legal_support" formatted="false">الدعم</string>
+    <string name="legal_terms" formatted="false">شروط الاستخدام</string>
+    <string name="library_designs" formatted="false">تصاميمي</string>
+    <string name="library_empty" formatted="false">مساحة لمفضلاتك</string>
+    <string name="library_emptyhint" formatted="false">احفظ تصميمًا أو اضغط على القلب أثناء الاستكشاف. من هنا تبدأ مجموعتك.</string>
+    <string name="library_favorite" formatted="false">تغيير حالة المفضلة</string>
+    <string name="library_favorites" formatted="false">المفضلة</string>
+    <string name="library_save" formatted="false">حفظ التصميم</string>
+    <string name="library_saved" formatted="false">تم حفظ التصميم</string>
+    <string name="library_subtitle" formatted="false">كل مفضلاتك. بطابعك أنت.</string>
+    <string name="package_icons" formatted="false">24 أيقونة متناسقة</string>
+    <string name="package_subtitle" formatted="false">خلفيات وأيقونات وأدوات. صُمّمت لتتناسق.</string>
+    <string name="package_widgets" formatted="false">تفاصيل صغيرة. فرق كبير.</string>
+    <string name="platform_detail" formatted="false">يعمل التفاعل باللمس والإمالة داخل ScreenMotion. يمكن أن تتحرّك صور Live Photo عند إيقاظ شاشة القفل. يحدّد iOS الصور التي تدعم خلفيات Live Photo أو المشاهد المكانية. عيّن خلفيتك يدويًا من الإعدادات؛ وتبقى خلفية الشاشة الرئيسية ثابتة.</string>
+    <string name="platform_short" formatted="false">تفاعلية هنا. احفظ Live Photo أو صورة ثابتة لخلفيتك.</string>
+    <string name="privacy_local" formatted="false">تبقى تصاميمك ومفضلاتك على هذا الجهاز. لا تستخدم هذه النسخة حسابًا أو حزمة تتبّع أو رفعًا إلى السحابة.</string>
+    <string name="pro_active" formatted="false">أنت مشترك في Pro</string>
+    <string name="pro_benefit_exports" formatted="false">تصدير غير محدود، بلا إعلانات</string>
+    <string name="pro_benefit_packs" formatted="false">أيقونات وأنماط أدوات متناسقة</string>
+    <string name="pro_benefit_scenes" formatted="false">كل المشاهد وطُرز الألوان</string>
+    <string name="pro_continue" formatted="false">المتابعة مع Pro</string>
+    <string name="pro_monthly" formatted="false">شهري</string>
+    <string name="pro_mostpopular" formatted="false">الأكثر رواجًا</string>
+    <string name="pro_subtitle" formatted="false">طرق أكثر ليعبّر هاتفك عنك.</string>
+    <string name="pro_terms" formatted="false">يتجدّد الاشتراك تلقائيًا للفترة المحددة حتى يتم إلغاؤه من إعدادات App Store.</string>
+    <string name="pro_testnotice" formatted="false">نسخة اختبار محلية. تستخدم المشتريات اختبارات Xcode StoreKit. لن يتم تحصيل أي مبلغ حقيقي.</string>
+    <string name="pro_title" formatted="false">كل العوالم لك.</string>
+    <string name="pro_unlock" formatted="false">اكتشف Pro</string>
+    <string name="pro_yearly" formatted="false">سنوي</string>
+    <string name="purchase_failed" formatted="false">تعذّر إتمام الشراء. حاول مجددًا.</string>
+    <string name="purchase_none" formatted="false">لم يُعثر على اشتراك نشط.</string>
+    <string name="purchase_pending" formatted="false">عملية الشراء بانتظار الموافقة.</string>
+    <string name="purchase_restore" formatted="false">استعادة المشتريات</string>
+    <string name="purchase_restored" formatted="false">تمت استعادة وصولك إلى Pro.</string>
+    <string name="purchase_unavailable" formatted="false">منتجات الاختبار غير متاحة. شغّل التطبيق من Xcode مع تحديد Products.storekit.</string>
+    <string name="purchase_working" formatted="false">جارٍ التنفيذ…</string>
+    <string name="search_placeholder" formatted="false">ابحث عن سمة…</string>
+    <string name="search_title" formatted="false">البحث عن السمات</string>
+    <string name="settings_about" formatted="false">من المفيد معرفته</string>
+    <string name="settings_help" formatted="false">اجعلها تعبّر عنك</string>
+    <string name="settings_testbuild" formatted="false">نسخة تطوير محلية · الخدمات المباشرة غير متصلة.</string>
+    <string name="settings_version" formatted="false">الإصدار</string>
+    <string name="style_cool" formatted="false">بارد</string>
+    <string name="style_original" formatted="false">الأصلي</string>
+    <string name="style_warm" formatted="false">دافئ</string>
+    <string name="tab_discover" formatted="false">اكتشف</string>
+    <string name="tab_library" formatted="false">مكتبتي</string>
+    <string name="tab_settings" formatted="false">الإعدادات</string>
+    <string name="theme_airplane" formatted="false">بين السحاب</string>
+    <string name="theme_alpine" formatted="false">مياه ساكنة</string>
+    <string name="theme_bicycle" formatted="false">أميال ذهبية</string>
+    <string name="theme_bus" formatted="false">رحلة ساحلية</string>
+    <string name="theme_forest" formatted="false">إلى الخُضرة</string>
+    <string name="theme_helicopter" formatted="false">فوق كل شيء</string>
+    <string name="theme_jellyfish" formatted="false">وهج المحيط</string>
+    <string name="theme_midnight" formatted="false">قيادة منتصف الليل</string>
+    <string name="theme_motorcycle" formatted="false">بعد الغروب</string>
+    <string name="theme_nebula" formatted="false">كون مخملي</string>
+    <string name="theme_orbit" formatted="false">رائد الفضاء الصغير</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">قيادة بكسل</string>
+    <string name="theme_pixel_forest" formatted="false">أجمة بكسل</string>
+    <string name="theme_pixel_helicopter" formatted="false">تحليق بكسل</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">رحلة ليلية بكسل</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">كوخ المطر والنار</string>
+    <string name="theme_pixel_reef" formatted="false">شعاب بكسل</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">انحراف بكسل</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">حديقة المرجان</string>
+    <string name="theme_spaceship" formatted="false">آفاق جديدة</string>
+    <string name="theme_tank" formatted="false">أسطورة الصحراء</string>
+    <string name="theme_tractor" formatted="false">ضوء الحصاد</string>
+    <string name="theme_truck" formatted="false">طريق العودة الطويل</string>
+    <string name="welcome_interact" formatted="false">أمِل هاتفك. المس المشهد.</string>
+    <string name="welcome_note" formatted="false">لا حاجة إلى حساب. المكان مكانك.</string>
+    <string name="welcome_start" formatted="false">اعثر على إطلالتي</string>
+    <string name="welcome_subtitle" formatted="false">عوالم تنبض بالحياة وأيقونات أنيقة وأدوات متناسقة. اختر إطلالة تشبهك.</string>
+    <string name="welcome_title" formatted="false">شاشتك.
+أقرب إلى شخصيتك.</string>
+    <string name="widget_calendar" formatted="false">التقويم</string>
+    <string name="widget_choose" formatted="false">اختر سمة في ScreenMotion</string>
+    <string name="widget_collection" formatted="false">المجموعة</string>
+    <string name="widget_configuration" formatted="false">تخصيص أداتك</string>
+    <string name="widget_configuration_description" formatted="false">اختر تخطيطًا للسمة المحدّدة في ScreenMotion.</string>
+    <string name="widget_date" formatted="false">الساعة والتاريخ</string>
+    <string name="widget_description" formatted="false">سمتك المختارة مع صورة أو ساعة أو تقويم أو اختصار للمجموعة.</string>
+    <string name="widget_error_artwork" formatted="false">تعذّر تحميل صورة هذه السمة.</string>
+    <string name="widget_error_group" formatted="false">مشاركة الأدوات غير متاحة. تحقّق من إعدادات توقيع App Group ثم حاول مجددًا.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">استكشف المجموعة</string>
+    <string name="widget_photo" formatted="false">صورة</string>
+    <string name="widget_select" formatted="false">استخدامها لأدواتي</string>
+    <string name="widget_selectionhint" formatted="false">اختر خلفية ثم أضف أداة ScreenMotion من شاشتك الرئيسية.</string>
+    <string name="widget_style" formatted="false">النمط</string>
+    <string name="widget_theme" formatted="false">خلفية الأداة</string>
+</resources>

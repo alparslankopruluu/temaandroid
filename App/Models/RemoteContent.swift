@@ -8,6 +8,8 @@ struct RemoteContentManifest: Codable, Equatable, Sendable {
     let minimumAppVersion: String
     let assetBaseURL: URL
     let items: [RemoteContentItem]
+    /// Additive schema-v2 catalog entries. Older v1 manifests decode with no themes.
+    let themes: [RemoteThemeDefinition]?
 }
 
 struct RemoteContentItem: Codable, Equatable, Identifiable, Sendable {
@@ -18,6 +20,81 @@ struct RemoteContentItem: Codable, Equatable, Identifiable, Sendable {
     let accessPolicy: RemoteAccessPolicy
     /// Logical asset name to a relative, versioned path below `assetBaseURL`.
     let assets: [String: String]
+}
+
+/// A new theme is data, never downloaded executable code. Its renderer and interaction
+/// vocabulary are compiled into the app and deliberately small/allow-listed.
+struct RemoteThemeDefinition: Codable, Equatable, Identifiable, Sendable {
+    let id: String
+    let localizedText: [String: [String: String]]
+    let isVisible: Bool
+    let order: Int
+    let accessPolicy: RemoteAccessPolicy
+    let appearance: ThemeAppearance
+    let collection: ThemeCollection
+    let symbol: String
+    /// Logical asset name to a relative, versioned path below `assetBaseURL`.
+    let assets: [String: String]
+    let scene: RemoteSceneRecipe
+}
+
+struct RemoteSceneRecipe: Codable, Equatable, Hashable, Sendable {
+    /// Layers use matching full-canvas transparent images, ordered back to front.
+    let layers: [RemoteSceneLayer]
+    let particles: [RemoteParticleEmitter]?
+    let light: RemoteSceneLight?
+    let interaction: RemoteTouchResponse
+    let ambientAudioAsset: String?
+}
+
+struct RemoteSceneLight: Codable, Equatable, Hashable, Sendable {
+    let x: Double
+    let y: Double
+    let color: String
+    let radius: Double
+    let flicker: Double
+    let period: Double
+}
+
+struct RemoteSceneLayer: Codable, Equatable, Hashable, Sendable {
+    let asset: String
+    let parallax: Double
+    let animation: RemoteLayerAnimation
+    let amount: Double
+    let period: Double
+}
+
+enum RemoteLayerAnimation: String, Codable, CaseIterable, Hashable, Sendable {
+    case still
+    case sway
+    case drift
+    case flicker
+    case pulse
+}
+
+struct RemoteParticleEmitter: Codable, Equatable, Hashable, Sendable {
+    let preset: RemoteParticlePreset
+    let count: Int
+    let speed: Double
+}
+
+enum RemoteParticlePreset: String, Codable, CaseIterable, Hashable, Sendable {
+    case rain
+    case ember
+    case smoke
+    case firefly
+    case snow
+    case bubble
+    case stardust
+}
+
+enum RemoteTouchResponse: String, Codable, CaseIterable, Hashable, Sendable {
+    case none
+    case push
+    case ripple
+    case swirl
+    case emberBurst
+    case bubbleTrail
 }
 
 enum RemoteAccessPolicy: String, Codable, Equatable, Sendable {
@@ -38,6 +115,15 @@ enum RemoteAccessPolicy: String, Codable, Equatable, Sendable {
 struct ValidatedRemoteContent: Equatable, Sendable {
     let manifest: RemoteContentManifest
 
+    var remoteThemes: [RemoteThemeDefinition] {
+        (manifest.themes ?? [])
+            .filter(\.isVisible)
+            .sorted {
+                if $0.order == $1.order { return $0.id < $1.id }
+                return $0.order < $1.order
+            }
+    }
+
     var visibleItems: [RemoteContentItem] {
         manifest.items
             .filter(\.isVisible)
@@ -54,6 +140,14 @@ struct ValidatedRemoteContent: Equatable, Sendable {
     func assetURL(itemID: String, name: String) -> URL? {
         guard let item = manifest.items.first(where: { $0.id == itemID }),
               let path = item.assets[name] else {
+            return nil
+        }
+        return Self.safeAssetURL(baseURL: manifest.assetBaseURL, relativePath: path)
+    }
+
+    func assetURL(themeID: String, name: String) -> URL? {
+        guard let theme = (manifest.themes ?? []).first(where: { $0.id == themeID }),
+              let path = theme.assets[name] else {
             return nil
         }
         return Self.safeAssetURL(baseURL: manifest.assetBaseURL, relativePath: path)
@@ -105,4 +199,11 @@ enum RemoteContentValidationError: Error, Equatable, Sendable {
     case invalidItemID
     case invalidLocalizedText(itemID: String)
     case invalidAssetPath(itemID: String, name: String)
+    case manifestTooLarge
+    case tooManyThemes
+    case duplicateThemeID(String)
+    case invalidThemeID
+    case invalidThemeText(themeID: String)
+    case invalidThemeAssets(themeID: String)
+    case invalidSceneRecipe(themeID: String)
 }

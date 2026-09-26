@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Canlı duvar kağıdını uygula</string>
+    <string name="action_export_still">Duvar kağıdını kaydet</string>
+    <string name="action_export_video">3 saniyelik videoyu kaydet</string>
+    <string name="android_live_wallpaper_note">Desteklenen Android başlatıcılarda hareket ve dokunma devam eder.</string>
+    <string name="huawei_theme_note">Huawei tema kurulumu cihazın EMUI veya HarmonyOS özelliklerine bağlıdır.</string>
+    <string name="android_purchase_unavailable">Bu yerel derlemede Google Play ürünleri yapılandırılmadı.</string>
+    <string name="android_debug_purchase_note">Geliştirme önizlemesi: Pro kilidi yerel açılır ve gerçek ödeme alınmaz.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Bir sahne seçip Canlı duvar kâğıdını uygula\'ya dokun.</string>
+    <string name="android_install_wallpaper_2">Android önizlemesinde hareketi kontrol edip Duvar kâğıdı olarak ayarla\'ya dokun.</string>
+    <string name="android_install_wallpaper_3">Cihazın sunuyorsa Ana ekranı veya Ana ve kilit ekranını seç.</string>
+    <string name="android_install_icons_1">24 simgeli ZIP paketini dışa aktar ve dosya uygulamanda çıkar.</string>
+    <string name="android_install_icons_2">Başlatıcının veya tema uygulamanın simge özelleştirme ayarlarını aç.</string>
+    <string name="android_install_icons_3">Her PNG\'yi seç. Standart başlatıcılar kısayol veya uyumlu bir simge paketi başlatıcısı gerektirebilir.</string>
+    <string name="android_install_widgets_1">ScreenMotion\'da bir widget arka planı seç.</string>
+    <string name="android_install_widgets_2">Ana ekranda boş bir alana basılı tutup Widget\'lar\'a dokun.</string>
+    <string name="android_install_widgets_3">ScreenMotion\'ı bul; Fotoğraf, Tarih, Takvim veya Koleksiyon\'u ekleyip boyutlandır.</string>
+    <string name="action_cancel" formatted="false">Vazgeç</string>
+    <string name="action_close" formatted="false">Kapat</string>
+    <string name="action_delete" formatted="false">Tasarımı sil</string>
+    <string name="action_reset" formatted="false">Ayarları sıfırla</string>
+    <string name="action_retry" formatted="false">Tekrar dene</string>
+    <string name="action_share" formatted="false">Paylaş</string>
+    <string name="action_skip" formatted="false">Atla</string>
+    <string name="action_undo" formatted="false">Geri al</string>
+    <string name="ad_cancelled" formatted="false">Reklam iptal edildi. Hazır olduğunda tekrar deneyebilirsin.</string>
+    <string name="ad_playing" formatted="false">Test reklamı oynatılıyor…</string>
+    <string name="ad_testnotice" formatted="false">Geliştirme önizlemesi: ödüllü reklam simülasyonudur. Gerçek reklam gösterilmez ve gelir oluşmaz.</string>
+    <string name="ad_watch" formatted="false">Reklamı test et · bir kez dışa aktar</string>
+    <string name="audio_play" formatted="false">Sahne sesini çal</string>
+    <string name="audio_stop" formatted="false">Sahne sesini durdur</string>
+    <string name="collection_cosmos" formatted="false">Başka dünyalar</string>
+    <string name="collection_nature" formatted="false">Sakin anlar</string>
+    <string name="collection_ocean" formatted="false">Su altında</string>
+    <string name="collection_vehicles" formatted="false">Yollarda</string>
+    <string name="discover_complete" formatted="false">Bir bütün olarak senin</string>
+    <string name="discover_curated" formatted="false">Yeni görünümünü bul</string>
+    <string name="discover_featured" formatted="false">HAREKET İÇİN TASARLANDI</string>
+    <string name="discover_title" formatted="false">Ekranın seni yansıtsın.</string>
+    <string name="editor_advanced" formatted="false">İnce ayarlar</string>
+    <string name="editor_depth" formatted="false">Derinlik</string>
+    <string name="editor_home" formatted="false">Ana ekran</string>
+    <string name="editor_interact" formatted="false">Keşfetmek için dokun veya eğ</string>
+    <string name="editor_lock" formatted="false">Kilit ekranı</string>
+    <string name="editor_motion" formatted="false">Hareket</string>
+    <string name="editor_particles" formatted="false">Parçacıklar</string>
+    <string name="editor_preview" formatted="false">Önizleme</string>
+    <string name="editor_saveinstall" formatted="false">Kaydet ve kur</string>
+    <string name="editor_scoremode" formatted="false">Rekor modu</string>
+    <string name="editor_style" formatted="false">Renk havası</string>
+    <string name="editor_yourstyle" formatted="false">Son dokunuşun</string>
+    <string name="editor_zoom" formatted="false">Kadraj</string>
+    <string name="export_description" formatted="false">Nasıl kaydetmek istediğini seç.</string>
+    <string name="export_error_busy" formatted="false">Zaten bir dışa aktarma işlemi sürüyor.</string>
+    <string name="export_error_cancelled" formatted="false">Dışa aktarma iptal edildi. Açtığın kullanım hakkı hâlâ geçerli.</string>
+    <string name="export_error_encoding" formatted="false">Animasyon oluşturulamadı. Lütfen tekrar dene.</string>
+    <string name="export_error_permission" formatted="false">Duvar kâğıdını kaydetmek için Ayarlar’dan fotoğraf ekleme izni ver.</string>
+    <string name="export_error_renderer" formatted="false">Bu sahne oluşturulamadı. Lütfen başka bir tema dene.</string>
+    <string name="export_error_storage" formatted="false">Yeterli boş alan yok. Biraz yer açıp tekrar dene.</string>
+    <string name="export_hint_livephoto" formatted="false">Kilit ekranın için kısa bir animasyon</string>
+    <string name="export_hint_still" formatted="false">Her ekrana uygun, net bir duvar kâğıdı</string>
+    <string name="export_hint_video" formatted="false">Paylaşmak için 3 saniyelik video</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Fotoğraflar’a kaydet</string>
+    <string name="export_still" formatted="false">Sabit görsel</string>
+    <string name="export_success" formatted="false">Fotoğraflar’a kaydedildi</string>
+    <string name="export_title" formatted="false">Duvar kâğıdın olsun</string>
+    <string name="export_video" formatted="false">Video</string>
+    <string name="filter_all" formatted="false">Senin için</string>
+    <string name="filter_pixel" formatted="false">Pixel</string>
+    <string name="filter_realistic" formatted="false">Gerçekçi</string>
+    <string name="hero_subtitle" formatted="false">Gece Sürüşü ile tanış</string>
+    <string name="hero_title" formatted="false">Ekranına
+yeni bir his.</string>
+    <string name="icon_0" formatted="false">Telefon</string>
+    <string name="icon_1" formatted="false">Mesajlar</string>
+    <string name="icon_10" formatted="false">Harita</string>
+    <string name="icon_11" formatted="false">Hava Durumu</string>
+    <string name="icon_12" formatted="false">Notlar</string>
+    <string name="icon_13" formatted="false">Anımsatıcılar</string>
+    <string name="icon_14" formatted="false">Dosyalar</string>
+    <string name="icon_15" formatted="false">Alışveriş</string>
+    <string name="icon_16" formatted="false">Kitaplar</string>
+    <string name="icon_17" formatted="false">Sağlık</string>
+    <string name="icon_18" formatted="false">Video</string>
+    <string name="icon_19" formatted="false">Ses Kaydı</string>
+    <string name="icon_2" formatted="false">Mail</string>
+    <string name="icon_20" formatted="false">Hesap Makinesi</string>
+    <string name="icon_21" formatted="false">Dünya</string>
+    <string name="icon_22" formatted="false">Ev</string>
+    <string name="icon_23" formatted="false">Favoriler</string>
+    <string name="icon_3" formatted="false">Tarayıcı</string>
+    <string name="icon_4" formatted="false">Kamera</string>
+    <string name="icon_5" formatted="false">Fotoğraflar</string>
+    <string name="icon_6" formatted="false">Müzik</string>
+    <string name="icon_7" formatted="false">Ayarlar</string>
+    <string name="icon_8" formatted="false">Takvim</string>
+    <string name="icon_9" formatted="false">Saat</string>
+    <string name="icons_error_export" formatted="false">Simge paketi dışa aktarılamadı. Lütfen tekrar dene.</string>
+    <string name="icons_export" formatted="false">Simge paketini dışa aktar</string>
+    <string name="icons_share" formatted="false">Simge paketini paylaş</string>
+    <string name="install_completed" formatted="false">Tamamlandı olarak işaretlendi</string>
+    <string name="install_icons" formatted="false">Simgelerini kur</string>
+    <string name="install_icons_1" formatted="false">Simge paketini dışa aktar ve klasörü Dosyalar’a kaydet. Özelleştirmek istediğin uygulamanın görselini seç.</string>
+    <string name="install_icons_2" formatted="false">Kestirmeler’de Uygulamayı Aç eylemi oluştur ve uygulamayı seç. Menüsünü açıp Ana Ekrana Ekle’yi seç.</string>
+    <string name="install_icons_3" formatted="false">Simgeye dokun, kaydettiğin görseli seç ve ad ver. Ekle’ye dokun. Diğer uygulamalar için tekrarla; asıl uygulama simgeleri değişmez.</string>
+    <string name="install_intro" formatted="false">Birkaç adım. Yepyeni bir görünüm.</string>
+    <string name="install_manual" formatted="false">Son kurulumu iOS yapar. Tamamladığın her adıma dokun; ilerlemeni hatırlayacağız.</string>
+    <string name="install_mark" formatted="false">Bitirince dokun</string>
+    <string name="install_title" formatted="false">Görünümünü kur</string>
+    <string name="install_wallpaper" formatted="false">Duvar kâğıdını ayarla</string>
+    <string name="install_wallpaper_1" formatted="false">Ayarlar → Duvar Kâğıdı → Yeni Duvar Kâğıdı Ekle yolunu aç. Fotoğraflar’ı seç ve kaydettiğin görseli bul.</string>
+    <string name="install_wallpaper_2" formatted="false">Live Photo için iOS sunuyorsa hareketi aç. Uygun görsellerde Uzamsal Sahne’yi dene. Kadrajı ve saati sistem düzenleyicisinde ayarla.</string>
+    <string name="install_wallpaper_3" formatted="false">Ekle’ye dokun, ardından Duvar Kâğıdı Çifti Olarak Ayarla’yı seç veya ana ekranını özelleştir. Sonucu görmek için telefonunu uyandır.</string>
+    <string name="install_widgets" formatted="false">Widget’larını ekle</string>
+    <string name="install_widgets_1" formatted="false">ScreenMotion’da widget arka planını seç. Ana ekranda boş bir alana basılı tut.</string>
+    <string name="install_widgets_2" formatted="false">Düzenle → Widget Ekle’ye dokun, ScreenMotion’ı bul, bir boyut seç ve Widget Ekle’ye dokun. Eski iOS sürümlerinde + düğmesini kullan.</string>
+    <string name="install_widgets_3" formatted="false">Widget’a basılı tut → Widget’ı Düzenle’den Fotoğraf, Saat ve Tarih, Takvim veya Koleksiyon’u seç. Kilit ekranı widget’ları sistemin kilit ekranı düzenleyicisinden eklenir.</string>
+    <string name="legal_privacy" formatted="false">Gizlilik Politikası</string>
+    <string name="legal_support" formatted="false">Destek</string>
+    <string name="legal_terms" formatted="false">Kullanım Koşulları</string>
+    <string name="library_designs" formatted="false">Tasarımlarım</string>
+    <string name="library_empty" formatted="false">Favorilerine bir yer</string>
+    <string name="library_emptyhint" formatted="false">Keşfederken bir tasarımı kaydet veya kalbe dokun. Koleksiyonun burada başlasın.</string>
+    <string name="library_favorite" formatted="false">Favori durumunu değiştir</string>
+    <string name="library_favorites" formatted="false">Favoriler</string>
+    <string name="library_save" formatted="false">Tasarımı kaydet</string>
+    <string name="library_saved" formatted="false">Tasarım kaydedildi</string>
+    <string name="library_subtitle" formatted="false">Tüm favorilerin. Tamamen senin.</string>
+    <string name="package_icons" formatted="false">24 uyumlu simge</string>
+    <string name="package_subtitle" formatted="false">Duvar kâğıtları, simgeler ve widget’lar. Birbiri için tasarlandı.</string>
+    <string name="package_widgets" formatted="false">Küçük ayrıntılar. Büyük fark.</string>
+    <string name="platform_detail" formatted="false">Dokunma ve eğme etkileşimleri ScreenMotion içinde çalışır. Live Photo, kilit ekranını uyandırdığında hareket edebilir. Hangi görsellerin Live Photo duvar kâğıdını veya Uzamsal Sahne’yi desteklediğine iOS karar verir. Duvar kâğıdını Ayarlar’dan kendin uygula; ana ekran duvar kâğıtları sabit kalır.</string>
+    <string name="platform_short" formatted="false">Burada etkileşimli. Duvar kâğıdı için Live Photo veya sabit görsel kaydet.</string>
+    <string name="privacy_local" formatted="false">Tasarımların ve favorilerin bu cihazda kalır. Bu sürümde hesap, takip SDK’sı veya buluta yükleme kullanılmaz.</string>
+    <string name="pro_active" formatted="false">Pro kullanıyorsun</string>
+    <string name="pro_benefit_exports" formatted="false">Sınırsız dışa aktarma, reklamsız</string>
+    <string name="pro_benefit_packs" formatted="false">Uyumlu simgeler ve widget stilleri</string>
+    <string name="pro_benefit_scenes" formatted="false">Tüm sahneler ve renk stilleri</string>
+    <string name="pro_continue" formatted="false">Pro ile devam et</string>
+    <string name="pro_monthly" formatted="false">Aylık</string>
+    <string name="pro_mostpopular" formatted="false">En Popüler</string>
+    <string name="pro_subtitle" formatted="false">Telefonunu kendine özgü kılmanın daha fazla yolu.</string>
+    <string name="pro_terms" formatted="false">Abonelik, App Store ayarlarından iptal edilene kadar seçilen dönem için otomatik yenilenir.</string>
+    <string name="pro_testnotice" formatted="false">Yerel test sürümü. Satın almalar Xcode StoreKit testiyle yapılır. Gerçek ücret alınmaz.</string>
+    <string name="pro_title" formatted="false">Her dünya senin.</string>
+    <string name="pro_unlock" formatted="false">Pro’yu keşfet</string>
+    <string name="pro_yearly" formatted="false">Yıllık</string>
+    <string name="purchase_failed" formatted="false">Satın alma tamamlanamadı. Lütfen tekrar dene.</string>
+    <string name="purchase_none" formatted="false">Etkin abonelik bulunamadı.</string>
+    <string name="purchase_pending" formatted="false">Satın alma işlemin onay bekliyor.</string>
+    <string name="purchase_restore" formatted="false">Satın almaları geri yükle</string>
+    <string name="purchase_restored" formatted="false">Pro erişimin geri yüklendi.</string>
+    <string name="purchase_unavailable" formatted="false">Test ürünleri kullanılamıyor. Uygulamayı Xcode’dan Products.storekit seçili olarak çalıştır.</string>
+    <string name="purchase_working" formatted="false">İşleniyor…</string>
+    <string name="search_placeholder" formatted="false">Tema bul…</string>
+    <string name="search_title" formatted="false">Tema ara</string>
+    <string name="settings_about" formatted="false">Bilmen gerekenler</string>
+    <string name="settings_help" formatted="false">Sana özel olsun</string>
+    <string name="settings_testbuild" formatted="false">Yerel geliştirme sürümü · Canlı servisler bağlı değil.</string>
+    <string name="settings_version" formatted="false">Sürüm</string>
+    <string name="style_cool" formatted="false">Soğuk</string>
+    <string name="style_original" formatted="false">Orijinal</string>
+    <string name="style_warm" formatted="false">Sıcak</string>
+    <string name="tab_discover" formatted="false">Keşfet</string>
+    <string name="tab_library" formatted="false">Kitaplığım</string>
+    <string name="tab_settings" formatted="false">Ayarlar</string>
+    <string name="theme_airplane" formatted="false">Bulutların Üstünde</string>
+    <string name="theme_alpine" formatted="false">Durgun Sular</string>
+    <string name="theme_bicycle" formatted="false">Altın Kilometreler</string>
+    <string name="theme_bus" formatted="false">Sahil Kaçamağı</string>
+    <string name="theme_forest" formatted="false">Yeşile Doğru</string>
+    <string name="theme_helicopter" formatted="false">Her Şeyin Üstünde</string>
+    <string name="theme_jellyfish" formatted="false">Okyanus Işıltısı</string>
+    <string name="theme_midnight" formatted="false">Gece Sürüşü</string>
+    <string name="theme_motorcycle" formatted="false">Gece Vakti</string>
+    <string name="theme_nebula" formatted="false">Kadife Evren</string>
+    <string name="theme_orbit" formatted="false">Küçük Astronot</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Akvaryum</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Sonbahar</string>
+    <string name="theme_pixel_car" formatted="false">Pixel Sürüş</string>
+    <string name="theme_pixel_forest" formatted="false">Pixel Koru</string>
+    <string name="theme_pixel_helicopter" formatted="false">Pixel Hover</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Pixel Gece Sürüşü</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Yarış</string>
+    <string name="theme_pixel_rainfire" formatted="false">Yağmur Ateşi Kulübesi</string>
+    <string name="theme_pixel_reef" formatted="false">Pixel Resif</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Kar</string>
+    <string name="theme_pixel_spaceship" formatted="false">Pixel Sürükleniş</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO Saldırısı</string>
+    <string name="theme_reef" formatted="false">Mercan Bahçesi</string>
+    <string name="theme_spaceship" formatted="false">Yeni Ufuklar</string>
+    <string name="theme_tank" formatted="false">Çöl Efsanesi</string>
+    <string name="theme_tractor" formatted="false">Hasat Işığı</string>
+    <string name="theme_truck" formatted="false">Eve Uzun Yol</string>
+    <string name="welcome_interact" formatted="false">Telefonunu eğ. Sahneye dokun.</string>
+    <string name="welcome_note" formatted="false">Hesap açmana gerek yok. Kendini evinde hisset.</string>
+    <string name="welcome_start" formatted="false">Tarzımı bul</string>
+    <string name="welcome_subtitle" formatted="false">Canlı dünyalar, özenli simgeler ve uyumlu widget’lar. Sana ait hissettiren bir görünüm bul.</string>
+    <string name="welcome_title" formatted="false">Senin ekranın.
+Biraz daha sen.</string>
+    <string name="widget_calendar" formatted="false">Takvim</string>
+    <string name="widget_choose" formatted="false">ScreenMotion’da bir tema seç</string>
+    <string name="widget_collection" formatted="false">Koleksiyon</string>
+    <string name="widget_configuration" formatted="false">Widget’ını özelleştir</string>
+    <string name="widget_configuration_description" formatted="false">ScreenMotion’da seçtiğin tema için bir düzen seç.</string>
+    <string name="widget_date" formatted="false">Saat ve tarih</string>
+    <string name="widget_description" formatted="false">Seçtiğin tema; fotoğraf, saat, takvim veya koleksiyon kısayoluyla.</string>
+    <string name="widget_error_artwork" formatted="false">Bu temanın görseli yüklenemedi.</string>
+    <string name="widget_error_group" formatted="false">Widget paylaşımı kullanılamıyor. App Group imzalama ayarlarını kontrol edip tekrar dene.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Koleksiyonu keşfet</string>
+    <string name="widget_photo" formatted="false">Fotoğraf</string>
+    <string name="widget_select" formatted="false">Widget’larımda kullan</string>
+    <string name="widget_selectionhint" formatted="false">Bir arka plan seç, ardından ana ekranından ScreenMotion widget’ı ekle.</string>
+    <string name="widget_style" formatted="false">Stil</string>
+    <string name="widget_theme" formatted="false">Widget arka planı</string>
+</resources>

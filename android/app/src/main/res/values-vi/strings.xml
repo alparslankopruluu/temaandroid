@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">Hủy</string>
+    <string name="action_close" formatted="false">Đóng</string>
+    <string name="action_delete" formatted="false">Xóa thiết kế</string>
+    <string name="action_reset" formatted="false">Đặt lại điều chỉnh</string>
+    <string name="action_retry" formatted="false">Thử lại</string>
+    <string name="action_share" formatted="false">Chia sẻ</string>
+    <string name="action_skip" formatted="false">Bỏ qua</string>
+    <string name="action_undo" formatted="false">Hoàn tác</string>
+    <string name="ad_cancelled" formatted="false">Đã hủy quảng cáo. Bạn có thể thử lại khi sẵn sàng.</string>
+    <string name="ad_playing" formatted="false">Đang phát quảng cáo thử…</string>
+    <string name="ad_testnotice" formatted="false">Bản xem trước phát triển: mô phỏng quảng cáo có thưởng. Không hiển thị quảng cáo thật hay tạo doanh thu.</string>
+    <string name="ad_watch" formatted="false">Thử quảng cáo · mở một lượt xuất</string>
+    <string name="audio_play" formatted="false">Phát âm thanh khung cảnh</string>
+    <string name="audio_stop" formatted="false">Dừng âm thanh khung cảnh</string>
+    <string name="collection_cosmos" formatted="false">Những thế giới khác</string>
+    <string name="collection_nature" formatted="false">Khoảnh khắc bình yên</string>
+    <string name="collection_ocean" formatted="false">Dưới đại dương</string>
+    <string name="collection_vehicles" formatted="false">Trên hành trình</string>
+    <string name="discover_complete" formatted="false">Phong cách trọn bộ</string>
+    <string name="discover_curated" formatted="false">Tìm phong cách mới</string>
+    <string name="discover_featured" formatted="false">SINH RA ĐỂ CHUYỂN ĐỘNG</string>
+    <string name="discover_title" formatted="false">Mang dấu ấn của bạn.</string>
+    <string name="editor_advanced" formatted="false">Tinh chỉnh</string>
+    <string name="editor_depth" formatted="false">Chiều sâu</string>
+    <string name="editor_home" formatted="false">Màn hình chính</string>
+    <string name="editor_interact" formatted="false">Chạm hoặc nghiêng để khám phá</string>
+    <string name="editor_lock" formatted="false">Màn hình khóa</string>
+    <string name="editor_motion" formatted="false">Chuyển động</string>
+    <string name="editor_particles" formatted="false">Hạt</string>
+    <string name="editor_preview" formatted="false">Xem trước</string>
+    <string name="editor_saveinstall" formatted="false">Lưu và thiết lập</string>
+    <string name="editor_scoremode" formatted="false">Chế độ điểm</string>
+    <string name="editor_style" formatted="false">Tông màu</string>
+    <string name="editor_yourstyle" formatted="false">Điểm nhấn của bạn</string>
+    <string name="editor_zoom" formatted="false">Cắt ảnh</string>
+    <string name="export_description" formatted="false">Chọn cách bạn muốn lưu.</string>
+    <string name="export_error_busy" formatted="false">Một tác vụ xuất đang chạy.</string>
+    <string name="export_error_cancelled" formatted="false">Đã hủy xuất. Lượt mở khóa của bạn vẫn còn.</string>
+    <string name="export_error_encoding" formatted="false">Không thể tạo hoạt ảnh. Vui lòng thử lại.</string>
+    <string name="export_error_permission" formatted="false">Cho phép thêm ảnh trong Cài đặt để lưu hình nền.</string>
+    <string name="export_error_renderer" formatted="false">Không thể kết xuất cảnh này. Vui lòng thử chủ đề khác.</string>
+    <string name="export_error_storage" formatted="false">Không đủ dung lượng trống. Hãy giải phóng dung lượng rồi thử lại.</string>
+    <string name="export_hint_livephoto" formatted="false">Hoạt ảnh ngắn cho Màn hình khóa</string>
+    <string name="export_hint_still" formatted="false">Hình nền sắc nét cho mọi màn hình</string>
+    <string name="export_hint_video" formatted="false">Đoạn phim 3 giây để chia sẻ</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Lưu vào Ảnh</string>
+    <string name="export_still" formatted="false">Ảnh tĩnh</string>
+    <string name="export_success" formatted="false">Đã lưu vào Ảnh</string>
+    <string name="export_title" formatted="false">Đặt làm hình nền</string>
+    <string name="export_video" formatted="false">Video</string>
+    <string name="filter_all" formatted="false">Dành cho bạn</string>
+    <string name="filter_pixel" formatted="false">Điểm ảnh</string>
+    <string name="filter_realistic" formatted="false">Chân thực</string>
+    <string name="hero_subtitle" formatted="false">Khám phá Chuyến Xe Nửa Đêm</string>
+    <string name="hero_title" formatted="false">Một trải nghiệm
+màn hình khác biệt.</string>
+    <string name="icon_0" formatted="false">Điện thoại</string>
+    <string name="icon_1" formatted="false">Tin nhắn</string>
+    <string name="icon_10" formatted="false">Bản đồ</string>
+    <string name="icon_11" formatted="false">Thời tiết</string>
+    <string name="icon_12" formatted="false">Ghi chú</string>
+    <string name="icon_13" formatted="false">Lời nhắc</string>
+    <string name="icon_14" formatted="false">Tệp</string>
+    <string name="icon_15" formatted="false">Mua sắm</string>
+    <string name="icon_16" formatted="false">Sách</string>
+    <string name="icon_17" formatted="false">Sức khỏe</string>
+    <string name="icon_18" formatted="false">Video</string>
+    <string name="icon_19" formatted="false">Ghi âm</string>
+    <string name="icon_2" formatted="false">Thư</string>
+    <string name="icon_20" formatted="false">Máy tính</string>
+    <string name="icon_21" formatted="false">Thế giới</string>
+    <string name="icon_22" formatted="false">Nhà</string>
+    <string name="icon_23" formatted="false">Yêu thích</string>
+    <string name="icon_3" formatted="false">Trình duyệt</string>
+    <string name="icon_4" formatted="false">Camera</string>
+    <string name="icon_5" formatted="false">Ảnh</string>
+    <string name="icon_6" formatted="false">Nhạc</string>
+    <string name="icon_7" formatted="false">Cài đặt</string>
+    <string name="icon_8" formatted="false">Lịch</string>
+    <string name="icon_9" formatted="false">Đồng hồ</string>
+    <string name="icons_error_export" formatted="false">Không thể xuất bộ biểu tượng. Vui lòng thử lại.</string>
+    <string name="icons_export" formatted="false">Xuất bộ biểu tượng</string>
+    <string name="icons_share" formatted="false">Chia sẻ bộ biểu tượng</string>
+    <string name="install_completed" formatted="false">Đã đánh dấu xong</string>
+    <string name="install_icons" formatted="false">Thiết lập biểu tượng</string>
+    <string name="install_icons_1" formatted="false">Xuất bộ biểu tượng và lưu thư mục vào Tệp. Chọn ảnh cho ứng dụng bạn muốn tùy chỉnh.</string>
+    <string name="install_icons_2" formatted="false">Trong Phím tắt, tạo tác vụ Mở ứng dụng và chọn ứng dụng. Mở menu và chọn Thêm vào Màn hình chính.</string>
+    <string name="install_icons_3" formatted="false">Chạm biểu tượng, chọn ảnh đã lưu và đặt tên. Chạm Thêm. Lặp lại cho ứng dụng khác; biểu tượng gốc không thay đổi.</string>
+    <string name="install_intro" formatted="false">Vài bước nhỏ. Diện mạo mới.</string>
+    <string name="install_manual" formatted="false">iOS xử lý bước thiết lập cuối. Chạm từng bước khi hoàn tất; chúng tôi sẽ nhớ tiến độ của bạn.</string>
+    <string name="install_mark" formatted="false">Chạm khi hoàn tất</string>
+    <string name="install_title" formatted="false">Thiết lập</string>
+    <string name="install_wallpaper" formatted="false">Đặt hình nền</string>
+    <string name="install_wallpaper_1" formatted="false">Mở Cài đặt → Hình nền → Thêm hình nền mới. Chọn Ảnh rồi chọn ảnh bạn đã lưu.</string>
+    <string name="install_wallpaper_2" formatted="false">Với Live Photo, bật chuyển động nếu iOS có tùy chọn này. Thử Cảnh không gian với ảnh đủ điều kiện. Điều chỉnh khung cắt và đồng hồ trong trình sửa của hệ thống.</string>
+    <string name="install_wallpaper_3" formatted="false">Chạm Thêm, rồi chọn Đặt làm cặp hình nền hoặc tùy chỉnh Màn hình chính. Đánh thức điện thoại để kiểm tra kết quả.</string>
+    <string name="install_widgets" formatted="false">Thêm tiện ích</string>
+    <string name="install_widgets_1" formatted="false">Chọn nền tiện ích trong ScreenMotion. Trên Màn hình chính, chạm và giữ một vùng trống.</string>
+    <string name="install_widgets_2" formatted="false">Chạm Sửa → Thêm tiện ích, tìm ScreenMotion, chọn kích thước rồi chạm Thêm tiện ích. Với iOS cũ, dùng nút +.</string>
+    <string name="install_widgets_3" formatted="false">Chạm và giữ tiện ích → Sửa tiện ích để chọn Ảnh, Đồng hồ và ngày, Lịch hoặc Bộ sưu tập. Thêm tiện ích Màn hình khóa trong trình sửa Màn hình khóa của hệ thống.</string>
+    <string name="legal_privacy" formatted="false">Chính sách quyền riêng tư</string>
+    <string name="legal_support" formatted="false">Hỗ trợ</string>
+    <string name="legal_terms" formatted="false">Điều khoản sử dụng</string>
+    <string name="library_designs" formatted="false">Thiết kế của tôi</string>
+    <string name="library_empty" formatted="false">Nơi dành cho điều bạn thích</string>
+    <string name="library_emptyhint" formatted="false">Lưu thiết kế hoặc chạm trái tim khi khám phá. Bộ sưu tập bắt đầu từ đó.</string>
+    <string name="library_favorite" formatted="false">Bật/tắt yêu thích</string>
+    <string name="library_favorites" formatted="false">Yêu thích</string>
+    <string name="library_save" formatted="false">Lưu thiết kế</string>
+    <string name="library_saved" formatted="false">Đã lưu thiết kế</string>
+    <string name="library_subtitle" formatted="false">Mọi điều bạn thích. Mang dấu ấn riêng.</string>
+    <string name="package_icons" formatted="false">24 biểu tượng đồng bộ</string>
+    <string name="package_subtitle" formatted="false">Hình nền, biểu tượng và tiện ích. Đồng bộ hoàn hảo.</string>
+    <string name="package_widgets" formatted="false">Chi tiết nhỏ. Khác biệt lớn.</string>
+    <string name="platform_detail" formatted="false">Tương tác chạm và nghiêng chỉ hoạt động trong ScreenMotion. Live Photo có thể chuyển động khi đánh thức Màn hình khóa. iOS quyết định ảnh nào hỗ trợ hình nền Live Photo hoặc Cảnh không gian. Đặt hình nền thủ công trong Cài đặt; hình nền Màn hình chính luôn tĩnh.</string>
+    <string name="platform_short" formatted="false">Tương tác tại đây. Lưu Live Photo hoặc ảnh tĩnh làm hình nền.</string>
+    <string name="privacy_local" formatted="false">Thiết kế và mục yêu thích được lưu trên thiết bị này. Bản này không dùng tài khoản, SDK theo dõi hoặc tải lên đám mây.</string>
+    <string name="pro_active" formatted="false">Bạn đang dùng Pro</string>
+    <string name="pro_benefit_exports" formatted="false">Xuất không giới hạn, không quảng cáo</string>
+    <string name="pro_benefit_packs" formatted="false">Biểu tượng và kiểu tiện ích đồng bộ</string>
+    <string name="pro_benefit_scenes" formatted="false">Mọi khung cảnh và tông màu</string>
+    <string name="pro_continue" formatted="false">Tiếp tục với Pro</string>
+    <string name="pro_monthly" formatted="false">Hàng tháng</string>
+    <string name="pro_mostpopular" formatted="false">Phổ biến nhất</string>
+    <string name="pro_subtitle" formatted="false">Thêm nhiều cách để điện thoại thể hiện chính bạn.</string>
+    <string name="pro_terms" formatted="false">Đăng ký tự động gia hạn theo kỳ đã chọn cho đến khi bạn hủy trong cài đặt App Store.</string>
+    <string name="pro_testnotice" formatted="false">Bản thử nghiệm cục bộ. Giao dịch dùng kiểm thử Xcode StoreKit. Không thu tiền thật.</string>
+    <string name="pro_title" formatted="false">Mọi thế giới. Của riêng bạn.</string>
+    <string name="pro_unlock" formatted="false">Khám phá Pro</string>
+    <string name="pro_yearly" formatted="false">Hàng năm</string>
+    <string name="purchase_failed" formatted="false">Không thể hoàn tất giao dịch. Vui lòng thử lại.</string>
+    <string name="purchase_none" formatted="false">Không tìm thấy gói đăng ký đang hoạt động.</string>
+    <string name="purchase_pending" formatted="false">Giao dịch đang chờ phê duyệt.</string>
+    <string name="purchase_restore" formatted="false">Khôi phục giao dịch</string>
+    <string name="purchase_restored" formatted="false">Đã khôi phục quyền truy cập Pro.</string>
+    <string name="purchase_unavailable" formatted="false">Sản phẩm thử nghiệm chưa khả dụng. Chạy ứng dụng từ Xcode và chọn Products.storekit.</string>
+    <string name="purchase_working" formatted="false">Đang xử lý…</string>
+    <string name="search_placeholder" formatted="false">Tìm chủ đề…</string>
+    <string name="search_title" formatted="false">Tìm kiếm chủ đề</string>
+    <string name="settings_about" formatted="false">Điều cần biết</string>
+    <string name="settings_help" formatted="false">Mang dấu ấn của bạn</string>
+    <string name="settings_testbuild" formatted="false">Bản phát triển cục bộ · Chưa kết nối dịch vụ trực tiếp.</string>
+    <string name="settings_version" formatted="false">Phiên bản</string>
+    <string name="style_cool" formatted="false">Lạnh</string>
+    <string name="style_original" formatted="false">Gốc</string>
+    <string name="style_warm" formatted="false">Ấm</string>
+    <string name="tab_discover" formatted="false">Khám phá</string>
+    <string name="tab_library" formatted="false">Thư viện</string>
+    <string name="tab_settings" formatted="false">Cài đặt</string>
+    <string name="theme_airplane" formatted="false">Chín Tầng Mây</string>
+    <string name="theme_alpine" formatted="false">Mặt Nước Yên Bình</string>
+    <string name="theme_bicycle" formatted="false">Dặm Đường Vàng</string>
+    <string name="theme_bus" formatted="false">Du Ngoạn Bờ Biển</string>
+    <string name="theme_forest" formatted="false">Về Miền Xanh</string>
+    <string name="theme_helicopter" formatted="false">Trên Tất Cả</string>
+    <string name="theme_jellyfish" formatted="false">Ánh Sáng Đại Dương</string>
+    <string name="theme_midnight" formatted="false">Chuyến Xe Nửa Đêm</string>
+    <string name="theme_motorcycle" formatted="false">Sau Hoàng Hôn</string>
+    <string name="theme_nebula" formatted="false">Vũ Trụ Nhung</string>
+    <string name="theme_orbit" formatted="false">Phi Hành Gia Nhỏ</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">Đường đua pixel</string>
+    <string name="theme_pixel_forest" formatted="false">Lùm pixel</string>
+    <string name="theme_pixel_helicopter" formatted="false">Bay lơ lửng pixel</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Đêm pixel</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">Căn nhà trong mưa</string>
+    <string name="theme_pixel_reef" formatted="false">Rạn pixel</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">Trôi pixel</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">Vườn San Hô</string>
+    <string name="theme_spaceship" formatted="false">Chân Trời Mới</string>
+    <string name="theme_tank" formatted="false">Huyền Thoại Sa Mạc</string>
+    <string name="theme_tractor" formatted="false">Ánh Sáng Mùa Gặt</string>
+    <string name="theme_truck" formatted="false">Đường Về Xa Xôi</string>
+    <string name="welcome_interact" formatted="false">Nghiêng điện thoại. Chạm vào khung cảnh.</string>
+    <string name="welcome_note" formatted="false">Không cần tài khoản. Cứ thoải mái khám phá.</string>
+    <string name="welcome_start" formatted="false">Tìm phong cách của tôi</string>
+    <string name="welcome_subtitle" formatted="false">Thế giới sống động, biểu tượng tinh tế và tiện ích đồng bộ. Tìm phong cách đúng với bạn.</string>
+    <string name="welcome_title" formatted="false">Màn hình của bạn.
+Đậm chất bạn hơn.</string>
+    <string name="widget_calendar" formatted="false">Lịch</string>
+    <string name="widget_choose" formatted="false">Chọn chủ đề trong ScreenMotion</string>
+    <string name="widget_collection" formatted="false">Bộ sưu tập</string>
+    <string name="widget_configuration" formatted="false">Tùy chỉnh tiện ích</string>
+    <string name="widget_configuration_description" formatted="false">Chọn bố cục cho chủ đề đã chọn trong ScreenMotion.</string>
+    <string name="widget_date" formatted="false">Đồng hồ và ngày</string>
+    <string name="widget_description" formatted="false">Chủ đề bạn chọn cùng ảnh, đồng hồ, lịch hoặc lối tắt bộ sưu tập.</string>
+    <string name="widget_error_artwork" formatted="false">Không thể tải hình ảnh của chủ đề này.</string>
+    <string name="widget_error_group" formatted="false">Chưa thể chia sẻ tiện ích. Kiểm tra cấu hình ký App Group rồi thử lại.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Khám phá bộ sưu tập</string>
+    <string name="widget_photo" formatted="false">Ảnh</string>
+    <string name="widget_select" formatted="false">Dùng cho tiện ích của tôi</string>
+    <string name="widget_selectionhint" formatted="false">Chọn nền, sau đó thêm tiện ích ScreenMotion từ Màn hình chính.</string>
+    <string name="widget_style" formatted="false">Kiểu</string>
+    <string name="widget_theme" formatted="false">Nền tiện ích</string>
+</resources>

@@ -4,6 +4,22 @@
 
 ## Taxonomy (snake_case, no exceptions)
 
+ScreenMotion's M5 implementation uses the project-specific event names below. The generic
+factory table that follows is a planning template, not a claim that those events fire.
+
+| ScreenMotion event | Params | Fires |
+|---|---|---|
+| `app_opened` | none | Root UI launched |
+| `onboarding_viewed`, `onboarding_completed` | none | Welcome shown / dismissed |
+| `editor_viewed`, `design_saved` | none | Editor shown / design saved |
+| `export_started`, `export_completed`, `export_failed` | none | iOS export attempt/result; Android currently records completion only |
+| `pro_paywall_viewed` | none | Paywall shown |
+| `pro_purchase_completed`, `pro_purchase_failed` | none | Purchase result; Android currently records completion only; no revenue amount |
+| `pro_restore_completed`, `pro_restore_failed` | none | Restore result |
+
+Events carry no UID, theme name, filename or raw error. Revenue and subscriptions remain
+RevenueCat's source of truth. Firebase DebugView and Crashlytics device receipts are open gates.
+
 | Event | Params | Fires |
 |---|---|---|
 | `onboarding_start` | — | welcome screen appears |

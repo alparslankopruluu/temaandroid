@@ -6,6 +6,8 @@ struct ArtworkView: View {
         Group {
             if let artworkURL = theme.artworkURL {
                 RemoteArtworkView(url: artworkURL)
+            } else if theme.remoteScene != nil, theme.remoteAssetURLs["artwork"] != nil {
+                RemoteThemeArtworkView(theme: theme)
             } else if theme.hasProgrammaticArtwork {
                 PixelStaticArtwork(theme: theme)
             } else {
@@ -13,6 +15,28 @@ struct ArtworkView: View {
             }
         }
         .accessibilityLabel(Text(theme.displayTitle))
+    }
+}
+
+private struct RemoteThemeArtworkView: View {
+    let theme: Theme
+    @State private var image: UIImage?
+
+    var body: some View {
+        Group {
+            if let image { Image(uiImage: image).resizable().scaledToFill() }
+            else { Design.surface.overlay { ProgressView() } }
+        }
+        .task(id: "\(theme.id)-\(theme.remoteContentVersion ?? "")") {
+            guard let source = theme.remoteAssetURLs["artwork"],
+                  let version = theme.remoteContentVersion,
+                  let file = await RemoteAssetCache.shared.thumbnailURL(
+                      source: source, contentVersion: version, itemID: theme.id
+                  ) else { return }
+            image = await Task.detached(priority: .userInitiated) {
+                UIImage(contentsOfFile: file.path)?.preparingForDisplay()
+            }.value
+        }
     }
 }
 

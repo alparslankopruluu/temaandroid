@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">Annuller</string>
+    <string name="action_close" formatted="false">Luk</string>
+    <string name="action_delete" formatted="false">Slet design</string>
+    <string name="action_reset" formatted="false">Nulstil justeringer</string>
+    <string name="action_retry" formatted="false">Prøv igen</string>
+    <string name="action_share" formatted="false">Del</string>
+    <string name="action_skip" formatted="false">Spring over</string>
+    <string name="action_undo" formatted="false">Fortryd</string>
+    <string name="ad_cancelled" formatted="false">Reklamen blev annulleret. Prøv igen, når du er klar.</string>
+    <string name="ad_playing" formatted="false">Afspiller testreklame…</string>
+    <string name="ad_testnotice" formatted="false">Udviklingsvisning: dette simulerer en belønningsreklame. Ingen rigtig reklame vises, og der genereres ingen indtægt.</string>
+    <string name="ad_watch" formatted="false">Test en reklame · lås én eksport op</string>
+    <string name="audio_play" formatted="false">Afspil scenelyd</string>
+    <string name="audio_stop" formatted="false">Stop scenelyd</string>
+    <string name="collection_cosmos" formatted="false">Andre verdener</string>
+    <string name="collection_nature" formatted="false">Rolige øjeblikke</string>
+    <string name="collection_ocean" formatted="false">Under vandet</string>
+    <string name="collection_vehicles" formatted="false">På farten</string>
+    <string name="discover_complete" formatted="false">Hele udtrykket</string>
+    <string name="discover_curated" formatted="false">Find dit næste udtryk</string>
+    <string name="discover_featured" formatted="false">SKABT TIL BEVÆGELSE</string>
+    <string name="discover_title" formatted="false">Gør den til din.</string>
+    <string name="editor_advanced" formatted="false">Finjuster</string>
+    <string name="editor_depth" formatted="false">Dybde</string>
+    <string name="editor_home" formatted="false">Hjemmeskærm</string>
+    <string name="editor_interact" formatted="false">Rør eller vip for at udforske</string>
+    <string name="editor_lock" formatted="false">Låseskærm</string>
+    <string name="editor_motion" formatted="false">Bevægelse</string>
+    <string name="editor_particles" formatted="false">Partikler</string>
+    <string name="editor_preview" formatted="false">Forhåndsvisning</string>
+    <string name="editor_saveinstall" formatted="false">Gem og indstil</string>
+    <string name="editor_scoremode" formatted="false">Pointtilstand</string>
+    <string name="editor_style" formatted="false">Farvestemning</string>
+    <string name="editor_yourstyle" formatted="false">Dit personlige præg</string>
+    <string name="editor_zoom" formatted="false">Beskæring</string>
+    <string name="export_description" formatted="false">Vælg, hvordan du vil gemme det.</string>
+    <string name="export_error_busy" formatted="false">En eksport er allerede i gang.</string>
+    <string name="export_error_cancelled" formatted="false">Eksport annulleret. Din oplåsning er stadig tilgængelig.</string>
+    <string name="export_error_encoding" formatted="false">Animationen kunne ikke oprettes. Prøv igen.</string>
+    <string name="export_error_permission" formatted="false">Tillad tilføjelse af billeder i Indstillinger for at gemme din baggrund.</string>
+    <string name="export_error_renderer" formatted="false">Scenen kunne ikke gengives. Prøv et andet tema.</string>
+    <string name="export_error_storage" formatted="false">Der er ikke nok ledig plads. Frigør plads, og prøv igen.</string>
+    <string name="export_hint_livephoto" formatted="false">En kort animation til låseskærmen</string>
+    <string name="export_hint_still" formatted="false">En skarp baggrund til enhver skærm</string>
+    <string name="export_hint_video" formatted="false">Et klip på 3 sekunder til deling</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Gem i Fotos</string>
+    <string name="export_still" formatted="false">Stillbillede</string>
+    <string name="export_success" formatted="false">Gemt i Fotos</string>
+    <string name="export_title" formatted="false">Gør det til din baggrund</string>
+    <string name="export_video" formatted="false">Video</string>
+    <string name="filter_all" formatted="false">Til dig</string>
+    <string name="filter_pixel" formatted="false">Pixel</string>
+    <string name="filter_realistic" formatted="false">Realistisk</string>
+    <string name="hero_subtitle" formatted="false">Mød Midnatskørsel</string>
+    <string name="hero_title" formatted="false">En ny måde
+at se din skærm på.</string>
+    <string name="icon_0" formatted="false">Telefon</string>
+    <string name="icon_1" formatted="false">Beskeder</string>
+    <string name="icon_10" formatted="false">Kort</string>
+    <string name="icon_11" formatted="false">Vejr</string>
+    <string name="icon_12" formatted="false">Noter</string>
+    <string name="icon_13" formatted="false">Påmindelser</string>
+    <string name="icon_14" formatted="false">Arkiver</string>
+    <string name="icon_15" formatted="false">Shopping</string>
+    <string name="icon_16" formatted="false">Bøger</string>
+    <string name="icon_17" formatted="false">Sundhed</string>
+    <string name="icon_18" formatted="false">Video</string>
+    <string name="icon_19" formatted="false">Optager</string>
+    <string name="icon_2" formatted="false">Mail</string>
+    <string name="icon_20" formatted="false">Lommeregner</string>
+    <string name="icon_21" formatted="false">Verden</string>
+    <string name="icon_22" formatted="false">Hjem</string>
+    <string name="icon_23" formatted="false">Favoritter</string>
+    <string name="icon_3" formatted="false">Browser</string>
+    <string name="icon_4" formatted="false">Kamera</string>
+    <string name="icon_5" formatted="false">Fotos</string>
+    <string name="icon_6" formatted="false">Musik</string>
+    <string name="icon_7" formatted="false">Indstillinger</string>
+    <string name="icon_8" formatted="false">Kalender</string>
+    <string name="icon_9" formatted="false">Ur</string>
+    <string name="icons_error_export" formatted="false">Ikonpakken kunne ikke eksporteres. Prøv igen.</string>
+    <string name="icons_export" formatted="false">Eksportér ikonpakke</string>
+    <string name="icons_share" formatted="false">Del ikonpakke</string>
+    <string name="install_completed" formatted="false">Markeret som udført</string>
+    <string name="install_icons" formatted="false">Indstil dine ikoner</string>
+    <string name="install_icons_1" formatted="false">Eksportér ikonpakken, og gem mappen i Arkiver. Vælg billedet til den app, du vil tilpasse.</string>
+    <string name="install_icons_2" formatted="false">Opret handlingen Åbn app i Genveje, og vælg appen. Åbn menuen, og vælg Føj til hjemmeskærm.</string>
+    <string name="install_icons_3" formatted="false">Tryk på ikonet, vælg dit gemte billede, og giv det et navn. Tryk på Tilføj. Gentag for andre apps; de oprindelige ikoner ændres ikke.</string>
+    <string name="install_intro" formatted="false">Få trin. Et helt nyt udtryk.</string>
+    <string name="install_manual" formatted="false">iOS håndterer den sidste opsætning. Tryk på hvert trin, når det er udført; vi husker, hvor langt du er.</string>
+    <string name="install_mark" formatted="false">Tryk, når du er færdig</string>
+    <string name="install_title" formatted="false">Indstil</string>
+    <string name="install_wallpaper" formatted="false">Indstil din baggrund</string>
+    <string name="install_wallpaper_1" formatted="false">Åbn Indstillinger → Baggrund → Tilføj ny baggrund. Vælg Fotos og det gemte billede.</string>
+    <string name="install_wallpaper_2" formatted="false">For et Live Photo skal du aktivere bevægelse, hvis iOS tilbyder det. Prøv rumlig scene med et egnet billede. Juster beskæring og ur i systemets editor.</string>
+    <string name="install_wallpaper_3" formatted="false">Tryk på Tilføj, og vælg et baggrundspar, eller tilpas hjemmeskærmen. Væk telefonen for at se resultatet.</string>
+    <string name="install_widgets" formatted="false">Tilføj dine widgets</string>
+    <string name="install_widgets_1" formatted="false">Vælg widgetbaggrund i ScreenMotion. Hold fingeren på et tomt område på hjemmeskærmen.</string>
+    <string name="install_widgets_2" formatted="false">Tryk på Rediger → Tilføj widget, find ScreenMotion, vælg størrelse, og tilføj widgetten. På ældre iOS-versioner bruges knappen +.</string>
+    <string name="install_widgets_3" formatted="false">Hold fingeren på widgetten → Rediger widget for at vælge foto, ur og dato, kalender eller samling. Låseskærmswidgets tilføjes i systemets låseskærmseditor.</string>
+    <string name="legal_privacy" formatted="false">Privatlivspolitik</string>
+    <string name="legal_support" formatted="false">Support</string>
+    <string name="legal_terms" formatted="false">Vilkår for brug</string>
+    <string name="library_designs" formatted="false">Mine designs</string>
+    <string name="library_empty" formatted="false">Et sted til dine favoritter</string>
+    <string name="library_emptyhint" formatted="false">Gem et design, eller tryk på et hjerte, mens du udforsker. Din samling begynder der.</string>
+    <string name="library_favorite" formatted="false">Tilføj eller fjern favorit</string>
+    <string name="library_favorites" formatted="false">Favoritter</string>
+    <string name="library_save" formatted="false">Gem design</string>
+    <string name="library_saved" formatted="false">Design gemt</string>
+    <string name="library_subtitle" formatted="false">Alle dine favoritter. Helt dine.</string>
+    <string name="package_icons" formatted="false">24 matchende ikoner</string>
+    <string name="package_subtitle" formatted="false">Baggrunde, ikoner og widgets. Skabt til at passe sammen.</string>
+    <string name="package_widgets" formatted="false">Små detaljer. Stor forskel.</string>
+    <string name="platform_detail" formatted="false">Berøring og vipning virker inde i ScreenMotion. Live Photos kan animeres, når låseskærmen vækkes. iOS afgør, hvilke billeder der understøtter Live Photo-baggrund eller rumlig scene. Indstil baggrunden manuelt i Indstillinger; hjemmeskærmens baggrund er statisk.</string>
+    <string name="platform_short" formatted="false">Interaktiv her. Gem et Live Photo eller stillbillede som baggrund.</string>
+    <string name="privacy_local" formatted="false">Dine designs og favoritter bliver på denne enhed. Denne version bruger ingen konto, tracking-SDK eller cloudupload.</string>
+    <string name="pro_active" formatted="false">Du har Pro</string>
+    <string name="pro_benefit_exports" formatted="false">Ubegrænset eksport, ingen reklamer</string>
+    <string name="pro_benefit_packs" formatted="false">Matchende ikoner og widgetstile</string>
+    <string name="pro_benefit_scenes" formatted="false">Alle scener og farvestemninger</string>
+    <string name="pro_continue" formatted="false">Fortsæt med Pro</string>
+    <string name="pro_monthly" formatted="false">Månedligt</string>
+    <string name="pro_mostpopular" formatted="false">Mest populær</string>
+    <string name="pro_subtitle" formatted="false">Flere måder at gøre telefonen personlig på.</string>
+    <string name="pro_terms" formatted="false">Abonnementet fornyes automatisk for den valgte periode, indtil det opsiges i App Store-indstillinger.</string>
+    <string name="pro_testnotice" formatted="false">Lokal testversion. Køb bruger Xcode StoreKit-test. Der opkræves ingen rigtige penge.</string>
+    <string name="pro_title" formatted="false">Alle verdener. Dine.</string>
+    <string name="pro_unlock" formatted="false">Udforsk Pro</string>
+    <string name="pro_yearly" formatted="false">Årligt</string>
+    <string name="purchase_failed" formatted="false">Købet kunne ikke gennemføres. Prøv igen.</string>
+    <string name="purchase_none" formatted="false">Intet aktivt abonnement fundet.</string>
+    <string name="purchase_pending" formatted="false">Dit køb afventer godkendelse.</string>
+    <string name="purchase_restore" formatted="false">Gendan køb</string>
+    <string name="purchase_restored" formatted="false">Din Pro-adgang er gendannet.</string>
+    <string name="purchase_unavailable" formatted="false">Testprodukter er ikke tilgængelige. Kør appen fra Xcode med Products.storekit valgt.</string>
+    <string name="purchase_working" formatted="false">Arbejder…</string>
+    <string name="search_placeholder" formatted="false">Find et tema…</string>
+    <string name="search_title" formatted="false">Søg efter temaer</string>
+    <string name="settings_about" formatted="false">Godt at vide</string>
+    <string name="settings_help" formatted="false">Gør den personlig</string>
+    <string name="settings_testbuild" formatted="false">Lokal udviklingsversion · Livetjenester er ikke tilsluttet.</string>
+    <string name="settings_version" formatted="false">Version</string>
+    <string name="style_cool" formatted="false">Kølig</string>
+    <string name="style_original" formatted="false">Original</string>
+    <string name="style_warm" formatted="false">Varm</string>
+    <string name="tab_discover" formatted="false">Opdag</string>
+    <string name="tab_library" formatted="false">Bibliotek</string>
+    <string name="tab_settings" formatted="false">Indstillinger</string>
+    <string name="theme_airplane" formatted="false">På en sky</string>
+    <string name="theme_alpine" formatted="false">Stille vand</string>
+    <string name="theme_bicycle" formatted="false">Gyldne kilometer</string>
+    <string name="theme_bus" formatted="false">Kysttur</string>
+    <string name="theme_forest" formatted="false">Ind i det grønne</string>
+    <string name="theme_helicopter" formatted="false">Over det hele</string>
+    <string name="theme_jellyfish" formatted="false">Havets glød</string>
+    <string name="theme_midnight" formatted="false">Midnatskørsel</string>
+    <string name="theme_motorcycle" formatted="false">Efter mørkets frembrud</string>
+    <string name="theme_nebula" formatted="false">Fløjlsunivers</string>
+    <string name="theme_orbit" formatted="false">Den lille astronaut</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">Pixelkørsel</string>
+    <string name="theme_pixel_forest" formatted="false">Pixelkrat</string>
+    <string name="theme_pixel_helicopter" formatted="false">Pixel svæv</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Pixel nattur</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">Hytte i regnen</string>
+    <string name="theme_pixel_reef" formatted="false">Pixelrev</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">Pixeldrift</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">Koralhaven</string>
+    <string name="theme_spaceship" formatted="false">Nye horisonter</string>
+    <string name="theme_tank" formatted="false">Ørkenlegende</string>
+    <string name="theme_tractor" formatted="false">Høstlys</string>
+    <string name="theme_truck" formatted="false">Den lange vej hjem</string>
+    <string name="welcome_interact" formatted="false">Vip telefonen. Rør ved scenen.</string>
+    <string name="welcome_note" formatted="false">Ingen konto nødvendig. Føl dig hjemme.</string>
+    <string name="welcome_start" formatted="false">Find mit udtryk</string>
+    <string name="welcome_subtitle" formatted="false">Levende verdener, gennemtænkte ikoner og matchende widgets. Find et udtryk, der føles som dig.</string>
+    <string name="welcome_title" formatted="false">Din skærm.
+Lidt mere dig.</string>
+    <string name="widget_calendar" formatted="false">Kalender</string>
+    <string name="widget_choose" formatted="false">Vælg et tema i ScreenMotion</string>
+    <string name="widget_collection" formatted="false">Samling</string>
+    <string name="widget_configuration" formatted="false">Tilpas din widget</string>
+    <string name="widget_configuration_description" formatted="false">Vælg et layout til temaet valgt i ScreenMotion.</string>
+    <string name="widget_date" formatted="false">Ur og dato</string>
+    <string name="widget_description" formatted="false">Dit valgte tema med foto, ur, kalender eller genvej til samling.</string>
+    <string name="widget_error_artwork" formatted="false">Temaets billede kunne ikke indlæses.</string>
+    <string name="widget_error_group" formatted="false">Widgetdeling er ikke tilgængelig. Kontrollér App Group-signering, og prøv igen.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Udforsk samling</string>
+    <string name="widget_photo" formatted="false">Foto</string>
+    <string name="widget_select" formatted="false">Brug til mine widgets</string>
+    <string name="widget_selectionhint" formatted="false">Vælg en baggrund, og tilføj en ScreenMotion-widget fra hjemmeskærmen.</string>
+    <string name="widget_style" formatted="false">Stil</string>
+    <string name="widget_theme" formatted="false">Widgetbaggrund</string>
+</resources>

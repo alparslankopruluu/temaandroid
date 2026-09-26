@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "themes": [
+    {
+      "id": "midnight",
+      "titleKey": "theme.midnight",
+      "collection": "vehicles",
+      "artwork": "midnight",
+      "isFree": true,
+      "symbol": "car.side"
+    },
+    {
+      "id": "motorcycle",
+      "titleKey": "theme.motorcycle",
+      "collection": "vehicles",
+      "artwork": "motorcycle",
+      "isFree": false,
+      "symbol": "bicycle"
+    },
+    {
+      "id": "bicycle",
+      "titleKey": "theme.bicycle",
+      "collection": "vehicles",
+      "artwork": "bicycle",
+      "isFree": false,
+      "symbol": "bicycle"
+    },
+    {
+      "id": "tractor",
+      "titleKey": "theme.tractor",
+      "collection": "vehicles",
+      "artwork": "tractor",
+      "isFree": false,
+      "symbol": "car.side"
+    },
+    {
+      "id": "tank",
+      "titleKey": "theme.tank",
+      "collection": "vehicles",
+      "artwork": "tank",
+      "isFree": false,
+      "symbol": "shield"
+    },
+    {
+      "id": "bus",
+      "titleKey": "theme.bus",
+      "collection": "vehicles",
+      "artwork": "bus",
+      "isFree": false,
+      "symbol": "bus"
+    },
+    {
+      "id": "truck",
+      "titleKey": "theme.truck",
+      "collection": "vehicles",
+      "artwork": "truck",
+      "isFree": false,
+      "symbol": "truck.box"
+    },
+    {
+      "id": "helicopter",
+      "titleKey": "theme.helicopter",
+      "collection": "vehicles",
+      "artwork": "helicopter",
+      "isFree": false,
+      "symbol": "airplane"
+    },
+    {
+      "id": "airplane",
+      "titleKey": "theme.airplane",
+      "collection": "vehicles",
+      "artwork": "airplane",
+      "isFree": false,
+      "symbol": "airplane"
+    },
+    {
+      "id": "spaceship",
+      "titleKey": "theme.spaceship",
+      "collection": "vehicles",
+      "artwork": "spaceship",
+      "isFree": false,
+      "symbol": "paperplane"
+    },
+    {
+      "id": "reef",
+      "titleKey": "theme.reef",
+      "collection": "ocean",
+      "artwork": "reef",
+      "isFree": true,
+      "symbol": "fish"
+    },
+    {
+      "id": "jellyfish",
+      "titleKey": "theme.jellyfish",
+      "collection": "ocean",
+      "artwork": "jellyfish",
+      "isFree": false,
+      "symbol": "water.waves"
+    },
+    {
+      "id": "orbit",
+      "titleKey": "theme.orbit",
+      "collection": "cosmos",
+      "artwork": "orbit",
+      "isFree": true,
+      "symbol": "moon.stars"
+    },
+    {
+      "id": "nebula",
+      "titleKey": "theme.nebula",
+      "collection": "cosmos",
+      "artwork": "nebula",
+      "isFree": false,
+      "symbol": "sparkles"
+    },
+    {
+      "id": "alpine",
+      "titleKey": "theme.alpine",
+      "collection": "nature",
+      "artwork": "alpine",
+      "isFree": true,
+      "symbol": "mountain.2"
+    },
+    {
+      "id": "forest",
+      "titleKey": "theme.forest",
+      "collection": "nature",
+      "artwork": "forest",
+      "isFree": false,
+      "symbol": "leaf"
+    },
+    {
+      "id": "pixel-car",
+      "titleKey": "theme.pixel-car",
+      "collection": "vehicles",
+      "artwork": "pixel-car",
+      "isFree": true,
+      "symbol": "car.side",
+      "appearance": "pixel",
+      "interaction": "car"
+    },
+    {
+      "id": "pixel-motorcycle",
+      "titleKey": "theme.pixel-motorcycle",
+      "collection": "vehicles",
+      "artwork": "pixel-motorcycle",
+      "isFree": false,
+      "symbol": "bicycle",
+      "appearance": "pixel",
+      "interaction": "motorcycle"
+    },
+    {
+      "id": "pixel-helicopter",
+      "titleKey": "theme.pixel-helicopter",
+      "collection": "vehicles",
+      "artwork": "pixel-helicopter",
+      "isFree": false,
+      "symbol": "airplane",
+      "appearance": "pixel",
+      "interaction": "helicopter"
+    },
+    {
+      "id": "pixel-spaceship",
+      "titleKey": "theme.pixel-spaceship",
+      "collection": "cosmos",
+      "artwork": "pixel-spaceship",
+      "isFree": false,
+      "symbol": "paperplane",
+      "appearance": "pixel",
+      "interaction": "spaceship"
+    },
+    {
+      "id": "pixel-reef",
+      "titleKey": "theme.pixel-reef",
+      "collection": "ocean",
+      "artwork": "pixel-reef",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "fish"
+    },
+    {
+      "id": "pixel-forest",
+      "titleKey": "theme.pixel-forest",
+      "collection": "nature",
+      "artwork": "pixel-forest",
+      "isFree": false,
+      "symbol": "leaf",
+      "appearance": "pixel",
+      "interaction": "nature"
+    },
+    {
+      "id": "pixel-ufo",
+      "titleKey": "theme.pixel-ufo",
+      "collection": "cosmos",
+      "artwork": "pixel-ufo",
+      "isFree": false,
+      "symbol": "sparkles",
+      "appearance": "pixel",
+      "interaction": "ufo"
+    },
+    {
+      "id": "pixel-aquarium",
+      "titleKey": "theme.pixel-aquarium",
+      "collection": "ocean",
+      "artwork": "pixel-aquarium",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "aquarium"
+    },
+    {
+      "id": "pixel-autumn",
+      "titleKey": "theme.pixel-autumn",
+      "collection": "nature",
+      "artwork": "pixel-autumn",
+      "isFree": false,
+      "symbol": "leaf",
+      "appearance": "pixel",
+      "interaction": "autumn"
+    },
+    {
+      "id": "pixel-race",
+      "titleKey": "theme.pixel-race",
+      "collection": "vehicles",
+      "artwork": "pixel-race",
+      "isFree": false,
+      "symbol": "flag.checkered",
+      "appearance": "pixel",
+      "interaction": "race"
+    },
+    {
+      "id": "pixel-koi",
+      "titleKey": "theme.pixel-koi",
+      "collection": "ocean",
+      "artwork": "pixel-koi",
+      "isFree": false,
+      "symbol": "fish",
+      "appearance": "pixel",
+      "interaction": "koi"
+    },
+    {
+      "id": "pixel-snow",
+      "titleKey": "theme.pixel-snow",
+      "collection": "nature",
+      "artwork": "pixel-snow",
+      "isFree": false,
+      "symbol": "snowflake",
+      "appearance": "pixel",
+      "interaction": "snow"
+    },
+    {
+      "id": "pixel-rainfire",
+      "titleKey": "theme.pixel-rainfire",
+      "collection": "nature",
+      "artwork": "pixel-rainfire",
+      "isFree": false,
+      "symbol": "house.fill",
+      "appearance": "pixel",
+      "remoteScene": {
+        "layers": [
+          {
+            "asset": "artwork",
+            "parallax": 0.55,
+            "animation": "drift",
+            "amount": 0.25,
+            "period": 18
+          }
+        ],
+        "particles": [
+          { "preset": "rain", "count": 88, "speed": 0.8 },
+          { "preset": "ember", "count": 30, "speed": 1.1 },
+          { "preset": "smoke", "count": 12, "speed": 0.32 }
+        ],
+        "light": {
+          "x": 0.79,
+          "y": 0.36,
+          "color": "#FF8B37",
+          "radius": 0.18,
+          "flicker": 0.84,
+          "period": 1.1
+        },
+        "interaction": "emberBurst",
+        "ambientAudioAsset": null
+      }
+    }
+  ]
+}

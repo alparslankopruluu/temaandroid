@@ -28,7 +28,8 @@ struct DynamicContentSnapshot: Equatable, Sendable {
 
 /// Loads public curation data. This actor never stores or derives purchase state.
 actor DynamicContentService {
-    static let supportedSchemaVersion = 1
+    static let supportedSchemaVersions: Set<Int> = [1, 2]
+    static let maximumManifestBytes = 1_000_000
 
     private let bundledData: Data
     private let remoteManifestURL: URL?
@@ -85,6 +86,9 @@ actor DynamicContentService {
     }
 
     func validatedContent(from data: Data) throws -> ValidatedRemoteContent {
+        guard data.count <= Self.maximumManifestBytes else {
+            throw RemoteContentValidationError.manifestTooLarge
+        }
         let manifest: RemoteContentManifest
         do {
             manifest = try decoder.decode(RemoteContentManifest.self, from: data)
@@ -92,7 +96,7 @@ actor DynamicContentService {
             throw RemoteContentValidationError.decodingFailed
         }
 
-        guard manifest.schemaVersion == Self.supportedSchemaVersion else {
+        guard Self.supportedSchemaVersions.contains(manifest.schemaVersion) else {
             throw RemoteContentValidationError.unsupportedSchema(manifest.schemaVersion)
         }
         guard Self.isVersion(manifest.contentVersion) else {
@@ -135,7 +139,102 @@ actor DynamicContentService {
             }
         }
 
+        let themes = manifest.themes ?? []
+        guard themes.count <= 48 else { throw RemoteContentValidationError.tooManyThemes }
+        if manifest.schemaVersion == 1, !themes.isEmpty {
+            throw RemoteContentValidationError.unsupportedSchema(1)
+        }
+        var themeIDs = Set<String>()
+        for theme in themes {
+            guard Self.isValidThemeID(theme.id) else {
+                throw RemoteContentValidationError.invalidThemeID
+            }
+            guard themeIDs.insert(theme.id).inserted else {
+                throw RemoteContentValidationError.duplicateThemeID(theme.id)
+            }
+            guard theme.localizedText["en"]?["title"]?.isEmpty == false,
+                  theme.localizedText.allSatisfy({ locale, fields in
+                      !locale.isEmpty && fields["title"]?.isEmpty == false
+                          && fields.allSatisfy { !$0.key.isEmpty && !$0.value.isEmpty }
+                          && (fields["title"]?.count ?? 0) <= 80
+                          && (fields["summary"]?.count ?? 0) <= 240
+                  }) else {
+                throw RemoteContentValidationError.invalidThemeText(themeID: theme.id)
+            }
+            guard theme.assets["artwork"] != nil,
+                  theme.assets.count <= 12,
+                  theme.assets.allSatisfy({ name, path in
+                      Self.isValidAssetName(name)
+                          && Self.isVersionedThemeAssetPath(path, contentVersion: manifest.contentVersion)
+                          && ValidatedRemoteContent.safeAssetURL(baseURL: manifest.assetBaseURL, relativePath: path) != nil
+                  }) else {
+                throw RemoteContentValidationError.invalidThemeAssets(themeID: theme.id)
+            }
+            guard !theme.scene.layers.isEmpty, theme.scene.layers.count <= 8,
+                  theme.scene.layers.allSatisfy({ layer in
+                      theme.assets[layer.asset] != nil
+                          && layer.parallax.isFinite && (-1...1).contains(layer.parallax)
+                          && layer.amount.isFinite && (0...1).contains(layer.amount)
+                          && layer.period.isFinite && (0.5...90).contains(layer.period)
+                  }),
+                  (theme.scene.particles.map { emitters in
+                      emitters.count <= 4
+                          && emitters.allSatisfy { (0...120).contains($0.count) && $0.speed.isFinite && (0...2).contains($0.speed) }
+                          && emitters.reduce(0) { $0 + $1.count } <= 160
+                  } ?? true),
+                  (theme.scene.light.map { light in
+                      light.x.isFinite && (0...1).contains(light.x)
+                          && light.y.isFinite && (0...1).contains(light.y)
+                          && light.color.range(of: "^#[0-9A-Fa-f]{6}$", options: .regularExpression) != nil
+                          && light.radius.isFinite && (0...0.5).contains(light.radius)
+                          && light.flicker.isFinite && (0...1).contains(light.flicker)
+                          && light.period.isFinite && (0.5...30).contains(light.period)
+                  } ?? true),
+                  theme.scene.ambientAudioAsset.map({ theme.assets[$0] != nil }) ?? true else {
+                throw RemoteContentValidationError.invalidSceneRecipe(themeID: theme.id)
+            }
+            if let audioAsset = theme.scene.ambientAudioAsset,
+               let audioPath = theme.assets[audioAsset],
+               !Self.isSupportedAudioPath(audioPath) {
+                throw RemoteContentValidationError.invalidSceneRecipe(themeID: theme.id)
+            }
+            for layer in theme.scene.layers {
+                guard let path = theme.assets[layer.asset], Self.isSupportedImagePath(path) else {
+                    throw RemoteContentValidationError.invalidSceneRecipe(themeID: theme.id)
+                }
+            }
+            guard Self.isSupportedImagePath(theme.assets["artwork"] ?? "") else {
+                throw RemoteContentValidationError.invalidThemeAssets(themeID: theme.id)
+            }
+        }
+
         return ValidatedRemoteContent(manifest: manifest)
+    }
+
+    private static func isValidThemeID(_ value: String) -> Bool {
+        guard (3...48).contains(value.count), value == value.lowercased() else { return false }
+        return value.utf8.allSatisfy { byte in
+            (byte >= 97 && byte <= 122) || (byte >= 48 && byte <= 57) || byte == 45
+        }
+    }
+
+    private static func isValidAssetName(_ value: String) -> Bool {
+        !value.isEmpty && value.count <= 32 && value.utf8.allSatisfy { byte in
+            (byte >= 97 && byte <= 122) || (byte >= 48 && byte <= 57) || byte == 45 || byte == 95
+        }
+    }
+
+    private static func isSupportedImagePath(_ value: String) -> Bool {
+        ["png", "jpg", "jpeg", "webp"].contains(URL(filePath: value).pathExtension.lowercased())
+    }
+
+    private static func isSupportedAudioPath(_ value: String) -> Bool {
+        ["m4a", "mp3", "aac"].contains(URL(filePath: value).pathExtension.lowercased())
+    }
+
+    private static func isVersionedThemeAssetPath(_ value: String, contentVersion: String) -> Bool {
+        let segments = value.split(separator: "/", omittingEmptySubsequences: false)
+        return segments.count >= 3 && segments[0] == "assets" && segments[1] == Substring(contentVersion)
     }
 
     private func loadCachedContent() -> ValidatedRemoteContent? {

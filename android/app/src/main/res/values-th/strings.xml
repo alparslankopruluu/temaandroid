@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">ยกเลิก</string>
+    <string name="action_close" formatted="false">ปิด</string>
+    <string name="action_delete" formatted="false">ลบดีไซน์</string>
+    <string name="action_reset" formatted="false">รีเซ็ตการปรับแต่ง</string>
+    <string name="action_retry" formatted="false">ลองอีกครั้ง</string>
+    <string name="action_share" formatted="false">แชร์</string>
+    <string name="action_skip" formatted="false">ข้าม</string>
+    <string name="action_undo" formatted="false">เลิกทำ</string>
+    <string name="ad_cancelled" formatted="false">ยกเลิกโฆษณาแล้ว ลองใหม่ได้เมื่อพร้อม</string>
+    <string name="ad_playing" formatted="false">กำลังเล่นโฆษณาทดสอบ…</string>
+    <string name="ad_testnotice" formatted="false">ตัวอย่างสำหรับพัฒนา: จำลองโฆษณาแบบให้รางวัล ไม่มีโฆษณาจริงหรือรายได้เกิดขึ้น</string>
+    <string name="ad_watch" formatted="false">ทดสอบโฆษณา · ปลดล็อคส่งออกหนึ่งครั้ง</string>
+    <string name="audio_play" formatted="false">เล่นเสียงบรรยากาศ</string>
+    <string name="audio_stop" formatted="false">หยุดเสียงบรรยากาศ</string>
+    <string name="collection_cosmos" formatted="false">โลกอื่น</string>
+    <string name="collection_nature" formatted="false">ช่วงเวลาอันสงบ</string>
+    <string name="collection_ocean" formatted="false">ใต้ท้องทะเล</string>
+    <string name="collection_vehicles" formatted="false">ระหว่างทาง</string>
+    <string name="discover_complete" formatted="false">ลุคที่เข้ากันทั้งชุด</string>
+    <string name="discover_curated" formatted="false">ค้นหาลุคใหม่</string>
+    <string name="discover_featured" formatted="false">สร้างมาให้เคลื่อนไหว</string>
+    <string name="discover_title" formatted="false">ให้เป็นสไตล์คุณ</string>
+    <string name="editor_advanced" formatted="false">ปรับละเอียด</string>
+    <string name="editor_depth" formatted="false">ความลึก</string>
+    <string name="editor_home" formatted="false">หน้าจอโฮม</string>
+    <string name="editor_interact" formatted="false">แตะหรือเอียงเพื่อสำรวจ</string>
+    <string name="editor_lock" formatted="false">หน้าจอล็อค</string>
+    <string name="editor_motion" formatted="false">การเคลื่อนไหว</string>
+    <string name="editor_particles" formatted="false">อนุภาค</string>
+    <string name="editor_preview" formatted="false">ตัวอย่าง</string>
+    <string name="editor_saveinstall" formatted="false">บันทึกและตั้งค่า</string>
+    <string name="editor_scoremode" formatted="false">โหมดคะแนน</string>
+    <string name="editor_style" formatted="false">โทนสี</string>
+    <string name="editor_yourstyle" formatted="false">เติมสัมผัสในแบบคุณ</string>
+    <string name="editor_zoom" formatted="false">ครอบตัด</string>
+    <string name="export_description" formatted="false">เลือกวิธีบันทึก</string>
+    <string name="export_error_busy" formatted="false">กำลังส่งออกงานอื่นอยู่</string>
+    <string name="export_error_cancelled" formatted="false">ยกเลิกการส่งออกแล้ว สิทธิ์ที่ปลดล็อคไว้ยังใช้ได้</string>
+    <string name="export_error_encoding" formatted="false">ไม่สามารถสร้างภาพเคลื่อนไหวได้ โปรดลองอีกครั้ง</string>
+    <string name="export_error_permission" formatted="false">อนุญาตให้เพิ่มรูปภาพในการตั้งค่าเพื่อบันทึกภาพพื้นหลัง</string>
+    <string name="export_error_renderer" formatted="false">ไม่สามารถเรนเดอร์ฉากนี้ได้ โปรดลองธีมอื่น</string>
+    <string name="export_error_storage" formatted="false">พื้นที่ว่างไม่เพียงพอ เพิ่มพื้นที่แล้วลองอีกครั้ง</string>
+    <string name="export_hint_livephoto" formatted="false">ภาพเคลื่อนไหวสั้นสำหรับหน้าจอล็อค</string>
+    <string name="export_hint_still" formatted="false">ภาพพื้นหลังคมชัดสำหรับทุกหน้าจอ</string>
+    <string name="export_hint_video" formatted="false">คลิป 3 วินาทีสำหรับแชร์</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">บันทึกไปยังรูปภาพ</string>
+    <string name="export_still" formatted="false">ภาพนิ่ง</string>
+    <string name="export_success" formatted="false">บันทึกไปยังรูปภาพแล้ว</string>
+    <string name="export_title" formatted="false">ใช้เป็นภาพพื้นหลัง</string>
+    <string name="export_video" formatted="false">วิดีโอ</string>
+    <string name="filter_all" formatted="false">สำหรับคุณ</string>
+    <string name="filter_pixel" formatted="false">พิกเซล</string>
+    <string name="filter_realistic" formatted="false">สมจริง</string>
+    <string name="hero_subtitle" formatted="false">พบกับขับขี่ยามเที่ยงคืน</string>
+    <string name="hero_title" formatted="false">ช่วงเวลาบนหน้าจอ
+ที่ต่างออกไป</string>
+    <string name="icon_0" formatted="false">โทรศัพท์</string>
+    <string name="icon_1" formatted="false">ข้อความ</string>
+    <string name="icon_10" formatted="false">แผนที่</string>
+    <string name="icon_11" formatted="false">สภาพอากาศ</string>
+    <string name="icon_12" formatted="false">โน้ต</string>
+    <string name="icon_13" formatted="false">เตือนความจำ</string>
+    <string name="icon_14" formatted="false">ไฟล์</string>
+    <string name="icon_15" formatted="false">ช้อปปิ้ง</string>
+    <string name="icon_16" formatted="false">หนังสือ</string>
+    <string name="icon_17" formatted="false">สุขภาพ</string>
+    <string name="icon_18" formatted="false">วิดีโอ</string>
+    <string name="icon_19" formatted="false">เครื่องบันทึกเสียง</string>
+    <string name="icon_2" formatted="false">เมล</string>
+    <string name="icon_20" formatted="false">เครื่องคิดเลข</string>
+    <string name="icon_21" formatted="false">โลก</string>
+    <string name="icon_22" formatted="false">บ้าน</string>
+    <string name="icon_23" formatted="false">รายการโปรด</string>
+    <string name="icon_3" formatted="false">เบราว์เซอร์</string>
+    <string name="icon_4" formatted="false">กล้อง</string>
+    <string name="icon_5" formatted="false">รูปภาพ</string>
+    <string name="icon_6" formatted="false">เพลง</string>
+    <string name="icon_7" formatted="false">การตั้งค่า</string>
+    <string name="icon_8" formatted="false">ปฏิทิน</string>
+    <string name="icon_9" formatted="false">นาฬิกา</string>
+    <string name="icons_error_export" formatted="false">ไม่สามารถส่งออกชุดไอคอนได้ โปรดลองอีกครั้ง</string>
+    <string name="icons_export" formatted="false">ส่งออกชุดไอคอน</string>
+    <string name="icons_share" formatted="false">แชร์ชุดไอคอน</string>
+    <string name="install_completed" formatted="false">ทำเครื่องหมายว่าเสร็จแล้ว</string>
+    <string name="install_icons" formatted="false">ตั้งค่าไอคอน</string>
+    <string name="install_icons_1" formatted="false">ส่งออกชุดไอคอนแล้วบันทึกโฟลเดอร์ไปยังไฟล์ เลือกภาพสำหรับแอปที่ต้องการปรับแต่ง</string>
+    <string name="install_icons_2" formatted="false">ในแอปคำสั่งลัด สร้างการทำงานเปิดแอป แล้วเลือกแอป เปิดเมนูแล้วเลือกเพิ่มไปยังหน้าจอโฮม</string>
+    <string name="install_icons_3" formatted="false">แตะไอคอน เลือกภาพที่บันทึกไว้และตั้งชื่อ แตะเพิ่ม ทำซ้ำสำหรับแอปอื่น ไอคอนเดิมจะไม่เปลี่ยนแปลง</string>
+    <string name="install_intro" formatted="false">ไม่กี่ขั้นตอน สู่ลุคใหม่</string>
+    <string name="install_manual" formatted="false">iOS จะจัดการการตั้งค่าขั้นสุดท้าย แตะแต่ละขั้นตอนเมื่อทำเสร็จ เราจะจำความคืบหน้าของคุณ</string>
+    <string name="install_mark" formatted="false">แตะเมื่อทำเสร็จ</string>
+    <string name="install_title" formatted="false">ตั้งค่าเลย</string>
+    <string name="install_wallpaper" formatted="false">ตั้งค่าภาพพื้นหลัง</string>
+    <string name="install_wallpaper_1" formatted="false">เปิดการตั้งค่า → ภาพพื้นหลัง → เพิ่มภาพพื้นหลังใหม่ เลือกรูปภาพ แล้วเลือกภาพที่บันทึกไว้</string>
+    <string name="install_wallpaper_2" formatted="false">สำหรับ Live Photo ให้เปิดการเคลื่อนไหวหาก iOS มีตัวเลือกนี้ ลองฉากเชิงมิติสำหรับภาพที่รองรับ ปรับการครอบตัดและนาฬิกาในตัวแก้ไขของระบบ</string>
+    <string name="install_wallpaper_3" formatted="false">แตะเพิ่ม แล้วเลือกตั้งค่าเป็นคู่ภาพพื้นหลังหรือปรับแต่งหน้าจอโฮม ปลุกโทรศัพท์เพื่อตรวจดูผลลัพธ์</string>
+    <string name="install_widgets" formatted="false">เพิ่มวิดเจ็ต</string>
+    <string name="install_widgets_1" formatted="false">เลือกพื้นหลังวิดเจ็ตใน ScreenMotion จากนั้นแตะค้างบนพื้นที่ว่างของหน้าจอโฮม</string>
+    <string name="install_widgets_2" formatted="false">แตะแก้ไข → เพิ่มวิดเจ็ต ค้นหา ScreenMotion เลือกขนาดแล้วแตะเพิ่มวิดเจ็ต สำหรับ iOS รุ่นเก่าให้ใช้ปุ่ม +</string>
+    <string name="install_widgets_3" formatted="false">แตะวิดเจ็ตค้างไว้ → แก้ไขวิดเจ็ต เพื่อเลือกรูปภาพ นาฬิกาและวันที่ ปฏิทิน หรือคอลเลกชั่น เพิ่มวิดเจ็ตหน้าจอล็อคในตัวแก้ไขหน้าจอล็อคของระบบ</string>
+    <string name="legal_privacy" formatted="false">นโยบายความเป็นส่วนตัว</string>
+    <string name="legal_support" formatted="false">ฝ่ายช่วยเหลือ</string>
+    <string name="legal_terms" formatted="false">ข้อกำหนดการใช้งาน</string>
+    <string name="library_designs" formatted="false">ดีไซน์ของฉัน</string>
+    <string name="library_empty" formatted="false">พื้นที่สำหรับสิ่งที่คุณชอบ</string>
+    <string name="library_emptyhint" formatted="false">บันทึกดีไซน์หรือแตะหัวใจระหว่างสำรวจ เพื่อเริ่มคอลเลกชั่นของคุณ</string>
+    <string name="library_favorite" formatted="false">สลับรายการโปรด</string>
+    <string name="library_favorites" formatted="false">รายการโปรด</string>
+    <string name="library_save" formatted="false">บันทึกดีไซน์</string>
+    <string name="library_saved" formatted="false">บันทึกดีไซน์แล้ว</string>
+    <string name="library_subtitle" formatted="false">ทุกสิ่งที่ชอบ ในแบบของคุณ</string>
+    <string name="package_icons" formatted="false">ไอคอนเข้าชุด 24 แบบ</string>
+    <string name="package_subtitle" formatted="false">ภาพพื้นหลัง ไอคอน และวิดเจ็ต ออกแบบให้เข้ากัน</string>
+    <string name="package_widgets" formatted="false">รายละเอียดเล็ก ความต่างที่ยิ่งใหญ่</string>
+    <string name="platform_detail" formatted="false">การแตะและเอียงทำงานภายใน ScreenMotion เท่านั้น Live Photo อาจเคลื่อนไหวเมื่อปลุกหน้าจอล็อค โดย iOS จะกำหนดว่าภาพใดรองรับภาพพื้นหลัง Live Photo หรือฉากเชิงมิติ ตั้งค่าภาพพื้นหลังด้วยตนเองในการตั้งค่า ภาพพื้นหลังหน้าจอโฮมจะเป็นภาพนิ่ง</string>
+    <string name="platform_short" formatted="false">โต้ตอบได้ที่นี่ บันทึก Live Photo หรือภาพนิ่งเพื่อใช้เป็นภาพพื้นหลัง</string>
+    <string name="privacy_local" formatted="false">ดีไซน์และรายการโปรดอยู่ในอุปกรณ์นี้ รุ่นนี้ไม่ใช้บัญชี SDK ติดตาม หรือการอัปโหลดบนคลาวด์</string>
+    <string name="pro_active" formatted="false">คุณใช้ Pro อยู่</string>
+    <string name="pro_benefit_exports" formatted="false">ส่งออกไม่จำกัด ไม่มีโฆษณา</string>
+    <string name="pro_benefit_packs" formatted="false">ไอคอนและรูปแบบวิดเจ็ตที่เข้ากัน</string>
+    <string name="pro_benefit_scenes" formatted="false">ทุกฉากและทุกโทนสี</string>
+    <string name="pro_continue" formatted="false">ดำเนินการต่อด้วย Pro</string>
+    <string name="pro_monthly" formatted="false">รายเดือน</string>
+    <string name="pro_mostpopular" formatted="false">ยอดนิยมที่สุด</string>
+    <string name="pro_subtitle" formatted="false">หลากหลายวิธีให้โทรศัพท์เป็นตัวคุณยิ่งขึ้น</string>
+    <string name="pro_terms" formatted="false">การสมัครสมาชิกจะต่ออายุอัตโนมัติตามระยะเวลาที่เลือกจนกว่าจะยกเลิกในการตั้งค่า App Store</string>
+    <string name="pro_testnotice" formatted="false">รุ่นทดสอบในเครื่อง การซื้อใช้การทดสอบ Xcode StoreKit ไม่มีการเรียกเก็บเงินจริง</string>
+    <string name="pro_title" formatted="false">ทุกโลก เป็นของคุณ</string>
+    <string name="pro_unlock" formatted="false">สำรวจ Pro</string>
+    <string name="pro_yearly" formatted="false">รายปี</string>
+    <string name="purchase_failed" formatted="false">ไม่สามารถซื้อให้เสร็จสมบูรณ์ได้ โปรดลองอีกครั้ง</string>
+    <string name="purchase_none" formatted="false">ไม่พบการสมัครสมาชิกที่ใช้งานอยู่</string>
+    <string name="purchase_pending" formatted="false">การซื้อของคุณกำลังรออนุมัติ</string>
+    <string name="purchase_restore" formatted="false">กู้คืนการซื้อ</string>
+    <string name="purchase_restored" formatted="false">กู้คืนสิทธิ์ Pro แล้ว</string>
+    <string name="purchase_unavailable" formatted="false">สินค้าทดสอบไม่พร้อมใช้งาน เรียกใช้แอปจาก Xcode โดยเลือก Products.storekit</string>
+    <string name="purchase_working" formatted="false">กำลังดำเนินการ…</string>
+    <string name="search_placeholder" formatted="false">ค้นหาธีม…</string>
+    <string name="search_title" formatted="false">ค้นหาธีม</string>
+    <string name="settings_about" formatted="false">สิ่งที่ควรรู้</string>
+    <string name="settings_help" formatted="false">ให้เป็นสไตล์คุณ</string>
+    <string name="settings_testbuild" formatted="false">รุ่นพัฒนาในเครื่อง · ยังไม่ได้เชื่อมต่อบริการจริง</string>
+    <string name="settings_version" formatted="false">เวอร์ชั่น</string>
+    <string name="style_cool" formatted="false">เย็น</string>
+    <string name="style_original" formatted="false">ต้นฉบับ</string>
+    <string name="style_warm" formatted="false">อุ่น</string>
+    <string name="tab_discover" formatted="false">สำรวจ</string>
+    <string name="tab_library" formatted="false">คลัง</string>
+    <string name="tab_settings" formatted="false">การตั้งค่า</string>
+    <string name="theme_airplane" formatted="false">ท่องเมฆา</string>
+    <string name="theme_alpine" formatted="false">สายน้ำสงบ</string>
+    <string name="theme_bicycle" formatted="false">เส้นทางสีทอง</string>
+    <string name="theme_bus" formatted="false">พักใจริมฝั่ง</string>
+    <string name="theme_forest" formatted="false">สู่ความเขียวขจี</string>
+    <string name="theme_helicopter" formatted="false">เหนือทุกสิ่ง</string>
+    <string name="theme_jellyfish" formatted="false">แสงแห่งท้องทะเล</string>
+    <string name="theme_midnight" formatted="false">ขับขี่ยามเที่ยงคืน</string>
+    <string name="theme_motorcycle" formatted="false">หลังตะวันลับ</string>
+    <string name="theme_nebula" formatted="false">จักรวาลกำมะหยี่</string>
+    <string name="theme_orbit" formatted="false">นักบินอวกาศตัวน้อย</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">ขับพิกเซล</string>
+    <string name="theme_pixel_forest" formatted="false">ป่าพิกเซล</string>
+    <string name="theme_pixel_helicopter" formatted="false">โฮเวอร์พิกเซล</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">ขี่กลางคืนพิกเซล</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">กระท่อมกลางฝน</string>
+    <string name="theme_pixel_reef" formatted="false">แนวปะการังพิกเซล</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">ดริฟต์พิกเซล</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">สวนปะการัง</string>
+    <string name="theme_spaceship" formatted="false">ขอบฟ้าใหม่</string>
+    <string name="theme_tank" formatted="false">ตำนานทะเลทราย</string>
+    <string name="theme_tractor" formatted="false">แสงแห่งฤดูเก็บเกี่ยว</string>
+    <string name="theme_truck" formatted="false">ทางไกลกลับบ้าน</string>
+    <string name="welcome_interact" formatted="false">เอียงโทรศัพท์ แล้วแตะฉาก</string>
+    <string name="welcome_note" formatted="false">ไม่ต้องมีบัญชี สำรวจได้ตามใจ</string>
+    <string name="welcome_start" formatted="false">ค้นหาสไตล์ของฉัน</string>
+    <string name="welcome_subtitle" formatted="false">โลกที่มีชีวิต ไอคอนที่ใส่ใจ และวิดเจ็ตที่เข้ากัน ค้นหาลุคที่เป็นคุณ</string>
+    <string name="welcome_title" formatted="false">หน้าจอของคุณ
+เป็นคุณมากขึ้นอีกนิด</string>
+    <string name="widget_calendar" formatted="false">ปฏิทิน</string>
+    <string name="widget_choose" formatted="false">เลือกธีมใน ScreenMotion</string>
+    <string name="widget_collection" formatted="false">คอลเลกชั่น</string>
+    <string name="widget_configuration" formatted="false">ปรับแต่งวิดเจ็ต</string>
+    <string name="widget_configuration_description" formatted="false">เลือกเค้าโครงสำหรับธีมที่เลือกใน ScreenMotion</string>
+    <string name="widget_date" formatted="false">นาฬิกาและวันที่</string>
+    <string name="widget_description" formatted="false">ธีมที่คุณเลือก พร้อมรูปภาพ นาฬิกา ปฏิทิน หรือทางลัดคอลเลกชั่น</string>
+    <string name="widget_error_artwork" formatted="false">ไม่สามารถโหลดภาพของธีมนี้ได้</string>
+    <string name="widget_error_group" formatted="false">การแชร์วิดเจ็ตไม่พร้อมใช้งาน ตรวจสอบการลงนาม App Group แล้วลองอีกครั้ง</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">สำรวจคอลเลกชั่น</string>
+    <string name="widget_photo" formatted="false">รูปภาพ</string>
+    <string name="widget_select" formatted="false">ใช้กับวิดเจ็ตของฉัน</string>
+    <string name="widget_selectionhint" formatted="false">เลือกพื้นหลัง แล้วเพิ่มวิดเจ็ต ScreenMotion จากหน้าจอโฮม</string>
+    <string name="widget_style" formatted="false">สไตล์</string>
+    <string name="widget_theme" formatted="false">พื้นหลังวิดเจ็ต</string>
+</resources>

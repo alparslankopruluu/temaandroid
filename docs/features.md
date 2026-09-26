@@ -1,20 +1,36 @@
 # Features — local implementation registry
 
-| Feature | Screens | Evidence / status | Strings |
-|---|---|---|---|
-| Interactive welcome | Welcome | UI journey, no account/paywall barrier | welcome.* |
-| 16 realistic scenes | Discover | Catalog, artwork and compatibility checks | discover.*, theme.*, filter.realistic |
-| 6 pixel scenes | Discover / Editor | In-app SpriteKit gyro/touch plus optional score mode; lock-screen gyro is not claimed | filter.pixel, editor.scoreMode, theme.pixel-* |
-| Scene editor | Editor | Shared editor chrome; deterministic renderer and simulator pixel journey | editor.*, style.* |
-| Dynamic catalog overlay | Discover | HTTPS-only remote titles/visibility/order; never grants Pro | (remote titles) |
-| JPEG / video / Live Photo | Export | Pair identity, timed track and duration test; physical playback pending | export.*, platform.* |
-| Favorites / designs | Library | Persistence tests | library.* |
-| Guided installation | Install | Persisted steps, wallpaper/icons/widgets instructions | install.* |
-| 96 icons | Package | Four packs × 24 distinct PNGs tested | package.* |
-| Widgets | Widget extension / package | Compiled, shared snapshot; device install pending | widget.* |
-| Pro | Paywall / settings | RevenueCat SDK wrapper and native offering-driven paywall; localized prices, yearly preselection/Most Popular, retry, Restore, Terms and Privacy; local purchase plus expiration/revocation and paywall UI tests pass; ASC monthly/yearly products at $6.99/$79.99 are `WAITING_FOR_REVIEW` with version 1.0; signed-device sandbox acceptance pending | pro.*, purchase.*, legal.* |
-| Rewarded export | Export | Clearly labeled local simulator, cancellation tested | ad.* |
-| 22 languages | All screens and widget | Key completeness; Turkish/Arabic UI captures; dynamic-key guard and Turkish export-hint regression | all |
-| 22-locale App Store screenshots | Discover / Editor / Export / iPad store set | All 22 version localizations have exactly 4 COMPLETE iPhone 6.7 and 4 COMPLETE 13-inch iPad shots; English iPad duplicates deleted | store.screenshots |
+| Feature | Screens / routes | Analytics events | String namespace | Since |
+|---|---|---|---|---|
+| Interactive welcome | Welcome | onboarding_viewed, onboarding_completed | welcome.* | iOS baseline; Firebase M5 |
+| 16 realistic scenes | Discover | None | discover.*, theme.*, filter.realistic | iOS baseline |
+| 12 pixel scenes | Discover / Editor | None | filter.pixel, editor.scoreMode, theme.pixel-* | iOS M4 |
+| Scene editor | Editor | editor_viewed, design_saved | editor.*, style.* | iOS baseline; Firebase M5 |
+| Dynamic catalog overlay | Discover | None | remote titles | iOS baseline |
+| JPEG, video and Live Photo | Export | export_started, export_completed, export_failed | export.*, platform.* | iOS baseline; Firebase M5 |
+| Favorites and designs | Library | None | library.* | iOS baseline |
+| Per-design guided installation | Export / Install | None | install.* | iOS M4 |
+| 96 icons | Package | None | package.* | iOS baseline |
+| Widgets | Widget extension / Package | None | widget.* | iOS baseline |
+| Pro | Paywall / Settings | pro_paywall_viewed, pro_purchase_completed, pro_purchase_failed, pro_restore_completed, pro_restore_failed | pro.*, purchase.*, legal.* | iOS baseline; Firebase M5 |
+| Rewarded export | Export | None | ad.* | iOS baseline |
+| 22 languages | All screens and widget | None | all | iOS baseline |
+| 22-locale App Store screenshots | Store listing | None | store.screenshots | iOS 1.0 |
+| Native Android experience | Welcome / Discover / Editor / Library / Settings | onboarding_viewed, onboarding_completed, editor_viewed, design_saved | canonical shared keys | Android 1.0; Firebase M5 |
+| Android live wallpaper | Export / system wallpaper preview | None | android_live_wallpaper_note | Android 1.0 |
+| Android media export | Export | export_completed | export.*, action_export_* | Android 1.0; Firebase M5 |
+| Android icon packs | Package | None | icons.*, package.* | Android 1.0 |
+| Android widgets | System widget picker / Package | None | widget.* | Android 1.0 |
+| Android purchases | Paywall | pro_paywall_viewed, pro_purchase_completed, pro_restore_completed, pro_restore_failed | pro.*, purchase.* | Android 1.0; Firebase M5 |
+| Android and Huawei guidance | Install | None | android_install_*, huawei_theme_note | Android 1.0 |
+| Android M4 parity | Discover / Editor / Export / Install / widgets | None | 196 shared keys plus platform strings | Android M4 local |
+| Firebase dynamic scene catalog | Discover / Editor / Export | None | remote theme localized text, audio.* | iOS M5 |
+| Remote scene recipes | Editor / export renderer | None | existing editor.* | iOS M5; touch/drag share editor scrolling |
+| Rainfire cabin pixel scene | Discover / Editor / export | None | theme.pixel-rainfire | iOS M5 sample |
+| Google Play Internal Testing release | Play Console | None | release metadata | Android 1.0 |
+| Google Play subscriptions | Play Console / Paywall | None | pro.*, purchase.* | Android 1.0 |
 
-Analytics: no external analytics SDK is currently included. RevenueCat is included for purchases and entitlement management. App Privacy currently declares Purchases, Device ID and Product Interaction with tracking disabled; recheck the signed release binary and provider configuration before submission.
+Firebase Anonymous Auth, Analytics and Crashlytics are integrated into both native apps under M5. RevenueCat remains isolated to purchases and entitlement management, with Firebase anonymous UID linked through its wrapper. Realtime event and crash receipt validation remains a device/provider gate. Android delivery evidence and remaining device/provider gates are recorded in
+[`android-parity.md`](android-parity.md); iOS release evidence remains in the platform release
+documents.
+`app_opened` is emitted by both app roots when the main UI starts.

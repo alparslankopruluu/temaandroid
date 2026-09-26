@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">रद्द करें</string>
+    <string name="action_close" formatted="false">बंद करें</string>
+    <string name="action_delete" formatted="false">डिज़ाइन हटाएँ</string>
+    <string name="action_reset" formatted="false">बदलाव रीसेट करें</string>
+    <string name="action_retry" formatted="false">फिर कोशिश करें</string>
+    <string name="action_share" formatted="false">शेयर करें</string>
+    <string name="action_skip" formatted="false">छोड़ें</string>
+    <string name="action_undo" formatted="false">पहले जैसा करें</string>
+    <string name="ad_cancelled" formatted="false">विज्ञापन रद्द हुआ। तैयार होने पर फिर कोशिश करें।</string>
+    <string name="ad_playing" formatted="false">परीक्षण विज्ञापन चल रहा है…</string>
+    <string name="ad_testnotice" formatted="false">विकास प्रीव्यू: यह इनाम वाले विज्ञापन का अनुकरण है। कोई असली विज्ञापन नहीं दिखाया जाता और आय नहीं होती।</string>
+    <string name="ad_watch" formatted="false">विज्ञापन जाँचें · एक एक्सपोर्ट खोलें</string>
+    <string name="audio_play" formatted="false">दृश्य की ध्वनि चलाएँ</string>
+    <string name="audio_stop" formatted="false">दृश्य की ध्वनि रोकें</string>
+    <string name="collection_cosmos" formatted="false">दूसरी दुनिया</string>
+    <string name="collection_nature" formatted="false">सुकून के पल</string>
+    <string name="collection_ocean" formatted="false">पानी के नीचे</string>
+    <string name="collection_vehicles" formatted="false">सफ़र में</string>
+    <string name="discover_complete" formatted="false">पूरा लुक</string>
+    <string name="discover_curated" formatted="false">अपना अगला लुक खोजें</string>
+    <string name="discover_featured" formatted="false">हरकत के लिए बना</string>
+    <string name="discover_title" formatted="false">अपना अंदाज़ दें।</string>
+    <string name="editor_advanced" formatted="false">बारीकी से बदलें</string>
+    <string name="editor_depth" formatted="false">गहराई</string>
+    <string name="editor_home" formatted="false">होम स्क्रीन</string>
+    <string name="editor_interact" formatted="false">खोजने के लिए छुएँ या झुकाएँ</string>
+    <string name="editor_lock" formatted="false">लॉक स्क्रीन</string>
+    <string name="editor_motion" formatted="false">गति</string>
+    <string name="editor_particles" formatted="false">कण</string>
+    <string name="editor_preview" formatted="false">प्रीव्यू</string>
+    <string name="editor_saveinstall" formatted="false">सहेजें और सेट करें</string>
+    <string name="editor_scoremode" formatted="false">स्कोर मोड</string>
+    <string name="editor_style" formatted="false">रंगों का मिज़ाज</string>
+    <string name="editor_yourstyle" formatted="false">आपका अंतिम स्पर्श</string>
+    <string name="editor_zoom" formatted="false">क्रॉप</string>
+    <string name="export_description" formatted="false">चुनें कि कैसे सहेजना है।</string>
+    <string name="export_error_busy" formatted="false">एक एक्सपोर्ट पहले से चल रहा है।</string>
+    <string name="export_error_cancelled" formatted="false">एक्सपोर्ट रद्द हुआ। आपका अनलॉक अभी भी उपलब्ध है।</string>
+    <string name="export_error_encoding" formatted="false">ऐनिमेशन नहीं बन सकी। फिर कोशिश करें।</string>
+    <string name="export_error_permission" formatted="false">वॉलपेपर सहेजने के लिए सेटिंग्ज़ में फ़ोटो जोड़ने की अनुमति दें।</string>
+    <string name="export_error_renderer" formatted="false">यह दृश्य तैयार नहीं हो सका। कोई दूसरी थीम आज़माएँ।</string>
+    <string name="export_error_storage" formatted="false">पर्याप्त खाली जगह नहीं है। कुछ जगह खाली करके फिर कोशिश करें।</string>
+    <string name="export_hint_livephoto" formatted="false">लॉक स्क्रीन के लिए छोटी ऐनिमेशन</string>
+    <string name="export_hint_still" formatted="false">हर स्क्रीन के लिए साफ़ वॉलपेपर</string>
+    <string name="export_hint_video" formatted="false">शेयर करने के लिए 3 सेकंड की क्लिप</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">फ़ोटो में सहेजें</string>
+    <string name="export_still" formatted="false">स्थिर तस्वीर</string>
+    <string name="export_success" formatted="false">फ़ोटो में सहेजा गया</string>
+    <string name="export_title" formatted="false">इसे अपना वॉलपेपर बनाएँ</string>
+    <string name="export_video" formatted="false">वीडियो</string>
+    <string name="filter_all" formatted="false">आपके लिए</string>
+    <string name="filter_pixel" formatted="false">पिक्सेल</string>
+    <string name="filter_realistic" formatted="false">यथार्थवादी</string>
+    <string name="hero_subtitle" formatted="false">मिलिए आधी रात का सफ़र से</string>
+    <string name="hero_title" formatted="false">स्क्रीन पर बिताएँ
+कुछ अलग पल।</string>
+    <string name="icon_0" formatted="false">फ़ोन</string>
+    <string name="icon_1" formatted="false">संदेश</string>
+    <string name="icon_10" formatted="false">नक़्शे</string>
+    <string name="icon_11" formatted="false">मौसम</string>
+    <string name="icon_12" formatted="false">नोट्स</string>
+    <string name="icon_13" formatted="false">रिमाइंडर</string>
+    <string name="icon_14" formatted="false">फ़ाइल</string>
+    <string name="icon_15" formatted="false">खरीदारी</string>
+    <string name="icon_16" formatted="false">किताबें</string>
+    <string name="icon_17" formatted="false">स्वास्थ्य</string>
+    <string name="icon_18" formatted="false">वीडियो</string>
+    <string name="icon_19" formatted="false">रिकॉर्डर</string>
+    <string name="icon_2" formatted="false">मेल</string>
+    <string name="icon_20" formatted="false">कैलकुलेटर</string>
+    <string name="icon_21" formatted="false">दुनिया</string>
+    <string name="icon_22" formatted="false">घर</string>
+    <string name="icon_23" formatted="false">पसंदीदा</string>
+    <string name="icon_3" formatted="false">ब्राउज़र</string>
+    <string name="icon_4" formatted="false">कैमरा</string>
+    <string name="icon_5" formatted="false">फ़ोटो</string>
+    <string name="icon_6" formatted="false">संगीत</string>
+    <string name="icon_7" formatted="false">सेटिंग्ज़</string>
+    <string name="icon_8" formatted="false">कैलेंडर</string>
+    <string name="icon_9" formatted="false">घड़ी</string>
+    <string name="icons_error_export" formatted="false">आइकन पैक एक्सपोर्ट नहीं हुआ। फिर कोशिश करें।</string>
+    <string name="icons_export" formatted="false">आइकन पैक एक्सपोर्ट करें</string>
+    <string name="icons_share" formatted="false">आइकन पैक शेयर करें</string>
+    <string name="install_completed" formatted="false">पूरा चिह्नित किया</string>
+    <string name="install_icons" formatted="false">आइकन सेट करें</string>
+    <string name="install_icons_1" formatted="false">आइकन पैक एक्सपोर्ट करें और फ़ोल्डर को फ़ाइल में सहेजें। जिस ऐप को बदलना है, उसकी तस्वीर चुनें।</string>
+    <string name="install_icons_2" formatted="false">शॉर्टकट में ऐप खोलें क्रिया बनाएँ और ऐप चुनें। मेनू खोलकर होम स्क्रीन में जोड़ें चुनें।</string>
+    <string name="install_icons_3" formatted="false">आइकन पर टैप करें, सहेजी तस्वीर चुनें और नाम दें। जोड़ें पर टैप करें। दूसरे ऐप के लिए दोहराएँ; मूल आइकन नहीं बदलते।</string>
+    <string name="install_intro" formatted="false">कुछ कदम। एक नया लुक।</string>
+    <string name="install_manual" formatted="false">अंतिम सेटअप iOS करता है। हर कदम पूरा होने पर टैप करें; आपकी प्रगति याद रखी जाएगी।</string>
+    <string name="install_mark" formatted="false">पूरा होने पर टैप करें</string>
+    <string name="install_title" formatted="false">सेट करें</string>
+    <string name="install_wallpaper" formatted="false">वॉलपेपर सेट करें</string>
+    <string name="install_wallpaper_1" formatted="false">सेटिंग्ज़ → वॉलपेपर → नया वॉलपेपर जोड़ें खोलें। फ़ोटो चुनें और अपनी सहेजी तस्वीर चुनें।</string>
+    <string name="install_wallpaper_2" formatted="false">Live Photo के लिए iOS विकल्प दे तो गति चालू करें। योग्य तस्वीर पर स्थानिक दृश्य आज़माएँ। सिस्टम एडिटर में क्रॉप और घड़ी बदलें।</string>
+    <string name="install_wallpaper_3" formatted="false">जोड़ें पर टैप करें, फिर वॉलपेपर जोड़ी के रूप में सेट करें चुनें या होम स्क्रीन बदलें। परिणाम देखने के लिए फ़ोन जगाएँ।</string>
+    <string name="install_widgets" formatted="false">विजेट जोड़ें</string>
+    <string name="install_widgets_1" formatted="false">ScreenMotion में विजेट बैकग्राउंड चुनें। होम स्क्रीन पर खाली जगह को छूकर दबाए रखें।</string>
+    <string name="install_widgets_2" formatted="false">संपादित करें → विजेट जोड़ें पर टैप करें, ScreenMotion खोजें, आकार चुनें और विजेट जोड़ें पर टैप करें। पुराने iOS पर + बटन इस्तेमाल करें।</string>
+    <string name="install_widgets_3" formatted="false">विजेट दबाए रखें → विजेट संपादित करें में फ़ोटो, घड़ी और तारीख़, कैलेंडर या संग्रह चुनें। लॉक स्क्रीन विजेट सिस्टम के लॉक स्क्रीन एडिटर में जोड़े जाते हैं।</string>
+    <string name="legal_privacy" formatted="false">गोपनीयता नीति</string>
+    <string name="legal_support" formatted="false">सहायता</string>
+    <string name="legal_terms" formatted="false">उपयोग की शर्तें</string>
+    <string name="library_designs" formatted="false">मेरे डिज़ाइन</string>
+    <string name="library_empty" formatted="false">आपकी पसंद के लिए जगह</string>
+    <string name="library_emptyhint" formatted="false">डिज़ाइन सहेजें या खोजते समय दिल पर टैप करें। आपका संग्रह यहीं से शुरू होता है।</string>
+    <string name="library_favorite" formatted="false">पसंदीदा स्थिति बदलें</string>
+    <string name="library_favorites" formatted="false">पसंदीदा</string>
+    <string name="library_save" formatted="false">डिज़ाइन सहेजें</string>
+    <string name="library_saved" formatted="false">डिज़ाइन सहेजा गया</string>
+    <string name="library_subtitle" formatted="false">आपकी पसंद। आपका अपना अंदाज़।</string>
+    <string name="package_icons" formatted="false">24 मेल खाते आइकन</string>
+    <string name="package_subtitle" formatted="false">वॉलपेपर, आइकन और विजेट। एक-दूसरे से मेल खाते।</string>
+    <string name="package_widgets" formatted="false">छोटी बारीकियाँ। बड़ा फ़र्क।</string>
+    <string name="platform_detail" formatted="false">छूने और झुकाने की क्रियाएँ ScreenMotion के अंदर काम करती हैं। लॉक स्क्रीन जगाने पर Live Photo चल सकती है। कौन-सी तस्वीर Live Photo वॉलपेपर या स्थानिक दृश्य का समर्थन करती है, यह iOS तय करता है। सेटिंग्ज़ में वॉलपेपर खुद सेट करें; होम स्क्रीन के वॉलपेपर स्थिर रहते हैं।</string>
+    <string name="platform_short" formatted="false">यहाँ इंटरैक्ट करें। वॉलपेपर के लिए Live Photo या स्थिर तस्वीर सहेजें।</string>
+    <string name="privacy_local" formatted="false">आपके डिज़ाइन और पसंदीदा इस डिवाइस पर रहते हैं। इस संस्करण में खाता, ट्रैकिंग SDK या क्लाउड अपलोड नहीं है।</string>
+    <string name="pro_active" formatted="false">आप Pro पर हैं</string>
+    <string name="pro_benefit_exports" formatted="false">असीमित एक्सपोर्ट, कोई विज्ञापन नहीं</string>
+    <string name="pro_benefit_packs" formatted="false">मेल खाते आइकन और विजेट शैली</string>
+    <string name="pro_benefit_scenes" formatted="false">हर दृश्य और रंगों का मिज़ाज</string>
+    <string name="pro_continue" formatted="false">Pro के साथ जारी रखें</string>
+    <string name="pro_monthly" formatted="false">मासिक</string>
+    <string name="pro_mostpopular" formatted="false">सबसे लोकप्रिय</string>
+    <string name="pro_subtitle" formatted="false">अपने फ़ोन को अपना अंदाज़ देने के और तरीके।</string>
+    <string name="pro_terms" formatted="false">सदस्यता चुनी हुई अवधि के लिए अपने आप नवीनीकृत होती है, जब तक कि App Store सेटिंग्ज़ में रद्द न की जाए।</string>
+    <string name="pro_testnotice" formatted="false">स्थानीय परीक्षण संस्करण। खरीदारी Xcode StoreKit परीक्षण से होती है। असली भुगतान नहीं लिया जाता।</string>
+    <string name="pro_title" formatted="false">हर दुनिया। आपकी अपनी।</string>
+    <string name="pro_unlock" formatted="false">Pro देखें</string>
+    <string name="pro_yearly" formatted="false">वार्षिक</string>
+    <string name="purchase_failed" formatted="false">खरीदारी पूरी नहीं हो सकी। फिर कोशिश करें।</string>
+    <string name="purchase_none" formatted="false">कोई सक्रिय सदस्यता नहीं मिली।</string>
+    <string name="purchase_pending" formatted="false">आपकी खरीदारी मंज़ूरी की प्रतीक्षा में है।</string>
+    <string name="purchase_restore" formatted="false">खरीदारी बहाल करें</string>
+    <string name="purchase_restored" formatted="false">आपकी Pro पहुँच बहाल हो गई।</string>
+    <string name="purchase_unavailable" formatted="false">परीक्षण उत्पाद उपलब्ध नहीं हैं। Xcode में Products.storekit चुनकर ऐप चलाएँ।</string>
+    <string name="purchase_working" formatted="false">काम जारी है…</string>
+    <string name="search_placeholder" formatted="false">थीम खोजें…</string>
+    <string name="search_title" formatted="false">थीम खोजें</string>
+    <string name="settings_about" formatted="false">जानने योग्य बातें</string>
+    <string name="settings_help" formatted="false">अपना अंदाज़ दें</string>
+    <string name="settings_testbuild" formatted="false">स्थानीय विकास संस्करण · लाइव सेवाएँ जुड़ी नहीं हैं।</string>
+    <string name="settings_version" formatted="false">संस्करण</string>
+    <string name="style_cool" formatted="false">ठंडा</string>
+    <string name="style_original" formatted="false">मूल</string>
+    <string name="style_warm" formatted="false">गर्म</string>
+    <string name="tab_discover" formatted="false">खोजें</string>
+    <string name="tab_library" formatted="false">लाइब्रेरी</string>
+    <string name="tab_settings" formatted="false">सेटिंग्ज़</string>
+    <string name="theme_airplane" formatted="false">बादलों के पार</string>
+    <string name="theme_alpine" formatted="false">शांत जल</string>
+    <string name="theme_bicycle" formatted="false">सुनहरी राहें</string>
+    <string name="theme_bus" formatted="false">समंदर किनारे</string>
+    <string name="theme_forest" formatted="false">हरियाली की ओर</string>
+    <string name="theme_helicopter" formatted="false">सबसे ऊपर</string>
+    <string name="theme_jellyfish" formatted="false">समंदर की चमक</string>
+    <string name="theme_midnight" formatted="false">आधी रात का सफ़र</string>
+    <string name="theme_motorcycle" formatted="false">शाम के बाद</string>
+    <string name="theme_nebula" formatted="false">मखमली ब्रह्मांड</string>
+    <string name="theme_orbit" formatted="false">नन्हा अंतरिक्ष यात्री</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">पिक्सेल ड्राइव</string>
+    <string name="theme_pixel_forest" formatted="false">पिक्सेल वन</string>
+    <string name="theme_pixel_helicopter" formatted="false">पिक्सेल होवर</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">पिक्सेल नाइट राइड</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">बारिश की रात की झोपड़ी</string>
+    <string name="theme_pixel_reef" formatted="false">पिक्सेल रीफ</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">पिक्सेल ड्रिफ्ट</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">मूँगों का बगीचा</string>
+    <string name="theme_spaceship" formatted="false">नए क्षितिज</string>
+    <string name="theme_tank" formatted="false">रेगिस्तान की दास्तान</string>
+    <string name="theme_tractor" formatted="false">फ़सल की रोशनी</string>
+    <string name="theme_truck" formatted="false">घर की लंबी राह</string>
+    <string name="welcome_interact" formatted="false">फ़ोन झुकाएँ। दृश्य को छुएँ।</string>
+    <string name="welcome_note" formatted="false">खाते की ज़रूरत नहीं। आराम से खोजें।</string>
+    <string name="welcome_start" formatted="false">अपना लुक खोजें</string>
+    <string name="welcome_subtitle" formatted="false">जीवंत दुनिया, सुंदर आइकन और मेल खाते विजेट। अपना-सा लगने वाला लुक खोजें।</string>
+    <string name="welcome_title" formatted="false">आपकी स्क्रीन।
+आपके रंग में।</string>
+    <string name="widget_calendar" formatted="false">कैलेंडर</string>
+    <string name="widget_choose" formatted="false">ScreenMotion में थीम चुनें</string>
+    <string name="widget_collection" formatted="false">संग्रह</string>
+    <string name="widget_configuration" formatted="false">विजेट को मनचाहा बनाएँ</string>
+    <string name="widget_configuration_description" formatted="false">ScreenMotion में चुनी थीम के लिए लेआउट चुनें।</string>
+    <string name="widget_date" formatted="false">घड़ी और तारीख़</string>
+    <string name="widget_description" formatted="false">आपकी चुनी थीम के साथ फ़ोटो, घड़ी, कैलेंडर या संग्रह का शॉर्टकट।</string>
+    <string name="widget_error_artwork" formatted="false">इस थीम की तस्वीर लोड नहीं हो सकी।</string>
+    <string name="widget_error_group" formatted="false">विजेट शेयर करना उपलब्ध नहीं है। App Group साइनिंग जाँचकर फिर कोशिश करें।</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">संग्रह देखें</string>
+    <string name="widget_photo" formatted="false">फ़ोटो</string>
+    <string name="widget_select" formatted="false">मेरे विजेट के लिए इस्तेमाल करें</string>
+    <string name="widget_selectionhint" formatted="false">बैकग्राउंड चुनें, फिर होम स्क्रीन से ScreenMotion विजेट जोड़ें।</string>
+    <string name="widget_style" formatted="false">शैली</string>
+    <string name="widget_theme" formatted="false">विजेट बैकग्राउंड</string>
+</resources>

@@ -34,7 +34,10 @@ struct ProPaywallView: View {
                 }
             }
         }
-        .task { await loadOffering() }
+        .task {
+            AppTelemetry.log(.proPaywallViewed)
+            await loadOffering()
+        }
     }
 
     private func loadOffering() async {
@@ -197,11 +200,9 @@ private struct NativePaywallView: View {
         busy = true
         defer { busy = false }
         do {
-            let result = try await Purchases.shared.purchase(package: selected)
-            guard !result.userCancelled else { return }
-            purchases.apply(result.customerInfo)
-            if purchases.isPro { dismiss() }
+            if try await purchases.purchase(selected) { dismiss() }
         } catch {
+            AppTelemetry.log(.proPurchaseFailed)
             purchases.message = "purchase.failed"
         }
     }

@@ -23,18 +23,18 @@ final class LibraryTests: XCTestCase {
         reopened.consumeReward("motorcycle")
         XCTAssertFalse(LibraryStore(defaults: defaults).rewards.contains("motorcycle"))
     }
-    func testCatalogPreservesRealisticBaselineAndAddsTwelvePixelScenes() {
+    func testCatalogHasSixteenRealisticAndThirteenPixelScenes() {
         let themes = ThemeCatalog.bundled.themes
-        XCTAssertEqual(themes.count, 28)
-        XCTAssertEqual(Set(themes.map(\.id)).count, 28)
+        XCTAssertEqual(themes.count, 29)
+        XCTAssertEqual(Set(themes.map(\.id)).count, 29)
         XCTAssertEqual(themes.filter { $0.appearance == .realistic }.count, 16)
-        XCTAssertEqual(themes.filter { $0.appearance == .pixel }.count, 12)
+        XCTAssertEqual(themes.filter { $0.appearance == .pixel }.count, 13)
         XCTAssertEqual(themes.filter { $0.appearance == .pixel && $0.isFree }.map(\.id), ["pixel-car"])
         XCTAssertEqual(Set(themes.filter(\.isPixel).map(\.titleKey)), Set([
             "theme.pixel-car", "theme.pixel-motorcycle", "theme.pixel-helicopter",
             "theme.pixel-spaceship", "theme.pixel-reef", "theme.pixel-forest",
             "theme.pixel-ufo", "theme.pixel-aquarium", "theme.pixel-autumn",
-            "theme.pixel-race", "theme.pixel-koi", "theme.pixel-snow"
+            "theme.pixel-race", "theme.pixel-koi", "theme.pixel-snow", "theme.pixel-rainfire"
         ]))
         for collection in ThemeCollection.allCases {
             XCTAssertEqual(themes.filter { $0.collection == collection && $0.appearance == .realistic && $0.isFree }.count, 1)
@@ -55,7 +55,10 @@ final class LibraryTests: XCTestCase {
         let installed = reopened.installationProgress(themeID: "pixel-ufo", configuration: first)
         XCTAssertTrue(installed.exported.contains(.wallpaper))
         XCTAssertTrue(installed.installed.contains(.wallpaper))
-        XCTAssertEqual(reopened.installationProgress(themeID: "pixel-ufo", configuration: second), .init())
+        let otherDesign = reopened.installationProgress(themeID: "pixel-ufo", configuration: second)
+        XCTAssertEqual(otherDesign.completedSteps, Set(["wallpaper.1", "wallpaper.2", "wallpaper.3"]))
+        XCTAssertTrue(otherDesign.exported.isEmpty)
+        XCTAssertTrue(otherDesign.installed.isEmpty)
     }
     @MainActor func testRewardCancelledBeforeCompletionNeverGrantsSuccess() async {
         let service = RewardedAdService()

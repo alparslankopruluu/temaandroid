@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">Отмена</string>
+    <string name="action_close" formatted="false">Закрыть</string>
+    <string name="action_delete" formatted="false">Удалить дизайн</string>
+    <string name="action_reset" formatted="false">Сбросить настройки</string>
+    <string name="action_retry" formatted="false">Повторить</string>
+    <string name="action_share" formatted="false">Поделиться</string>
+    <string name="action_skip" formatted="false">Пропустить</string>
+    <string name="action_undo" formatted="false">Отменить изменение</string>
+    <string name="ad_cancelled" formatted="false">Реклама отменена. Попробуйте снова, когда будете готовы.</string>
+    <string name="ad_playing" formatted="false">Воспроизводится тестовая реклама…</string>
+    <string name="ad_testnotice" formatted="false">Предпросмотр для разработки: имитация рекламы с наградой. Настоящая реклама не показывается, доход не начисляется.</string>
+    <string name="ad_watch" formatted="false">Тест рекламы · открыть один экспорт</string>
+    <string name="audio_play" formatted="false">Включить звук сцены</string>
+    <string name="audio_stop" formatted="false">Выключить звук сцены</string>
+    <string name="collection_cosmos" formatted="false">Другие миры</string>
+    <string name="collection_nature" formatted="false">Мгновения покоя</string>
+    <string name="collection_ocean" formatted="false">Под водой</string>
+    <string name="collection_vehicles" formatted="false">В движении</string>
+    <string name="discover_complete" formatted="false">Всё в одном стиле</string>
+    <string name="discover_curated" formatted="false">Найдите новый образ</string>
+    <string name="discover_featured" formatted="false">СОЗДАНО ДЛЯ ДВИЖЕНИЯ</string>
+    <string name="discover_title" formatted="false">Экран в вашем стиле.</string>
+    <string name="editor_advanced" formatted="false">Точная настройка</string>
+    <string name="editor_depth" formatted="false">Глубина</string>
+    <string name="editor_home" formatted="false">Экран «Домой»</string>
+    <string name="editor_interact" formatted="false">Коснитесь или наклоните для просмотра</string>
+    <string name="editor_lock" formatted="false">Экран блокировки</string>
+    <string name="editor_motion" formatted="false">Движение</string>
+    <string name="editor_particles" formatted="false">Частицы</string>
+    <string name="editor_preview" formatted="false">Предпросмотр</string>
+    <string name="editor_saveinstall" formatted="false">Сохранить и настроить</string>
+    <string name="editor_scoremode" formatted="false">Режим счёта</string>
+    <string name="editor_style" formatted="false">Цветовое настроение</string>
+    <string name="editor_yourstyle" formatted="false">Ваш завершающий штрих</string>
+    <string name="editor_zoom" formatted="false">Кадрирование</string>
+    <string name="export_description" formatted="false">Выберите способ сохранения.</string>
+    <string name="export_error_busy" formatted="false">Экспорт уже выполняется.</string>
+    <string name="export_error_cancelled" formatted="false">Экспорт отменён. Полученное право на экспорт сохранено.</string>
+    <string name="export_error_encoding" formatted="false">Не удалось создать анимацию. Попробуйте ещё раз.</string>
+    <string name="export_error_permission" formatted="false">Разрешите добавление фото в настройках, чтобы сохранить обои.</string>
+    <string name="export_error_renderer" formatted="false">Не удалось отрисовать сцену. Попробуйте другую тему.</string>
+    <string name="export_error_storage" formatted="false">Недостаточно свободного места. Освободите память и повторите попытку.</string>
+    <string name="export_hint_livephoto" formatted="false">Короткая анимация для экрана блокировки</string>
+    <string name="export_hint_still" formatted="false">Чёткие обои для любого экрана</string>
+    <string name="export_hint_video" formatted="false">Ролик на 3 секунды, которым можно поделиться</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Сохранить в «Фото»</string>
+    <string name="export_still" formatted="false">Статичное изображение</string>
+    <string name="export_success" formatted="false">Сохранено в «Фото»</string>
+    <string name="export_title" formatted="false">Ваши новые обои</string>
+    <string name="export_video" formatted="false">Видео</string>
+    <string name="filter_all" formatted="false">Для вас</string>
+    <string name="filter_pixel" formatted="false">Пиксели</string>
+    <string name="filter_realistic" formatted="false">Реализм</string>
+    <string name="hero_subtitle" formatted="false">Знакомьтесь: Ночная поездка</string>
+    <string name="hero_title" formatted="false">Новый взгляд
+на ваш экран.</string>
+    <string name="icon_0" formatted="false">Телефон</string>
+    <string name="icon_1" formatted="false">Сообщения</string>
+    <string name="icon_10" formatted="false">Карты</string>
+    <string name="icon_11" formatted="false">Погода</string>
+    <string name="icon_12" formatted="false">Заметки</string>
+    <string name="icon_13" formatted="false">Напоминания</string>
+    <string name="icon_14" formatted="false">Файлы</string>
+    <string name="icon_15" formatted="false">Покупки</string>
+    <string name="icon_16" formatted="false">Книги</string>
+    <string name="icon_17" formatted="false">Здоровье</string>
+    <string name="icon_18" formatted="false">Видео</string>
+    <string name="icon_19" formatted="false">Диктофон</string>
+    <string name="icon_2" formatted="false">Почта</string>
+    <string name="icon_20" formatted="false">Калькулятор</string>
+    <string name="icon_21" formatted="false">Мир</string>
+    <string name="icon_22" formatted="false">Дом</string>
+    <string name="icon_23" formatted="false">Избранное</string>
+    <string name="icon_3" formatted="false">Браузер</string>
+    <string name="icon_4" formatted="false">Камера</string>
+    <string name="icon_5" formatted="false">Фото</string>
+    <string name="icon_6" formatted="false">Музыка</string>
+    <string name="icon_7" formatted="false">Настройки</string>
+    <string name="icon_8" formatted="false">Календарь</string>
+    <string name="icon_9" formatted="false">Часы</string>
+    <string name="icons_error_export" formatted="false">Не удалось экспортировать набор значков. Повторите попытку.</string>
+    <string name="icons_export" formatted="false">Экспортировать набор значков</string>
+    <string name="icons_share" formatted="false">Поделиться набором значков</string>
+    <string name="install_completed" formatted="false">Отмечено как выполненное</string>
+    <string name="install_icons" formatted="false">Настройте значки</string>
+    <string name="install_icons_1" formatted="false">Экспортируйте набор значков и сохраните папку в «Файлы». Выберите изображение для приложения, которое хотите оформить.</string>
+    <string name="install_icons_2" formatted="false">В «Командах» создайте действие «Открыть приложение» и выберите приложение. Откройте меню и выберите «На экран Домой».</string>
+    <string name="install_icons_3" formatted="false">Нажмите на значок, выберите сохранённое изображение и задайте имя. Нажмите «Добавить». Повторите для других приложений; их исходные значки не изменятся.</string>
+    <string name="install_intro" formatted="false">Всего несколько шагов. Совершенно новый образ.</string>
+    <string name="install_manual" formatted="false">Финальную настройку выполняет iOS. Нажимайте на каждый шаг после его завершения — мы сохраним ваш прогресс.</string>
+    <string name="install_mark" formatted="false">Нажмите после завершения</string>
+    <string name="install_title" formatted="false">Настройте свой экран</string>
+    <string name="install_wallpaper" formatted="false">Установите обои</string>
+    <string name="install_wallpaper_1" formatted="false">Откройте «Настройки» → «Обои» → «Добавить новые обои». Выберите «Фото» и сохранённое изображение.</string>
+    <string name="install_wallpaper_2" formatted="false">Для Live Photo включите движение, если iOS предлагает эту функцию. Для совместимых изображений попробуйте пространственную сцену. Настройте кадрирование и часы в системном редакторе.</string>
+    <string name="install_wallpaper_3" formatted="false">Нажмите «Добавить», затем выберите «Сделать парой обоев» или настройте экран «Домой». Разбудите телефон, чтобы проверить результат.</string>
+    <string name="install_widgets" formatted="false">Добавьте виджеты</string>
+    <string name="install_widgets_1" formatted="false">Выберите фон виджета в ScreenMotion. На экране «Домой» нажмите и удерживайте пустую область.</string>
+    <string name="install_widgets_2" formatted="false">Нажмите «Править» → «Добавить виджет», найдите ScreenMotion, выберите размер и нажмите «Добавить виджет». В старых версиях iOS используйте кнопку +.</string>
+    <string name="install_widgets_3" formatted="false">Нажмите и удерживайте виджет → «Изменить виджет», чтобы выбрать «Фото», «Часы и дата», «Календарь» или «Коллекция». Виджеты экрана блокировки добавляются в системном редакторе экрана блокировки.</string>
+    <string name="legal_privacy" formatted="false">Политика конфиденциальности</string>
+    <string name="legal_support" formatted="false">Поддержка</string>
+    <string name="legal_terms" formatted="false">Условия использования</string>
+    <string name="library_designs" formatted="false">Мои дизайны</string>
+    <string name="library_empty" formatted="false">Место для избранного</string>
+    <string name="library_emptyhint" formatted="false">Сохраните дизайн или нажмите на сердечко при просмотре. С этого начинается ваша коллекция.</string>
+    <string name="library_favorite" formatted="false">Изменить статус избранного</string>
+    <string name="library_favorites" formatted="false">Избранное</string>
+    <string name="library_save" formatted="false">Сохранить дизайн</string>
+    <string name="library_saved" formatted="false">Дизайн сохранён</string>
+    <string name="library_subtitle" formatted="false">Всё избранное. Всё ваше.</string>
+    <string name="package_icons" formatted="false">24 подходящих значка</string>
+    <string name="package_subtitle" formatted="false">Обои, значки и виджеты. В едином стиле.</string>
+    <string name="package_widgets" formatted="false">Маленькие детали. Большая разница.</string>
+    <string name="platform_detail" formatted="false">Реакция на касания и наклоны работает внутри ScreenMotion. Live Photo может анимироваться при пробуждении экрана блокировки. iOS определяет, какие изображения поддерживают обои Live Photo или пространственную сцену. Установите обои вручную в настройках; на экране «Домой» они остаются неподвижными.</string>
+    <string name="platform_short" formatted="false">Здесь — интерактивно. Для обоев сохраните Live Photo или статичное изображение.</string>
+    <string name="privacy_local" formatted="false">Ваши дизайны и избранное остаются на этом устройстве. В этой сборке нет аккаунтов, SDK отслеживания и загрузки в облако.</string>
+    <string name="pro_active" formatted="false">У вас Pro</string>
+    <string name="pro_benefit_exports" formatted="false">Неограниченный экспорт без рекламы</string>
+    <string name="pro_benefit_packs" formatted="false">Подходящие значки и стили виджетов</string>
+    <string name="pro_benefit_scenes" formatted="false">Все сцены и цветовые настроения</string>
+    <string name="pro_continue" formatted="false">Продолжить с Pro</string>
+    <string name="pro_monthly" formatted="false">На месяц</string>
+    <string name="pro_mostpopular" formatted="false">Самый популярный</string>
+    <string name="pro_subtitle" formatted="false">Больше способов сделать телефон своим.</string>
+    <string name="pro_terms" formatted="false">Подписка автоматически продлевается на выбранный период, пока вы не отмените её в настройках App Store.</string>
+    <string name="pro_testnotice" formatted="false">Локальная тестовая сборка. Покупки выполняются через тестирование StoreKit в Xcode. Реальные деньги не списываются.</string>
+    <string name="pro_title" formatted="false">Все миры — ваши.</string>
+    <string name="pro_unlock" formatted="false">Открыть Pro</string>
+    <string name="pro_yearly" formatted="false">На год</string>
+    <string name="purchase_failed" formatted="false">Не удалось завершить покупку. Повторите попытку.</string>
+    <string name="purchase_none" formatted="false">Активная подписка не найдена.</string>
+    <string name="purchase_pending" formatted="false">Ваша покупка ожидает одобрения.</string>
+    <string name="purchase_restore" formatted="false">Восстановить покупки</string>
+    <string name="purchase_restored" formatted="false">Ваш доступ Pro восстановлен.</string>
+    <string name="purchase_unavailable" formatted="false">Тестовые продукты недоступны. Запустите приложение из Xcode, выбрав Products.storekit.</string>
+    <string name="purchase_working" formatted="false">Обработка…</string>
+    <string name="search_placeholder" formatted="false">Найти тему…</string>
+    <string name="search_title" formatted="false">Поиск тем</string>
+    <string name="settings_about" formatted="false">Полезно знать</string>
+    <string name="settings_help" formatted="false">Ваш неповторимый стиль</string>
+    <string name="settings_testbuild" formatted="false">Локальная сборка для разработки · Онлайн-сервисы не подключены.</string>
+    <string name="settings_version" formatted="false">Версия</string>
+    <string name="style_cool" formatted="false">Холодный</string>
+    <string name="style_original" formatted="false">Оригинал</string>
+    <string name="style_warm" formatted="false">Тёплый</string>
+    <string name="tab_discover" formatted="false">Обзор</string>
+    <string name="tab_library" formatted="false">Библиотека</string>
+    <string name="tab_settings" formatted="false">Настройки</string>
+    <string name="theme_airplane" formatted="false">Среди облаков</string>
+    <string name="theme_alpine" formatted="false">Тихие воды</string>
+    <string name="theme_bicycle" formatted="false">Золотые километры</string>
+    <string name="theme_bus" formatted="false">Побег к морю</string>
+    <string name="theme_forest" formatted="false">Навстречу зелени</string>
+    <string name="theme_helicopter" formatted="false">Выше всего</string>
+    <string name="theme_jellyfish" formatted="false">Сияние океана</string>
+    <string name="theme_midnight" formatted="false">Ночная поездка</string>
+    <string name="theme_motorcycle" formatted="false">После заката</string>
+    <string name="theme_nebula" formatted="false">Бархатная вселенная</string>
+    <string name="theme_orbit" formatted="false">Маленький астронавт</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">Пиксельный заезд</string>
+    <string name="theme_pixel_forest" formatted="false">Пиксельная роща</string>
+    <string name="theme_pixel_helicopter" formatted="false">Пиксельный полёт</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Пиксельная ночная езда</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">Хижина в дождливую ночь</string>
+    <string name="theme_pixel_reef" formatted="false">Пиксельный риф</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">Пиксельный дрейф</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">Коралловый сад</string>
+    <string name="theme_spaceship" formatted="false">Новые горизонты</string>
+    <string name="theme_tank" formatted="false">Легенда пустыни</string>
+    <string name="theme_tractor" formatted="false">Свет урожая</string>
+    <string name="theme_truck" formatted="false">Долгая дорога домой</string>
+    <string name="welcome_interact" formatted="false">Наклоните телефон. Коснитесь сцены.</string>
+    <string name="welcome_note" formatted="false">Аккаунт не нужен. Чувствуйте себя как дома.</string>
+    <string name="welcome_start" formatted="false">Найти свой стиль</string>
+    <string name="welcome_subtitle" formatted="false">Живые миры, продуманные значки и подходящие виджеты. Найдите образ, который вам близок.</string>
+    <string name="welcome_title" formatted="false">Ваш экран.
+Чуть больше вас.</string>
+    <string name="widget_calendar" formatted="false">Календарь</string>
+    <string name="widget_choose" formatted="false">Выберите тему в ScreenMotion</string>
+    <string name="widget_collection" formatted="false">Коллекция</string>
+    <string name="widget_configuration" formatted="false">Настройте виджет</string>
+    <string name="widget_configuration_description" formatted="false">Выберите макет для темы, выбранной в ScreenMotion.</string>
+    <string name="widget_date" formatted="false">Часы и дата</string>
+    <string name="widget_description" formatted="false">Выбранная тема с фото, часами, календарём или ссылкой на коллекцию.</string>
+    <string name="widget_error_artwork" formatted="false">Не удалось загрузить изображение этой темы.</string>
+    <string name="widget_error_group" formatted="false">Обмен данными с виджетами недоступен. Проверьте подпись App Group и повторите попытку.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Открыть коллекцию</string>
+    <string name="widget_photo" formatted="false">Фото</string>
+    <string name="widget_select" formatted="false">Использовать для виджетов</string>
+    <string name="widget_selectionhint" formatted="false">Выберите фон, затем добавьте виджет ScreenMotion с экрана «Домой».</string>
+    <string name="widget_style" formatted="false">Стиль</string>
+    <string name="widget_theme" formatted="false">Фон виджета</string>
+</resources>

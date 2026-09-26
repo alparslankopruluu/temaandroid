@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "contentVersion": "2",
+  "minimumAppVersion": "1.0.2",
+  "assetBaseURL": "https://screenmotion-prod.web.app/v2/",
+  "items": [],
+  "themes": [
+    {
+      "id": "pixel-rainfire",
+      "localizedText": {
+        "en": {
+          "title": "Rainfire Cabin",
+          "summary": "Rain falls over a quiet island cabin while firelight, smoke and embers respond to your touch."
+        },
+        "tr": {
+          "title": "Yağmur Ateşi Kulübesi",
+          "summary": "Sessiz bir ada kulübesine yağmur yağarken ateş ışığı, duman ve korlar dokunuşuna tepki verir."
+        }
+      },
+      "isVisible": true,
+      "order": 28,
+      "accessPolicy": "pro",
+      "appearance": "pixel",
+      "collection": "nature",
+      "symbol": "house.fill",
+      "assets": {
+        "artwork": "assets/2/pixel-rainfire.png"
+      },
+      "scene": {
+        "layers": [
+          {
+            "asset": "artwork",
+            "parallax": 0.55,
+            "animation": "drift",
+            "amount": 0.25,
+            "period": 18
+          }
+        ],
+        "particles": [
+          { "preset": "rain", "count": 88, "speed": 0.8 },
+          { "preset": "ember", "count": 30, "speed": 1.1 },
+          { "preset": "smoke", "count": 12, "speed": 0.32 }
+        ],
+        "light": {
+          "x": 0.79,
+          "y": 0.36,
+          "color": "#FF8B37",
+          "radius": 0.18,
+          "flicker": 0.84,
+          "period": 1.1
+        },
+        "interaction": "emberBurst",
+        "ambientAudioAsset": null
+      }
+    }
+  ]
+}

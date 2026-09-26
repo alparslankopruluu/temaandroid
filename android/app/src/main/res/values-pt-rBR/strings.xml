@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ScreenMotion</string>
+    <string name="wallpaper_description">ScreenMotion interactive live wallpaper</string>
+    <string name="action_apply_live_wallpaper">Apply live wallpaper</string>
+    <string name="action_export_still">Save wallpaper</string>
+    <string name="action_export_video">Save 3-second video</string>
+    <string name="android_live_wallpaper_note">Movement and touch continue on supported Android launchers.</string>
+    <string name="huawei_theme_note">Huawei theme installation depends on this device\'s EMUI or HarmonyOS capabilities.</string>
+    <string name="android_purchase_unavailable">Google Play products are not configured in this local build.</string>
+    <string name="android_debug_purchase_note">Development preview: Pro unlock is local and no real payment is taken.</string>
+    <string name="android_pro_badge">PRO</string>
+    <string name="android_install_wallpaper_1">Choose a scene and tap Apply live wallpaper.</string>
+    <string name="android_install_wallpaper_2">Review the motion in Android\'s preview, then tap Set wallpaper.</string>
+    <string name="android_install_wallpaper_3">Choose Home screen or Home and lock screen if your device offers it.</string>
+    <string name="android_install_icons_1">Export the 24-icon ZIP and extract it in your files app.</string>
+    <string name="android_install_icons_2">Open your launcher or theme app\'s icon customization settings.</string>
+    <string name="android_install_icons_3">Choose each PNG. Stock launchers may require shortcuts or a compatible icon-pack launcher.</string>
+    <string name="android_install_widgets_1">Choose a widget background in ScreenMotion.</string>
+    <string name="android_install_widgets_2">Touch and hold an empty Home screen area, then tap Widgets.</string>
+    <string name="android_install_widgets_3">Find ScreenMotion and add Photo, Date, Calendar or Collection; resize as needed.</string>
+    <string name="action_cancel" formatted="false">Cancelar</string>
+    <string name="action_close" formatted="false">Fechar</string>
+    <string name="action_delete" formatted="false">Apagar design</string>
+    <string name="action_reset" formatted="false">Redefinir ajustes</string>
+    <string name="action_retry" formatted="false">Tentar novamente</string>
+    <string name="action_share" formatted="false">Compartilhar</string>
+    <string name="action_skip" formatted="false">Pular</string>
+    <string name="action_undo" formatted="false">Desfazer</string>
+    <string name="ad_cancelled" formatted="false">Anúncio cancelado. Você pode tentar novamente quando quiser.</string>
+    <string name="ad_playing" formatted="false">Reproduzindo anúncio de teste…</string>
+    <string name="ad_testnotice" formatted="false">Prévia de desenvolvimento: simula um anúncio com recompensa. Nenhum anúncio real é exibido nem gera receita.</string>
+    <string name="ad_watch" formatted="false">Testar anúncio · liberar uma exportação</string>
+    <string name="audio_play" formatted="false">Reproduzir som ambiente</string>
+    <string name="audio_stop" formatted="false">Parar som ambiente</string>
+    <string name="collection_cosmos" formatted="false">Outros mundos</string>
+    <string name="collection_nature" formatted="false">Momentos de calma</string>
+    <string name="collection_ocean" formatted="false">Debaixo d’água</string>
+    <string name="collection_vehicles" formatted="false">Em movimento</string>
+    <string name="discover_complete" formatted="false">O visual completo</string>
+    <string name="discover_curated" formatted="false">Encontre seu próximo visual</string>
+    <string name="discover_featured" formatted="false">FEITO PARA SE MOVER</string>
+    <string name="discover_title" formatted="false">Deixe com a sua cara.</string>
+    <string name="editor_advanced" formatted="false">Ajustes finos</string>
+    <string name="editor_depth" formatted="false">Profundidade</string>
+    <string name="editor_home" formatted="false">Tela de Início</string>
+    <string name="editor_interact" formatted="false">Toque ou incline para explorar</string>
+    <string name="editor_lock" formatted="false">Tela Bloqueada</string>
+    <string name="editor_motion" formatted="false">Movimento</string>
+    <string name="editor_particles" formatted="false">Partículas</string>
+    <string name="editor_preview" formatted="false">Prévia</string>
+    <string name="editor_saveinstall" formatted="false">Salvar e configurar</string>
+    <string name="editor_scoremode" formatted="false">Modo de pontuação</string>
+    <string name="editor_style" formatted="false">Tom das cores</string>
+    <string name="editor_yourstyle" formatted="false">Seu toque final</string>
+    <string name="editor_zoom" formatted="false">Enquadramento</string>
+    <string name="export_description" formatted="false">Escolha como deseja salvar.</string>
+    <string name="export_error_busy" formatted="false">Já existe uma exportação em andamento.</string>
+    <string name="export_error_cancelled" formatted="false">Exportação cancelada. O desbloqueio continua disponível.</string>
+    <string name="export_error_encoding" formatted="false">Não foi possível criar a animação. Tente novamente.</string>
+    <string name="export_error_permission" formatted="false">Permita adicionar fotos em Ajustes para salvar seu papel de parede.</string>
+    <string name="export_error_renderer" formatted="false">Não foi possível renderizar esta cena. Tente outro tema.</string>
+    <string name="export_error_storage" formatted="false">Não há espaço livre suficiente. Libere espaço e tente novamente.</string>
+    <string name="export_hint_livephoto" formatted="false">Uma animação curta para a Tela Bloqueada</string>
+    <string name="export_hint_still" formatted="false">Um papel de parede nítido para qualquer tela</string>
+    <string name="export_hint_video" formatted="false">Um vídeo de 3 segundos para compartilhar</string>
+    <string name="export_livephoto" formatted="false">Live Photo</string>
+    <string name="export_save" formatted="false">Salvar em Fotos</string>
+    <string name="export_still" formatted="false">Imagem estática</string>
+    <string name="export_success" formatted="false">Salvo em Fotos</string>
+    <string name="export_title" formatted="false">Seu novo papel de parede</string>
+    <string name="export_video" formatted="false">Vídeo</string>
+    <string name="filter_all" formatted="false">Para você</string>
+    <string name="filter_pixel" formatted="false">Pixel</string>
+    <string name="filter_realistic" formatted="false">Realista</string>
+    <string name="hero_subtitle" formatted="false">Conheça Passeio à meia-noite</string>
+    <string name="hero_title" formatted="false">Um novo jeito
+de olhar sua tela.</string>
+    <string name="icon_0" formatted="false">Telefone</string>
+    <string name="icon_1" formatted="false">Mensagens</string>
+    <string name="icon_10" formatted="false">Mapas</string>
+    <string name="icon_11" formatted="false">Tempo</string>
+    <string name="icon_12" formatted="false">Notas</string>
+    <string name="icon_13" formatted="false">Lembretes</string>
+    <string name="icon_14" formatted="false">Arquivos</string>
+    <string name="icon_15" formatted="false">Compras</string>
+    <string name="icon_16" formatted="false">Livros</string>
+    <string name="icon_17" formatted="false">Saúde</string>
+    <string name="icon_18" formatted="false">Vídeo</string>
+    <string name="icon_19" formatted="false">Gravador</string>
+    <string name="icon_2" formatted="false">Mail</string>
+    <string name="icon_20" formatted="false">Calculadora</string>
+    <string name="icon_21" formatted="false">Mundo</string>
+    <string name="icon_22" formatted="false">Casa</string>
+    <string name="icon_23" formatted="false">Favoritos</string>
+    <string name="icon_3" formatted="false">Navegador</string>
+    <string name="icon_4" formatted="false">Câmera</string>
+    <string name="icon_5" formatted="false">Fotos</string>
+    <string name="icon_6" formatted="false">Música</string>
+    <string name="icon_7" formatted="false">Ajustes</string>
+    <string name="icon_8" formatted="false">Calendário</string>
+    <string name="icon_9" formatted="false">Relógio</string>
+    <string name="icons_error_export" formatted="false">Não foi possível exportar o pacote de ícones. Tente novamente.</string>
+    <string name="icons_export" formatted="false">Exportar pacote de ícones</string>
+    <string name="icons_share" formatted="false">Compartilhar pacote de ícones</string>
+    <string name="install_completed" formatted="false">Marcado como concluído</string>
+    <string name="install_icons" formatted="false">Configure seus ícones</string>
+    <string name="install_icons_1" formatted="false">Exporte o pacote de ícones e salve a pasta em Arquivos. Escolha a imagem do app que deseja personalizar.</string>
+    <string name="install_icons_2" formatted="false">Em Atalhos, crie uma ação Abrir App e escolha o aplicativo. Abra o menu e selecione Adicionar à Tela de Início.</string>
+    <string name="install_icons_3" formatted="false">Toque no ícone, escolha a imagem salva e dê um nome. Toque em Adicionar. Repita nos outros apps; os ícones originais não são alterados.</string>
+    <string name="install_intro" formatted="false">Poucos passos. Um visual novo por inteiro.</string>
+    <string name="install_manual" formatted="false">O iOS cuida da configuração final. Toque em cada etapa ao concluí-la; vamos lembrar seu progresso.</string>
+    <string name="install_mark" formatted="false">Toque ao terminar</string>
+    <string name="install_title" formatted="false">Configure seu visual</string>
+    <string name="install_wallpaper" formatted="false">Defina seu papel de parede</string>
+    <string name="install_wallpaper_1" formatted="false">Abra Ajustes → Imagem de Fundo → Adicionar Nova Imagem de Fundo. Escolha Fotos e selecione a imagem salva.</string>
+    <string name="install_wallpaper_2" formatted="false">Para uma Live Photo, ative o movimento se o iOS oferecer a opção. Em imagens compatíveis, experimente Cena Espacial. Ajuste o enquadramento e o relógio no editor do sistema.</string>
+    <string name="install_wallpaper_3" formatted="false">Toque em Adicionar e escolha Definir como Par de Imagens de Fundo ou personalize a Tela de Início. Desperte o celular para conferir o resultado.</string>
+    <string name="install_widgets" formatted="false">Adicione seus widgets</string>
+    <string name="install_widgets_1" formatted="false">Escolha o fundo do widget no ScreenMotion. Na Tela de Início, mantenha uma área vazia pressionada.</string>
+    <string name="install_widgets_2" formatted="false">Toque em Editar → Adicionar Widget, encontre ScreenMotion, escolha um tamanho e toque em Adicionar Widget. Em versões anteriores do iOS, use o botão +.</string>
+    <string name="install_widgets_3" formatted="false">Mantenha o widget pressionado → Editar Widget para escolher Foto, Relógio e Data, Calendário ou Coleção. Widgets da Tela Bloqueada são adicionados no editor da Tela Bloqueada do sistema.</string>
+    <string name="legal_privacy" formatted="false">Política de Privacidade</string>
+    <string name="legal_support" formatted="false">Suporte</string>
+    <string name="legal_terms" formatted="false">Termos de Uso</string>
+    <string name="library_designs" formatted="false">Meus designs</string>
+    <string name="library_empty" formatted="false">Um espaço para seus favoritos</string>
+    <string name="library_emptyhint" formatted="false">Salve um design ou toque no coração enquanto explora. Sua coleção começa aí.</string>
+    <string name="library_favorite" formatted="false">Alternar favorito</string>
+    <string name="library_favorites" formatted="false">Favoritos</string>
+    <string name="library_save" formatted="false">Salvar design</string>
+    <string name="library_saved" formatted="false">Design salvo</string>
+    <string name="library_subtitle" formatted="false">Todos os seus favoritos. Do seu jeito.</string>
+    <string name="package_icons" formatted="false">24 ícones que combinam</string>
+    <string name="package_subtitle" formatted="false">Papéis de parede, ícones e widgets. Feitos para combinar.</string>
+    <string name="package_widgets" formatted="false">Pequenos detalhes. Grande diferença.</string>
+    <string name="platform_detail" formatted="false">As interações por toque e inclinação funcionam dentro do ScreenMotion. Live Photos podem se animar ao despertar a Tela Bloqueada. O iOS determina quais imagens aceitam papel de parede com Live Photo ou Cena Espacial. Defina o papel de parede manualmente em Ajustes; na Tela de Início, ele permanece estático.</string>
+    <string name="platform_short" formatted="false">Interativo aqui. Salve uma Live Photo ou imagem estática como papel de parede.</string>
+    <string name="privacy_local" formatted="false">Seus designs e favoritos ficam neste dispositivo. Esta versão não usa conta, SDK de rastreamento nem envio para a nuvem.</string>
+    <string name="pro_active" formatted="false">Você tem Pro</string>
+    <string name="pro_benefit_exports" formatted="false">Exportações ilimitadas, sem anúncios</string>
+    <string name="pro_benefit_packs" formatted="false">Ícones e estilos de widgets que combinam</string>
+    <string name="pro_benefit_scenes" formatted="false">Todas as cenas e tons de cor</string>
+    <string name="pro_continue" formatted="false">Continuar com Pro</string>
+    <string name="pro_monthly" formatted="false">Mensal</string>
+    <string name="pro_mostpopular" formatted="false">Mais popular</string>
+    <string name="pro_subtitle" formatted="false">Mais formas de deixar o celular com a sua cara.</string>
+    <string name="pro_terms" formatted="false">A assinatura é renovada automaticamente pelo período escolhido até ser cancelada nos ajustes da App Store.</string>
+    <string name="pro_testnotice" formatted="false">Versão de teste local. As compras usam testes do StoreKit no Xcode. Nenhum pagamento real é cobrado.</string>
+    <string name="pro_title" formatted="false">Todos os mundos. Seus.</string>
+    <string name="pro_unlock" formatted="false">Conhecer o Pro</string>
+    <string name="pro_yearly" formatted="false">Anual</string>
+    <string name="purchase_failed" formatted="false">Não foi possível concluir a compra. Tente novamente.</string>
+    <string name="purchase_none" formatted="false">Nenhuma assinatura ativa foi encontrada.</string>
+    <string name="purchase_pending" formatted="false">Sua compra está aguardando aprovação.</string>
+    <string name="purchase_restore" formatted="false">Restaurar compras</string>
+    <string name="purchase_restored" formatted="false">Seu acesso Pro foi restaurado.</string>
+    <string name="purchase_unavailable" formatted="false">Os produtos de teste não estão disponíveis. Execute o app pelo Xcode com Products.storekit selecionado.</string>
+    <string name="purchase_working" formatted="false">Processando…</string>
+    <string name="search_placeholder" formatted="false">Buscar um tema…</string>
+    <string name="search_title" formatted="false">Buscar temas</string>
+    <string name="settings_about" formatted="false">Bom saber</string>
+    <string name="settings_help" formatted="false">Deixe com a sua cara</string>
+    <string name="settings_testbuild" formatted="false">Versão de desenvolvimento local · Serviços online não conectados.</string>
+    <string name="settings_version" formatted="false">Versão</string>
+    <string name="style_cool" formatted="false">Frio</string>
+    <string name="style_original" formatted="false">Original</string>
+    <string name="style_warm" formatted="false">Quente</string>
+    <string name="tab_discover" formatted="false">Explorar</string>
+    <string name="tab_library" formatted="false">Biblioteca</string>
+    <string name="tab_settings" formatted="false">Ajustes</string>
+    <string name="theme_airplane" formatted="false">Entre as nuvens</string>
+    <string name="theme_alpine" formatted="false">Águas tranquilas</string>
+    <string name="theme_bicycle" formatted="false">Quilômetros dourados</string>
+    <string name="theme_bus" formatted="false">Fuga para o litoral</string>
+    <string name="theme_forest" formatted="false">Rumo ao verde</string>
+    <string name="theme_helicopter" formatted="false">Acima de tudo</string>
+    <string name="theme_jellyfish" formatted="false">Brilho do oceano</string>
+    <string name="theme_midnight" formatted="false">Passeio à meia-noite</string>
+    <string name="theme_motorcycle" formatted="false">Depois do anoitecer</string>
+    <string name="theme_nebula" formatted="false">Universo de veludo</string>
+    <string name="theme_orbit" formatted="false">Pequeno astronauta</string>
+    <string name="theme_pixel_aquarium" formatted="false">Pixel Aquarium</string>
+    <string name="theme_pixel_autumn" formatted="false">Pixel Autumn</string>
+    <string name="theme_pixel_car" formatted="false">Corrida pixel</string>
+    <string name="theme_pixel_forest" formatted="false">Bosque pixel</string>
+    <string name="theme_pixel_helicopter" formatted="false">Pairado pixel</string>
+    <string name="theme_pixel_koi" formatted="false">Pixel Koi</string>
+    <string name="theme_pixel_motorcycle" formatted="false">Noite pixel</string>
+    <string name="theme_pixel_race" formatted="false">Pixel Race</string>
+    <string name="theme_pixel_rainfire" formatted="false">Cabana na chuva</string>
+    <string name="theme_pixel_reef" formatted="false">Recife pixel</string>
+    <string name="theme_pixel_snow" formatted="false">Pixel Snow</string>
+    <string name="theme_pixel_spaceship" formatted="false">Deriva pixel</string>
+    <string name="theme_pixel_ufo" formatted="false">Pixel UFO</string>
+    <string name="theme_reef" formatted="false">Jardim de corais</string>
+    <string name="theme_spaceship" formatted="false">Novos horizontes</string>
+    <string name="theme_tank" formatted="false">Lenda do deserto</string>
+    <string name="theme_tractor" formatted="false">Luz da colheita</string>
+    <string name="theme_truck" formatted="false">O longo caminho de volta</string>
+    <string name="welcome_interact" formatted="false">Incline o celular. Toque na cena.</string>
+    <string name="welcome_note" formatted="false">Não precisa de conta. Sinta-se em casa.</string>
+    <string name="welcome_start" formatted="false">Encontrar meu visual</string>
+    <string name="welcome_subtitle" formatted="false">Mundos vivos, ícones bem pensados e widgets que combinam. Encontre um visual com a sua cara.</string>
+    <string name="welcome_title" formatted="false">Sua tela.
+Um pouco mais você.</string>
+    <string name="widget_calendar" formatted="false">Calendário</string>
+    <string name="widget_choose" formatted="false">Escolha um tema no ScreenMotion</string>
+    <string name="widget_collection" formatted="false">Coleção</string>
+    <string name="widget_configuration" formatted="false">Personalize seu widget</string>
+    <string name="widget_configuration_description" formatted="false">Escolha um layout para o tema selecionado no ScreenMotion.</string>
+    <string name="widget_date" formatted="false">Relógio e data</string>
+    <string name="widget_description" formatted="false">Seu tema escolhido, com foto, relógio, calendário ou atalho para a coleção.</string>
+    <string name="widget_error_artwork" formatted="false">Não foi possível carregar a imagem deste tema.</string>
+    <string name="widget_error_group" formatted="false">O compartilhamento com widgets não está disponível. Verifique a assinatura do App Group e tente novamente.</string>
+    <string name="widget_name" formatted="false">ScreenMotion</string>
+    <string name="widget_open" formatted="false">Explorar coleção</string>
+    <string name="widget_photo" formatted="false">Foto</string>
+    <string name="widget_select" formatted="false">Usar nos meus widgets</string>
+    <string name="widget_selectionhint" formatted="false">Escolha um fundo e adicione um widget do ScreenMotion pela Tela de Início.</string>
+    <string name="widget_style" formatted="false">Estilo</string>
+    <string name="widget_theme" formatted="false">Fundo do widget</string>
+</resources>

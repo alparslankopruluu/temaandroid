@@ -10,23 +10,32 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
     var appearance: ThemeAppearance = .realistic
     var interaction: InteractiveSceneBehavior.Profile?
     var titleOverride: String?
+    var subtitleOverride: String?
     var artworkURL: URL?
+    var remoteScene: RemoteSceneRecipe?
+    var remoteAssetURLs: [String: URL]
+    var remoteContentVersion: String?
 
     var isPixel: Bool { appearance == .pixel }
     var hasProgrammaticArtwork: Bool {
+        if remoteScene != nil { return true }
         guard isPixel else { return false }
         return [.fish, .nature, .ufo, .aquarium, .autumn, .race, .koi, .snow].contains(interaction)
     }
     var displayTitle: String { titleOverride ?? NSLocalizedString(titleKey, comment: "") }
+    var displaySubtitle: String? { subtitleOverride }
 
     private enum CodingKeys: String, CodingKey {
-        case id, titleKey, collection, artwork, isFree, symbol, appearance, interaction, titleOverride, artworkURL
+        case id, titleKey, collection, artwork, isFree, symbol, appearance, interaction, titleOverride,
+             subtitleOverride, artworkURL, remoteScene, remoteAssetURLs, remoteContentVersion
     }
 
     init(id: String, titleKey: String, collection: ThemeCollection, artwork: String,
          isFree: Bool, symbol: String, appearance: ThemeAppearance = .realistic,
          interaction: InteractiveSceneBehavior.Profile? = nil, titleOverride: String? = nil,
-         artworkURL: URL? = nil) {
+         subtitleOverride: String? = nil, artworkURL: URL? = nil,
+         remoteScene: RemoteSceneRecipe? = nil, remoteAssetURLs: [String: URL] = [:],
+         remoteContentVersion: String? = nil) {
         self.id = id
         self.titleKey = titleKey
         self.collection = collection
@@ -36,7 +45,11 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
         self.appearance = appearance
         self.interaction = interaction
         self.titleOverride = titleOverride
+        self.subtitleOverride = subtitleOverride
         self.artworkURL = artworkURL
+        self.remoteScene = remoteScene
+        self.remoteAssetURLs = remoteAssetURLs
+        self.remoteContentVersion = remoteContentVersion
     }
 
     init(from decoder: Decoder) throws {
@@ -50,7 +63,11 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
         appearance = try values.decodeIfPresent(ThemeAppearance.self, forKey: .appearance) ?? .realistic
         interaction = try values.decodeIfPresent(InteractiveSceneBehavior.Profile.self, forKey: .interaction)
         titleOverride = try values.decodeIfPresent(String.self, forKey: .titleOverride)
+        subtitleOverride = try values.decodeIfPresent(String.self, forKey: .subtitleOverride)
         artworkURL = try values.decodeIfPresent(URL.self, forKey: .artworkURL)
+        remoteScene = try values.decodeIfPresent(RemoteSceneRecipe.self, forKey: .remoteScene)
+        remoteAssetURLs = try values.decodeIfPresent([String: URL].self, forKey: .remoteAssetURLs) ?? [:]
+        remoteContentVersion = try values.decodeIfPresent(String.self, forKey: .remoteContentVersion)
     }
 }
 
