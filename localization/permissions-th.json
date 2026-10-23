@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "บันทึกภาพพื้นหลังและ Live Photo ลงในคลังรูปภาพของคุณ"
+  "NSPhotoLibraryAddUsageDescription": "บันทึกภาพพื้นหลังและ Live Photo ลงในคลังรูปภาพของคุณ",
+  "NSCameraUsageDescription": "อัดคลิปสั้นเพื่อทำเป็นภาพพื้นหลัง Live Photo",
+  "NSMicrophoneUsageDescription": "กล้องจะบันทึกเสียงพร้อมวิดีโอ ScreenMotion ไม่เก็บเสียงไว้ใน Live Photo"
 }

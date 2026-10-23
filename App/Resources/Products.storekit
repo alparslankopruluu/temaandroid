@@ -1,7 +1,23 @@
 {
   "identifier": "ScreenMotionLocal",
   "nonRenewingSubscriptions": [],
-  "products": [],
+  "products": [
+    {
+      "displayPrice": "49.99",
+      "familyShareable": false,
+      "internalID": "lifetime",
+      "localizations": [
+        {
+          "description": "Local ScreenMotion Pro lifetime test purchase",
+          "displayName": "ScreenMotion Pro Lifetime",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.screenmotion.pro.lifetime",
+      "referenceName": "Pro Lifetime",
+      "type": "NonConsumable"
+    }
+  ],
   "settings": {
     "_applicationInternalID": "",
     "_developerTeamID": "",
@@ -40,11 +56,16 @@
         {
           "adHocOffers": [],
           "codeOffers": [],
-          "displayPrice": "79.99",
+          "displayPrice": "29.99",
           "familyShareable": false,
           "groupNumber": 1,
           "internalID": "yearly",
-          "introductoryOffer": null,
+          "introductoryOffer": {
+            "internalID": "3B1F6C2A",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P3D"
+          },
           "localizations": [
             {
               "description": "Local ScreenMotion Pro test subscription",

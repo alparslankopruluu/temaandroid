@@ -136,6 +136,278 @@
           }
         }
       }
+    },
+    "NSCameraUsageDescription": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record a short clip to turn into a Live Photo wallpaper."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quay một clip ngắn để biến thành hình nền Live Photo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grave um clipe curto para virar papel de parede Live Photo."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rekam klip pendek untuk dijadikan wallpaper Live Photo."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optag et kort klip, der kan blive til en Live Photo-baggrund."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spela in ett kort klipp att göra till en Live Photo-bakgrund."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อัดคลิปสั้นเพื่อทำเป็นภาพพื้นหลัง Live Photo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سجّل مقطعاً قصيراً لتحويله إلى خلفية Live Photo."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Graba un clip corto para convertirlo en fondo Live Photo."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ta opp et kort klipp som kan bli en Live Photo-bakgrunn."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmez un court clip à transformer en fond d’écran Live Photo."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Photo वॉलपेपर बनाने के लिए छोटी क्लिप रिकॉर्ड करें।"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "짧은 클립을 촬영해 Live Photo 배경화면으로 만듭니다."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "录制一段短片，制作实况照片墙纸。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимите короткий клип, чтобы сделать обои Live Photo."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nagraj krótki klip, aby zrobić z niego tapetę Live Photo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nimm einen kurzen Clip für ein Live-Photo-Hintergrundbild auf."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Registra una breve clip da trasformare in sfondo Live Photo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Live Photo duvar kâğıdına dönüştürmek için kısa bir klip kaydet."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neem een korte clip op voor een Live Photo-achtergrond."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "錄製一段短片，製作原況照片背景圖片。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "短いクリップを撮影してLive Photo壁紙にします。"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera records sound with video. ScreenMotion does not keep the sound in your Live Photo."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camera ghi âm cùng video. ScreenMotion không giữ âm thanh trong Live Photo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A câmera grava som com o vídeo. O ScreenMotion não mantém o som na sua Live Photo."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera merekam suara bersama video. ScreenMotion tidak menyimpan suara di Live Photo."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kameraet optager lyd med video. ScreenMotion gemmer ikke lyden i dit Live Photo."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kameran spelar in ljud med videon. ScreenMotion sparar inte ljudet i din Live Photo."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กล้องจะบันทึกเสียงพร้อมวิดีโอ ScreenMotion ไม่เก็บเสียงไว้ใน Live Photo"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تسجّل الكاميرا الصوت مع الفيديو. لا يحتفظ ScreenMotion بالصوت في Live Photo."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La cámara graba sonido con el video. ScreenMotion no lo conserva en tu Live Photo."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kameraet tar opp lyd med video. ScreenMotion beholder ikke lyden i Live Photo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La caméra enregistre le son avec la vidéo. ScreenMotion ne le garde pas dans votre Live Photo."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरा वीडियो के साथ आवाज़ भी रिकॉर्ड करता है। ScreenMotion आपकी Live Photo में आवाज़ नहीं रखता।"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "카메라는 동영상과 함께 소리를 녹음합니다. ScreenMotion은 Live Photo에 소리를 남기지 않습니다."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相机录制视频时会同时录音。ScreenMotion 不会在实况照片中保留声音。"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Камера записывает звук вместе с видео. ScreenMotion не сохраняет звук в Live Photo."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aparat nagrywa dźwięk z filmem. ScreenMotion nie zachowuje go w Live Photo."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Kamera nimmt Ton mit auf. ScreenMotion übernimmt den Ton nicht in dein Live Photo."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La fotocamera registra anche l’audio. ScreenMotion non lo conserva nella Live Photo."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kamera videoyla birlikte ses kaydeder. ScreenMotion sesi Live Photo'nda tutmaz."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De camera neemt geluid op met video. ScreenMotion bewaart het geluid niet in je Live Photo."
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相機錄製影片時會同時錄音。ScreenMotion 不會在原況照片中保留聲音。"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カメラは動画と一緒に音声も録音します。ScreenMotionはLive Photoに音声を残しません。"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

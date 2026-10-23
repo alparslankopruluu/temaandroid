@@ -27,6 +27,15 @@ struct DesignInstallationProgress: Codable, Equatable, Sendable {
     private(set) var designInstallationProgress: [String: DesignInstallationProgress] = [:]
     var rewards: Set<String> = []
     var hasSeenWelcome = false
+    private(set) var videoConversions = 0
+    private(set) var successfulExports = 0
+    private(set) var hasSeenLaunchPaywall = false
+    /// Discover filters picked during onboarding; matching scenes are listed first.
+    private(set) var interests: [String] = []
+    /// The scene Nightstand reopens with, so a charging automation lands on the user's own pick.
+    private(set) var nightstandThemeID: String?
+    /// Free users can turn this many of their own clips into Live Photos before Pro is required.
+    static let freeVideoConversions = 2
     private let defaults: UserDefaults
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -38,6 +47,11 @@ struct DesignInstallationProgress: Codable, Equatable, Sendable {
         }
         rewards = Set(defaults.stringArray(forKey: "rewards") ?? [])
         hasSeenWelcome = defaults.bool(forKey: "welcome")
+        videoConversions = defaults.integer(forKey: "video-conversions")
+        successfulExports = defaults.integer(forKey: "successful-exports")
+        hasSeenLaunchPaywall = defaults.bool(forKey: "launch-paywall")
+        interests = defaults.stringArray(forKey: "interests") ?? []
+        nightstandThemeID = defaults.string(forKey: "nightstand-theme")
         if let data = defaults.data(forKey: "designs"), let decoded = try? JSONDecoder().decode([SavedDesign].self, from: data) { designs = decoded }
     }
     func toggleFavorite(_ id: String) {
@@ -51,6 +65,17 @@ struct DesignInstallationProgress: Codable, Equatable, Sendable {
     }
     func delete(_ id: UUID) { designs.removeAll { $0.id == id }; persistDesigns() }
     func finishWelcome() { hasSeenWelcome = true; defaults.set(true, forKey: "welcome") }
+    func markLaunchPaywallSeen() { hasSeenLaunchPaywall = true; defaults.set(true, forKey: "launch-paywall") }
+    func setInterests(_ values: [String]) { interests = values; defaults.set(values, forKey: "interests") }
+    func setNightstandTheme(_ id: String) { nightstandThemeID = id; defaults.set(id, forKey: "nightstand-theme") }
+    var freeVideoConversionsLeft: Int { max(0, Self.freeVideoConversions - videoConversions) }
+    func recordVideoConversion() { videoConversions += 1; defaults.set(videoConversions, forKey: "video-conversions") }
+    /// Returns the new total so callers can pick a delightful moment (first and third save) to ask for a rating.
+    @discardableResult func recordSuccessfulExport() -> Int {
+        successfulExports += 1
+        defaults.set(successfulExports, forKey: "successful-exports")
+        return successfulExports
+    }
     func toggleStep(_ key: String) {
         if installationSteps.contains(key) { installationSteps.remove(key) } else { installationSteps.insert(key) }
         defaults.set(Array(installationSteps), forKey: "steps")

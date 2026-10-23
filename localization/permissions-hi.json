@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "अपने वॉलपेपर और Live Photo को फ़ोटो लाइब्रेरी में सहेजें।"
+  "NSPhotoLibraryAddUsageDescription": "अपने वॉलपेपर और Live Photo को फ़ोटो लाइब्रेरी में सहेजें।",
+  "NSCameraUsageDescription": "Live Photo वॉलपेपर बनाने के लिए छोटी क्लिप रिकॉर्ड करें।",
+  "NSMicrophoneUsageDescription": "कैमरा वीडियो के साथ आवाज़ भी रिकॉर्ड करता है। ScreenMotion आपकी Live Photo में आवाज़ नहीं रखता।"
 }

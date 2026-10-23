@@ -1,4 +1,17 @@
 # Approved implementation and release progression
+
+## M6 — iOS 1.0.4 recovery and monetization (approved 2026-10-19)
+Live App Store state: 1.0.3 (8) READY_FOR_DISTRIBUTION; repository source is 1.0.2 (6) and the 1.0.3 source is lost. Rebuild the five missing 1.0.3 store promises (cinematic loops, video→Live Photo, tappable widgets, iOS 26 Spatial Scene guide, Nightstand mode, Lock Screen-style cards with a simpler Discover) and ship monetization fixes: featured-order bug, review prompt after a successful save, export failure reasons, dismissible paywall after welcome and on locked scenes, visual paywall with trial timeline, 2 free video conversions. Pricing change (yearly USD 29.99 + 3-day trial), metadata apply, asset upload and review submission each need a separate exact approval.
+
+- [ ] Featured/remote order fix + regression test
+- [ ] Paywall v2, welcome soft paywall, locked-card paywall, review prompt, export diagnostics
+- [ ] Video→Live Photo (2 free) 
+- [ ] Code-rendered cinematic loops (20) in app + Live Photo export
+- [ ] Nightstand mode, Spatial Scene guide, tappable widgets, Lock Screen cards / Discover
+- [ ] 22-locale strings, tests green, version 1.0.4 (9)
+- [ ] ASO metadata, screenshots, App Preview, header/search videos (local prepare → approved apply)
+- [x] 2026-10-23 (user-approved): yearly equalized to USD 29.99 in 175 territories and a 3-day free trial on yearly in 175 territories, both effective 2026-10-24; version 1.0.4 created in ASC with 22-locale metadata applied (1.0.3 screenshots carried over)
+- [x] Purchase cancel no longer shows an error or counts as `pro_purchase_failed`; Ask to Buy shows a pending note; purchase events carry `source`/`plan`; the store-unavailable copy no longer tells customers to run Xcode
 Current milestones: M5 — Firebase-delivered dynamic scene catalog and iOS 1.0.2; M4 — Interactive Theme Studio v2; M3 — iOS App Store release gates; A0 — Android parity contract and source gate.
 M0–M2 implementation is present and accepted locally. The StoreKit purchase/expiration regression and paywall compliance UI journey pass on the current simulator runtime.
 M0: Kit and native app/widget targets.

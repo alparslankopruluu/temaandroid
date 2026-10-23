@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Bewaar je achtergrond en Live Photo in je fotobibliotheek."
+  "NSPhotoLibraryAddUsageDescription": "Bewaar je achtergrond en Live Photo in je fotobibliotheek.",
+  "NSCameraUsageDescription": "Neem een korte clip op voor een Live Photo-achtergrond.",
+  "NSMicrophoneUsageDescription": "De camera neemt geluid op met video. ScreenMotion bewaart het geluid niet in je Live Photo."
 }

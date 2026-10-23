@@ -38,7 +38,8 @@ final class StoreScreenshotTests: XCTestCase {
             app.launchArguments = [
                 "-AppleLanguages", "(\(shot.language))",
                 "-AppleLocale", shot.locale,
-                "-welcome", "NO"
+                "-welcome", "NO",
+                "-launch-paywall", "YES"
             ]
             app.launch()
             let start = app.buttons["startExploring"]

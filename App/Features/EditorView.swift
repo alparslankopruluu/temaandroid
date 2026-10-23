@@ -4,6 +4,7 @@ struct EditorView: View {
     let theme: Theme
     @State var configuration = SceneConfiguration()
     @Environment(LibraryStore.self) private var library
+    @Environment(PurchasesService.self) private var purchases
     @State private var undoStack: [SceneConfiguration] = []
     @State private var advanced = false
     @State private var showExport = false
@@ -16,8 +17,8 @@ struct EditorView: View {
                 ZStack(alignment: .top) {
                     ScenePreview(theme: theme, configuration: configuration, isActive: isVisible && !showExport)
                     VStack(spacing: 3) {
-                        Text(Date.now, format: .dateTime.weekday(.wide).month().day()).font(.subheadline.weight(.medium))
-                        Text(Date.now, style: .time).font(.system(size: 64, weight: .light, design: .rounded)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.65)
+                        Text(LockScreenClock.displayDate(.now), format: .dateTime.weekday(.wide).month().day()).font(.subheadline.weight(.medium))
+                        Text(LockScreenClock.timeText(LockScreenClock.displayDate(.now))).font(.system(size: 64, weight: .light, design: .rounded)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.65)
                     }.padding(.top, 24).padding(.horizontal, 26).allowsHitTesting(false).accessibilityHidden(true)
                     if theme.remoteScene?.ambientAudioAsset != nil {
                         Button {
@@ -43,7 +44,7 @@ struct EditorView: View {
                     }
                     HStack { Text("editor.yourStyle").font(.title3.bold()); Spacer(); Button { if let previous = undoStack.popLast() { configuration = previous } } label: { Image(systemName: "arrow.uturn.backward").frame(width: 44, height: 44) }.disabled(undoStack.isEmpty).accessibilityLabel(Text("action.undo")) }
                     Picker("editor.style", selection: Binding(get: { configuration.style }, set: { value in undoStack.append(configuration); configuration.style = value })) { Text("style.original").tag(0); Text("style.cool").tag(1); Text("style.warm").tag(2) }.pickerStyle(.segmented)
-                    slider("editor.motion", value: $configuration.intensity)
+                    if theme.loopResource == nil { slider("editor.motion", value: $configuration.intensity) }
                     if theme.interaction?.supportsScoreMode == true {
                         Toggle("editor.scoreMode", isOn: $configuration.scoreMode)
                             .tint(Design.accent)
@@ -55,7 +56,7 @@ struct EditorView: View {
                             }
                     }
                     DisclosureGroup("editor.advanced", isExpanded: $advanced) {
-                        VStack(spacing: 18) { slider("editor.particles", value: $configuration.particles); slider("editor.depth", value: $configuration.depth); slider("editor.zoom", value: $configuration.zoom, range: 1...1.6); Button("action.reset") { undoStack.append(configuration); configuration = SceneConfiguration() }.frame(minHeight: 44) }.padding(.top, 18)
+                        VStack(spacing: 18) { if theme.loopResource == nil { slider("editor.particles", value: $configuration.particles) }; slider("editor.depth", value: $configuration.depth); slider("editor.zoom", value: $configuration.zoom, range: 1...1.6); Button("action.reset") { undoStack.append(configuration); configuration = SceneConfiguration() }.frame(minHeight: 44) }.padding(.top, 18)
                     }.tint(.white)
                 }
                 Text("platform.short").font(.caption).foregroundStyle(Design.muted)
@@ -67,7 +68,7 @@ struct EditorView: View {
         .safeAreaInset(edge: .bottom) {
             HStack(spacing: 12) {
                 Button { library.save(theme, configuration: configuration); saved = true; AppTelemetry.log(.designSaved) } label: { Image(systemName: saved ? "bookmark.fill" : "bookmark").frame(width: 54, height: 56).background(Design.surface, in: RoundedRectangle(cornerRadius: 18)) }.accessibilityLabel(Text(saved ? "library.saved" : "library.save"))
-                PrimaryButton(title: "editor.saveInstall", symbol: "arrow.down") { showExport = true }
+                PrimaryButton(title: "editor.saveInstall", symbol: theme.isFree || purchases.isPro ? "arrow.down" : "lock.fill") { showExport = true }
             }.padding(.horizontal, Design.padding).padding(.vertical, 12).background(Design.background)
         }
         .onChange(of: configuration) { _, _ in saved = false }

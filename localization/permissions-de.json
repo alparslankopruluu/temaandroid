@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Speichere dein Hintergrundbild und Live Photo in deiner Fotomediathek."
+  "NSPhotoLibraryAddUsageDescription": "Speichere dein Hintergrundbild und Live Photo in deiner Fotomediathek.",
+  "NSCameraUsageDescription": "Nimm einen kurzen Clip für ein Live-Photo-Hintergrundbild auf.",
+  "NSMicrophoneUsageDescription": "Die Kamera nimmt Ton mit auf. ScreenMotion übernimmt den Ton nicht in dein Live Photo."
 }

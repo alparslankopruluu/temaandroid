@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Simpan wallpaper dan Live Photo ke perpustakaan foto Anda."
+  "NSPhotoLibraryAddUsageDescription": "Simpan wallpaper dan Live Photo ke perpustakaan foto Anda.",
+  "NSCameraUsageDescription": "Rekam klip pendek untuk dijadikan wallpaper Live Photo.",
+  "NSMicrophoneUsageDescription": "Kamera merekam suara bersama video. ScreenMotion tidak menyimpan suara di Live Photo."
 }

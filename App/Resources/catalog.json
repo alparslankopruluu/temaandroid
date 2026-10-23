@@ -130,6 +130,38 @@
       "symbol": "leaf"
     },
     {
+      "id": "aurora",
+      "titleKey": "theme.aurora",
+      "collection": "nature",
+      "artwork": "aurora",
+      "isFree": false,
+      "symbol": "moon.stars"
+    },
+    {
+      "id": "neon-rain",
+      "titleKey": "theme.neon-rain",
+      "collection": "vehicles",
+      "artwork": "neon-rain",
+      "isFree": false,
+      "symbol": "building.2"
+    },
+    {
+      "id": "abyss",
+      "titleKey": "theme.abyss",
+      "collection": "ocean",
+      "artwork": "abyss",
+      "isFree": false,
+      "symbol": "drop"
+    },
+    {
+      "id": "event-horizon",
+      "titleKey": "theme.event-horizon",
+      "collection": "cosmos",
+      "artwork": "event-horizon",
+      "isFree": false,
+      "symbol": "circle.circle"
+    },
+    {
       "id": "pixel-car",
       "titleKey": "theme.pixel-car",
       "collection": "vehicles",
@@ -268,9 +300,21 @@
           }
         ],
         "particles": [
-          { "preset": "rain", "count": 88, "speed": 0.8 },
-          { "preset": "ember", "count": 30, "speed": 1.1 },
-          { "preset": "smoke", "count": 12, "speed": 0.32 }
+          {
+            "preset": "rain",
+            "count": 88,
+            "speed": 0.8
+          },
+          {
+            "preset": "ember",
+            "count": 30,
+            "speed": 1.1
+          },
+          {
+            "preset": "smoke",
+            "count": 12,
+            "speed": 0.32
+          }
         ],
         "light": {
           "x": 0.79,
@@ -283,6 +327,30 @@
         "interaction": "emberBurst",
         "ambientAudioAsset": null
       }
+    },
+    {
+      "id": "halloween-moon",
+      "titleKey": "theme.halloween-moon",
+      "collection": "cosmos",
+      "artwork": "halloween-moon",
+      "isFree": false,
+      "symbol": "moon.stars.fill"
+    },
+    {
+      "id": "halloween-pumpkins",
+      "titleKey": "theme.halloween-pumpkins",
+      "collection": "nature",
+      "artwork": "halloween-pumpkins",
+      "isFree": false,
+      "symbol": "flame"
+    },
+    {
+      "id": "halloween-ghosts",
+      "titleKey": "theme.halloween-ghosts",
+      "collection": "nature",
+      "artwork": "halloween-ghosts",
+      "isFree": false,
+      "symbol": "cloud.fog"
     }
   ]
 }

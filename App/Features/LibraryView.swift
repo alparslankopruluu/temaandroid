@@ -34,7 +34,11 @@ struct LibraryView: View {
 
 struct SettingsView: View {
     @Environment(PurchasesService.self) private var purchases
+    @Environment(ContentStore.self) private var content
+    @Environment(LibraryStore.self) private var library
     @State private var showPro = false
+    @State private var showNightstand = false
+    @Environment(\.openURL) private var openURL
     private var version: String {
         let short = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "—"
         let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "—"
@@ -51,6 +55,12 @@ struct SettingsView: View {
                     NavigationLink("install.wallpaper", destination: InstallView(kind: .wallpaper))
                     NavigationLink("install.icons", destination: InstallView(kind: .icons))
                     NavigationLink("install.widgets", destination: InstallView(kind: .widgets))
+                    if SpatialGuideView.isSupported { NavigationLink("spatial.navTitle", destination: SpatialGuideView()) }
+                }
+                Section("settings.tools") {
+                    NavigationLink("discover.video", destination: VideoLiveView())
+                    Button("discover.nightstand") { showNightstand = true }
+                    notificationsRow
                 }
                 Section("settings.about") {
                     Text("platform.detail").font(.footnote)
@@ -64,7 +74,21 @@ struct SettingsView: View {
                     LabeledContent("settings.version", value: version)
                 }
                 if let message = purchases.message { Text(LocalizedStringKey(message)).font(.footnote) }
-            }.scrollContentBackground(.hidden).background(Design.background).navigationTitle("tab.settings").sheet(isPresented: $showPro) { ProPaywallView() }
+            }.scrollContentBackground(.hidden).background(Design.background).navigationTitle("tab.settings").task { await PushService.shared.refreshAuthorization() }.sheet(isPresented: $showPro) { ProPaywallView(source: .settings) }
+                .fullScreenCover(isPresented: $showNightstand) { NightstandView(theme: content.catalog.nightstandTheme(library.nightstandThemeID)) }
         }
+    }
+    /// Asks once; after a decision the row opens the system settings, the only place iOS lets users change it.
+    @ViewBuilder private var notificationsRow: some View {
+        let status = PushService.shared.authorization
+        Button {
+            if status == .notDetermined { Task { await PushService.shared.requestPermission(source: "settings") } }
+            else if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) }
+        } label: {
+            LabeledContent("settings.notifications") {
+                Text(status == .authorized || status == .provisional ? "settings.notifications.on" : "settings.notifications.off")
+            }
+        }
+        .accessibilityIdentifier("settings.notifications")
     }
 }

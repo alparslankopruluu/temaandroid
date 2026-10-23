@@ -43,7 +43,8 @@ import Observation
                 continue
             }
             guard let item = items[base.id] else {
-                themes.append((base, 10_000 + index))
+                // Unlisted bundled scenes keep their catalog position so a remote order cannot jump ahead of them.
+                themes.append((base, index))
                 continue
             }
             guard item.isVisible else { continue }

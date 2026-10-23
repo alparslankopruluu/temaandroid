@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "احفظ خلفيتك وصورة Live Photo في مكتبة صورك."
+  "NSPhotoLibraryAddUsageDescription": "احفظ خلفيتك وصورة Live Photo في مكتبة صورك.",
+  "NSCameraUsageDescription": "سجّل مقطعاً قصيراً لتحويله إلى خلفية Live Photo.",
+  "NSMicrophoneUsageDescription": "تسجّل الكاميرا الصوت مع الفيديو. لا يحتفظ ScreenMotion بالصوت في Live Photo."
 }

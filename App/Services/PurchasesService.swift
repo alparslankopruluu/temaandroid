@@ -68,12 +68,28 @@ import StoreKit
         }
     }
 
-    func purchase(_ package: Package) async throws -> Bool {
+    func purchase(_ package: Package, source: PaywallSource) async throws -> Bool {
+        let context = ["source": source.rawValue, "plan": package.packageType == .annual ? "yearly" : package.packageType == .lifetime ? "lifetime" : "monthly"]
         await identifyAnonymousUser()
-        let result = try await Purchases.shared.purchase(package: package)
-        guard !result.userCancelled else { return false }
+        message = nil
+        let result: PurchaseResultData
+        do {
+            result = try await Purchases.shared.purchase(package: package)
+        } catch ErrorCode.purchaseCancelledError {
+            // The async API throws on cancel; closing the sheet is a choice, not a failure.
+            AppTelemetry.log(.proPurchaseCancelled, context)
+            return false
+        } catch ErrorCode.paymentPendingError {
+            // Ask to Buy or SCA: access arrives later through customerInfoStream.
+            message = "purchase.pending"
+            return false
+        }
+        guard !result.userCancelled else {
+            AppTelemetry.log(.proPurchaseCancelled, context)
+            return false
+        }
         apply(result.customerInfo)
-        if isPro { AppTelemetry.log(.proPurchaseCompleted) }
+        if isPro { AppTelemetry.log(.proPurchaseCompleted, context) }
         return isPro
     }
 
@@ -103,7 +119,7 @@ import StoreKit
     }
 
 #if DEBUG
-    private static let testProductIDs = ["com.screenmotion.pro.monthly", "com.screenmotion.pro.yearly"]
+    private static let testProductIDs = ["com.screenmotion.pro.monthly", "com.screenmotion.pro.yearly", "com.screenmotion.pro.lifetime"]
 #endif
 }
 

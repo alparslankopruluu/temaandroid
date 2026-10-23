@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Spara din bakgrund och Live Photo i ditt bildbibliotek."
+  "NSPhotoLibraryAddUsageDescription": "Spara din bakgrund och Live Photo i ditt bildbibliotek.",
+  "NSCameraUsageDescription": "Spela in ett kort klipp att göra till en Live Photo-bakgrund.",
+  "NSMicrophoneUsageDescription": "Kameran spelar in ljud med videon. ScreenMotion sparar inte ljudet i din Live Photo."
 }

@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Zapisuj tapety i Live Photo w bibliotece zdjęć."
+  "NSPhotoLibraryAddUsageDescription": "Zapisuj tapety i Live Photo w bibliotece zdjęć.",
+  "NSCameraUsageDescription": "Nagraj krótki klip, aby zrobić z niego tapetę Live Photo.",
+  "NSMicrophoneUsageDescription": "Aparat nagrywa dźwięk z filmem. ScreenMotion nie zachowuje go w Live Photo."
 }

@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Сохраняйте обои и Live Photo в медиатеку фотографий."
+  "NSPhotoLibraryAddUsageDescription": "Сохраняйте обои и Live Photo в медиатеку фотографий.",
+  "NSCameraUsageDescription": "Снимите короткий клип, чтобы сделать обои Live Photo.",
+  "NSMicrophoneUsageDescription": "Камера записывает звук вместе с видео. ScreenMotion не сохраняет звук в Live Photo."
 }

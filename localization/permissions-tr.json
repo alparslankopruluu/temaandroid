@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Duvar kâğıdınızı ve Live Photo’nuzu fotoğraf arşivinize kaydedin."
+  "NSPhotoLibraryAddUsageDescription": "Duvar kâğıdınızı ve Live Photo’nuzu fotoğraf arşivinize kaydedin.",
+  "NSCameraUsageDescription": "Live Photo duvar kâğıdına dönüştürmek için kısa bir klip kaydet.",
+  "NSMicrophoneUsageDescription": "Kamera videoyla birlikte ses kaydeder. ScreenMotion sesi Live Photo'nda tutmaz."
 }

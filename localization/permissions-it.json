@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Salva il tuo sfondo e la tua Live Photo nella libreria foto."
+  "NSPhotoLibraryAddUsageDescription": "Salva il tuo sfondo e la tua Live Photo nella libreria foto.",
+  "NSCameraUsageDescription": "Registra una breve clip da trasformare in sfondo Live Photo.",
+  "NSMicrophoneUsageDescription": "La fotocamera registra anche l’audio. ScreenMotion non lo conserva nella Live Photo."
 }

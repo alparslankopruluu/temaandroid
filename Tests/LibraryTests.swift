@@ -23,11 +23,17 @@ final class LibraryTests: XCTestCase {
         reopened.consumeReward("motorcycle")
         XCTAssertFalse(LibraryStore(defaults: defaults).rewards.contains("motorcycle"))
     }
-    func testCatalogHasSixteenRealisticAndThirteenPixelScenes() {
+    func testCatalogHasTwentyThreeLoopScenesAndThirteenPixelScenes() {
         let themes = ThemeCatalog.bundled.themes
-        XCTAssertEqual(themes.count, 29)
-        XCTAssertEqual(Set(themes.map(\.id)).count, 29)
-        XCTAssertEqual(themes.filter { $0.appearance == .realistic }.count, 16)
+        XCTAssertEqual(themes.count, 36)
+        XCTAssertEqual(Set(themes.map(\.id)).count, 36)
+        XCTAssertEqual(themes.filter { $0.appearance == .realistic }.count, 23)
+        // Halloween scenes are Pro in the catalog (one is a seasonal gift), so the five starters stay the permanent free tier.
+        XCTAssertEqual(themes.filter(\.isHalloween).map(\.id), ["halloween-moon", "halloween-pumpkins", "halloween-ghosts"])
+        XCTAssertEqual(themes.filter { $0.isFree && !$0.isHalloween }.count, 5)
+        // Every non-pixel scene ships a cinematic loop; pixel scenes keep their interactive renderer.
+        XCTAssertEqual(themes.filter { $0.appearance == .realistic && $0.loopResource == nil }.map(\.id), [])
+        XCTAssertEqual(themes.filter { $0.isPixel && $0.loopResource != nil }.map(\.id), [])
         XCTAssertEqual(themes.filter { $0.appearance == .pixel }.count, 13)
         XCTAssertEqual(themes.filter { $0.appearance == .pixel && $0.isFree }.map(\.id), ["pixel-car"])
         XCTAssertEqual(Set(themes.filter(\.isPixel).map(\.titleKey)), Set([
@@ -37,7 +43,7 @@ final class LibraryTests: XCTestCase {
             "theme.pixel-race", "theme.pixel-koi", "theme.pixel-snow", "theme.pixel-rainfire"
         ]))
         for collection in ThemeCollection.allCases {
-            XCTAssertEqual(themes.filter { $0.collection == collection && $0.appearance == .realistic && $0.isFree }.count, 1)
+            XCTAssertEqual(themes.filter { $0.collection == collection && $0.appearance == .realistic && $0.isFree && !$0.isHalloween }.count, 1)
         }
     }
     @MainActor func testInstallProgressIsScopedToExactDesignAndPersists() throws {
@@ -76,5 +82,51 @@ final class LibraryTests: XCTestCase {
             XCTAssertEqual(Set(contents).count, 24)
             try FileManager.default.removeItem(at: url)
         }
+    }
+    @MainActor func testOnboardingInterestsAndNightstandPickPersist() {
+        let defaults = UserDefaults(suiteName: UUID().uuidString)!
+        let store = LibraryStore(defaults: defaults)
+        XCTAssertFalse(store.hasSeenLaunchPaywall)
+        store.setInterests(["halloween", "ocean"])
+        store.setNightstandTheme("aurora")
+        store.markLaunchPaywallSeen()
+        let reopened = LibraryStore(defaults: defaults)
+        XCTAssertEqual(reopened.interests, ["halloween", "ocean"])
+        XCTAssertEqual(reopened.nightstandThemeID, "aurora")
+        XCTAssertTrue(reopened.hasSeenLaunchPaywall)
+        let catalog = ThemeCatalog.bundled
+        XCTAssertEqual(catalog.nightstandTheme("aurora")?.id, "aurora")
+        // A pick that left the catalog falls back to the free featured scene instead of a blank screen.
+        XCTAssertEqual(catalog.nightstandTheme("removed-scene")?.isFree, true)
+    }
+    func testHalloweenSeasonLeadsOffersButNeverTheFreeHero() throws {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = .current
+        let inSeason = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 10, day: 24)))
+        let afterSeason = try XCTUnwrap(calendar.date(from: DateComponents(year: 2026, month: 11, day: 3)))
+        XCTAssertTrue(ThemeCatalog.isHalloweenSeason(inSeason))
+        XCTAssertFalse(ThemeCatalog.isHalloweenSeason(afterSeason))
+        let themes = ThemeCatalog.bundled.themes
+        XCTAssertEqual(ThemeCatalog.offer(in: themes, on: inSeason)?.isHalloween, true)
+        XCTAssertEqual(ThemeCatalog.offer(in: themes, on: afterSeason)?.isHalloween, false)
+        XCTAssertEqual(ThemeCatalog.offer(in: themes, on: afterSeason)?.isFree, false)
+        XCTAssertEqual(ThemeCatalog.featured(in: themes)?.isFree, true)
+        XCTAssertEqual(DiscoverFilter.visible(in: themes).first, .all)
+        XCTAssertTrue(DiscoverFilter.interests(in: themes).contains(.halloween))
+        XCTAssertFalse(DiscoverFilter.visible(in: themes.filter { !$0.isHalloween }).contains(.halloween))
+        XCTAssertTrue(Theme.isSeasonalGift(id: "halloween-pumpkins", on: inSeason))
+        XCTAssertFalse(Theme.isSeasonalGift(id: "halloween-pumpkins", on: afterSeason))
+        XCTAssertFalse(Theme.isSeasonalGift(id: "halloween-moon", on: inSeason))
+    }
+    func testYearlySavingsBadgeMath() {
+        XCTAssertEqual(PaywallMath.yearlySavingsPercent(yearly: Decimal(string: "29.99")!, monthly: Decimal(string: "6.99")!), 64)
+        XCTAssertNil(PaywallMath.yearlySavingsPercent(yearly: Decimal(string: "79.99")!, monthly: Decimal(string: "6.99")!))
+        XCTAssertNil(PaywallMath.yearlySavingsPercent(yearly: 10, monthly: 0))
+    }
+    func testPushLinksOnlyOpenScreenMotionRoutes() {
+        XCTAssertEqual(PushService.link(from: ["link": "screenmotion://discover/halloween"])?.host, "discover")
+        XCTAssertEqual(PushService.link(from: ["link": "screenmotion://offer"])?.host, "offer")
+        XCTAssertNil(PushService.link(from: ["link": "https://example.com/phish"]))
+        XCTAssertNil(PushService.link(from: ["title": "no link"]))
     }
 }

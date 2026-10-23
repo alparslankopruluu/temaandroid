@@ -27,6 +27,24 @@ struct WidgetSnapshot: Codable, Sendable {
     var deepLink: URL? { URL(string: themeID.isEmpty ? "screenmotion://home" : "screenmotion://theme/\(themeID)") }
 }
 
+/// Day → dusk → night state that a tap on the widget advances; shared through the app group.
+enum WidgetScenePhase: Int, CaseIterable, Sendable {
+    case day, dusk, night
+    private static let key = "widget-scene-phase"
+    private static let tapsKey = "widget-scene-taps"
+    static var current: WidgetScenePhase {
+        WidgetScenePhase(rawValue: UserDefaults(suiteName: WidgetSnapshot.group)?.integer(forKey: key) ?? 0) ?? .day
+    }
+    /// Increments on every tap so each answer can place its effect differently.
+    static var taps: Int { UserDefaults(suiteName: WidgetSnapshot.group)?.integer(forKey: tapsKey) ?? 0 }
+    static func advance() {
+        let defaults = UserDefaults(suiteName: WidgetSnapshot.group)
+        let next = (current.rawValue + 1) % allCases.count
+        defaults?.set(next, forKey: key)
+        defaults?.set(taps + 1, forKey: tapsKey)
+    }
+}
+
 #if !WIDGET_EXTENSION
 @MainActor
 enum WidgetBridge {

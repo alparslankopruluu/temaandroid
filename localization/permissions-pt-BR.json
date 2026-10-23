@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Salve seu papel de parede e sua Live Photo na fototeca."
+  "NSPhotoLibraryAddUsageDescription": "Salve seu papel de parede e sua Live Photo na fototeca.",
+  "NSCameraUsageDescription": "Grave um clipe curto para virar papel de parede Live Photo.",
+  "NSMicrophoneUsageDescription": "A câmera grava som com o vídeo. O ScreenMotion não mantém o som na sua Live Photo."
 }

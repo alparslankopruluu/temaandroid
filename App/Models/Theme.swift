@@ -22,6 +22,15 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
         guard isPixel else { return false }
         return [.fish, .nature, .ufo, .aquarium, .autumn, .race, .koi, .snow].contains(interaction)
     }
+    /// A bundled seamless cinematic loop (`loop-<id>.mp4`) replaces the procedural preview and drives exports.
+    var loopResource: URL? { Bundle.main.url(forResource: "loop-\(id)", withExtension: "mp4") }
+    /// Seasonal scenes are grouped by id so the catalog schema stays unchanged.
+    var isHalloween: Bool { id.hasPrefix("halloween-") }
+    /// One Halloween scene is free to save during the season (the App Store in-app event is a no-cost event);
+    /// the permanent free tier stays the five catalog starters.
+    static func isSeasonalGift(id: String, on date: Date) -> Bool {
+        id == "halloween-pumpkins" && ThemeCatalog.isHalloweenSeason(date)
+    }
     var displayTitle: String { titleOverride ?? NSLocalizedString(titleKey, comment: "") }
     var displaySubtitle: String? { subtitleOverride }
 
@@ -58,7 +67,7 @@ struct Theme: Codable, Identifiable, Hashable, Sendable {
         titleKey = try values.decode(String.self, forKey: .titleKey)
         collection = try values.decode(ThemeCollection.self, forKey: .collection)
         artwork = try values.decode(String.self, forKey: .artwork)
-        isFree = try values.decode(Bool.self, forKey: .isFree)
+        isFree = try values.decode(Bool.self, forKey: .isFree) || Self.isSeasonalGift(id: id, on: .now)
         symbol = try values.decode(String.self, forKey: .symbol)
         appearance = try values.decodeIfPresent(ThemeAppearance.self, forKey: .appearance) ?? .realistic
         interaction = try values.decodeIfPresent(InteractiveSceneBehavior.Profile.self, forKey: .interaction)
@@ -142,5 +151,20 @@ struct ThemeCatalog: Sendable {
         return ThemeCatalog(themes: catalog.themes)
     }()
     func theme(_ id: String) -> Theme? { themes.first { $0.id == id } }
+    /// The user's last Nightstand pick when it still exists, else the featured scene.
+    func nightstandTheme(_ id: String?) -> Theme? { id.flatMap(theme) ?? Self.featured(in: themes) }
+    /// The Discover hero must be something a new user can save without paying.
+    static func featured(in themes: [Theme]) -> Theme? { themes.first(where: \.isFree) ?? themes.first }
+    /// A paywall shows what Pro unlocks: a Pro cinematic loop, a Halloween one while the season runs.
+    static func offer(in themes: [Theme], on date: Date = .now) -> Theme? {
+        let pro = themes.filter { !$0.isFree && $0.loopResource != nil }
+        if isHalloweenSeason(date), let seasonal = pro.first(where: \.isHalloween) { return seasonal }
+        return pro.first ?? featured(in: themes)
+    }
+    /// October 10 through November 2: Halloween scenes lead Discover around the App Store in-app event.
+    static func isHalloweenSeason(_ date: Date) -> Bool {
+        let parts = Calendar(identifier: .gregorian).dateComponents([.month, .day], from: date)
+        return (parts.month == 10 && (parts.day ?? 0) >= 10) || (parts.month == 11 && (parts.day ?? 99) <= 2)
+    }
     private struct CatalogFile: Decodable { let version: Int; let themes: [Theme] }
 }

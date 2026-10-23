@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "배경화면과 Live Photo를 사진 보관함에 저장합니다."
+  "NSPhotoLibraryAddUsageDescription": "배경화면과 Live Photo를 사진 보관함에 저장합니다.",
+  "NSCameraUsageDescription": "짧은 클립을 촬영해 Live Photo 배경화면으로 만듭니다.",
+  "NSMicrophoneUsageDescription": "카메라는 동영상과 함께 소리를 녹음합니다. ScreenMotion은 Live Photo에 소리를 남기지 않습니다."
 }

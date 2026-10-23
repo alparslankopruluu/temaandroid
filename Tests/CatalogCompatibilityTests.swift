@@ -87,4 +87,15 @@ struct CatalogCompatibilityTests {
         #expect(theme.id == "midnight")
         #expect(theme.isFree)
     }
+
+    @Test("Discover hero skips a Pro scene that a remote order placed first")
+    func featuredSceneIsAlwaysFree() throws {
+        let catalog = ThemeCatalog.bundled
+        let rainfire = try #require(catalog.theme("pixel-rainfire"))
+        #expect(!rainfire.isFree)
+        let reordered = [rainfire] + catalog.themes.filter { $0.id != rainfire.id }
+        let featured = try #require(ThemeCatalog.featured(in: reordered))
+        #expect(featured.isFree)
+        #expect(ThemeCatalog.featured(in: [rainfire])?.id == rainfire.id)
+    }
 }

@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "將背景圖片與原況照片儲存到你的照片圖庫。"
+  "NSPhotoLibraryAddUsageDescription": "將背景圖片與原況照片儲存到你的照片圖庫。",
+  "NSCameraUsageDescription": "錄製一段短片，製作原況照片背景圖片。",
+  "NSMicrophoneUsageDescription": "相機錄製影片時會同時錄音。ScreenMotion 不會在原況照片中保留聲音。"
 }

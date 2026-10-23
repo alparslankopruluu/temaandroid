@@ -1,6 +1,8 @@
 import SwiftUI
 import SpriteKit
 import CoreMotion
+import AVFoundation
+import CoreImage
 
 /// Decorative artwork surface. The enclosing screen owns accessible descriptions and controls.
 struct ScenePreview: View {
@@ -12,7 +14,10 @@ struct ScenePreview: View {
 
     var body: some View {
         Group {
-            if theme.remoteScene != nil {
+            if let loop = theme.loopResource {
+                LoopSceneSurface(url: loop, configuration: configuration,
+                                 active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
+            } else if theme.remoteScene != nil {
                 RemoteSceneSurface(theme: theme, configuration: configuration,
                                    active: isActive && scenePhase == .active, reduceMotion: reduceMotion)
             } else if theme.isPixel {
@@ -458,5 +463,138 @@ private struct SceneArtwork: Sendable {
             guard let original = decoded(theme.artwork) else { return nil }
             return SceneArtwork(background: original, foreground: nil)
         }.value
+    }
+}
+
+/// Plays a bundled cinematic loop with tilt parallax and a touch glow, matching what the Live Photo export contains.
+private struct LoopSceneSurface: UIViewRepresentable {
+    let url: URL
+    let configuration: SceneConfiguration
+    let active: Bool
+    let reduceMotion: Bool
+
+    func makeUIView(context: Context) -> LoopPlayerView {
+        let view = LoopPlayerView()
+        view.load(url)
+        updateUIView(view, context: context)
+        return view
+    }
+
+    func updateUIView(_ view: LoopPlayerView, context: Context) {
+        view.apply(zoom: configuration.zoom, style: configuration.style, depth: configuration.depth)
+        view.setPlaying(active && !reduceMotion, allowsMotion: !reduceMotion)
+    }
+
+    static func dismantleUIView(_ view: LoopPlayerView, coordinator: ()) { view.teardown() }
+}
+
+@MainActor
+final class LoopPlayerView: UIView {
+    override class var layerClass: AnyClass { AVPlayerLayer.self }
+    private var playerLayer: AVPlayerLayer? { layer as? AVPlayerLayer }
+    private let player = AVQueuePlayer()
+    private var looper: AVPlayerLooper?
+    private var item: AVPlayerItem?
+    private let motion = CMMotionManager()
+    private var zoom = 1.0
+    private var depth = 0.5
+    private var style = -1
+    private var tilt = CGPoint.zero
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .black
+        player.isMuted = true
+        player.preventsDisplaySleepDuringVideoPlayback = false
+        playerLayer?.player = player
+        playerLayer?.videoGravity = .resizeAspectFill
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped(_:))))
+    }
+    required init?(coder: NSCoder) { nil }
+
+    func load(_ url: URL) {
+        let item = AVPlayerItem(url: url)
+        self.item = item
+        looper = AVPlayerLooper(player: player, templateItem: item)
+    }
+
+    func apply(zoom: Double, style: Int, depth: Double) {
+        self.zoom = zoom
+        self.depth = depth
+        if style != self.style {
+            self.style = style
+            // The looper copies the template item, so the composition is set on every queued copy.
+            for queued in player.items() { queued.videoComposition = Self.composition(for: queued.asset, style: style) }
+        }
+        updateTransform()
+    }
+
+    func setPlaying(_ playing: Bool, allowsMotion: Bool) {
+        if playing { player.play() } else { player.pause() }
+        if playing && allowsMotion && motion.isDeviceMotionAvailable && !motion.isDeviceMotionActive {
+            motion.deviceMotionUpdateInterval = 1 / 30
+            motion.startDeviceMotionUpdates(to: .main) { [weak self] data, _ in
+                guard let self, let data else { return }
+                self.tilt = CGPoint(x: max(-1, min(1, data.attitude.roll)), y: max(-1, min(1, data.attitude.pitch - 0.6)))
+                self.updateTransform()
+            }
+        } else if !playing || !allowsMotion {
+            motion.stopDeviceMotionUpdates()
+        }
+    }
+
+    func teardown() {
+        motion.stopDeviceMotionUpdates()
+        player.pause()
+        looper?.disableLooping()
+        player.removeAllItems()
+    }
+
+    private func updateTransform() {
+        // A little overscan keeps edges hidden while the scene drifts with the device.
+        let overscan = 1.06 + depth * 0.04
+        let travel = 14 * depth
+        let scale = CGFloat(zoom * overscan)
+        layer.setAffineTransform(CGAffineTransform(translationX: -tilt.x * travel, y: -tilt.y * travel).scaledBy(x: scale, y: scale))
+    }
+
+    @objc private func tapped(_ gesture: UITapGestureRecognizer) {
+        let point = gesture.location(in: self)
+        let glow = CAShapeLayer()
+        glow.path = UIBezierPath(ovalIn: CGRect(x: -40, y: -40, width: 80, height: 80)).cgPath
+        glow.position = point
+        glow.fillColor = UIColor.white.withAlphaComponent(0.18).cgColor
+        glow.strokeColor = UIColor.white.withAlphaComponent(0.55).cgColor
+        glow.lineWidth = 1.5
+        superview?.layer.addSublayer(glow)
+        let grow = CABasicAnimation(keyPath: "transform.scale")
+        grow.fromValue = 0.2
+        grow.toValue = 2.6
+        let fade = CABasicAnimation(keyPath: "opacity")
+        fade.fromValue = 1
+        fade.toValue = 0
+        let group = CAAnimationGroup()
+        group.animations = [grow, fade]
+        group.duration = 0.9
+        group.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { glow.removeFromSuperlayer() }
+        glow.add(group, forKey: "glow")
+        CATransaction.commit()
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+    }
+
+    private static func composition(for asset: AVAsset, style: Int) -> AVVideoComposition? {
+        guard style != 0 else { return nil }
+        let target: CGFloat = style == 1 ? 8200 : 4800
+        return AVVideoComposition(asset: asset) { request in
+            let filter = CIFilter(name: "CITemperatureAndTint")
+            filter?.setValue(request.sourceImage, forKey: kCIInputImageKey)
+            filter?.setValue(CIVector(x: 6500, y: 0), forKey: "inputNeutral")
+            filter?.setValue(CIVector(x: target, y: 0), forKey: "inputTargetNeutral")
+            request.finish(with: filter?.outputImage ?? request.sourceImage, context: nil)
+        }
     }
 }

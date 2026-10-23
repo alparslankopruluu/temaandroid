@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "将壁纸和实况照片保存到你的照片图库。"
+  "NSPhotoLibraryAddUsageDescription": "将壁纸和实况照片保存到你的照片图库。",
+  "NSCameraUsageDescription": "录制一段短片，制作实况照片墙纸。",
+  "NSMicrophoneUsageDescription": "相机录制视频时会同时录音。ScreenMotion 不会在实况照片中保留声音。"
 }

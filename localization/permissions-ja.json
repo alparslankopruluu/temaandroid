@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "壁紙とLive Photoを写真ライブラリに保存します。"
+  "NSPhotoLibraryAddUsageDescription": "壁紙とLive Photoを写真ライブラリに保存します。",
+  "NSCameraUsageDescription": "短いクリップを撮影してLive Photo壁紙にします。",
+  "NSMicrophoneUsageDescription": "カメラは動画と一緒に音声も録音します。ScreenMotionはLive Photoに音声を残しません。"
 }

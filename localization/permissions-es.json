@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Guarda tu fondo de pantalla y tu Live Photo en la fototeca."
+  "NSPhotoLibraryAddUsageDescription": "Guarda tu fondo de pantalla y tu Live Photo en la fototeca.",
+  "NSCameraUsageDescription": "Graba un clip corto para convertirlo en fondo Live Photo.",
+  "NSMicrophoneUsageDescription": "La cámara graba sonido con el video. ScreenMotion no lo conserva en tu Live Photo."
 }

@@ -1,3 +1,5 @@
 {
-  "NSPhotoLibraryAddUsageDescription": "Lưu hình nền và Live Photo vào thư viện ảnh của bạn."
+  "NSPhotoLibraryAddUsageDescription": "Lưu hình nền và Live Photo vào thư viện ảnh của bạn.",
+  "NSCameraUsageDescription": "Quay một clip ngắn để biến thành hình nền Live Photo.",
+  "NSMicrophoneUsageDescription": "Camera ghi âm cùng video. ScreenMotion không giữ âm thanh trong Live Photo."
 }

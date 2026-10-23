@@ -29,6 +29,11 @@ final class ExportTests: XCTestCase {
             let identity = try XCTUnwrap(metadata.first { ($0.key as? String) == "com.apple.quicktime.content.identifier" })
             let stringValue = try await identity.load(.stringValue)
             XCTAssertEqual(stringValue, identifier)
+            // Camera Live Photo keys that Lock Screen Live Photo wallpapers look for.
+            let keys = Set(metadata.compactMap { $0.key as? String })
+            XCTAssertTrue(keys.isSuperset(of: ["com.apple.quicktime.live-photo.auto",
+                                               "com.apple.quicktime.live-photo.vitality-score",
+                                               "com.apple.quicktime.live-photo.vitality-scoring-version"]))
             let tracks = try await asset.loadTracks(withMediaType: .metadata)
             XCTAssertEqual(tracks.count, 1)
             let track = try XCTUnwrap(tracks.first)

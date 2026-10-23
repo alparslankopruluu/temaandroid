@@ -28,6 +28,16 @@ struct MotionWidgetIntent: WidgetConfigurationIntent {
     @Parameter(title: "widget.style", default: .photo) var style: MotionWidgetStyle
 }
 
+/// The widget answers a tap in place: the scene steps to the next time of day and plays its collection's effect.
+struct AdvanceSceneIntent: AppIntent {
+    static let title: LocalizedStringResource = "widget.tap"
+    static let isDiscoverable = false
+    func perform() async throws -> some IntentResult {
+        WidgetScenePhase.advance()
+        return .result()
+    }
+}
+
 struct MotionEntry: TimelineEntry {
     let date: Date
     let configuration: MotionWidgetIntent
@@ -78,8 +88,16 @@ struct MotionWidgetView: View {
     @ViewBuilder private var content: some View {
         switch entry.configuration.style {
         case .photo:
-            VStack { Spacer(); HStack { Text(LocalizedStringKey(entry.snapshot.titleKey)).font(.headline); Spacer() } }
-                .foregroundStyle(.white)
+            Button(intent: AdvanceSceneIntent()) {
+                ZStack {
+                    SceneEffect(collection: entry.snapshot.collection, phase: WidgetScenePhase.current, seed: WidgetScenePhase.taps)
+                    VStack { Spacer(); HStack { Text(LocalizedStringKey(entry.snapshot.titleKey)).font(.headline); Spacer(); Image(systemName: "hand.tap").font(.caption) } }
+                        .foregroundStyle(.white)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
         case .date:
             VStack(alignment: .leading, spacing: 8) {
                 Text(entry.date, format: .dateTime.weekday(.wide)).font(.caption).textCase(.uppercase).foregroundStyle(accent)
@@ -121,11 +139,71 @@ struct MotionWidgetView: View {
            let image = UIImage(contentsOfFile: url.path) {
             GeometryReader { proxy in
                 Image(uiImage: image).resizable().scaledToFill().frame(width: proxy.size.width, height: proxy.size.height).clipped()
+                    .overlay(WidgetScenePhase.current.tint)
                     .overlay(LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom))
             }
         } else {
             Rectangle().fill(WidgetPalette.background.gradient)
         }
+    }
+}
+
+extension WidgetScenePhase {
+    var tint: some View {
+        switch self {
+        case .day: LinearGradient(colors: [.clear], startPoint: .top, endPoint: .bottom)
+        case .dusk: LinearGradient(colors: [Color(red: 1, green: 0.45, blue: 0.2).opacity(0.38), Color(red: 0.5, green: 0.15, blue: 0.4).opacity(0.3)], startPoint: .top, endPoint: .bottom)
+        case .night: LinearGradient(colors: [Color(red: 0.03, green: 0.05, blue: 0.2).opacity(0.62), Color(red: 0.02, green: 0.02, blue: 0.08).opacity(0.5)], startPoint: .top, endPoint: .bottom)
+        }
+    }
+}
+
+/// Deterministic per-tap effect: headlight flares, bubbles, shooting stars or fireflies.
+private struct SceneEffect: View {
+    let collection: String
+    let phase: WidgetScenePhase
+    let seed: Int
+
+    var body: some View {
+        GeometryReader { proxy in
+            let size = proxy.size
+            ZStack {
+                switch collection {
+                case "vehicles":
+                    ForEach(0..<2, id: \.self) { index in
+                        Circle().fill(RadialGradient(colors: [.white, Color(red: 1, green: 0.85, blue: 0.55).opacity(0.6), .clear], center: .center, startRadius: 1, endRadius: 22))
+                            .frame(width: 44, height: 44)
+                            .position(x: size.width * (0.42 + Double(index) * 0.16), y: size.height * 0.62)
+                    }
+                case "cosmos":
+                    Capsule().fill(LinearGradient(colors: [.clear, .white], startPoint: .leading, endPoint: .trailing))
+                        .frame(width: size.width * 0.45, height: 2)
+                        .rotationEffect(.degrees(-24))
+                        .position(x: size.width * unit(1), y: size.height * (0.2 + unit(2) * 0.25))
+                default:
+                    ForEach(0..<7, id: \.self) { index in
+                        let bubble = collection == "ocean"
+                        Circle()
+                            .fill(bubble ? Color.white.opacity(0.08) : Color(red: 0.95, green: 1, blue: 0.5).opacity(0.9))
+                            .overlay(Circle().stroke(bubble ? Color.white.opacity(0.7) : .clear, lineWidth: 1))
+                            .shadow(color: bubble ? .clear : Color(red: 0.9, green: 1, blue: 0.4), radius: 5)
+                            .frame(width: bubble ? 6 + unit(index * 3) * 10 : 4, height: bubble ? 6 + unit(index * 3) * 10 : 4)
+                            .position(x: size.width * unit(index * 5 + 1), y: size.height * (0.15 + unit(index * 7 + 2) * 0.6))
+                    }
+                }
+            }
+            .opacity(phase == .day && collection != "vehicles" ? 0.75 : 1)
+        }
+        .transition(.opacity.combined(with: .scale(scale: 0.9)))
+        .id(seed)
+        .allowsHitTesting(false)
+    }
+
+    /// A stable pseudo-random value in 0...1 for this tap, so the widget never flickers on reload.
+    private func unit(_ salt: Int) -> Double {
+        var value = UInt64(truncatingIfNeeded: (seed &* 7919) &+ salt &* 104_729 &+ 13)
+        value = (value ^ (value >> 13)) &* 0x5bd1e995
+        return Double(value % 1000) / 1000
     }
 }
 
