@@ -176,8 +176,8 @@ NEWS = {
 }
 
 APP_INFO = {
-    "en-US": ("Live Wallpaper: Video to Live", "Live Photo Maker & Lock Screen"),
-    "tr": ("Canlı Duvar Kağıdı: Live Photo", "Hareketli Kilit Ekranı, Widget"),
+    "en-US": ("Live Wallpaper: ScreenMotion", "Video to Live Photo Maker"),
+    "tr": ("Duvar Kağıdı: ScreenMotion", "Canlı Duvar Kağıdı, Live Photo"),
 }
 KEYWORDS = {
     "en-US": "moving,animated,background,aesthetic,nightstand,standby,clock,widget,spatial,tilt,pixel,gif,car",
