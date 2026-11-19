@@ -14,6 +14,11 @@ Resubmitted on 2026-11-18 for App Store Connect app `6814078185`.
 - Items: App Store version `d84fe749-824c-4244-96d9-467c19e2d486` with build 1.0.4 (11) `04ac21f1-e509-4119-8caf-2e8c711bca36`, and IAP version `2aff6f9d-e50a-4f16-a73f-f429fab8dbe2` (Pro Lifetime).
 - The Resolution Center thread of the removed submission rejects replies (web API 409, no reply box in the web UI). The fix summary is at the top of the App Review notes instead, read back.
 
+## Approval (2026-11-19)
+
+- Submission `0008ed39` read back as `COMPLETE`; version 1.0.4 is `READY_FOR_DISTRIBUTION` and live on the App Store.
+- Pro Lifetime (`com.screenmotion.pro.lifetime`, `6826108564`) is `APPROVED`.
+
 ## Validation
 
 - Full `ScreenMotion` test plan on iPhone 17 Pro / iOS 26.2 from commit `fe74d49` (the build-11 source): `TEST SUCCEEDED`, 0 failures; the two on-request store-capture tests skipped by design.
